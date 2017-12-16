@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>webpy的常规使用与踩过的坑 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下 基础的框架搭建安装1pip install web.py -i https://pypi.douban.com/simple">
+<meta name="keywords" content="python,webpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpy的常规使用与踩过的坑">
+<meta property="og:url" content="http://www.yangyanxing.com/article/use-webpy.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下 基础的框架搭建安装1pip install web.py -i https://pypi.douban.com/simple">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-16T10:11:00.516Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpy的常规使用与踩过的坑">
+<meta name="twitter:description" content="在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下 基础的框架搭建安装1pip install web.py -i https://pypi.douban.com/simple">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-use-webpy" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            webpy的常规使用与踩过的坑
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/use-webpy.html">
+            <time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/webpy/">webpy</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下</p>
+<h1 id="基础的框架搭建"><a href="#基础的框架搭建" class="headerlink" title="基础的框架搭建"></a>基础的框架搭建</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install web<span class="selector-class">.py</span> -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line"></span><br><span class="line">urls = (<span class="string">"/.*"</span>, <span class="string">"hello"</span>)</span><br><span class="line">app = web.application(urls, globals())</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello, world!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>return 可以返回字符串也可以返回字典，不过直接返回字符串不是一个很好的网页习惯，如果是对外提供的api是很好的，但是如果是做的网页，最好还是将数据render（渲染）到模板中</p>
+<h3 id="使用GET或者POST接收数据"><a href="#使用GET或者POST接收数据" class="headerlink" title="使用GET或者POST接收数据"></a>使用GET或者POST接收数据</h3><p><code>web.input()</code> 既可以接收GET的数据，也可以接收POST过来的数据</p>
+<p><code>web.data()</code> 通过这个方法可以取到数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line"></span><br><span class="line">urls = (<span class="string">"/.*"</span>, <span class="string">"hello"</span>)</span><br><span class="line">app = web.application(urls, globals())</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello, world!'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">POST</span><span class="params">(self)</span>:</span></span><br><span class="line">        username = web.input().get(<span class="string">'username'</span>,<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<h3 id="模板的定义使用"><a href="#模板的定义使用" class="headerlink" title="模板的定义使用"></a>模板的定义使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line"></span><br><span class="line">urls = (<span class="string">"/.*"</span>, <span class="string">"hello"</span>)</span><br><span class="line">app = web.application(urls, globals())</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello, world!'</span></span><br><span class="line">        </span><br><span class="line">app_root = os.path.dirname(__file__) <span class="comment">#定义根路径</span></span><br><span class="line">templates_root = os.path.join(app_root, <span class="string">'templates'</span>) <span class="comment">#定义模板所在的路径</span></span><br><span class="line">render = web.template.render(templates_root)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>使用的时候用return render<br>如： return rende.index() 则需要在templates目录下创建一个index.html 这样访问</p>
+<h3 id="模板中使用渲染的数据"><a href="#模板中使用渲染的数据" class="headerlink" title="模板中使用渲染的数据"></a>模板中使用渲染的数据</h3><p>当有以下代码的时候<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'yangyanxing'</span></span><br><span class="line"><span class="keyword">return</span> render.index(name)</span><br></pre></td></tr></table></figure></p>
+<p>此时可以在index.html中使用渲染过来的name值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$def with(name_t)</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  hello $name_t</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>$def with 必须写在首行，with里面有多少个参数，那个在之前的py文件中就需要render多少个参数，多了少了都不行，with里可以使用默认参数，这个和一般的函数定义是一样的。</p>
+<h1 id="中级使用"><a href="#中级使用" class="headerlink" title="中级使用"></a>中级使用</h1><h3 id="session的使用"><a href="#session的使用" class="headerlink" title="session的使用"></a>session的使用</h3><ul>
+<li>session 可以使用文件的形式也可以存储在数据库中</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line"></span><br><span class="line">urls = (<span class="string">"/.*"</span>, <span class="string">"hello"</span>)</span><br><span class="line">app = web.application(urls, globals())</span><br><span class="line">store = web.session.DiskStore(<span class="string">'sessions'</span>) <span class="comment">#定义session使用文件存储方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义session格式，使用本地存储，还可以使用数据库存储方式</span></span><br><span class="line"><span class="keyword">if</span> web.config.get(<span class="string">'_session'</span>) <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    session = web.session.Session(app, store,)</span><br><span class="line">    web.config._session = session</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    session = web.config._session</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello, world!'</span></span><br><span class="line">        </span><br><span class="line">app_root = os.path.dirname(__file__) <span class="comment">#定义根路径</span></span><br><span class="line">templates_root = os.path.join(app_root, <span class="string">'templates'</span>) <span class="comment">#定义模板所在的路径</span></span><br><span class="line">render = web.template.render(templates_root,globals=&#123;<span class="string">'session'</span>: session&#125;) <span class="comment">#将session应用到模板中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>session的赋值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username = <span class="string">'yangyanxing'</span></span><br><span class="line">session.realname = username</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>session的读取</p>
+<blockquote>
+<p>print session.realname</p>
+</blockquote>
+</li>
+<li><p>session在模板中的使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$def with (something)</span><br><span class="line"></span><br><span class="line">$session.realname</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面在定义</p>
+<blockquote>
+<p>render = web.template.render(templates_root,globals={‘session’: session})</p>
+</blockquote>
+<p>时<code>globals={&#39;session&#39;: session}</code> 这里如果定义成<code>globals={&#39;session_t&#39;: session}</code> 那么在模板中使用session中也要使用`$session_t</p>
+<h3 id="模板布局的使用"><a href="#模板布局的使用" class="headerlink" title="模板布局的使用"></a>模板布局的使用</h3><p>有时候对于一个小型网站，它的header与footer是一样的，只是中间的内容不一样，那么可以定义一个模板，base.html包括了header与footer，其它模板在定义的时候只要引用这个模板就行了，这样做的好处也在于当修改base.html，不用修改每一个模板。<br>首先定义一个基础的模板，我这里就叫做base.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$def with (content)</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”renderer”</span> <span class="attr">content</span>=<span class="string">”webkit”</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>欢迎来到我们的世界<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">		something here</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    	$:content</span><br><span class="line">    	<span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    	    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&amp;copy; yangyanxing.com 2016<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这里有两个要点 <code>$def with (content)</code> 这里的content可以随意写，而下面的<code>$:content</code> 则是别的模板文件内容，可以这样理解，当你再使用<code>return render.index(name)</code> 时，其实它是将index.html里的内容当成这里的<code>content</code> 这样也就实现了一个基础的模板，只更新里面的内容的效果。</p>
+<p>定义完基础模板还不行，如果要使其生效还得在py文件中修改以下定义render的代码<br><code>render = web.template.render(templates_root,globals={&#39;session&#39;: session},base=&#39;base&#39;)</code><br>这样定义render才能将base.html设置为基础模板</p>
+<p>此时如果index.html中是以下的样子<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$def with (name)</span><br><span class="line">hello $name</span><br></pre></td></tr></table></figure></p>
+<p>那么当你有以下代码的时候<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myname = <span class="string">'yangyanxing'</span></span><br><span class="line"><span class="keyword">return</span> render.index(myname)</span><br></pre></td></tr></table></figure></p>
+<p>那么最终生成的html应该是<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”renderer”</span> <span class="attr">content</span>=<span class="string">”webkit”</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>欢迎来到我们的世界<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">		something here</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    	hello yangyanxing</span><br><span class="line">    	<span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    	    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&amp;copy; yangyanxing.com 2016<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="高级使用-踩过的坑"><a href="#高级使用-踩过的坑" class="headerlink" title="高级使用(踩过的坑)"></a>高级使用(踩过的坑)</h1><h3 id="checkbox传过来多个值的时候数据的处理"><a href="#checkbox传过来多个值的时候数据的处理" class="headerlink" title="checkbox传过来多个值的时候数据的处理"></a>checkbox传过来多个值的时候数据的处理</h3><p>有这种情况，有一个表单它的name值下面是checkbox，如以下的html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">'/groupaddcase'</span> <span class="attr">method</span>=<span class="string">'POST'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"caseids"</span>  <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">checked</span>=<span class="string">"true"</span>&gt;</span>1</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"caseids"</span>  <span class="attr">value</span>=<span class="string">"2"</span> &gt;</span>2</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"caseids"</span>  <span class="attr">value</span>=<span class="string">"3"</span> &gt;</span>3</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"caseids"</span>  <span class="attr">value</span>=<span class="string">"4"</span> &gt;</span>4</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"caseids"</span>  <span class="attr">value</span>=<span class="string">"5"</span> &gt;</span>5</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"修改"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>此时如果在py中处理如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Groupaddcase</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">POST</span><span class="params">(self)</span>:</span></span><br><span class="line">        caseids = web.input().get(<span class="string">'caseids'</span>)</span><br><span class="line">        <span class="keyword">print</span> caseids</span><br></pre></td></tr></table></figure></p>
+<p>这样处理的话那么传过来的caseids只有一个，当你勾选了多个checkbox时也只有一个数据传过来，解决的办法是在接收的时候将其定义成数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Groupaddcase</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">POST</span><span class="params">(self)</span>:</span></span><br><span class="line">        groupinfo  =  web.input(caseids=[])</span><br><span class="line">        groupid = groupinfo.get(<span class="string">'groupid'</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这样groupid就以数组的形式保存了传过来的checkbox的值,多个checkbox可以定义多个数组<br><code>groupinfo  =  web.input(caseids=[],casenames=[])</code></p>
+<h3 id="添加一个hook来处理在所有请求前做的处理"><a href="#添加一个hook来处理在所有请求前做的处理" class="headerlink" title="添加一个hook来处理在所有请求前做的处理"></a>添加一个hook来处理在所有请求前做的处理</h3><p>有时会有这样的需求，需要屏蔽某一个IP的客户端访问或者在访问前需要检查一下是否登录了，这种情况下可以使用hook方法来控制<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__redirect</span><span class="params">()</span>:</span></span><br><span class="line">    rejectIP = [<span class="string">'192.168.0.101'</span>]</span><br><span class="line">    <span class="keyword">if</span> web.ctx.ip <span class="keyword">in</span> rejectIP:</span><br><span class="line">        <span class="keyword">raise</span> web.seeother(<span class="string">r'http://so.com'</span>)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.add_processor(web.loadhook(__redirect))</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></p>
+<h3 id="模板中使用python的逻辑处理方法"><a href="#模板中使用python的逻辑处理方法" class="headerlink" title="模板中使用python的逻辑处理方法"></a>模板中使用python的逻辑处理方法</h3><ul>
+<li><p>判断</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$<span class="keyword">if</span> condition:</span><br><span class="line">    &lt;td&gt;yes&lt;/td&gt;</span><br><span class="line">$<span class="keyword">else</span>:</span><br><span class="line">    &lt;td&gt;no&lt;/td&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$<span class="keyword">for</span> item <span class="keyword">in</span> some_array:</span><br><span class="line">    &lt;td&gt;$item['title']&lt;/td&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>判断和循环的使用都要在前面加一个$,以<code>:</code> 结尾，且下面的语句也要遵守缩进规则</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: webpy的常规使用与踩过的坑<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/use-webpy.html">http://www.yangyanxing.com/article/use-webpy.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/use-webpy.html" data-id="cjb9mh8x8004etsdnm7lb1b0z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/use-webpy.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/use-apscheduler.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    用于python的定时任务apscheduler的使用
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/use-mac-mount-ntfs-disk.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">在MAC下加载NTFS移动硬盘或者U盘</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

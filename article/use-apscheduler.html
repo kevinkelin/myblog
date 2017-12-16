@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>用于python的定时任务apscheduler的使用 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的这里记录一下它的使用">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用于python的定时任务apscheduler的使用">
+<meta property="og:url" content="http://www.yangyanxing.com/article/use-apscheduler.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的这里记录一下它的使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.yangyanxing.com/image/timezoneerror.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/mongorecord.png">
+<meta property="og:updated_time" content="2017-12-16T10:11:00.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用于python的定时任务apscheduler的使用">
+<meta name="twitter:description" content="最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的这里记录一下它的使用">
+<meta name="twitter:image" content="http://www.yangyanxing.com/image/timezoneerror.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-use-apscheduler" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            用于python的定时任务apscheduler的使用
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/use-apscheduler.html">
+            <time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启<br>于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的<br>这里记录一下它的使用</p>
+<a id="more"></a>
+<p>###安装</p>
+<p>我一开始在python2.6中安装的，但是安装有错误，估计是支持不好，在python2.7中是可以的</p>
+<blockquote>
+<p>pip install apscheduler -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a></p>
+</blockquote>
+<p>安装过程中会额外安装一个pytz的库，是关于timezone的</p>
+<h3 id="基础概念-参考-http-debugo-com-apscheduler"><a href="#基础概念-参考-http-debugo-com-apscheduler" class="headerlink" title="基础概念 参考 http://debugo.com/apscheduler/"></a>基础概念 参考 <a href="http://debugo.com/apscheduler/" target="_blank" rel="noopener">http://debugo.com/apscheduler/</a></h3><blockquote>
+<p>触发器(trigger)包含调度逻辑，每一个作业有它自己的触发器，用于决定接下来哪一个作业会运行。除了他们自己初始配置意外，触发器完全是无状态的。<br>作业存储(job store)存储被调度的作业，默认的作业存储是简单地把作业保存在内存中，其他的作业存储是将作业保存在数据库中。一个作业的数据讲在保存在持久化作业存储时被序列化，并在加载时被反序列化。调度器不能分享同一个作业存储。<br>执行器(executor)处理作业的运行，他们通常通过在作业中提交制定的可调用对象到一个线程或者进城池来进行。当作业完成时，执行器将会通知调度器。<br>调度器(scheduler)是其他的组成部分。你通常在应用只有一个调度器，应用的开发者通常不会直接处理作业存储、调度器和触发器，相反，调度器提供了处理这些的合适的接口。配置作业存储和执行器可以在调度器中完成，例如添加、修改和移除作业。<br>你需要选择合适的调度器，这取决于你的应用环境和你使用APScheduler的目的。通常最常用的两个：<br>– BlockingScheduler: 当调度器是你应用中唯一要运行的东西时使用。<br>– BackgroundScheduler: 当你不运行任何其他框架时使用，并希望调度器在你应用的后台执行。</p>
+</blockquote>
+<p>最主要用的就是scheduler与job store</p>
+<h3 id="作业存储"><a href="#作业存储" class="headerlink" title="作业存储"></a>作业存储</h3><p>一般存储分为内存存储和持久化的存储，推荐使用持久化的存储，这样一旦主机挂了或者重启了，这样只要重新运行脚本就可以接着运行了，我这里使用的是mongodb来存储。</p>
+<h3 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h3><p>任务的执行调度工作由其来完成，主要用到的有BlockingScheduler（阻塞的），BackgroundScheduler（非阻塞的）</p>
+<p>一个简单的例子，每隔5s钟输出‘hello world’，每天的13点50分输出‘i m blocking task’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> apscheduler.schedulers.background <span class="keyword">import</span> BackgroundScheduler</span><br><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</span><br><span class="line"></span><br><span class="line">mongoDBhost = <span class="string">'vps.yangyanxing.com'</span> <span class="comment">#mongodb 服务器</span></span><br><span class="line">mongoDBport = <span class="string">'29017'</span> <span class="comment"># 端口号</span></span><br><span class="line">mongoDBuser = <span class="string">'yangyanxing'</span> <span class="comment"># 用户名</span></span><br><span class="line">mongoDBpwd = <span class="string">'pwd'</span> <span class="comment"># 密码</span></span><br><span class="line"></span><br><span class="line">mongoclient = MongoClient(host=[<span class="string">'%s:%s'</span>%(mongoDBhost,mongoDBport)])</span><br><span class="line">mongoclient.admin.authenticate(mongoDBuser,mongoDBpwd)</span><br><span class="line"></span><br><span class="line">dbjob = mongoclient.mac.jobs  <span class="comment"># mongodb所用到的collection，这里是BackgroundScheduler的</span></span><br><span class="line">dbjob_b = mongoclient.mac.jobs_block <span class="comment"># mongodb所用到的collection，这里是blockingScheduler的</span></span><br><span class="line"></span><br><span class="line">job_defaults = &#123;</span><br><span class="line">    <span class="string">'coalesce'</span>: <span class="keyword">False</span>,</span><br><span class="line">    <span class="string">'max_instances'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'misfire_grace_time'</span>: <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timetest</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timetestblock</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'i m blocking task'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    scheduler = BackgroundScheduler(job_defaults=job_defaults)</span><br><span class="line">    scheduler_b = BlockingScheduler(job_defaults=job_defaults)</span><br><span class="line">    scheduler.add_jobstore(<span class="string">'mongodb'</span>, client=dbjob)</span><br><span class="line">    scheduler_b.add_jobstore(<span class="string">'mongodb'</span>, client=dbjob_b)</span><br><span class="line">    scheduler.add_job(timetest, <span class="string">'interval'</span>, seconds=<span class="number">5</span>)</span><br><span class="line">    scheduler_b.add_job(timetestblock, <span class="string">'cron'</span>, minute=<span class="number">50</span>, hour=<span class="number">13</span>, start_date=datetime.now())</span><br><span class="line">    scheduler.start()</span><br><span class="line">    scheduler_b.start()</span><br></pre></td></tr></table></figure>
+<p>运行脚本发现报错了。。。</p>
+<blockquote>
+<p>pytz.exceptions.UnknownTimeZoneError: u’Can not find timezone China Standard time’</p>
+</blockquote>
+<p><img src="/image/timezoneerror.png" alt="时区找不着的错误"></p>
+<p>有的环境是不报这个错误的，如果报的话就手动指定一个时区，指定一个pytz库中定义了的时区，可以在site-packages中查看一下，具体原因没有细追。。。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">timez</span> = pytz.timezone(<span class="string">'Asia/Shanghai'</span>)</span><br><span class="line"><span class="comment"># 初始化scheduler的时候加上timezone参数</span></span><br><span class="line"><span class="attr">scheduler</span> = BackgroundScheduler(job_defaults=job_defaults,timezone=timez)</span><br><span class="line"><span class="attr">scheduler_b</span> = BlockingScheduler(job_defaults=job_defaults,timezone=timez)</span><br></pre></td></tr></table></figure>
+<p>再次运行该脚本，则可以正常运行了，查看mongo数据库<br><img src="/image/mongorecord.png" alt="mongodb中该任务的记录"></p>
+<p>这里也记录着next_run_time</p>
+<p>最终的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> apscheduler.schedulers.background <span class="keyword">import</span> BackgroundScheduler</span><br><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</span><br><span class="line"><span class="keyword">import</span> pytz</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">两个问题</span></span><br><span class="line"><span class="string">1. 对于 interval，比如说每5秒钟进行一次的任务，当该脚本被停了，重新运行该脚本的时候，已经过了nexttime了，</span></span><br><span class="line"><span class="string">   程序是怎么操作的</span></span><br><span class="line"><span class="string">2. 报pytz.exceptions.UnknownTimeZoneError: u'Can not find timezone China Standard time' 的问题</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line">timez = pytz.timezone(<span class="string">'Asia/Shanghai'</span>)</span><br><span class="line"><span class="comment"># 当有不识别的timezone的时候，初始化的时候可以加上timezone，最好也要加上，否则时间日期不对应会出问题</span></span><br><span class="line">mongoDBhost = <span class="string">'vps.yangyanxing.com'</span></span><br><span class="line">mongoDBport = <span class="string">'29017'</span></span><br><span class="line">mongoDBuser = <span class="string">'yangyanxing'</span></span><br><span class="line">mongoDBpwd = <span class="string">'pwd'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mongoclient = MongoClient(host=[<span class="string">'%s:%s'</span>%(mongoDBhost,mongoDBport)])</span><br><span class="line">mongoclient.admin.authenticate(mongoDBuser,mongoDBpwd)</span><br><span class="line"></span><br><span class="line">dbjob = mongoclient.mac.jobs</span><br><span class="line">dbjob_b = mongoclient.mac.jobs_block</span><br><span class="line"></span><br><span class="line">job_defaults = &#123;</span><br><span class="line">    <span class="string">'coalesce'</span>: <span class="keyword">False</span>,</span><br><span class="line">    <span class="string">'max_instances'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'misfire_grace_time'</span>: <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timetest</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> time.strftime(<span class="string">'%Y%m%d--%H:%M:%S'</span>,time.localtime(time.time())),<span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timetestblock</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'i m blocking task'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    scheduler = BackgroundScheduler(timezone=timez)</span><br><span class="line">    scheduler_b = BlockingScheduler(timezone=timez)</span><br><span class="line">    scheduler.add_jobstore(<span class="string">'mongodb'</span>, client=dbjob)</span><br><span class="line">    scheduler_b.add_jobstore(<span class="string">'mongodb'</span>, client=dbjob_b)</span><br><span class="line">    scheduler.add_job(timetest, <span class="string">'interval'</span>, seconds=<span class="number">5</span>)</span><br><span class="line">    scheduler_b.add_job(timetestblock, <span class="string">'cron'</span>, minute=<span class="number">50</span>, hour=<span class="number">13</span>, start_date=datetime.now())</span><br><span class="line">    scheduler.start()</span><br><span class="line">    scheduler_b.start()</span><br></pre></td></tr></table></figure>
+<h3 id="几个问题"><a href="#几个问题" class="headerlink" title="几个问题"></a>几个问题</h3><p>1、运行的时候会有一些误差，由于我这个mongodb在国外的VPS上，所以在操作的时候就有一些延迟，正常如果很快的话误差不会很大<br>2、关于timezone，如果有报错的话则要手工的指定，在中国境内可以定义为’Asia/Shanghai’<br>3、添加作业的时候，类型可以为cron,这个定义和linux中的crontab格式，比较灵活，而且它本身就可以定义第周几进行，第几个星期几等，推荐使用<br>4、添加作业的时候也可以使用装饰器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@scheduler_b.scheduled_job('cron',id='timetest_b',minute=50, hour=13)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timetestblock</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'i m blocking task'</span></span><br></pre></td></tr></table></figure></p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 用于python的定时任务apscheduler的使用<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/use-apscheduler.html">http://www.yangyanxing.com/article/use-apscheduler.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/use-apscheduler.html" data-id="cjb9mh90z007rtsdnvmkhx5ow" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/use-apscheduler.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/use-python-get-house-info.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    使用python抓取自住房信息
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/use-webpy.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">webpy的常规使用与踩过的坑</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

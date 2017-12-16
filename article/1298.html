@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>没事别蹭wifi-告诉你公共的wifi有多不安全 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="经常看到一些朋友每到一个地方就先找wifi，没有密码就直接上了！汗…… 今天通过两个小工具来显示一下公共wifi的安全隐患（爱蹭网的代价） 工具：wireshark与cain下载：wireshark https://www.wireshark.org/download.htmlCain &amp;amp; Abel http://www.oxid.it/cain.html (被墙) 百度网盘链接：http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="没事别蹭wifi-告诉你公共的wifi有多不安全">
+<meta property="og:url" content="http://www.yangyanxing.com/article/1298.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="经常看到一些朋友每到一个地方就先找wifi，没有密码就直接上了！汗…… 今天通过两个小工具来显示一下公共wifi的安全隐患（爱蹭网的代价） 工具：wireshark与cain下载：wireshark https://www.wireshark.org/download.htmlCain &amp;amp; Abel http://www.oxid.it/cain.html (被墙) 百度网盘链接：http">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image1.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image2.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image3.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image4.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image5.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image6.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image7.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image8.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image9.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image10.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/02/image11.png">
+<meta property="og:updated_time" content="2017-12-16T15:34:10.794Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="没事别蹭wifi-告诉你公共的wifi有多不安全">
+<meta name="twitter:description" content="经常看到一些朋友每到一个地方就先找wifi，没有密码就直接上了！汗…… 今天通过两个小工具来显示一下公共wifi的安全隐患（爱蹭网的代价） 工具：wireshark与cain下载：wireshark https://www.wireshark.org/download.htmlCain &amp;amp; Abel http://www.oxid.it/cain.html (被墙) 百度网盘链接：http">
+<meta name="twitter:image" content="http://www.yangyanxing.com/image/2015/02/image.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-1298" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            没事别蹭wifi-告诉你公共的wifi有多不安全
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/1298.html">
+            <time datetime="2015-02-11T16:13:33.000Z" itemprop="datePublished">2015-02-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>经常看到一些朋友每到一个地方就先找wifi，没有密码就直接上了！汗……</p>
+<p>今天通过两个小工具来显示一下公共wifi的安全隐患（爱蹭网的代价）</p>
+<h1 id="工具：wireshark与cain"><a href="#工具：wireshark与cain" class="headerlink" title="工具：wireshark与cain"></a>工具：wireshark与cain</h1><h1 id="下载：wireshark"><a href="#下载：wireshark" class="headerlink" title="下载：wireshark"></a>下载：wireshark</h1><blockquote>
+<p><a href="https://www.wireshark.org/download.html" title="https://www.wireshark.org/download.html" target="_blank" rel="noopener">https://www.wireshark.org/download.html</a><br>Cain &amp; Abel <a href="http://www.oxid.it/cain.html" title="http://www.oxid.it/cain.html" target="_blank" rel="noopener">http://www.oxid.it/cain.html</a> (被墙) 百度网盘链接：<a href="http://pan.baidu.com/s/18kshg" target="_blank" rel="noopener">http://pan.baidu.com/s/18kshg</a> 密码：9owu</p>
+<p>md5:EA2EF30C99ECECB1EDA9AA128631FF31 sha1:82407EAF6437D6956F63E85B28C0EC6CA58D298A  </p>
+</blockquote>
+<p>如果没有校验工具，我写了一个python脚本来校验 链接：<a href="http://pan.baidu.com/s/1i3j93sp" target="_blank" rel="noopener">http://pan.baidu.com/s/1i3j93sp</a> 密码：h6gz<br><a id="more"></a></p>
+<h1 id="使用Cain进行arp欺骗"><a href="#使用Cain进行arp欺骗" class="headerlink" title="使用Cain进行arp欺骗"></a>使用Cain进行arp欺骗</h1><p>&#160;&#160;&#160; 打开Cain主界面，先点击上面的小网卡标识，然后再点击那个’+’ 号</p>
+<p><a href="/image/2015/02/image.png"><img src="/image/2015/02/image.png" alt="image" title="image"></a> </p>
+<p>默认就行了，它会根据网关进行扫描活动的主机</p>
+<p><a href="/image/2015/02/image1.png"><img src="/image/2015/02/image1.png" alt="image" title="image"></a> </p>
+<p>&#160;</p>
+<p>可以看到，在和我电脑同网段的有两个三星手机（其中一个是我的）和一台电脑</p>
+<p><a href="/image/2015/02/image2.png"><img src="/image/2015/02/image2.png" alt="image" title="image"></a></p>
+<p>&#160;</p>
+<p>点击下面的arp图标</p>
+<p><a href="/image/2015/02/image3.png"><img src="/image/2015/02/image3.png" alt="image" title="image"></a>&#160; </p>
+<p>接着先点击上面的列表的空白地方，再点击’+ ’号，左边选择要监听的IP，右边选择网关的IP，这里是192.168.1.1（也就是路由器的地址）</p>
+<p><a href="/image/2015/02/image4.png"><img src="/image/2015/02/image4.png" alt="image" title="image"></a> </p>
+<p>点击OK，回到主界面，这时点击那个小雷达标识开始进行arp欺骗</p>
+<p><a href="/image/2015/02/image5.png"><img src="/image/2015/02/image5.png" alt="image" title="image"></a> </p>
+<h1 id="打开wireshark进行抓包"><a href="#打开wireshark进行抓包" class="headerlink" title="打开wireshark进行抓包"></a>打开wireshark进行抓包</h1><p>选择capture-&gt;interfaces…</p>
+<p><a href="/image/2015/02/image6.png"><img src="/image/2015/02/image6.png" alt="image" title="image"></a> </p>
+<p>选择进行监听的网卡（也就是你进行上网的网卡），点击strat</p>
+<h1 id="抓包分析"><a href="#抓包分析" class="headerlink" title="抓包分析"></a>抓包分析</h1><p>我这里抓了我手机上网的包，刷了下微博，看了眼朋友圈，并且用手机里的浏览器访问了我的个人博客<a href="http://static.yangyanxing.com" target="_blank" rel="noopener">http://static.yangyanxing.com</a> 并且登录了下后台</p>
+<p>现在来看看这些信息</p>
+<p>在wireshark的显示过滤里写下过滤ip.addr eq 192.168.1.102 &amp;&amp; !dns &amp;&amp; http</p>
+<p>找啊找，找到一条</p>
+<p>125&#160;&#160;&#160; 2015-02-11 21:25:25.275021000&#160;&#160;&#160; 192.168.1.102&#160;&#160;&#160; 180.149.139.248&#160;&#160;&#160; HTTP&#160;&#160;&#160; 916&#160;&#160;&#160; POST /2/push/active?c=android&amp;i=5f61746&amp;s=2602e25d&amp;ua=samsung-GT-I9502<strong>weibo</strong>4.6.2<strong>android</strong>android4.4.2&amp;wm=4209_8001&amp;v_f=2&amp;from=1046295010&amp;gsid=4up8f9e93Tw5PZz2EqMCx8xEv9p&amp;lang=zh_CN&amp;skin=default&amp;oldwm=2468_1001 HTTP/1.1&#160; (application/x-www-form-urlencoded)</p>
+<p>看下它的packet details</p>
+<p>打开HTML Form URL Encoded: application/x-www-form-urlencoded，很多信息，但其实没太多的用，顶多那个uid:2035987583 这个是我的微博ID，</p>
+<p>打开<a href="http://weibo.com/2035987583" title="http://weibo.com/2035987583" target="_blank" rel="noopener">http://weibo.com/2035987583</a> 就到达了我的微博主页了（如果你是个PLMM的话，闷骚的屌丝会通过这样的方式搞到你的微博账号）</p>
+<p><a href="/image/2015/02/image7.png"><img src="/image/2015/02/image7.png" alt="image" title="image"></a> </p>
+<p>如果得到微博账号不算什么的话（毕竟微博还算是个开放的平台，加个粉对于博主来说也不算什么坏事），那么如果能够看到你朋友圈的图片呢？</p>
+<p>继续往下找抓包信息</p>
+<p>会看到这样的包</p>
+<p><a href="/image/2015/02/image8.png"><img src="/image/2015/02/image8.png" alt="image" title="image"></a> </p>
+<p>打开这个包的Hypertext Transfer Protocol</p>
+<p>拖到下面</p>
+<p><a href="/image/2015/02/image9.png"><img src="/image/2015/02/image9.png" alt="image" title="image"></a> </p>
+<p>试着在浏览器里打开这个网址，这个地址就是你朋友圈里朋友发的图片……（汗！）</p>
+<p>如果可以看到朋友圈里的图片也无所谓的话，那么如果能看到你登录的用户与密码呢？</p>
+<p>继续往下看抓到的包，看到我登录我个人博客后台的包</p>
+<p>11695&#160;&#160;&#160; 2015-02-11 21:27:19.177156000&#160;&#160;&#160; 192.168.1.102&#160;&#160;&#160; 118.123.116.226&#160;&#160;&#160; HTTP&#160;&#160;&#160; 121&#160;&#160;&#160; POST /wp-login.php?redirect_to=http%3A%2F%2Fstatic.yangyanxing.com%2F%3Fp%3D1266 HTTP/1.1&#160; (application/x-www-form-urlencoded)</p>
+<p><a href="/image/2015/02/image10.png"><img src="/image/2015/02/image10.png" alt="image" title="image"></a> </p>
+<p>打开packet detail 里面的HTML Form URL Encoded: application/x-www-form-urlencoded</p>
+<p><a href="/image/2015/02/image11.png"><img src="/image/2015/02/image11.png" alt="image" title="image"></a> </p>
+<p>username 与password已经明文获得到了。。。</p>
+<h1 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h1><p>如果仔细分析包，还能分析出更多有用的信息，在进行arp过程中，手机上没有任何异常，这下知道免费蹭网有多大的隐患了吧？所以没事别想着瞎蹭网，除非你对你要连接的wifi充分的了解与信任。</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 没事别蹭wifi-告诉你公共的wifi有多不安全<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/1298.html">http://www.yangyanxing.com/article/1298.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/1298.html" data-id="cjb9mh90w007otsdnaemh6wxo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/1298.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/1303.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Android开发初步
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/1266.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">appium简明教程(转)</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

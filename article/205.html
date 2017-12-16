@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>关于PHP面向对象的一点网摘(继承性与访问类型) | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="类的继承继承作为面向对象的三个重要特性的一个方面，在面向对象的领域有着极其重要的作用，好像没听说哪个面向对象的语言不支持继承。继承是PHP5 面向对象程序设计的重要特性之 一，它是指建立一个新的派生类，从一个或多个先前定义的类中继承数据和函数，而且可以 重新定义或加进新数据和函数，从而建立了类的层次或等级。说的简单点就是，继承性是子类自动共享父类的数据结构和方法的机制，这是类之间的一种关系。在定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于PHP面向对象的一点网摘(继承性与访问类型)">
+<meta property="og:url" content="http://www.yangyanxing.com/article/205.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="类的继承继承作为面向对象的三个重要特性的一个方面，在面向对象的领域有着极其重要的作用，好像没听说哪个面向对象的语言不支持继承。继承是PHP5 面向对象程序设计的重要特性之 一，它是指建立一个新的派生类，从一个或多个先前定义的类中继承数据和函数，而且可以 重新定义或加进新数据和函数，从而建立了类的层次或等级。说的简单点就是，继承性是子类自动共享父类的数据结构和方法的机制，这是类之间的一种关系。在定义">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-16T10:10:42.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于PHP面向对象的一点网摘(继承性与访问类型)">
+<meta name="twitter:description" content="类的继承继承作为面向对象的三个重要特性的一个方面，在面向对象的领域有着极其重要的作用，好像没听说哪个面向对象的语言不支持继承。继承是PHP5 面向对象程序设计的重要特性之 一，它是指建立一个新的派生类，从一个或多个先前定义的类中继承数据和函数，而且可以 重新定义或加进新数据和函数，从而建立了类的层次或等级。说的简单点就是，继承性是子类自动共享父类的数据结构和方法的机制，这是类之间的一种关系。在定义">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-205" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            关于PHP面向对象的一点网摘(继承性与访问类型)
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/205.html">
+            <time datetime="2011-12-18T09:32:20.000Z" itemprop="datePublished">2011-12-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>类的继承</strong><br>继承作为面向对象的三个重要特性的一个方面，在面向对象的领域有着极其重要的作用，好像没听说哪个面向对象的语言不支持继承。继承是PHP5 面向对象程序设计的重要特性之 一，它是指建立一个新的派生类，从一个或多个先前定义的类中继承数据和函数，而且可以 重新定义或加进新数据和函数，从而建立了类的层次或等级。说的简单点就是，继承性是子类自动共享父类的数据结构和方法的机制，这是类之间的一种关系。在定义和实现一个类的 时候，可以在一个已经存在的类的基础之上来进行，把这个已经存在的类所定义的内容作为 自己的内容，并加入若干新的内容。比如你现在已经有一个“人”这个类了，这个类里面有 两个成员属性“姓名和年龄”以及还有两个成员方法“说话的方法和走路的方法”，如果现在 程序需要一个学生的类，因为学生的也是人，所以学生也有成员属性“姓名和年龄”以及成 员方法“说话的方法和走路的方法”，这个时候你就可以让学生类来继承人这个类，继承之后， 学生类就会把人类里面的所有的属性都继承过来，就不用你再去重新声明一遍这些成员属性 和方法了，因为学生类里面还有所在学校的属性和学习的方法，所以在你做的学生类里面有 继承自人类里面的属性和方法之外在加上学生特有的“所在学校属性”和“学习的方法”, 这样一个学生类就声明完成了，继承我们也可以叫做“扩展”，从上面我们就可以看出，学生 类对人类进行了扩展，在人类里原有两个属性和两个方法的基础上加上一个属性和一个方法 扩展出来一个新的学生类。 通过继承机制，可以利用已有的数据类型来定义新的数据类型。所定义的新的数据类型 不仅拥有新定义的成员，而且还同时拥有旧的成员。我们称已存在的用来派生新类的类为基 类，又称为父类以及超类。由已存在的类派生出的新类称为派生类，又称为子类。 在软件开发中，类的继承性使所建立的软件具有开放性、可扩充性，这是信息组织与分 类的行之有效的方法，它简化了对象、类的创建工作量，增加了代码的可重性。采用继承性， 提供了类的规范的等级结构。通过类的继承关系，使公共的特性能够共享，提高了软件的重<br>用性。<br>在C++语言中，一个派生类可以从一个基类派生，也可以从多个基类派生。从一个基类派生的继承称为单继承；从多个基类派生的继承称为多继承。<span style="color: #ff0000;">但是在PHP 和Java 语言里面没有多继承，只有单继承，也就是说，一个类只能直接从 一个类中继承数据，这就是我们所说的单继承。 也就是说一个子类只能有一个父类，但一个父类可以有多个子类</span><br>例如：<br>下面是“人”类的抽象 <a id="more"></a><br>代码片段<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123; <span class="comment">//定义一个“人”类作为父类</span></span><br><span class="line"><span class="comment">//下面是人的成员属性</span></span><br><span class="line"><span class="keyword">var</span> $name;</span><br><span class="line"><span class="keyword">var</span> $sex;</span><br><span class="line"><span class="keyword">var</span> $age;</span><br><span class="line"><span class="comment">//定义一个构造方法参数为属性姓名$name、性别$sex和年龄$age进行赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name, $sex, $age)</span></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;name=$name;</span><br><span class="line"><span class="keyword">$this</span>-&gt;sex=$sex;</span><br><span class="line"><span class="keyword">$this</span>-&gt;age=$age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个人可以说话的方法, 说出自己的属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 性别："</span>.<span class="keyword">$this</span>-&gt;sex.<span class="string">" 我的年龄是："</span>.<span class="keyword">$this</span>-&gt;age.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面我们做一个“学生类”，如果不是用继承如下：代码片段</p>
+<p><div><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123; <span class="comment">//定义一个“人”类做为父类</span></span><br><span class="line"><span class="comment">//下面是人的成员属性</span></span><br><span class="line"><span class="keyword">var</span> $name;</span><br><span class="line"><span class="keyword">var</span> $sex;</span><br><span class="line"><span class="keyword">var</span> $age;</span><br><span class="line"><span class="keyword">var</span> $school; <span class="comment">//新添加的学生所在学校的属性</span></span><br><span class="line"><span class="comment">//定义一个构造方法参数为属性姓名$name、性别$sex和年龄$age进行赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name=””, $sex=””, $age=””, $school=””)</span></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;name=$name;</span><br><span class="line"><span class="keyword">$this</span>-&gt;sex=$sex;</span><br><span class="line"><span class="keyword">$this</span>-&gt;age=$age;</span><br><span class="line"><span class="keyword">$this</span>-&gt;school=$school;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个人可以说话的方法, 说出自己的属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 性别："</span>.<span class="keyword">$this</span>-&gt;sex.<span class="string">" 我的年龄是："</span>.<span class="keyword">$this</span>-&gt;age.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个学生学习的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 我正在”.$this-&gt;school.”学习&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义一个子类“学生类“使用”extends”关键字来继承”人”类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> $school; <span class="comment">//学生所在学校的属性 只是新添加上去</span></span><br><span class="line"><span class="comment">//这个学生学习的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 我正在”.$this-&gt;school.”学习&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>通过上面“Student”类的定义，Student 类通过使用“extends”这个关键字把Person 类里的所有成员属性和成员方法都继承过来了，并扩展了一个所在学校成员属性“school”，和一个学习方法“study()”。现在子类“Student”里面和使用这个类实例出来的对象都具有如下的属性和方法：<br>学生类“Student”里面的成员属性有：<br>姓名：name;<br>年龄：age;<br>性别：sex;<br>学校：school;<br>学生类“Student”里面的成员方法有：<br>说话方法：say();<br>学习方法：study();<br>通过上面类继承的使用简化了对象、类的创建工作量，增加了代码的可重性。但是从上面这一个例子上中“可重用性”以及其它的继承性所带来的影响，我们看的还不是特别的明显，你扩展的去想一下，人有无数个岗位，比如上面的学生还有老师、工程师、医生、工人 等，很多很多，如果每个类都定义“人”都共同具有的属性和方法，想一想会有很大的工作 量，这些属性和方法都可以从“Person”人类里面继承过来。</p>
+<p><strong>重载新的方法</strong> (只是在子类里重新定义父类中的函数)<br>在学习PHP 这种语言中你会发现，PHP 中的方法是不能重载的，所谓的方法重载就是定义相同的方法名，通过“参数的个数”不同或“参数的类型”不同,来访问我们的相同方法 名的不同方法。但是因为PHP 是弱类型的语言，所以在方法的参数中本身就可以接收不同类 型的数据，又因为PHP 的方法可以接收不定个数的参数，所以通过传递不同个数的参数调用不相同方法名的不同方法也是不成立的。所以在PHP 里面没有方法重载。不能重载也就是在 你的项目中不能定义相同方法名的方法。另外，因为PHP 没有名子空间的概念，在同一个页 面和被包含的页面中不能定义相同名称的方法，也不能定义和PHP 给我提供的方法重名，当然在同一个类中也不能定义相同名称的方法。我们这里所指的重载新的方法所指的是什么呢？其实我们所说的重载新的方法就是子类覆盖父类的已有的方法，那为什么要这么做呢？父类的方法不是可以继承过来直接用吗？但 有一些情况是我们必须要覆盖的，比如说我们前面提到过的例子里面，“Person”这个人类里 面有一个“说话”的方法，所有继承“Person”类的子类都是可以“说话”的，我们“Student” 类就是“Person”类的子类，所以“Student”的实例就可以“说话”了，但是人类里面“说 话”的方法里面说出的是“Person”类里面的属性，而“Student”类对“Person”类进行了扩 展，又扩展出了几个新的属性，如果使用继承过来的“say()”说话方法的话，只能说出从 “Person”类继承过来的那些属性，那么新扩展的那些属性使用这个继承过来的“say()”的 方法就说不出来了，那有的人就问了，我在“Student”这个子类中再定义一个新的方法用于 说话，说出子类里面所有的属性不就行了吗？一定不要这么做，从抽象的角度来讲，一个“学 生”不能有两种“说话”的方法，就算你定义了两个不同的说话的方法，可以实现你想要的 功能，被继承过来的那个“说话“方法可能没有机会用到了，而且是继承过来的你也删不掉。 这个时候我们就要用到覆盖了。虽然说在PHP 里面不能定义同名的方法，但是在父子关系的两个类中，我们可以在子类 中定义和父类同名的方法，这样就把父类中继承过来的方法覆盖掉了。 代码片段<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123; <span class="comment">//定义一个“人”类做为父类</span></span><br><span class="line"><span class="comment">//下面是人的成员属性</span></span><br><span class="line"><span class="keyword">var</span> $name;</span><br><span class="line"><span class="keyword">var</span> $sex;</span><br><span class="line"><span class="keyword">var</span> $age;</span><br><span class="line"><span class="comment">//定义一个构造方法参数为属性姓名$name、性别$sex和年龄$age进行赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name, $sex, $age)</span></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;name=$name;</span><br><span class="line"><span class="keyword">$this</span>-&gt;sex=$sex;</span><br><span class="line"><span class="keyword">$this</span>-&gt;age=$age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 性别："</span>.<span class="keyword">$this</span>-&gt;sex.<span class="string">" 我的年龄是："</span>.<span class="keyword">$this</span>-&gt;age.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">var</span> $school;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 我正在”.$this-&gt;school.”学习&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个学性可以说话的方法, 说出自己所有的属性，覆盖了父类的同名方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 性别："</span>.<span class="keyword">$this</span>-&gt;sex.<span class="string">" 我的年龄是："</span>.<span class="keyword">$this</span>-&gt;age.<span class="string">"我在"</span>.<span class="keyword">$this</span>-&gt;school.<span class="string">"上学.&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的例子，我们就在“Student”子类里覆盖了继承父类里面的“say()”的方法，通过覆盖我们就实现了对“方法”扩展。 但是，像这样做虽然解决了我们上面说的问题，但是在实际开发中，一个方法不可能就一条代码或是几条代码，比如说“Person”类里面“say()”方法有里面有100 条代码，如果我们想对这个方法覆盖保留原有的功能外加上一点点功能，就要把原有的100 条代码重写 一次，再加上扩展的几条代码，这还算是好的，而有的情况，父类中的方法是看不见原代码 的，这个时候你怎么去重写原有的代码呢？我们也有解决的办法，就是在子类这个方法中可 以调用到父类中被覆盖的方法，也就是把被覆盖的方法原有的功能拿过来再加上自己的一点 功能，可以通过两种方法实现在子类的方法中调用父类被覆盖的方法：一种是使用父类的“类名：：“来调用父类中被覆盖的方法；一种是使用“parent：：”的方试来调用父类中被覆盖的方法；</p>
+<p><div><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> $school;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 我正在”.$this-&gt;school.”学习&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个学性可以说话的方法, 说出自己所有的属性，覆盖了父类的同名方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//使用父类的“类名::“来调用父类中被覆盖的方法；</span></span><br><span class="line"><span class="comment">// Person::say();</span></span><br><span class="line"><span class="comment">//或者使用“parent：：”的方试来调用父类中被覆盖的方法；这种方法没法加上了类的函数</span></span><br><span class="line"><span class="keyword">parent</span>::say();</span><br><span class="line"><span class="comment">//加上一点自己的功能</span></span><br><span class="line"><span class="keyword">echo</span> “我的年龄是：<span class="string">".$this-&gt;age."</span>我在<span class="string">".$this-&gt;school."</span>上学.&lt;br&gt;<span class="string">";</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></div></p>
+<p>现在用两种方式都可以访问到父类中被覆盖的方法，我们选那种方式最好呢？用户可能会发现自己写的代码访问了父类的变量和函数。如果子类非常精炼或者父类非常专业化的时候尤其是这样。不要用代码中父类文字上的名字，应该用特殊的名字parent，它指的就是子类在extends 声明中所指的父类的名字。这样做可以避免在多个地方使用父类的名字。如果继承树在实现的过程中要修改，只要简单地修改类中extends 声明的部分。同样，构造方法在子类中如果没有声明的话，也可以使用父类中的构造方法，如果子类中重新定义了一个构造方法也会覆盖掉父类中的构造方法，如果想使用新的构造方法为所有属性赋值也可以用同样的方式。<br>代码片段</p>
+<p><div><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> $school; <span class="comment">//学生所在学校的属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name, $sex, $age, $school)</span></span>&#123;</span><br><span class="line"><span class="comment">//使用父类中的方法为原有的属性赋值</span></span><br><span class="line"><span class="keyword">parent</span>::__construct($name, $sex, $age);</span><br><span class="line"><span class="keyword">$this</span>-&gt;school=$school;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个学生学习的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"我的名子叫："</span>.<span class="keyword">$this</span>-&gt;name.<span class="string">" 我正在”.$this-&gt;school.”学习&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个人可以说话的方法, 说出自己的属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">parent</span>::say();</span><br><span class="line"><span class="comment">//加上一点自己的功能</span></span><br><span class="line"><span class="keyword">echo</span> “我的年龄是：<span class="string">".$this-&gt;age."</span>我在<span class="string">".$this-&gt;school."</span>上学.&lt;br&gt;<span class="string">";</span></span><br></pre></td></tr></table></figure></div></p>
+<p></p>
+<p><div><strong>访问类型</strong><br>类型的访问修饰符允许开发人员对类成员的访问进行限制，这是PHP5 的新特性，但却是OOP 语言的一个好的特性。而且大多数OOP 语言都已支持此特性。PHP5 支持如下3 种访问修饰符public (公有的、默认的)，private (私有的)和protected (受保护的)三种。 public 公有修饰符，类中的成员将没有访问限制，所有的外部成员都可以访问（读和写）这个类成员（包括成员属性和成员方法），在PHP5 之前的所有版本中，PHP 中类的成员都是public 的，而且在PHP5 中如果类的成员没有指定成员访问修饰符，将被视为public。 例：public $name;</div></p>
+<p><div>public function say(){};<br>private 私有修改符，被定义为private 的成员，对于同一个类里的所有成员是可见的，即是没有访问限制；但对于该类的外部代码是不允许改变甚至读操作，对于该类的子类，也不能访问private 修饰的成员。例：private $var1 = ‘A’; //属性<br>private function getValue(){} //函数<br>protected 保护成员修饰符，被修饰为protected 的成员不能被该类的外部代码访问。但是对于该类的子类有访问权限，可以进行属性、方法的读及写操作,该子类的外部代码包括其的子类都不具有访问其属性和方法的权限。<br>例：protected $name;<br>protected function say(){};<br>                    private        protected            public<br>同一个类中             √             √                   √<br>类的子类中             √             √<br>所有的外部成员         √<br>代码片段<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Define MyClass</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line"><span class="comment">// Contructors must be public</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"><span class="comment">// Declare a public method</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">MyPublic</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"><span class="comment">// Declare a protected method</span></span><br><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">MyProtected</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"><span class="comment">// Declare a private method</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">MyPrivate</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"><span class="comment">// This is public</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyPublic();</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyProtected();</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyPrivate();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">$myclass = <span class="keyword">new</span> MyClass;</span><br><span class="line">$myclass-&gt;MyPublic(); <span class="comment">//Works</span></span><br><span class="line">$myclass-&gt;MyProtected(); <span class="comment">// Fatal Error</span></span><br><span class="line">$myclass-&gt;MyPrivate(); <span class="comment">// Fatal Error</span></span><br><span class="line">$myclass-&gt;Foo(); <span class="comment">// Public, Protected and Private work</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Define MyClass2</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> <span class="keyword">extends</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line"><span class="comment">// This is public</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo2</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyPublic();</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyProtected();</span><br><span class="line"><span class="keyword">$this</span>-&gt;MyPrivate(); <span class="comment">// Fatal Error</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">$myclass2 = <span class="keyword">new</span> MyClass2;</span><br><span class="line">$myclass2-&gt;MyPublic(); <span class="comment">// Works</span></span><br><span class="line">$myclass2-&gt;Foo2(); <span class="comment">// Public and Protected work, not Private</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></div></p>
+<p>另外在子类覆盖父类的方法时也要注意一点，子类中方法的访问权限一定不能低于父类被覆盖方法的访问权限，也就是一定要高于或等于父类方法的访问权限。 例如，如果父类方法的访问权限是protected 那么子类中要覆盖的权限就要是protected<br>和public，如果父类的方法是public 那么子类中要覆盖的方法只能也是public，总之子类中的方法总是要高于或等于父类被覆盖方法的访问权限.</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 关于PHP面向对象的一点网摘(继承性与访问类型)<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/205.html">http://www.yangyanxing.com/article/205.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/205.html" data-id="cjb9mh8yz005ytsdnx5czr2g1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/205.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/210.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    opensuse12.1从安装到使用的一些札记
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/199.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">关于PHP面向对象的一点网摘(基本概念与封装性)</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>使用python抓取自住房信息 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="使用python也有一段时间了，最近比较关注自住房信息，虽说它更新的比较缓慢，但是平时也不怎么会特意的去它的网站上去看，于是就想用python抓它的信息，如果有新的信息就给自己发个邮件，这样手机上得到通知以后就可以再去它的网站上看看。功能比较简单，但是用到的点还是挺多的，这里记录一下。主要有以下几个步骤  python beautifulsoup 与requests的使用 ubuntu 中安装 m">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用python抓取自住房信息">
+<meta property="og:url" content="http://www.yangyanxing.com/article/use-python-get-house-info.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="使用python也有一段时间了，最近比较关注自住房信息，虽说它更新的比较缓慢，但是平时也不怎么会特意的去它的网站上去看，于是就想用python抓它的信息，如果有新的信息就给自己发个邮件，这样手机上得到通知以后就可以再去它的网站上看看。功能比较简单，但是用到的点还是挺多的，这里记录一下。主要有以下几个步骤  python beautifulsoup 与requests的使用 ubuntu 中安装 m">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.yangyanxing.com/image/houseluanma.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/houseinfo.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/housemac.png">
+<meta property="og:updated_time" content="2017-12-16T10:11:00.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用python抓取自住房信息">
+<meta name="twitter:description" content="使用python也有一段时间了，最近比较关注自住房信息，虽说它更新的比较缓慢，但是平时也不怎么会特意的去它的网站上去看，于是就想用python抓它的信息，如果有新的信息就给自己发个邮件，这样手机上得到通知以后就可以再去它的网站上看看。功能比较简单，但是用到的点还是挺多的，这里记录一下。主要有以下几个步骤  python beautifulsoup 与requests的使用 ubuntu 中安装 m">
+<meta name="twitter:image" content="http://www.yangyanxing.com/image/houseluanma.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-use-python-get-house-info" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            使用python抓取自住房信息
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/use-python-get-house-info.html">
+            <time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>使用python也有一段时间了，最近比较关注自住房信息，虽说它更新的比较缓慢，但是平时也不怎么会特意的去它的网站上去看，<br>于是就想用python抓它的信息，如果有新的信息就给自己发个邮件，这样手机上得到通知以后就可以再去它的网站上看看。<br>功能比较简单，但是用到的点还是挺多的，这里记录一下。<br>主要有以下几个步骤</p>
+<ol>
+<li>python beautifulsoup 与requests的使用</li>
+<li>ubuntu 中安装 mysql 与mysql-python </li>
+<li>beautifulsoup与requests编码的问题</li>
+<li>使用gmail发送邮件，其中gmail采用两步认证要单独申请一个密码</li>
+<li>在ubuntu中使用crontab定时来触发脚本</li>
+</ol>
+<a id="more"></a>
+<h1 id="网站分析"><a href="#网站分析" class="headerlink" title="网站分析"></a>网站分析</h1><p>自住房信息的网址为 <a href="http://www.bjjs.gov.cn/bjjs/fwgl/zzxspzf/tzgg/index.shtml" target="_blank" rel="noopener">http://www.bjjs.gov.cn/bjjs/fwgl/zzxspzf/tzgg/index.shtml</a><br>主要就是抓取上面的通知，使用数据库或者本地文件记录一下url和标题<br>主要就是以下这块html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">opentype</span>=<span class="string">"page"</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bjjs/fwgl/zzxspzf/tzgg/427793/index.shtml"</span> <span class="attr">onclick</span>=<span class="string">"void(0)"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"富兴鹏城自住型商品住房递补选房公告"</span>&gt;</span>富兴鹏城自住型商品住房递补选房公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>2017-07-06<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bjjs/fwgl/zzxspzf/tzgg/425403/index.shtml"</span> <span class="attr">onclick</span>=<span class="string">"void(0)"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"朝阳区锦都家园自住型商品住房项目申购登记公告"</span>&gt;</span>朝阳区锦都家园自住型商品住房项目申购登记公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>2017-06-12<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bjjs/fwgl/zzxspzf/tzgg/425259/index.shtml"</span> <span class="attr">onclick</span>=<span class="string">"void(0)"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">title</span>=<span class="string">"住总万科&amp;middot;TBD万科天地自住型商品住房递补选房公告"</span>&gt;</span>住总万科&amp;middot;TBD万科天地自住型商品住房递补选房公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>2017-06-09<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> ....</span><br><span class="line"> ...</span><br><span class="line"> ..</span><br><span class="line"> .</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我这里使用的是beautifulsoup来进行解析。<br>beautifulsoup的使用参考 <a href="http://cuiqingcai.com/1319.html" target="_blank" rel="noopener">beautifulsoup使用</a><br>我一开始使用requests库的get方法来抓取网页，后来我被它的编码逼疯了，在网上查了下，requests与beautifulsoup都会对网页的编码进行优化，</p>
+<p><img src="/image/houseluanma.png" alt="乱码"><br>但是它们同时优化就会出现很多头疼的问题，所以最后我使用python的urllib来抓取网页</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">r'http://www.bjjs.gov.cn/bjjs/fwgl/zzxspzf/tzgg/index.shtml'</span></span><br><span class="line">s = urllib.urlopen(url)</span><br><span class="line"><span class="keyword">if</span> s.code == <span class="number">200</span>:</span><br><span class="line">	soup = BeautifulSoup(s.read(),<span class="string">"lxml"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="解析出url-与title信息"><a href="#解析出url-与title信息" class="headerlink" title="解析出url 与title信息"></a>解析出url 与title信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ulcontent = soup.find(<span class="string">'ul'</span>,opentype=<span class="string">"page"</span>)	</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ulcontent.children:</span><br><span class="line">	acontent = i.find(<span class="string">'a'</span>)</span><br><span class="line">	<span class="keyword">if</span> type(acontent)!=int:</span><br><span class="line">		title = acontent.get(<span class="string">'title'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">		<span class="keyword">if</span> acontent.get(<span class="string">'href'</span>).startswith(<span class="string">r'/'</span>):</span><br><span class="line">			url = <span class="string">"%s%s"</span>%(<span class="string">r'http://www.bjjs.gov.cn'</span>,acontent.get(<span class="string">'href'</span>))						</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			url = acontent.get(<span class="string">'href'</span>)</span><br></pre></td></tr></table></figure>
+<p>使用 <code>soup.find(&#39;ul&#39;,opentype=&quot;page&quot;)</code> 来定位到通知的ul dom结构，然后再寻找下面的a结构，美汤的用法还是很牛逼的。</p>
+<h1 id="使用mysql来记录"><a href="#使用mysql来记录" class="headerlink" title="使用mysql来记录"></a>使用mysql来记录</h1><p>得到url与title信息后，就去数据库中查寻一下，我一开始想用mongo，但是由于我的VPS是OpenVZ的，所以安装mongodb以后发现有很多问题，最后索性放弃，改用mysql。<br>ubuntu 上安装mysql还是挺简单的</p>
+<blockquote>
+<p>sudo apt-get install mysql-server mysql-client</p>
+</blockquote>
+<p>安装过程中会设置root密码，安装结束后，我创建了一个库和表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE houseinfo；</span><br><span class="line">mysql&gt; use houseinfo;</span><br><span class="line">mysql&gt; create table house ( id int NOT NULL AUTO_INCREMENT PRIMARY KEY, url text NOT NULL, title text NOT NULL) DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure></p>
+<p>在表中查询url字段是否存在,不存在的话就插入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">executesql</span><span class="params">(sql)</span>:</span></span><br><span class="line">	dbo  = MySQLdb.connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"password"</span>,<span class="string">"houseinfo"</span>)</span><br><span class="line">	cursor = dbo.cursor()</span><br><span class="line">	data = <span class="string">''</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		cursor.execute(sql)</span><br><span class="line">		<span class="keyword">if</span> sql.startswith(<span class="string">'select'</span>):</span><br><span class="line">			data = cursor.fetchall()</span><br><span class="line">		<span class="keyword">elif</span> sql.startswith(<span class="string">'insert'</span>):</span><br><span class="line">			data = dbo.commit()</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Error: unable to fecth data"</span></span><br><span class="line">		<span class="keyword">print</span> traceback.format_exc()</span><br><span class="line">		dbo.rollback()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		dbo.close()		</span><br><span class="line">		<span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line">s = urllib.urlopen(url)</span><br><span class="line"><span class="keyword">if</span> s.code == <span class="number">200</span>:</span><br><span class="line">	soup = BeautifulSoup(s.read(),<span class="string">"lxml"</span>)</span><br><span class="line">	ulcontent = soup.find(<span class="string">'ul'</span>,opentype=<span class="string">"page"</span>)	</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> ulcontent.children:</span><br><span class="line">		acontent = i.find(<span class="string">'a'</span>)</span><br><span class="line">		<span class="keyword">if</span> type(acontent)!=int:</span><br><span class="line">			title = acontent.get(<span class="string">'title'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">			<span class="keyword">if</span> acontent.get(<span class="string">'href'</span>).startswith(<span class="string">r'/'</span>):</span><br><span class="line">				url = <span class="string">"%s%s"</span>%(<span class="string">r'http://www.bjjs.gov.cn'</span>,acontent.get(<span class="string">'href'</span>))						</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				url = acontent.get(<span class="string">'href'</span>)</span><br><span class="line"></span><br><span class="line">			sql = <span class="string">'select * from house where url = "%s"'</span>% url</span><br><span class="line">			rst = executesql(sql)</span><br><span class="line">			<span class="keyword">if</span> <span class="keyword">not</span> rst:</span><br><span class="line">				insertsql = <span class="string">'insert into house (url,title) values("%s","%s")'</span>%(url,title)</span><br><span class="line">				executesql(insertsql)</span><br></pre></td></tr></table></figure></p>
+<h1 id="发送新通知邮件"><a href="#发送新通知邮件" class="headerlink" title="发送新通知邮件"></a>发送新通知邮件</h1><p>当有一个新的通知发出来以后需要发送一封邮件</p>
+<p>因为VPS是在国外，所在我这里使用的是gmail的smtp服务，因为我的google账户采用了两步认证，所以这里还得重新申请一个临时密码，这里不得不提一下google的服务，太人性化了！具体使用请参考 <a href="https://support.google.com/accounts/answer/185833" target="_blank" rel="noopener">https://support.google.com/accounts/answer/185833</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">HOST = <span class="string">'smtp.gmail.com'</span></span><br><span class="line">PORT = <span class="number">587</span></span><br><span class="line">mail_username=<span class="string">'yanxingyang@gmail.com'</span>  </span><br><span class="line">mail_password=<span class="string">'linshimima'</span></span><br><span class="line"></span><br><span class="line">to_addrs=[<span class="string">'yanxingyang@gmail.com'</span>] </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendmail</span><span class="params">(contents,title)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		smtp = smtplib.SMTP() </span><br><span class="line">		smtp.set_debuglevel(<span class="number">1</span>)</span><br><span class="line">		smtp.connect(HOST,PORT)</span><br><span class="line">		smtp.starttls()</span><br><span class="line">		smtp.login(mail_username,mail_password)</span><br><span class="line">		msg = email.mime.text.MIMEText(contents,<span class="string">'html'</span>)</span><br><span class="line">		msg[<span class="string">'From'</span>] = <span class="string">'yanxingyang@gmail.com'</span></span><br><span class="line">		msg[<span class="string">'To'</span>] = <span class="string">';'</span>.join(to_addrs)  </span><br><span class="line">		msg[<span class="string">'Subject'</span>]=  <span class="string">'有新的房产信息,请注意查看《%s》'</span>% title   </span><br><span class="line">		smtp.sendmail(<span class="string">'yanxingyang@gmail.com'</span>,to_addrs,msg.as_string())  </span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">print</span> traceback.format_exc()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		smtp.quit()</span><br></pre></td></tr></table></figure>
+<h1 id="设置crontab任务"><a href="#设置crontab任务" class="headerlink" title="设置crontab任务"></a>设置crontab任务</h1><p>在linux的世界里crontab绝对是神一样的存在<br>使用参考 <a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html" target="_blank" rel="noopener">crontab使用</a></p>
+<p>我这里设置的是每隔一个小时执行一次<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span><span class="emphasis">*/1 *</span> <span class="bullet">* *</span> python /root/gethouseinfo.py</span><br></pre></td></tr></table></figure></p>
+<p>最终的效果是我收到了好多邮件。。。<br><img src="/image/houseinfo.png" alt="手机中收到的邮件"></p>
+<p>mac上也可以实时的收到<br><img src="/image/housemac.png" alt="mac上的邮件"></p>
+<p>最张的全代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time,os,sys,chardet</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">import</span> email.mime.text</span><br><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> parseaddr, formataddr</span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">'smtp.gmail.com'</span></span><br><span class="line">PORT = <span class="number">587</span></span><br><span class="line">mail_username=<span class="string">'yanxingyang@gmail.com'</span>  </span><br><span class="line">mail_password=<span class="string">'linshimima'</span> </span><br><span class="line"></span><br><span class="line">to_addrs=[<span class="string">'yanxingyang@gmail.com'</span>] </span><br><span class="line"></span><br><span class="line">urls = [<span class="string">r'http://www.bjjs.gov.cn/bjjs/fwgl/zzxspzf/tzgg/index.shtml'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendmail</span><span class="params">(contents,title)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		smtp = smtplib.SMTP() </span><br><span class="line">		smtp.set_debuglevel(<span class="number">1</span>)</span><br><span class="line">		smtp.connect(HOST,PORT)</span><br><span class="line">		smtp.starttls()</span><br><span class="line">		smtp.login(mail_username,mail_password)</span><br><span class="line">		msg = email.mime.text.MIMEText(contents,<span class="string">'html'</span>)</span><br><span class="line">		msg[<span class="string">'From'</span>] = <span class="string">'yanxingyang@gmail.com'</span></span><br><span class="line">		msg[<span class="string">'To'</span>] = <span class="string">';'</span>.join(to_addrs)  </span><br><span class="line">		msg[<span class="string">'Subject'</span>]=  <span class="string">'有新的房产信息,请注意查看《%s》'</span>% title   </span><br><span class="line">		smtp.sendmail(<span class="string">'yanxingyang@gmail.com'</span>,to_addrs,msg.as_string())  </span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">print</span> traceback.format_exc()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		smtp.quit()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">executesql</span><span class="params">(sql)</span>:</span></span><br><span class="line">	dbo  = MySQLdb.connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"password"</span>,<span class="string">"houseinfo"</span>)</span><br><span class="line">	cursor = dbo.cursor()</span><br><span class="line">	data = <span class="string">''</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		cursor.execute(sql)</span><br><span class="line">		<span class="keyword">if</span> sql.startswith(<span class="string">'select'</span>):</span><br><span class="line">			data = cursor.fetchall()</span><br><span class="line">		<span class="keyword">elif</span> sql.startswith(<span class="string">'insert'</span>):</span><br><span class="line">			data = dbo.commit()</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Error: unable to fecth data"</span></span><br><span class="line">		<span class="keyword">print</span> traceback.format_exc()</span><br><span class="line">		dbo.rollback()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		dbo.close()		</span><br><span class="line">		<span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">		<span class="comment"># r = requests.get(url)</span></span><br><span class="line">		s = urllib.urlopen(url)</span><br><span class="line">		<span class="keyword">if</span> s.code == <span class="number">200</span>:</span><br><span class="line">			soup = BeautifulSoup(s.read(),<span class="string">"lxml"</span>)</span><br><span class="line">			ulcontent = soup.find(<span class="string">'ul'</span>,opentype=<span class="string">"page"</span>)	</span><br><span class="line">			<span class="keyword">for</span> i <span class="keyword">in</span> ulcontent.children:</span><br><span class="line">				acontent = i.find(<span class="string">'a'</span>)</span><br><span class="line">				<span class="keyword">if</span> type(acontent)!=int:</span><br><span class="line">					title = acontent.get(<span class="string">'title'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">					<span class="keyword">if</span> acontent.get(<span class="string">'href'</span>).startswith(<span class="string">r'/'</span>):</span><br><span class="line">						url = <span class="string">"%s%s"</span>%(<span class="string">r'http://www.bjjs.gov.cn'</span>,acontent.get(<span class="string">'href'</span>))						</span><br><span class="line">					<span class="keyword">else</span>:</span><br><span class="line">						url = acontent.get(<span class="string">'href'</span>)</span><br><span class="line"></span><br><span class="line">					sql = <span class="string">'select * from house where url = "%s"'</span>% url</span><br><span class="line">					rst = executesql(sql)</span><br><span class="line">					<span class="keyword">if</span> <span class="keyword">not</span> rst:</span><br><span class="line">						insertsql = <span class="string">'insert into house (url,title) values("%s","%s")'</span>%(url,title)</span><br><span class="line">						executesql(insertsql)</span><br><span class="line">						contents = <span class="string">'&lt;h1&gt;%s&lt;/h1&gt;&lt;/br&gt;&lt;p&gt;%s&lt;/p&gt;'</span>%(title,url)</span><br><span class="line">						sendmail(contents,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure></p>
+<h1 id="遗留的问题"><a href="#遗留的问题" class="headerlink" title="遗留的问题"></a>遗留的问题</h1><p>如果长时间的使用某个IP去抓该网站的信息它如果给封了IP就不行了，而且我也没有设置访问的header，以后可以设置一下代理或者header信息</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 使用python抓取自住房信息<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/use-python-get-house-info.html">http://www.yangyanxing.com/article/use-python-get-house-info.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/use-python-get-house-info.html" data-id="cjb9mh8xs004wtsdn9gzzotbj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/use-python-get-house-info.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/try_in_python.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    python中的异常处理
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/use-apscheduler.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">用于python的定时任务apscheduler的使用</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

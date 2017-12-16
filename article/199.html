@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>关于PHP面向对象的一点网摘(基本概念与封装性) | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="本文大部门摘自网络，作为我学习的一点总结也还不错 PHP面向对象技术 本部分一共包括以下一些技术点：1.面向对象的概念2.什么是类，什么是对象，类和对象这间的关系3.什么是面向对象编程呢？4.如何抽象出一个类？5.如何实例化对象？6.如何去使用对象中的成员？7.特殊的引用“$this”的使用8.构造方法与析构方法9.封装性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于PHP面向对象的一点网摘(基本概念与封装性)">
+<meta property="og:url" content="http://www.yangyanxing.com/article/199.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="本文大部门摘自网络，作为我学习的一点总结也还不错 PHP面向对象技术 本部分一共包括以下一些技术点：1.面向对象的概念2.什么是类，什么是对象，类和对象这间的关系3.什么是面向对象编程呢？4.如何抽象出一个类？5.如何实例化对象？6.如何去使用对象中的成员？7.特殊的引用“$this”的使用8.构造方法与析构方法9.封装性">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-16T10:10:42.454Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于PHP面向对象的一点网摘(基本概念与封装性)">
+<meta name="twitter:description" content="本文大部门摘自网络，作为我学习的一点总结也还不错 PHP面向对象技术 本部分一共包括以下一些技术点：1.面向对象的概念2.什么是类，什么是对象，类和对象这间的关系3.什么是面向对象编程呢？4.如何抽象出一个类？5.如何实例化对象？6.如何去使用对象中的成员？7.特殊的引用“$this”的使用8.构造方法与析构方法9.封装性">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-199" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            关于PHP面向对象的一点网摘(基本概念与封装性)
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/199.html">
+            <time datetime="2011-12-15T16:50:04.000Z" itemprop="datePublished">2011-12-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>本文大部门摘自网络，作为我学习的一点总结也还不错</p>
+<p><strong>PHP面向对象技术</strong></p>
+<p>本部分一共包括以下一些技术点：<br>1.面向对象的概念<br>2.什么是类，什么是对象，类和对象这间的关系<br>3.什么是面向对象编程呢？<br>4.如何抽象出一个类？<br>5.如何实例化对象？<br>6.如何去使用对象中的成员？<br>7.特殊的引用“$this”的使用<br>8.构造方法与析构方法<br>9.封装性 <a id="more"></a><br>10.<strong>set()、 </strong>get()、 <strong>isset()、 </strong>unset()四个方法的应用<br>11.类的继承<br>12.多态的应用<br>13.重载新的方法<br>14.访问类型<br>15.静态成员的使用<br>16.final关键字的应用<br>17.<strong>toString()方法<br>18.克隆对象<br>19.</strong>call处理调用错误<br>20.自动加载类<br>21.把对象串行化<br>22.抽象方法和抽象类<br>23.php5接口技术</p>
+<p>1.面向对象的概念<br>面向对象编程（Object Oriented Programming, OOP, 面向对象程序设计）是一种计算机编程架构，OOP的一条基本原则是计算机程序是由单个能够起到子程序作用的单元或对象组合而成，OOP达到了软件工程的三个目标：重用性、灵活性和扩展性。为了实现整体运算，每个对象都能够接收信息、处理数据和向其它对象发送信息。面向对象一直是软件开发领域内比较热门的话题，首先，面向对象符合人类看待事物的一般规律。其次，采用面向对象方法可以使系统各部分各司其职、各尽所能。为编程人员敞开了一扇大门，使其编程的代码更简洁、更易于维护，并且具有更强的可重用性。有人说PHP不是一个真正的面向对象的语言，这是事实。PHP 是一个混合型语言，你可以使用OOP，也可以使用传统的过程化编程。然而，对于大型项目，你可能需要在PHP 中使用纯的OOP去声明类，而且在你的项目里只用对象和类。这个概念我先不多说了，因为有很多朋友远离面向对象编程的主要原因就是一接触面向对象概念的时候就理解不上去，所以就不想去学下去了。等读者看完整体内容后再去把概念搞明白吧。</p>
+<p>2.什么是类，什么是对象，类和对象这间的关系<br><strong>类</strong>的概念：类是具有相同属性和服务的一组对象的集合。它为属于该类的所有对象提供了统一的抽象描述，其内部包括属性和服务两个主要部分。在面向对象的编程语言中，类是一个独立的程序单位，它应该有一个类名并包括属性说明和服务说明两个主要部分。</p>
+<p><strong>对象</strong>的概念：对象是系统中用来描述客观事物的一个实体，它是构成系统的一个基本单位。一个对象由一组属性和对这组属性进行操作的一组服务组成。从更抽象的角度来说，对象是问题域或实现域中某些事物的一个抽象，它反映该事物在系统中需要保存的信息和发挥的作用；它是一组属性和有权对这些属性进行操作的一组服务的封装体。客观世界是由对象和对象之间的联系组成的。<br>类与对象的关系就如模具和铸件的关系，类的实例化结果就是对象，而对一类对象的抽象就是类。类描述了一组有相同特性（属性）和相同行为（方法）的对象。</p>
+<p>3.什么是面向对象编程呢？<br>就不说他的概念，如果你想建立一个电脑教室，首先要有一个房间，房间里面要有N台电脑，有N张桌子， N把椅子，白板，投影机等等，这些是什么，刚才咱们说了，这就是对象，能看到的一个个的实体，可以说这个电脑教室的单位就是这一个个的实体对象，它们共同组成了这个电脑教室，那么我们是做程序，这和面向对象有什么关系呢？开发一个系统程序和建一个电脑教室类似，你把每个独立的功能模块抽象成类，形成对象，由多个对象组成这个系统，这些对象之间都能够接收信息、处理数据和向其它对象发送信息等等相互作用。就构成了面向对象的程序。</p>
+<p>4.如何抽象出一个类？<br>上面已经介绍过了，面向对象程序的单位就是对象，但对象又是通过类的实例化出来的，所以我们首先要做的就是如何来声明类，做出来一个类很容易，只要掌握基本的程序语法定义规则就可以做的出来，那么难点在那里呢？一个项目要用到多少个类，用多少个对象，在那要定义类，定义一个什么样的类，这个类实例化出多少个对象，类里面有多少个属性，有多少个方法等等,这就需要读者通过在实际的开发中就实际问题分析设计和总结了。<br>类的定义：<br><span style="color: #00ffff;">class</span> 类名{<br>}</p>
+<p>使用一个关键字class和后面加上一个你想要的类名以及加上一对大括号， 这样一个类的结构就定义出来了，只要在里面写代码就可以了，但是里面写什么？ 能写什么？怎样写才是一个完整的类呢？上面讲过来，使用类是为了让它实例出对象来给我们用，这就要知道你想要的是什么样的对象了，像上面我们讲的一个装机配置单上写什么，你装出来的机子就有什么。比如说，一个人就<br>是一个对象，你怎么把一个你看好的人推荐给你们领导呢？当然是越详细越好了：<br>首先，你会介绍这个人姓名、性别、年龄、身高、体重、电话、家庭住址等等。<br>然后，你要介绍这个人能做什么，可以开车，会说英语，可以使用电脑等等。<br>只要你介绍多一点，别人对这个人就多一点了解，这就是我们对一个人的描述， 现在我们总结<br>一下，所有的对象我们用类去描述都是类似的，从上面人的描述可以看到， 做出一个类来，从定义的角度分两部分，第一是从静态上描述，第二是从动态上描述，静态上的描述就是我们所说的</p>
+<p>属性，像上面我们看到的，人的姓名、性别、年龄、身高、体重、电话、家庭住址等等。动态上也就是人的这个对象的功能，比如这个人可以开车，会说英语，可以使用电脑等等，抽象成程序时，我们把动态的写成函数或者说是方法，函数和方法是一样的。所以，所有类都是从属性和方法这两方面去写，属性又叫做这个类的成员属性，方法叫做这个类的成员方法。<br>class 人{<br>成员属性：姓名、性别、年龄、身高、体重、电话、家庭住址<br>成员方法：可以开车， 会说英语， 可以使用电脑<br>}<br>属性：<br>通过在类定义中使用关键字” <span style="color: #ff0000;">var</span> “（<span style="color: #ff0000;">如果没有别的关键词修饰，则用var来修饰</span>）来声明变量，即创建了类的属性,虽然在声明成员属性的时候可以给定初始值， 但是在声明类的时候给成员属性初使值是没有必要的，比如说要是把人的姓名赋上“张三”,那么用这个类实例出几十个人，这几十个人都叫张三了，所以没有必要， 我们在实例出对象后给成员属性初始值就可以了。<br>如：　var $somevar;<br>方法(成员函数)：<br>通过在类定义中声明函数，即创建了类的方法。<br>如：　function somefun(参数列表)<br>{      … …     }</p>
+<pre class="brush:php"><?php
+class Person
+{
+//下面是人的成员属性
+var $name;     //人的名子
+var $sex;      //人的性别
+var $age;      //人的年龄
+//下面是人的成员方法
+function say() //这个人可以说话的方法
+{
+echo "这个人在说话";
+}
+function run() //这个人可以走路的方法
+{
+echo "这个人在走路";
+}
+}
+?></pre>
+
+
+<p>上面就是一个类的声明，从属性和方法上声明出来的一个类，但是成员属性最好在声明的时候不要给初始的值，因为我们做的人这个类是一个描述信息，将来用它实例化对象，比如实例化出来10个人对象，那么这10个人， 每一个人的名子，性别， 年龄都是不一样的，所以最好不要在这个地方给成员属性赋初值，而是对每个对象分别赋值的。用同样的办法可以做出你想要的类了， 只要你能用属性和方法能描述出来的实体都可以定义成类，去实例化对象。为了加强你对类的理解，我们再做一个类，做一个形状的类，形状的范围广了点， 我们就做个矩形吧，先分析一下，想一想从两方面分析，矩形的属性都有什么？矩形的功能都有什么？<br>class 矩形<br>{<br>//矩形的属性<br>矩形的长；<br>矩形的宽；</p>
+<p>//矩形的方法<br>矩形的周长；<br>矩形的面积；<br>}</p>
+<pre class="brush:php"><?php
+class Rect
+{
+var $kuan;
+var $gao;
+function zhouChang()
+{
+计算矩形的周长；
+}
+function mianJi()
+{
+计算矩形的面积；
+}
+}
+?></pre>
+
+
+<p>如果用这个类来创建出多个矩形对象，每个矩形对象都有自己的长和宽， 都可以求出自己的周长和面积了。</p>
+<h3 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a><strong>面向对象的三大特性</strong></h3><p><strong><span style="font-size: medium;"><a name="_Toc173034049"></a>一、封装性</span></strong></p>
+<div>    封装性是面向对象编程中的三大特性之一，封装性就是把对象的属性和服务结合成一个独立的相同单位，并尽可能隐蔽对象的内部细节，包含两个含义:1.把对象的全部属性和全部服务结合在一起，形成一个不可分割的独立单位（即对象）。2.信息隐蔽，即尽可能隐蔽对象的内部细节，对外形成一个边界〔或者说形成一道屏障〕，只保留有限的对外接口使之与外部发生联系。</div><br><div>    封装的原则在软件上的反映是：要求使对象以外的部分不能随意存取对象的内部数据（属性），从而有效的避免了外部错误对它的”交叉感染”，使软件错误能够局部化，大大减少查错和排错的难度。</div><br><div>       用个实例来说明吧，假如某个人的对象中有年龄和工资等属性，像这样个人隐私的属性是不想让其它人随意就能获得到的，如果你不使用封装，那么别人想知道就能得到，但是如果你封装上之后别人就没有办法获得封装的属性，除非你自己把它说出去，否则别人没有办法得到。再比如说，个人电脑都有一个密码，不想让其它人随意的登陆，在你的电脑里面拷贝和粘贴。还有就是像人这个对象，身高和年龄的属性，只能是自己来增涨，不可以让别人随意的赋值等等。</div><br><div>使用<span style="color: #ff0000;">private</span>这个关键字来对属性和方法进行封装：</div><br><div>原来的成员:</div><br><div>var $name;                  //声明人的姓名</div><br><div>var $sex;                      //声明人的性别</div><br><div>var $age;                      //声明人的年龄</div><br><div>function run(){…….}</div><br><div>改成封装的形式：</div><br><div>private $name;                            //把人的姓名使用private关键字进行封装</div><br><div>private $sex;                                //把人的性别使用private关键字进行封装</div><br><div>private $age;                                //把人的年龄使用private关键字进行封装</div><br><div>private function run(){……}             //把人的走路方法使用private关键字进行封装</div><br><div>注意：只要是成员属性前面有其它的关键字就要去掉原有的关键字“var”。</div><br><div>通过private就可以把人的成员（成员属性和成员方法）封装上了。封装上的成员就不能被类外面直接访问了，只有对象内部自己可以访问；下面的代码会产生错误：</div><br><div><br><div align="left"><br><pre class="brush:php">class Person<br> {<br> //下面是人的成员属性<br> private $name; //人的名子，被private封装上了<br> private $sex; //人的性别, 被private封装上了<br> private $age; //人的年龄, 被private封装上了<br> //这个人可以说话的方法<br> function say()<br> {<br> echo “我的名子叫：”.$this-&gt;name.” 性别：”.$this-&gt;sex.” 我的年龄是：”.$this-&gt;age.”<br>“;<br> }<br> //这个人可以走路的方法, 被private封装上了<br> private function run()<br> {<br> echo “这个人在走路”;<br> }<br> }<br> //实例化一个人的实例对象<br> $p1=new Person();<br> //试图去给私有的属性赋值， 结果会发生错误<br> $p1-&gt;name=”张三”;<br> $p1-&gt;sex=”男”;<br> $p1-&gt;age=20;<br> //试图去打印私有的属性， 结果会发生错误<br> echo $p1-&gt;name.”<br>”;<br> echo $p1-&gt;sex.”<br>”;<br> echo $p1-&gt;age.”<br>”<br> //试图去打印私有的成员方法， 结果会发生错误<br> $p1-&gt;run();<br> ?&gt;</pre><br><br><br></div><br><div>输出结果为：</div><br><div><strong>Fatal error</strong>: Cannot access private property Person::$name</div><br><div><strong>Fatal error</strong>: Cannot access private property Person::$sex</div><br><div><strong>Fatal error</strong>: Cannot access private property Person::$age</div><br><div><strong>Fatal error</strong>: Cannot access private property Person::$name</div><br><div><strong>Fatal error</strong>: Call to private method Person::run() from context ‘’</div><br><div>从上面的实例可以看到，私有的成员是不能被外部访问的，因为私有成员只能在本对象内部自己访问，比如，$p1这个对象自己想把他的私有属性说出去，在say()这个方法里面访问了私有属性，这样是可以。（没有加任何访问控制，默认的是public的，任何地方都可以访问）</div><br><div align="left">//这个人可以说话的方法, 说出自己的私有属性，在这里也可以访问私有方法</div><br><div align="left"><br><pre class="brush:php">function say()<br>{<br> echo “我的名子叫：”.$this-&gt;name.” 性别：”.$this-&gt;sex.” 我的年龄是：”.$this-&gt;age.”<br>“;<br> //在这里也可以访问私有方法<br> //$this-&gt;run();<br> }</pre><br><br><br></div><br><div>因为成员方法say()是公有的，所以我们在类的外部调用say()方法是可以的，改变上面的代码；</div><br><div align="left"><br><pre class="brush:php">class Person<br> {<br> //下面是人的成员属性<br> private $name;       //人的名子，被private封装上了<br> private $sex;        //人的性别, 被private封装上了<br> private $age;        //人的年龄, 被private封装上了<br> //定义一个构造方法参数为私有的属性姓名$name、性别$sex和年龄$age进行赋值<br> function <strong>construct($name, $sex, $age) //<span style="color: #ff0000;">此处如果不给予初始值，则实例化对象时new Person() 里要赋值，否则会有警告</span><br> {<br> //通过构造方法传进来的$name给私有成员属性$this-&gt;name赋初使值<br> $this-&gt;name=$name;<br> //通过构造方法传进来的$sex给私有成员属性$this-&gt;sex赋初使值<br> $this-&gt;sex=$sex;<br> //通过构造方法传进来的$age给私有成员属性$this-&gt;age赋初使值<br> $this-&gt;age=$age;<br> }<br> //这个人可以说话的方法, 说出自己的私有属性，在这里也可以访问私有方法<br> function say()<br> {<br>     echo “我的名子叫：”.$this-&gt;name.” 性别：”.$this-&gt;sex.” 我的年龄是：”.$this-&gt;age.”<br>“;<br> }<br> }<br> //通过构造方法创建3个对象$p1、p2、$p3,分别传入三个不同的实参为姓名、性别和年龄<br> $p1=new Person(“张三”，”男”, 20);<br> $p2=new Person(“李四”，”女”, 30);<br> $p3=new Person(“王五”，”男”, 40);<br> //下面访问$p1对象中的说话方法<br> $p1-&gt;say();<br> //下面访问$p2对象中的说话方法<br> $p2-&gt;say();<br> //下面访问$p3对象中的说话方法<br> $p3-&gt;say();</strong></pre><br><br><br>输出结果为：<br>我的名子叫：张三性别：男我的年龄是：20<br>我的名子叫：李四性别：女我的年龄是：30<br>我的名子叫：王五性别：男我的年龄是：40<br>因为构造方法是默认的公有方法（构造方法不要设置成私有的），所以在类的外面可以访问到，这样就可以使用构造方法创建对象，另外构造方法也是类里面的函数，所以可以用构造方法给私有的属性赋初值。Say()的方法是默认公有的，所以在外面也可以访问的到，说出他自己的私有属性。<br>从上面的例子中我们可以看到，私有的成员只能在类的内部使用，不能被类外部直接来存取，但是在类的内部是有权限访问的，所以有时候我们需要在类的外面给私有属性赋值和读取出来，也就是给类的外部提供一些可以存取的接口，上例中构造方法就是一种赋值的形式，但是构造方法只是在创建对象的时候赋值，如果我们已经有一个存在的对象了，想对这个存在的对象赋值，这个时候，如果你还使用构造方法传值的形式传值，那么就创建了一个新的对象，并不是这个已存在的对象了。所以我们要对私有的属性做一些可以被外部存取的接口，目的就是可以在对象存在的情况下，改变和存取属性的值，但要注意，只有需要让外部改变的属性才这样做，不想让外面访问的属性是不做这样的接口的，这样就能达到封装的目的，所有的功能都是对象自己来完成，给外面提供尽量少的操作。如果给类外部提供接口，可以为私有属性在类外部提供设置方法和获取方法，来操作私有属性.例如：<br><pre class="brush:php"> private $age; //私有的属性年龄<br> function setAge($age)       //为外部提供一个公有设置年龄的方法<br> {<br>     if($age<0 ¦¦="" $age="">130)     //在给属性赋值的时候，为了避免非法值设置给属性<br>     return;<br>     $this-&gt;age=$age;<br> }<br> function getAge()           //为外部提供一个公有获取年龄的方法<br> {<br>     return($this-&gt;age);<br> }</0></pre><br><br><br></div><br><div>       上面的方法是为一个成员属性设置和获取值，当然你也可以为每个属性用同样的方法对其进行赋值和取值的操作，完成在类外部的存取工作。</div><br><div>**<span style="font-size: medium;"><a name="_Toc173034050"></a><span style="color: #1f3a87;">set() <strong>get() </strong>isset() <strong>unset()</strong></span>四个方法的应用</span>**</div><br><div>一般来说，总是把类的属性定义为private，这更符合现实的逻辑。但是，对属性的读取和赋值操作是非常频繁的，因此在PHP5中，预定义了两个函数“get()”和“<strong>set()”来获取和赋值其属性,以及检查属性的“</strong>isset()”和删除属性的方法“<strong>unset()”。</strong></div><br><div><br><br>上一节中，我们为每个属性做了设置和获取的方法，在PHP5中给我们提供了专门为属性设置值和获取值的方法，“set()”和“<strong>get()”这两个方法，这两个方法不是默认存在的，而是我们手工添加到类里面去的，像构造方法(</strong>construct())一样, 类里面添加了才会存在，可以按下面的方式来添加这两个方法，当然也可以按个人的风格来添加：<br><div align="left"><br><pre class="brush:php">//<strong>get()方法用来获取私有属性<br> private function </strong>get($property_name)<br> {<br>      if(isset($this-&gt;$property_name))<br> {<br>     return($this-&gt;$property_name);<br> }else<br> {<br>     return(NULL);<br> }<br> }<br> //<strong>set()方法用来设置私有属性<br> private function </strong>set($property_name, $value)<br> {<br>     $this-&gt;$property_name = $value;<br> }</pre><br><br><br></div><br><div><strong>get()方法：这个方法用来获取私有成员属性值的,有一个参数，参数传入你要获取的成员属性的名称，返回获取的属性值，这个方法不用我们手工的去调用，因为我们也可以把这个方法做成私有的方法，是在直接获取私有属性的时候对象自动调用的。因为私有属性已经被封装上了，是不能直接获取值的（比如：“echo $p1-&gt;name”这样直接获取是错误的），但是如果你在类里面加上了这个方法，在使用“echo $p1-&gt;name”这样的语句直接获取值的时候就会自动调用</strong>get($property_name)方法，将属性name传给参数$property_name，通过这个方法的内部执行，返回我们传入的私有属性的值。如果成员属性不封装成私有的，对象本身就不会去自动调用这个方法。</div><br><div><strong>set()方法：这个方法用来为私有成员属性设置值的，有两个参数，第一个参数为你要为设置值的属性名，第二个参数是要给属性设置的值，没有返回值。这个方法同样不用我们手工去调用，它也可以做成私有的，是在直接设置私有属性值的时候自动调用的，同样属性私有的已经被封装上了，如果没有</strong>set()这个方法，是不允许的，比如：$this-&gt;name=‘zhangsan’, 这样会出错，但是如果你在类里面加上了<strong>set($property_name, $value)这个方法，在直接给私有属性赋值的时候，就会自动调用它，把属性比如name传给$property_name, 把要赋的值“zhangsan”传给$value，通过这个方法的执行，达到赋值的目的。如果成员属性不封装成私有的，对象本身就不会去自动调用这个方法。为了不传入非法的值，还可以在这个方法给做一下判断。代码如下：</strong></div><br><div align="left"><br><pre class="brush:php">&lt;?php<br> class Person<br> {<br> //下面是人的成员属性， 都是封装的私有成员<br> private $name;        //人的名子<br> private $sex;         //人的性别<br> private $age;         //人的年龄<br> //get()方法用来获取私有属性<br> private function <strong>get($property_name)<br> {<br>     echo “在直接获取私有属性值的时候，自动调用了这个</strong>get()方法<br>“;<br> if(isset($this-&gt;$property_name))<br> {<br>     return($this-&gt;$property_name);<br> }<br> else<br> {<br>     return(NULL);<br> }<br> }<br> //<strong>set()方法用来设置私有属性<br> private function </strong>set($property_name, $value)<br> {<br>     echo “在直接设置私有属性值的时候，自动调用了这个<strong>set()方法为私有属性赋值<br>“;<br>     $this-&gt;$property_name = $value;<br> }<br> }<br> $p1=new Person();<br> //直接为私有属性赋值的操作， 会自动调用</strong>set()方法进行赋值<br> $p1-&gt;name=”张三”;<br> $p1-&gt;sex=”男”;<br> $p1-&gt;age=20;<br> //直接获取私有属性的值， 会自动调用<strong>get()方法，返回成员属性的值<br> echo “姓名：”.$p1-&gt;name.”<br>“;<br> echo “性别：”.$p1-&gt;sex.”<br>“;<br> echo “年龄：”.$p1-&gt;age.”<br>“;<br> ?&gt;</strong></pre><br><br><br></div><br><div>程序执行结果：</div><br><div>在直接设置私有属性值的时候，自动调用了这个set()方法为私有属性赋值<br>在直接设置私有属性值的时候，自动调用了这个<strong>set()方法为私有属性赋值<br>在直接设置私有属性值的时候，自动调用了这个</strong>set()方法为私有属性赋值<br>在直接获取私有属性值的时候，自动调用了这个<strong>get()方法<br>姓名：张三<br>在直接获取私有属性值的时候，自动调用了这个</strong>get()方法<br>性别：男<br>在直接获取私有属性值的时候，自动调用了这个<strong>get()方法<br>年龄：20</strong></div><br><div>以上代码如果不加上get()和<strong>set()方法，程序就会出错，因为不能在类的外部操作私有成员，而上面的代码是通过自动调用</strong>get()和<strong>set()方法来帮助我们直接存取封装的私有成员的。</strong></div><br><div>isset() 方法：在看这个方法之前我们看一下“isset()”函数的应用，isset()是测定变量是否设定用的函数，传入一个变量作为参数，如果传入的变量存在则传回true，否则传回false。那么如果在一个对象外面使用“isset()”这个函数去测定对象里面的成员是否被设定可不可以用它呢？分两种情况，如果对象里面成员是公有的，我们就可以使用这个函数来测定成员属性，如果是私有的成员属性，这个函数就不起作用了，原因就是因为私有的被封装了，在外部不可见。那么我们就不可以在对象的外部使用“isset()”函数来测定私有成员属性是否被设定了呢？可以，你只要在类里面加上一个“<strong>isset()”方法就可以了，当在类外部使用”isset()”函数来测定对象里面的私有成员是否被设定时，就会自动调用类里面的“</strong>isset()”方法了帮我们完成这样的操作，“<strong>isset()”方法也可以做成私有的。你可以在类里面加上下面这样的代码就可以了：</strong></div><br><div align="left"><br><pre class="brush:php">private function isset($nm)<br> {<br>     echo “当在类外部使用isset()函数测定私有成员$nm时，自动调用<br>“;<br>     return isset($this-&gt;$nm);<br> }</pre><br><br><br></div><br><div><strong>unset()方法：看这个方法之前呢，我们也先来看一下“unset()”这个函数，“unset()”这个函数的作用是删除指定的变量且传回true，参数为要删除的变量。那么如果在一个对象外部去删除对象内部的成员属性用“unset()”函数可不可以呢，也是分两种情况，如果一个对象里面的成员属性是公有的，就可以使用这个函数在对象外面删除对象的公有属性，如果对象的成员属性是私有的，我使用这个函数就没有权限去删除，但同样如果你在一个对象里面加上“</strong>unset()”这个方法，就可以在对象的外部去删除对象的私有成员属性了。在对象里面加上了“<strong>unset()”这个方法之后，在对象外部使用“unset()”函数删除对象内部的私有成员属性时，自动调用“</strong>unset()”函数来帮</div><br><div>我们删除对象内部的私有成员属性，这个方法也可以在类的内部定义成私有的。在对象里面加上下面的代码就可以了：</div><br><div align="left"><br><pre class="brush:php">private function <strong>unset($nm)<br> {<br>     echo “当在类外部使用unset()函数来删除私有成员时自动调用的<br>“;<br>     unset($this-&gt;$nm);<br> }</strong></pre><br><br><br></div><br><div>我们来看一个完整的实例：</div><br><div align="left"><br><pre class="brush:php">&lt;?php<br> class Person<br> {<br> //下面是人的成员属性<br> private $name;      //人的名子<br> private $sex;       //人的性别<br> private $age;       //人的年龄<br> //get()方法用来获取私有属性<br> private function <strong>get($property_name)<br> {<br>     if(isset($this-&gt;$property_name))<br> {<br>     return($this-&gt;$property_name);<br> }else {<br>     return(NULL);<br> }<br> }<br> //</strong>set()方法用来设置私有属性<br> private function <strong>set($property_name, $value)<br> {<br>    $this-&gt;$property_name = $value; //这里的$this-&gt;$property_name 中$property_name 中要有$的，没有的话将赋不了值<br> }<br> //</strong>isset()方法<br> private function <strong>isset($nm)<br> {<br>     echo “isset()函数测定私有成员时，自动调用<br>“;<br>     return isset($this-&gt;$nm);<br> }<br> //</strong>unset()方法<br> private function <strong>unset($nm)<br> {<br>     echo “当在类外部使用unset()函数来删除私有成员时自动调用的<br>“;<br>     unset($this-&gt;$nm);<br> }<br> }<br> $p1=new Person();<br> $p1-&gt;name=”this is a person name”;<br> //在使用isset()函数测定私有成员时，自动调用</strong>isset()方法帮我们完成，返回结果为true<br> echo var_dump(isset($p1-&gt;name)).”<br>“;<br> echo $p1-&gt;name.”<br>“;<br> //在使用unset()函数删除私有成员时，自动调用<strong>unset()方法帮我们完成，删除name私有属性<br> unset($p1-&gt;name);<br> //已经被删除了， 所这行不会有输出<br> echo $p1-&gt;name;<br> ?&gt;</strong></pre><br><br><br></div><br><div>输出结果为：</div><br><div>isset()函数测定私有成员时，自动调用<br>bool(true)<br>this is a person name<br>当在类外部使用unset()函数来删除私有成员时自动调用的</div><br><div>set()、<strong>get()、</strong>isset()、__unset() 这四个方法都是我们添加到对象里面的，在需要时自动调用的，来完成在对象外部对对象内部私有属性的操作</div><br></div><br></div>
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 关于PHP面向对象的一点网摘(基本概念与封装性)<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/199.html">http://www.yangyanxing.com/article/199.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/199.html" data-id="cjb9mh8z30062tsdnnjc7yp41" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/199.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/205.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    关于PHP面向对象的一点网摘(继承性与访问类型)
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/131.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">说说大学里的打工赚钱</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

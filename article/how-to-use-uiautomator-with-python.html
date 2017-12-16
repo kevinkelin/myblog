@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>使用uiautomator的python封装进行android的UI测试 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作 基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截 考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是">
+<meta name="keywords" content="python,android,自动化测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用uiautomator的python封装进行android的UI测试">
+<meta property="og:url" content="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作 基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截 考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/08/dump_3164510212585030182_thumb.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/08/dump_3893862848196469772_thumb.png">
+<meta property="og:image" content="http://www.yangyanxing.com/image/2015/08/dump_8250787869838979823_thumb.png">
+<meta property="og:updated_time" content="2017-12-16T10:10:42.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用uiautomator的python封装进行android的UI测试">
+<meta name="twitter:description" content="最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作 基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截 考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是">
+<meta name="twitter:image" content="http://www.yangyanxing.com/image/2015/08/dump_3164510212585030182_thumb.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-how-to-use-uiautomator-with-python" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            使用uiautomator的python封装进行android的UI测试
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/how-to-use-uiautomator-with-python.html">
+            <time datetime="2015-08-27T17:17:30.000Z" itemprop="datePublished">2015-08-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/android/">android</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作</p>
+<p>基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截</p>
+<p>考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是有很多需要注意的地方<br> <a id="more"></a><br><a href="https://github.com/xiaocong/uiautomator" title="https://github.com/xiaocong/uiautomator" target="_blank" rel="noopener">https://github.com/xiaocong/uiautomator</a>   这个是xiaocong对其进行的python封装，也是这个小测试用例使用的，膜拜下</p>
+<h1 id="准备："><a href="#准备：" class="headerlink" title="准备："></a>准备：</h1><p>python27,不能使用python26，安装urllib3与uiautomator，可以使用easy_install命令，安装android SDK，配置好adb的环境变量，这些应该都是作为android测试人员最基本的环境配置，要测试的应用是360手机急救箱，可以从<a href="http://jijiu.360.cn/" title="http://jijiu.360.cn/" target="_blank" rel="noopener">http://jijiu.360.cn/</a> 这个网址下载</p>
+<p>下面是基本的测试流程<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 需要配置好adb 环境变量</span></span><br><span class="line"><span class="comment"># 1.先确定有几台手机</span></span><br><span class="line"><span class="comment"># 2.再确定有多少个应用</span></span><br><span class="line"><span class="comment"># 3.先安装mkiller,启动mkiller</span></span><br><span class="line"><span class="comment"># 4.再安装测试的样本</span></span><br><span class="line"><span class="comment"># 5.检查是否有取消安装的按钮出现，出现说明测试通过，没出现说明测试失败</span></span><br></pre></td></tr></table></figure></p>
+<p>既然要采用自动化，就不能手机测试那样，一台一台的跑，应该可以同时跑多台手机，我的想法就是启用多线程来跑，每个手机用一个线程来跑</p>
+<h1 id="确定有几台手机"><a href="#确定有几台手机" class="headerlink" title="确定有几台手机"></a>确定有几台手机</h1><p>我封了一个方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">finddevices</span><span class="params">()</span>:</span></span><br><span class="line">    rst = util.exccmd(<span class="string">'adb devices'</span>)</span><br><span class="line">    devices = re.findall(<span class="string">r'(.*?)\s+device'</span>,rst)</span><br><span class="line">    <span class="keyword">if</span> len(devices) &gt;<span class="number">1</span>:</span><br><span class="line">        deviceIds = devices[<span class="number">1</span>:]</span><br><span class="line">        logger.info(<span class="string">'共找到%s个手机'</span>%str(len(devices)<span class="number">-1</span>))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> deviceIds:            </span><br><span class="line">            logger.info(<span class="string">'ID为%s'</span>%i)</span><br><span class="line">        <span class="keyword">return</span> deviceIds</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        logger.error(<span class="string">'没有找到手机，请检查'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="uiautomator在python中的使用"><a href="#uiautomator在python中的使用" class="headerlink" title="uiautomator在python中的使用"></a>uiautomator在python中的使用</h1><p>下面来说说uiautomator在python中的使用，其实github中的readme.md写的挺清楚，但是实践起来还是有一些问题</p>
+<p>uiautomator在使用的时候都要初始化一个d对象，单个手机可以通过<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> uiautomator <span class="keyword">import</span> device <span class="keyword">as</span> d</span><br></pre></td></tr></table></figure></p>
+<p>多台手机可以<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> uiautomator <span class="keyword">import</span> Device</span><br></pre></td></tr></table></figure></p>
+<p>然后通过 d=Device(Serial)的方式初始化d对象，以后的操作基本上都是操作这个d对象，可以想象每个d对应着一台手机</p>
+<p>我觉得这个设计有点不大好，我现在还经常在device的大小写上犯迷糊</p>
+<h1 id="基本的点击操作"><a href="#基本的点击操作" class="headerlink" title="基本的点击操作"></a>基本的点击操作</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># press home key</span></span><br><span class="line">d.press.home()</span><br><span class="line"><span class="comment"># press back key</span></span><br><span class="line">d.press.back()</span><br><span class="line"><span class="comment"># the normal way to press back key</span></span><br><span class="line">d.press(<span class="string">"back"</span>)</span><br><span class="line"><span class="comment"># press keycode 0x07('0') with META ALT(0x02) on</span></span><br><span class="line">d.press(<span class="number">0x07</span>, <span class="number">0x02</span>)</span><br></pre></td></tr></table></figure>
+<p>首先安装启动应用，安装采用adb install 命令，启动采用adb shell am start 命令</p>
+<p>手机急救箱的launchable-activity是’com.qihoo.mkiller.ui.index.AppEnterActivity’,第一次启动会弹出使用协议要用户来点击”同意并使用”</p>
+<p><a href="/image/2015/08/dump_3164510212585030182.png"><img src="/image/2015/08/dump_3164510212585030182_thumb.png" alt="dump_3164510212585030182" title="dump_3164510212585030182"></a></p>
+<h1 id="watcher的使用"><a href="#watcher的使用" class="headerlink" title="watcher的使用"></a>watcher的使用</h1><p>我这里采用了watcher来监视并且点击，基本的watcher方法是<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'agree'</span>).when(text=<span class="string">u'同意并使用'</span>).click(text=<span class="string">u'同意并使用'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>先给watcher起一个名字，随便起，我这里叫agree，when里面写条件，我这里就是当text为’同意并使用’,后面写当符合这些条件的时候进行的操作，我这里就是click(text=u’同意并使用’),这里有一个坑，我之前写watcher的时候，就直接写click() 我以为里面不写内容默认就会点击前面找到的元素，但是后来发现这样是不行的，必须要写上要点击哪个对象</p>
+<p>其实对于这种只出现一次的view可以不用写在watcher里，可以直接写d(text=u’同意并使用’).click(),但是考虑到这个界面出现之前会有一些延迟，各种手机的性能不同，也不好加time.sleep()时间，所以我建议像这种一律写到watcher里，什么时候出现就什么时候点击。</p>
+<p>由于这个应用会请求root权限，所以有时第三方的root工具会弹相应的授权提示框，我想大部分的root工具应该都是有”允许”这个按钮的，于是我就加了一个watcher<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'allowroot'</span>).when(text=<span class="string">u'允许'</span>).click(text=<span class="string">u'允许'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>点击同意后会再弹一个开启超强模式的弹框，这里我要点击的是取消</p>
+<p><a href="/image/2015/08/dump_3893862848196469772.png"><img src="/image/2015/08/dump_3893862848196469772_thumb.png" alt="dump_3893862848196469772" title="dump_3893862848196469772"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'cancel'</span>).when(text=<span class="string">u'取消'</span>).click(text=<span class="string">u'取消'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>之后要点击一下back键，这时又会弹一个是否退出的框，这次我要点击“确认”</p>
+<p><a href="/image/2015/08/dump_8250787869838979823.png"><img src="/image/2015/08/dump_8250787869838979823_thumb.png" alt="dump_8250787869838979823" title="dump_8250787869838979823"></a></p>
+<p>这个确认我是后面单独处理的，其实也可以放在watcher里，只是我的考虑是有时点击back键的时候不一定会弹出来这个框，所以我会尝试多点击几次，直到这个框出来</p>
+<p>但现在就有一个问题了，刚才写了一个d.watcher(‘cancel’).when(text=u’取消’).click(text=u’取消’)，这时当弹出这个框的时候，watcher就要起作用了，就会先去点击取消，这不是我想要的，所以我将之前点击取消的加了一个限制条件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'cancel'</span>).when(text=<span class="string">u'取消'</span>).when(textContains=<span class="string">u'超强防护能够极大提高'</span>).click(text=<span class="string">u'取消'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>textContains的意思就是和包含里面的文字，上面的意思就是当界面中text是“取消”的同时还要有一个view的text中要包含u’超强防护能够极大提高’,这样的话就限制的点击“取消”的条件，再遇到退出时的提示框就不会再会点击”取消”了</p>
+<p>尽可能的想到可能出现的弹框，比较在小米手机中安装应用会弹一个小米的安装确认界面，使用下面的watcher来进行监测点击<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'install'</span>).when(text=<span class="string">u'安装'</span>).when(textContains=<span class="string">u'是否要安装该应用程序'</span>).click(text=<span class="string">u'安装'</span>,className=<span class="string">'android.widget.Button'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>总的watcher就是下面的样子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d.watcher(<span class="string">'allowroot'</span>).when(text=<span class="string">u'允许'</span>).click(text=<span class="string">u'允许'</span>)</span><br><span class="line">        d.watcher(<span class="string">'install'</span>).when(text=<span class="string">u'安装'</span>).when(textContains=<span class="string">u'是否要安装该应用程序'</span>).click(text=<span class="string">u'安装'</span>,className=<span class="string">'android.widget.Button'</span>) <span class="comment">#专门为小米弹出的安装拦截</span></span><br><span class="line">        d.watcher(<span class="string">'cancel'</span>).when(text=<span class="string">u'取消'</span>).when(textContains=<span class="string">u'超强防护能够极大提高'</span>).click(text=<span class="string">u'取消'</span>)</span><br><span class="line">        d.watcher(<span class="string">'confirm'</span>).when(text=<span class="string">u'确认'</span>).when(textContains=<span class="string">u'应用程序许可'</span>).click(text=<span class="string">u'确认'</span>)</span><br><span class="line">        d.watcher(<span class="string">'agree'</span>).when(text=<span class="string">u'同意并使用'</span>).click(text=<span class="string">u'同意并使用'</span>)</span><br><span class="line">        d.watcher(<span class="string">'weishiuninstall'</span>).when(textContains=<span class="string">u'暂不处理'</span>).click(textContains=<span class="string">u'暂不处理'</span>)</span><br></pre></td></tr></table></figure>
+<p>然后使用d.watchers.run()来启动watcher</p>
+<p>但是在实际的watcher中，我发现这个watcher并没有想象的那样好用，有时经常是明明有相应的view但是就是点击不上，经过多次尝试，我发现，当界面已经出现的时候，这时我再强行的使用run()方法来启动watchers，这时它就能很好的点击了，所以基于此，我写了一个循环来来无限的调用run方法，times限制了次数，根据项目的实际进行调整吧，sleep时间也可以相应的调整<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">runwatch</span><span class="params">(d,data)</span>:</span></span><br><span class="line">    times = <span class="number">120</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">if</span> data == <span class="number">1</span>:                </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="comment"># d.watchers.reset()</span></span><br><span class="line">        d.watchers.run()        </span><br><span class="line">        times -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> times == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br></pre></td></tr></table></figure></p>
+<p>监视的时候又不能只跑监视程序，还要跑相应的测试步骤，所以这里我把这个runwatch方法放到一个线程中去跑，起一个线程用作监视，脚本的测试方法放在另外的线程上跑</p>
+<p>线程函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#线程函数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FuncThread</span><span class="params">(threading.Thread)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func, *params, **paramMap)</span>:</span></span><br><span class="line">        threading.Thread.__init__(self)</span><br><span class="line">        self.func = func</span><br><span class="line">        self.params = params</span><br><span class="line">        self.paramMap = paramMap</span><br><span class="line">        self.rst = <span class="keyword">None</span></span><br><span class="line">        self.finished = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.rst = self.func(*self.params, **self.paramMap)</span><br><span class="line">        self.finished = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getResult</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.rst</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isFinished</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.finished</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doInThread</span><span class="params">(func, *params, **paramMap)</span>:</span></span><br><span class="line">    t_setDaemon = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'t_setDaemon'</span> <span class="keyword">in</span> paramMap:</span><br><span class="line">        t_setDaemon = paramMap[<span class="string">'t_setDaemon'</span>]</span><br><span class="line">        <span class="keyword">del</span> paramMap[<span class="string">'t_setDaemon'</span>]</span><br><span class="line">    ft = FuncThread(func, *params, **paramMap)</span><br><span class="line">    <span class="keyword">if</span> t_setDaemon != <span class="keyword">None</span>:</span><br><span class="line">        ft.setDaemon(t_setDaemon)</span><br><span class="line">    ft.start()</span><br><span class="line">    <span class="keyword">return</span> ft</span><br></pre></td></tr></table></figure></p>
+<p>所以这里启动线程来跑runwatcher的调用就是</p>
+<p>data = 0</p>
+<p>doInThread(runwatch,d,data,t_setDaemon=True)</p>
+<h1 id="多台手机的运行问题"><a href="#多台手机的运行问题" class="headerlink" title="多台手机的运行问题"></a>多台手机的运行问题</h1><p>基本的思路就是这样，这样当脚本都写完了以后在单个手机上运行很好，但是一旦插入多个手机就会出现一个问题，所有watcher只在一台手机上有效，另外的手机就只能傻傻的不知道点击，这个问题困扰了很久，我在github上也给作者发issue，但是后来我自已找到了解决的办法，就是在d=Device(Serial)的时候加上local_port端口号，让每台手机使用不同的local_port端口号，这样各自运行各自的，都很完好</p>
+<h1 id="最终的代码"><a href="#最终的代码" class="headerlink" title="最终的代码"></a>最终的代码</h1><p>以下了测试脚本的代码</p>
+<p>mkiller.py,主测试脚本文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:gbk</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os,sys,time,re,csv</span><br><span class="line"><span class="keyword">import</span> log</span><br><span class="line"><span class="keyword">import</span> util</span><br><span class="line"><span class="keyword">from</span> uiautomator <span class="keyword">import</span> Device</span><br><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">import</span> log,logging</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"></span><br><span class="line">optpath = os.getcwd()                      <span class="comment">#获取当前操作目录</span></span><br><span class="line">imgpath = os.path.join(optpath,<span class="string">'img'</span>)      <span class="comment">#截图目录</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanEnv</span><span class="params">()</span>:</span></span><br><span class="line">    os.system(<span class="string">'adb kill-server'</span>)</span><br><span class="line">    needClean = [<span class="string">'log.log'</span>,<span class="string">'img'</span>,<span class="string">'rst'</span>]</span><br><span class="line">    pwd = os.getcwd()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> needClean:</span><br><span class="line">        delpath = os.path.join(pwd,i)</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(delpath):</span><br><span class="line">            cmd = <span class="string">'del /f/s/q "%s"'</span>% delpath</span><br><span class="line">            os.system(cmd)</span><br><span class="line">        <span class="keyword">elif</span> os.path.isdir(delpath):</span><br><span class="line">            cmd = <span class="string">'rd /s/q "%s"'</span> %delpath</span><br><span class="line">            os.system(cmd)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(<span class="string">'rst'</span>):</span><br><span class="line">        os.mkdir(<span class="string">'rst'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">runwatch</span><span class="params">(d,data)</span>:</span></span><br><span class="line">    times = <span class="number">120</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">if</span> data == <span class="number">1</span>:                </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="comment"># d.watchers.reset()</span></span><br><span class="line">        d.watchers.run()        </span><br><span class="line">        times -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> times == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">installapk</span><span class="params">(apklist,d,device)</span>:</span></span><br><span class="line">    sucapp = []</span><br><span class="line">    errapp = []</span><br><span class="line">    <span class="comment"># d = Device(device)</span></span><br><span class="line">    <span class="comment">#初始化一个结果文件</span></span><br><span class="line">    d.screen.on()</span><br><span class="line">    rstlogger = log.Logger(<span class="string">'rst/%s.log'</span>%device,clevel = logging.DEBUG,Flevel = logging.INFO)</span><br><span class="line">    <span class="comment">#先安装mkiller</span></span><br><span class="line">    mkillerpath = os.path.join(os.getcwd(),<span class="string">'MKiller_1001.apk'</span>)</span><br><span class="line">    cmd = <span class="string">'adb -s %s install -r %s'</span>% (device,mkillerpath)</span><br><span class="line">    util.exccmd(cmd)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkcancel</span><span class="params">(d,sucapp,errapp)</span>:</span></span><br><span class="line">        times = <span class="number">10</span></span><br><span class="line">        <span class="keyword">while</span>(times):</span><br><span class="line">            <span class="keyword">if</span> d(textContains = <span class="string">u'取消安装'</span>).count:</span><br><span class="line">                <span class="keyword">print</span> d(textContains = <span class="string">u'取消安装'</span>,className=<span class="string">'android.widget.Button'</span>).info[<span class="string">'text'</span>]</span><br><span class="line">                d(textContains = <span class="string">u'取消安装'</span>,className=<span class="string">'android.widget.Button'</span>).click()</span><br><span class="line">                rstlogger.info(device+<span class="string">'测试成功，有弹出取消安装对话框'</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">                times -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> times == <span class="number">0</span>:</span><br><span class="line">                    rstlogger.error(device+<span class="string">'测试失败，没有弹出取消安装对话框'</span>)</span><br><span class="line">    <span class="keyword">try</span>:        </span><br><span class="line">        d.watcher(<span class="string">'allowroot'</span>).when(text=<span class="string">u'允许'</span>).click(text=<span class="string">u'允许'</span>)</span><br><span class="line">        d.watcher(<span class="string">'install'</span>).when(text=<span class="string">u'安装'</span>).when(textContains=<span class="string">u'是否要安装该应用程序'</span>).click(text=<span class="string">u'安装'</span>,className=<span class="string">'android.widget.Button'</span>) <span class="comment">#专门为小米弹出的安装拦截</span></span><br><span class="line">        d.watcher(<span class="string">'cancel'</span>).when(text=<span class="string">u'取消'</span>).when(textContains=<span class="string">u'超强防护能够极大提高'</span>).click(text=<span class="string">u'取消'</span>)</span><br><span class="line">        d.watcher(<span class="string">'confirm'</span>).when(text=<span class="string">u'确认'</span>).when(textContains=<span class="string">u'应用程序许可'</span>).click(text=<span class="string">u'确认'</span>)</span><br><span class="line">        d.watcher(<span class="string">'agree'</span>).when(text=<span class="string">u'同意并使用'</span>).click(text=<span class="string">u'同意并使用'</span>)</span><br><span class="line">        d.watcher(<span class="string">'weishiuninstall'</span>).when(textContains=<span class="string">u'暂不处理'</span>).click(textContains=<span class="string">u'暂不处理'</span>)</span><br><span class="line">        <span class="comment"># d.watchers.run()</span></span><br><span class="line">        data = <span class="number">0</span></span><br><span class="line">        util.doInThread(runwatch,d,data,t_setDaemon=<span class="keyword">True</span>)</span><br><span class="line">        <span class="comment">#启动急救箱并退出急救箱</span></span><br><span class="line">        cmd = <span class="string">'adb -s %s shell am start com.qihoo.mkiller/com.qihoo.mkiller.ui.index.AppEnterActivity'</span>% device</span><br><span class="line">        util.exccmd(cmd)</span><br><span class="line">        time.sleep(<span class="number">5</span>)</span><br><span class="line">        times = <span class="number">3</span></span><br><span class="line">        <span class="keyword">while</span>(times):</span><br><span class="line">            d.press.back()</span><br><span class="line">            <span class="keyword">if</span> d(text=<span class="string">u'确认'</span>).count:</span><br><span class="line">                d(text=<span class="string">u'确认'</span>).click()</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line">                times -=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> apklist:</span><br><span class="line">            apkpath = item</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(apkpath):</span><br><span class="line">                logger.error(<span class="string">'%s的应用不存在，请检查'</span>%apkpath)</span><br><span class="line">                <span class="keyword">continue</span> </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> device:</span><br><span class="line">                cmd = <span class="string">'adb install -r "%s"'</span> % apkpath</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cmd = <span class="string">'adb -s %s install -r "%s"'</span>%(device,apkpath)</span><br><span class="line">            util.doInThread(checkcancel,d,sucapp,errapp)</span><br><span class="line">            rst = util.exccmd(cmd)</span><br><span class="line">    <span class="keyword">except</span> Exception, e:</span><br><span class="line">        logger.error(traceback.format_exc())</span><br><span class="line">        data = <span class="number">1</span></span><br><span class="line">    data = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> sucapp</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">finddevices</span><span class="params">()</span>:</span></span><br><span class="line">    rst = util.exccmd(<span class="string">'adb devices'</span>)</span><br><span class="line">    devices = re.findall(<span class="string">r'(.*?)\s+device'</span>,rst)</span><br><span class="line">    <span class="keyword">if</span> len(devices) &gt;<span class="number">1</span>:</span><br><span class="line">        deviceIds = devices[<span class="number">1</span>:]</span><br><span class="line">        logger.info(<span class="string">'共找到%s个手机'</span>%str(len(devices)<span class="number">-1</span>))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> deviceIds:            </span><br><span class="line">            logger.info(<span class="string">'ID为%s'</span>%i)</span><br><span class="line">        <span class="keyword">return</span> deviceIds</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        logger.error(<span class="string">'没有找到手机，请检查'</span>)</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#needcount:需要安装的apk数量，默认为0，既安所有</span></span><br><span class="line"><span class="comment">#deviceids:手机的列表</span></span><br><span class="line"><span class="comment">#apklist:apk应用程序的列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doInstall</span><span class="params">(deviceids,apklist)</span>:</span></span><br><span class="line">    count = len(deviceids)</span><br><span class="line">    port_list = range(<span class="number">5555</span>,<span class="number">5555</span>+count)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(deviceids)):</span><br><span class="line">        d = Device(deviceids[i],port_list[i])</span><br><span class="line">        util.doInThread(installapk,apklist,d,deviceids[i])</span><br><span class="line"></span><br><span class="line"><span class="comment">#结束应用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">uninstall</span><span class="params">(deviceid,packname,timeout=<span class="number">20</span>)</span>:</span></span><br><span class="line">    cmd = <span class="string">'adb -s %s uninstall %s'</span> %(deviceid,packname) </span><br><span class="line">    ft = util.doInThread(os.system,cmd,t_setDaemon=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">if</span> ft.isFinished():</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">            timeout -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> timeout == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要配置好adb 环境变量</span></span><br><span class="line"><span class="comment"># 1.先确定有几台手机</span></span><br><span class="line"><span class="comment"># 2.再确定有多少个应用</span></span><br><span class="line"><span class="comment"># 3.先安装mkiller,启动mkiller</span></span><br><span class="line"><span class="comment"># 4.再安装测试的样本</span></span><br><span class="line"><span class="comment"># 5.检查是否有取消安装的按钮出现，出现说明测试通过，没出现说明测试失败</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    cleanEnv()</span><br><span class="line">    logger = util.logger</span><br><span class="line">    devicelist = finddevices()</span><br><span class="line">    <span class="keyword">if</span> devicelist:       </span><br><span class="line">        apkpath = os.path.join(os.getcwd(),<span class="string">'apk'</span>)</span><br><span class="line">        apklist = util.listFile(apkpath)</span><br><span class="line">        doInstall(devicelist,apklist) <span class="comment">#每个手机都要安装apklist里的apk</span></span><br></pre></td></tr></table></figure></p>
+<p>util.py 线程与执行cmd脚本函数文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:gbk</span></span><br><span class="line"><span class="keyword">import</span> os,sys</span><br><span class="line"><span class="keyword">import</span> log</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">logger = log.Logger(<span class="string">'log.log'</span>,clevel = logging.DEBUG,Flevel = logging.INFO)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exccmd</span><span class="params">(cmd)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> os.popen(cmd).read()</span><br><span class="line">    <span class="keyword">except</span> Exception:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#遍历目录内的文件列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listFile</span><span class="params">(path, isDeep=True)</span>:</span></span><br><span class="line">    _list = []</span><br><span class="line">    <span class="keyword">if</span> isDeep:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">                <span class="keyword">for</span> fl <span class="keyword">in</span> files:</span><br><span class="line">                    _list.append(<span class="string">'%s\%s'</span> % (root, fl))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> fn <span class="keyword">in</span> glob.glob( path + os.sep + <span class="string">'*'</span> ):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(fn):</span><br><span class="line">                _list.append(<span class="string">'%s'</span> % path + os.sep + fn[fn.rfind(<span class="string">'\\'</span>)+<span class="number">1</span>:])</span><br><span class="line">    <span class="keyword">return</span> _list</span><br><span class="line"></span><br><span class="line"><span class="comment">#线程函数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FuncThread</span><span class="params">(threading.Thread)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func, *params, **paramMap)</span>:</span></span><br><span class="line">        threading.Thread.__init__(self)</span><br><span class="line">        self.func = func</span><br><span class="line">        self.params = params</span><br><span class="line">        self.paramMap = paramMap</span><br><span class="line">        self.rst = <span class="keyword">None</span></span><br><span class="line">        self.finished = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.rst = self.func(*self.params, **self.paramMap)</span><br><span class="line">        self.finished = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getResult</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.rst</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isFinished</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.finished</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doInThread</span><span class="params">(func, *params, **paramMap)</span>:</span></span><br><span class="line">    t_setDaemon = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'t_setDaemon'</span> <span class="keyword">in</span> paramMap:</span><br><span class="line">        t_setDaemon = paramMap[<span class="string">'t_setDaemon'</span>]</span><br><span class="line">        <span class="keyword">del</span> paramMap[<span class="string">'t_setDaemon'</span>]</span><br><span class="line">    ft = FuncThread(func, *params, **paramMap)</span><br><span class="line">    <span class="keyword">if</span> t_setDaemon != <span class="keyword">None</span>:</span><br><span class="line">        ft.setDaemon(t_setDaemon)</span><br><span class="line">    ft.start()</span><br><span class="line">    <span class="keyword">return</span> ft</span><br></pre></td></tr></table></figure></p>
+<p>log.py log相应的函数文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#coding=gbk</span></span><br><span class="line"><span class="keyword">import</span> logging,os</span><br><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"></span><br><span class="line">FOREGROUND_WHITE = <span class="number">0x0007</span></span><br><span class="line">FOREGROUND_BLUE = <span class="number">0x01</span> <span class="comment"># text color contains blue.</span></span><br><span class="line">FOREGROUND_GREEN= <span class="number">0x02</span> <span class="comment"># text color contains green.</span></span><br><span class="line">FOREGROUND_RED  = <span class="number">0x04</span> <span class="comment"># text color contains red.</span></span><br><span class="line">FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN</span><br><span class="line"></span><br><span class="line">STD_OUTPUT_HANDLE= <span class="number">-11</span></span><br><span class="line">std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_color</span><span class="params">(color, handle=std_out_handle)</span>:</span></span><br><span class="line">    bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)</span><br><span class="line">    <span class="keyword">return</span> bool</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, path,clevel = logging.DEBUG,Flevel = logging.DEBUG)</span>:</span></span><br><span class="line">        self.logger = logging.getLogger(path)</span><br><span class="line">        self.logger.setLevel(logging.DEBUG)</span><br><span class="line">        fmt = logging.Formatter(<span class="string">'[%(asctime)s] [%(levelname)s] %(message)s'</span>, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">        <span class="comment">#设置CMD日志</span></span><br><span class="line">        sh = logging.StreamHandler()</span><br><span class="line">        sh.setFormatter(fmt)</span><br><span class="line">        sh.setLevel(clevel)</span><br><span class="line">        <span class="comment">#设置文件日志</span></span><br><span class="line">        fh = logging.FileHandler(path)</span><br><span class="line">        fh.setFormatter(fmt)</span><br><span class="line">        fh.setLevel(Flevel)</span><br><span class="line">        self.logger.addHandler(sh)</span><br><span class="line">        self.logger.addHandler(fh)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">debug</span><span class="params">(self,message)</span>:</span></span><br><span class="line">        self.logger.debug(message)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">info</span><span class="params">(self,message)</span>:</span></span><br><span class="line">        self.logger.info(message)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">war</span><span class="params">(self,message,color=FOREGROUND_YELLOW)</span>:</span></span><br><span class="line">        set_color(color)</span><br><span class="line">        self.logger.warn(message)</span><br><span class="line">        set_color(FOREGROUND_WHITE)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">error</span><span class="params">(self,message,color=FOREGROUND_RED)</span>:</span></span><br><span class="line">        set_color(color)</span><br><span class="line">        self.logger.error(message)</span><br><span class="line">        set_color(FOREGROUND_WHITE)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cri</span><span class="params">(self,message)</span>:</span></span><br><span class="line">        self.logger.critical(message)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">'__main__'</span>:</span><br><span class="line">    logyyx = Logger(<span class="string">'yyx.log'</span>,logging.WARNING,logging.DEBUG)</span><br><span class="line">    logyyx.debug(<span class="string">'一个debug信息'</span>)</span><br><span class="line">    logyyx.info(<span class="string">'一个info信息'</span>)</span><br><span class="line">    logyyx.war(<span class="string">'一个warning信息'</span>)</span><br><span class="line">    logyyx.error(<span class="string">'一个error信息'</span>)</span><br><span class="line">    logyyx.cri(<span class="string">'一个致命critical信息'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这个小测试应用虽然比较简单，但是由于刚刚接触uiautomator的python封装，所以还是遇到了一些麻烦，不过还好，最终的结果是很好的解决了相应的问题，这里也算是抛砖引玉吧，这个uiautomator还有很多好玩的值得探索的地方，待以后慢慢发现~</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 使用uiautomator的python封装进行android的UI测试<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html">http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html" data-id="cjb9mh8ye005etsdn6wzxhey9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/1381.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    使用jquery在一个页面中有多个form表单做数据有效性校验
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/1350.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">使用wxPython建立一个计算文件md5的GUI工具</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

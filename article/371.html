@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>通过新浪SAE搭建自己的个人博客 | 杨彦星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="新浪SAE是个好东西，对于学习PHP的同学是一个不错的练习空间，（现在已经推出了java了，不过需要邀请码）不用在四处寻找廉价的主机，而且 平台上已经集成了很多现成的应用，博客空间有wordpress，emlog等，PHP框架有thinkPHP,cakephp等，而且还是 ecshop，最土等电子商务系统，更方便的应用于用户，感兴趣的同学可以体验一下，现在我将写一篇关于搭建wordpress博客应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过新浪SAE搭建自己的个人博客">
+<meta property="og:url" content="http://www.yangyanxing.com/article/371.html">
+<meta property="og:site_name" content="杨彦星">
+<meta property="og:description" content="新浪SAE是个好东西，对于学习PHP的同学是一个不错的练习空间，（现在已经推出了java了，不过需要邀请码）不用在四处寻找廉价的主机，而且 平台上已经集成了很多现成的应用，博客空间有wordpress，emlog等，PHP框架有thinkPHP,cakephp等，而且还是 ecshop，最土等电子商务系统，更方便的应用于用户，感兴趣的同学可以体验一下，现在我将写一篇关于搭建wordpress博客应">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-16T10:10:42.545Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通过新浪SAE搭建自己的个人博客">
+<meta name="twitter:description" content="新浪SAE是个好东西，对于学习PHP的同学是一个不错的练习空间，（现在已经推出了java了，不过需要邀请码）不用在四处寻找廉价的主机，而且 平台上已经集成了很多现成的应用，博客空间有wordpress，emlog等，PHP框架有thinkPHP,cakephp等，而且还是 ecshop，最土等电子商务系统，更方便的应用于用户，感兴趣的同学可以体验一下，现在我将写一篇关于搭建wordpress博客应">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">杨彦星</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/1.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/1.jpg" />
+            <h2 id="name">杨彦星</h2>
+            <h3 id="title">自由翱翔的天空</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
+            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                99
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-371" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            通过新浪SAE搭建自己的个人博客
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/article/371.html">
+            <time datetime="2012-04-22T17:02:55.000Z" itemprop="datePublished">2012-04-23</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>新浪SAE是个好东西，对于学习PHP的同学是一个不错的练习空间，（现在已经推出了java了，不过需要邀请码）不用在四处寻找廉价的主机，而且 平台上已经集成了很多现成的应用，博客空间有wordpress，emlog等，PHP框架有thinkPHP,cakephp等，而且还是 ecshop，最土等电子商务系统，更方便的应用于用户，感兴趣的同学可以体验一下，现在我将写一篇关于搭建wordpress博客应用和自己创建一个新 浪微博的简单应用来抛砖引玉，让更多的同学朋友了解SAE。</p>
+<p>SAE地址 <a href="http://rrurl.cn/fzgC5N" target="_blank" rel="noopener">http://sae.sina.com.cn/</a></p>
+<p>需要准备：新浪微博账号（必须），自己注册的域名（可选），SAE提供二级域名的访问，xxx.sinaapp.com 也可以绑定自己的域名，注意这里的域名可以不用备案哦~</p>
+<h1 id="搭建wordpress博客应用"><a href="#搭建wordpress博客应用" class="headerlink" title="搭建wordpress博客应用"></a>搭建wordpress博客应用</h1><p>具体步骤<br><a id="more"></a></p>
+<h2 id="用新浪微博账号授权"><a href="#用新浪微博账号授权" class="headerlink" title="用新浪微博账号授权"></a>用新浪微博账号授权</h2><p>打开SAE地址 <a href="http://rrurl.cn/fzgC5N" target="_blank" rel="noopener">http://sae.sina.com.cn/</a> 点击“用新浪微博账号”登录，用新浪微博账号登录后点击导航条上的“应用仓库”，选择下面的wordpress</p>
+<h2 id="点击安装些应"><a href="#点击安装些应" class="headerlink" title="点击安装些应"></a>点击安装些应</h2><p>点击安装些应，选择基于URL安装，并且在填写二级域名处填写一个独一无二的域名，接着点击“安装到以上位置”</p>
+<h2 id="设置站点信息"><a href="#设置站点信息" class="headerlink" title="设置站点信息"></a>设置站点信息</h2><p>稍等一会，程序会自动安装的，安装完毕后点击提示中的”点击此处进入初始化页面”进行个人博客的初始化，站点名字，管理员及密码等，设置好了以后，点击下面的“安装wordpress”，一切OK了，个人博客搭建完毕。简单吧。</p>
+<h2 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h2><p>绑定自己的域名，在自己的应用列表下选择刚才你创建的应用名字，不是后面的二级域名啊，切换到“应用设置”里面，在独立域名设置那添加一个你自己的域名，这里添加的时候是把自己的域名添加一个CNAME解析，再添加一个A解析，具体是什么，会有提示告诉你的~</p>
+<h2 id="wordpress-的模板添加与修改"><a href="#wordpress-的模板添加与修改" class="headerlink" title="wordpress 的模板添加与修改"></a>wordpress 的模板添加与修改</h2><p>wordpress 的模板添加与修改，这里比用自己的虚拟主机有点麻烦，因为新浪SAE不允许wordpress后台更新模板，所以与下载插件，所以更改模板的时候有两种方 法，SVN或者用SAE的代码编辑器来编辑，推荐使用SVN，比SAE更改要简单方便 SVN的使用方法参见<a href="http://sae.sina.com.cn/?m=devcenter&amp;catId=212" target="_blank" rel="noopener">http://sae.sina.com.cn/?m=devcenter&amp;catId=212</a> 这里就不重复了。添加插件也用同样的方法。</p>
+<h1 id="简单的调用新浪微博API来更新自己的微博"><a href="#简单的调用新浪微博API来更新自己的微博" class="headerlink" title="简单的调用新浪微博API来更新自己的微博"></a>简单的调用新浪微博API来更新自己的微博</h1><p>准备工作，新浪微博账号并且开通新浪微博开发者平台，注册地址 <a href="http://open.weibo.com/" target="_blank" rel="noopener">http://open.weibo.com/</a></p>
+<p>具体步骤</p>
+<ul>
+<li><p>打开新浪微博开放平台 <a href="http://open.weibo.com/" target="_blank" rel="noopener">http://open.weibo.com/</a> 点击下面的“我是开发者” <a href="http://open.weibo.com/development" target="_blank" rel="noopener">http://open.weibo.com/development</a> 进入开发者页面，点击创建应用—&gt;选择第一个“站内应用”</p>
+</li>
+<li><p>填写应用名字，应用介绍等信息（随便写的），域名绑定选择默认的“否”，点击“创建” OK</p>
+</li>
+<li><p>转到刚才你创建的应用的详细页面，其实这里的信息只有两个有用，一个是APP Keys，一个是App Secret,记录好这两个值，以后的应用都要用这两个值</p>
+</li>
+<li><p>由于新浪SAE已经集合了最新的PHP版的SDK，可以不用下载，直接用，但有兴趣的同学可以下载来看看人家的方法是怎么实现的，对于学习者来说还是挺有用的~</p>
+</li>
+<li><p>在本地新建三个php文件，名字随便起，我这里起的是getRequestToken.php（用于请求request token），请求request token（用于获得的request token和token secret来初始化SaeTOAuth对象），config.php（可选，主要用于初始化常量，推荐使用）</p>
+</li>
+<li><p>在config.php中写入以下代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">'Content-Type: text/html; charset=UTF-8'</span>);</span><br><span class="line"></span><br><span class="line">define( <span class="string">"WB_AKEY"</span> , <span class="string">'你自己的APP Keys'</span> );</span><br><span class="line">define( <span class="string">"WB_SKEY"</span> , <span class="string">'你自己的App Secret'</span> );</span><br><span class="line">define( <span class="string">"WB_CALLBACK_URL"</span> , <span class="string">'http://kevinweibo.sinaapp.com/getAccess.php'</span> );<span class="comment">//稍后介绍这里怎么填写</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在getRequestToken.php中写入以下代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">include</span> (<span class="string">'config.php'</span>);<span class="comment">//我这里是将WB_AKEY和WB_SKEY写入到了一个config.php文件中</span></span><br><span class="line"><span class="keyword">include</span> (<span class="string">'saet.ex.class.php'</span>);</span><br><span class="line">$auth=<span class="keyword">new</span> SaeTOAuth(WB_AKEY,WB_SKEY);<span class="comment">//your app key and app secret</span></span><br><span class="line"><span class="comment">//这一步是去sina服务器请求request token</span></span><br><span class="line">$token=$auth-&gt;getRequestToken();</span><br><span class="line"><span class="comment">//这一步是用request token拼装认证的url,第三个参数是获得用户认证许可后跳转到的url。就是我们在SAE注册应用的二级域名</span></span><br><span class="line">$url=$auth-&gt;getAuthorizeURL($token,<span class="keyword">true</span>,<span class="string">"http://kevinweibo.sinaapp.com/getAccessToken.php"</span>);</span><br><span class="line">$_SESSION[<span class="string">'token'</span>]=$token[<span class="string">'oauth_token'</span>];<span class="comment">//记录下来备用</span></span><br><span class="line">$_SESSION[<span class="string">'token_secret'</span>]=$token[<span class="string">'oauth_token_secret'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//最后将$url当成一个链接输出到页面中,用户点击了这个链接就会跳转到认证页面</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;a href=$url&gt;欢迎光临，请使用微博账号受权登录!&lt;/a&gt;"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>5.3 在getAccessToken.php中写入以下代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">include</span> (<span class="string">'config.php'</span>);</span><br><span class="line"><span class="keyword">include</span> (<span class="string">'saet.ex.class.php'</span>);</span><br><span class="line"><span class="comment">//利用第一步获得的request token和token secret来初始化SaeTOAuth对象</span></span><br><span class="line">$auth=<span class="keyword">new</span> SaeTOAuth(WB_AKEY,WB_SKEY,$_SESSION[<span class="string">'token'</span>],$_SESSION[<span class="string">'token_secret'</span>]);</span><br><span class="line"><span class="comment">//去换取真正有用的access token</span></span><br><span class="line">$accessToken=$auth-&gt;getAccessToken($_REQUEST[<span class="string">'oauth_verifier'</span>],$_REQUEST[<span class="string">'oauth_token'</span>]);</span><br><span class="line"><span class="comment">//print_r($accessToken);</span></span><br><span class="line"><span class="comment">//存储起来,后面每次请求都要带上这两个值</span></span><br><span class="line">$_SESSION[<span class="string">'token'</span>]=$accessToken[<span class="string">'oauth_token'</span>];</span><br><span class="line">$_SESSION[<span class="string">'token_secret'</span>]=$accessToken[<span class="string">'oauth_token_secret'</span>];</span><br><span class="line"><span class="comment">//接下来你就可以跳转到你的应用页面开始微博之旅了,例如输出一句js,window.location.href="send.php"</span></span><br><span class="line"><span class="comment">//echo "token:".$_SESSION['token'];</span></span><br><span class="line"><span class="comment">//echo "&lt;br/&gt;token_secret:".$_SESSION['token_secret']."&lt;br/&gt;";</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;script&gt;window.location.href='send.php'&lt;/script&gt;"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>5.4 注意最后一句说的是打开一个send.php页面，所以这里还要新建一个send.php文件，在里面打入以下代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">include</span> (<span class="string">'config.php'</span>);</span><br><span class="line"><span class="comment">//include ('saetv2.ex.class.php');</span></span><br><span class="line"><span class="keyword">include</span> (<span class="string">'saet.ex.class.php'</span>);</span><br><span class="line">$auth = <span class="keyword">new</span> SaeTClient(WB_AKEY,WB_SKEY, $_SESSION[<span class="string">'token'</span>], $_SESSION[<span class="string">'token_secret'</span>]);</span><br><span class="line">$mes = $_POST[msg];</span><br><span class="line">$auth-&gt;update($mes);<span class="comment">// 这句话是关键，其实发新浪微博的方法就这个，非常简单~</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form method=<span class="string">"POST"</span>&gt;</span><br><span class="line">要发送的微博：&lt;input type=<span class="string">"text"</span> name=<span class="string">"msg"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;a href=<span class="string">"weibolist.php"</span>&gt;进入你的微博列表页面&lt;/a&gt;&lt;br /&gt; <span class="comment">//这个不用写，写了后有更好玩的~</span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>把这四个文件打包成一个zip文件，到新浪SAE里面创建一个应用，这时在创建应用的时候就不要选择基于URL安装了，选择下面的“选择文件“，把刚才那压缩的zip文件，点击”安装到以上位置“</li>
+</ul>
+<ul>
+<li><p>刚才config.php代码里面的define( “WB_CALLBACK_URL” , ‘<a href="http://kevinweibo.sinaapp.com/getAccess.php" target="_blank" rel="noopener">http://kevinweibo.sinaapp.com/getAccess.php</a>‘ ); 这里面红字应该知道填写什么了吧？你应用的地址加上getaccess.php</p>
+</li>
+<li><p>好了，大功告成，可以爽一爽了，进入你刚才创建的应用</p>
+</li>
+</ul>
+<p><a href="http://kevinweibo.sinaapp.com/getRequestToken.php" target="_blank" rel="noopener">http://kevinweibo.sinaapp.com/getRequestToken.php</a></p>
+<p>点击上面的受权链接，并将自己的微博账号受权，接着会进入到send.php页面，随便写句话，点击”提交“，看看微博发出去没，哈哈~</p>
+<h1 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h1><p>要玩点更好玩的，可以下载微博SDK，查看里面的API方法，或者在线的查看 <a href="http://open.weibo.com/wiki/API%E6%96%87%E6%A1%A3_V2" target="_blank" rel="noopener">http://open.weibo.com/wiki/API%E6%96%87%E6%A1%A3_V2</a></p>
+<p>我这里创建了个weibolist.php文件，来简单的调用了几个<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">include</span> (<span class="string">'config.php'</span>);</span><br><span class="line"><span class="comment">//include ('saetv2.ex.class.php');</span></span><br><span class="line"><span class="keyword">include</span> (<span class="string">'saet.ex.class.php'</span>);</span><br><span class="line"></span><br><span class="line">$auth = <span class="keyword">new</span> SaeTClient(WB_AKEY,WB_SKEY, $_SESSION[<span class="string">'token'</span>], $_SESSION[<span class="string">'token_secret'</span>]);</span><br><span class="line">$publicmsg=$auth-&gt;followers();<span class="comment">//调用followers方法来显示当前用户的粉丝列表</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//用foreach方法来遍历数组</span></span><br><span class="line"><span class="keyword">foreach</span> ($publicmsg <span class="keyword">as</span> $key=&gt;$value)&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"$key =&gt; $value"</span>.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="keyword">foreach</span>($value <span class="keyword">as</span> $key1=&gt;$value1)&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"$key1 =&gt; $value1"</span>.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这里是旧版的SDK的例子</span></span><br><span class="line">$mes = $_POST[msg];</span><br><span class="line">$auth-&gt;update($mes);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form method=<span class="string">"POST"</span>&gt;</span><br><span class="line">要发送的微博：&lt;input type=<span class="string">"text"</span> name=<span class="string">"msg"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;h2&gt;第二种种发送新微博&lt;/h2&gt;</span><br><span class="line">&lt;form action=<span class="string">"weibolist.php"</span> method=<span class="string">"POST"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"msg"</span> style=<span class="string">"width:300px"</span> /&gt;</span><br><span class="line"> &lt;input type=<span class="string">"submit"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;发送图片微博&lt;/h2&gt;</span><br><span class="line">&lt;form action=<span class="string">"weibolist.php"</span> &gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"msg"</span> style=<span class="string">"width:300px"</span> value=<span class="string">"文字内容"</span> /&gt;</span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"pic"</span> style=<span class="string">"width:300px"</span> value=<span class="string">"图片url"</span> /&gt;</span><br><span class="line"> &lt;input type=<span class="string">"submit"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/form&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>($_REQUEST[<span class="string">'pic'</span>]) )&#123;</span><br><span class="line">$rr = $auth -&gt;upload( $_REQUEST[<span class="string">'msg'</span>] , $_REQUEST[<span class="string">'pic'</span>] );</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;发送完成&lt;/p&gt;"</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>先到这吧，更有意思的东西等待更新的发现~</p>
+
+        
+        
+        
+        <div class="article-footer-copyright">
+	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+	本文标题为: 通过新浪SAE搭建自己的个人博客<br>
+	本文链接为：<a href="http://www.yangyanxing.com/article/371.html">http://www.yangyanxing.com/article/371.html</a><br>
+
+</div>
+        <br><br>
+        
+        
+  <!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+  <!-- /css -->
+
+    <!-- Donate Module -->
+    <div id="donate_module">
+
+  <!-- btn_donate & tips -->
+  <div id="donate_board" class="donate_bar center">
+      <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+      
+    
+  </div>
+  <!-- /btn_donate & tips -->
+
+  <!-- donate guide -->
+    
+  <div id="donate_guide" class="donate_bar center hidden">
+        <br>
+      ------------------------------------------------------------------------------------------------------------------------------
+      <br>
+
+    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
+      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+        
+        &nbsp;&nbsp;
+
+    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
+      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
+    </a>
+
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>
+
+  </div>
+  <!-- /donate guide -->
+
+  <!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+  <!-- /donate script -->
+</div>
+<!-- /Donate Module -->
+           
+        
+        
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.yangyanxing.com/article/371.html" data-id="cjb9mh92d008ltsdn8smd7g98" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                      '<input class="article-share-input" value="' + url + '">',
+                      '<div class="article-share-links">',
+                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                      '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.yangyanxing.com/article/371.html#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/article/372.html" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    ThinkPHP四种实例化模型的方法
+                
+            </div>
+        </a>
+    
+    
+        <a href="/article/227.html" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">在SUSE中用Pidgin整合QQ与新浪微博</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="uyan_frame"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/try_in_python.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
+                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
+                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-apscheduler.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
+                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-webpy.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
+                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
+                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://opentest.360.cn/">360开测</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://testerhome.com/">TesterHome</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://coolshell.cn/">酷壳</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://stormzhang.com/">stormzhang博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imququ.com/">Jerry Qu</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 杨彦星<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <script>
+				(function(){
+				    var bp = document.createElement('script');
+				    var curProtocol = window.location.protocol.split(':')[0];
+				    if (curProtocol === 'https'){
+				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				  }
+				  else{
+				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				  }
+				    var s = document.getElementsByTagName("script")[0];
+				    s.parentNode.insertBefore(bp, s);
+				})();
+			</script>
+
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
