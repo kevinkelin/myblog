@@ -1,262 +1,173 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>使用python进行windows自动化测试（1） | 杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的 主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作 下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作 所用的工具有SpyL">
-<meta name="keywords" content="python,自动化测试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用python进行windows自动化测试（1）">
-<meta property="og:url" content="http://www.yangyanxing.com/article/920.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的 主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作 下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作 所用的工具有SpyL">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-16T10:10:42.368Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用python进行windows自动化测试（1）">
-<meta name="twitter:description" content="最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的 主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作 下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作 所用的工具有SpyL">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
+    
+    
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     
-
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
     
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
     
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>使用python进行windows自动化测试（1） | 杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/920.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="杨彦星">
+       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+       <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main"><article id="post-920" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">使用python进行windows自动化测试（1）</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-05T01:41:33+08:00">2013-10-05</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            使用python进行windows自动化测试（1）
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/920.html">
-            <time datetime="2013-10-04T17:41:33.000Z" itemprop="datePublished">2013-10-05</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <p>最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的</p>
 <p>主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作</p>
 <p>下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作</p>
 <p>所用的工具有SpyLite，用于查看窗口ID，句柄等信息<br> <a id="more"></a><br>工具下载 </p>
@@ -272,431 +183,492 @@
 <p>needCheck目录放需要检查md5的文件</p>
 <p>&#160;</p>
 <p>&#160;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment">#coding=gbk</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time,re,ctypes</span><br><span class="line"><span class="keyword">import</span> os,sys,subprocess,win32gui,win32con,win32api</span><br><span class="line"><span class="keyword">import</span> glob,time</span><br><span class="line"></span><br><span class="line"><span class="comment">#启进程函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createProcess</span><span class="params">(cmd, wait = False)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> wait:</span><br><span class="line">        proc = tryExcept(subprocess.Popen, cmd, stdout = subprocess.PIPE, stderr = subprocess.PIPE)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        proc = tryExcept(subprocess.Popen, cmd)</span><br><span class="line">    <span class="keyword">if</span> isExcept(proc):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> wait:</span><br><span class="line">        <span class="keyword">return</span> proc.pid</span><br><span class="line">    proc.communicate()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tryExcept</span><span class="params">(func, *params, **paramMap)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> func(*params, **paramMap)</span><br><span class="line">    <span class="keyword">except</span> Exception, e:</span><br><span class="line">        <span class="keyword">return</span> e</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isExcept</span><span class="params">(e, eType = Exception)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> isinstance(e, eType)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseWindow</span>:</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parseClickConfig</span><span class="params">(clkCfg)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> clkCfg == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">False</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> type(clkCfg) == bool:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span>, clkCfg, <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> type(clkCfg) == int:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">False</span>, clkCfg</span><br><span class="line">        <span class="keyword">if</span> len(clkCfg) == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span> type(clkCfg[<span class="number">0</span>]) == int <span class="keyword">and</span> type(clkCfg[<span class="number">1</span>]) == int:</span><br><span class="line">                <span class="keyword">return</span> clkCfg[<span class="number">0</span>], clkCfg[<span class="number">1</span>], <span class="keyword">False</span>, <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span>, <span class="keyword">None</span>, clkCfg[<span class="number">0</span>], clkCfg[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> len(clkCfg) == <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">if</span> type(clkCfg[<span class="number">2</span>]) == bool:</span><br><span class="line">                <span class="keyword">return</span> clkCfg[<span class="number">0</span>], clkCfg[<span class="number">1</span>], clkCfg[<span class="number">2</span>], <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> clkCfg[<span class="number">0</span>], clkCfg[<span class="number">1</span>], <span class="keyword">False</span>, clkCfg[<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> clkCfg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#点击窗口</span></span><br><span class="line"><span class="comment">#clkCfg:byDrv|mode|(x,y)|(byDrv,mode)|(x,y,byDrv)|(x,y,mode)|(x,y,byDrv,mode)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clickWindow</span><span class="params">(hwnd, clkCfg = None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isRawWindow(hwnd):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    topWindow(hwnd)</span><br><span class="line">    rect = getWindowRect(hwnd)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> rect:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    x, y, byDrv, mode = BaseWindow.parseClickConfig(clkCfg)</span><br><span class="line">    <span class="keyword">if</span> x == <span class="keyword">None</span>:</span><br><span class="line">        x = (rect[<span class="number">0</span>] + rect[<span class="number">2</span>]) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">elif</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        x += rect[<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        x += rect[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> y == <span class="keyword">None</span>:</span><br><span class="line">        y = (rect[<span class="number">1</span>] + rect[<span class="number">3</span>]) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">elif</span> y &lt; <span class="number">0</span>:</span><br><span class="line">        y += rect[<span class="number">3</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y += rect[<span class="number">1</span>]</span><br><span class="line">    clickMouse(x, y, byDrv, mode)</span><br><span class="line"></span><br><span class="line"><span class="comment">#点击鼠标</span></span><br><span class="line">CLICK_MOUSE = <span class="number">0</span></span><br><span class="line">CLICK_MOUSE_DOUBLE = <span class="number">1</span></span><br><span class="line">CLICK_MOUSE_RIGHT = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clickMouse</span><span class="params">(x, y, byDrv = False, mode = CLICK_MOUSE)</span>:</span></span><br><span class="line">    moveMouse(x, y, byDrv)</span><br><span class="line">    downMsg, upMsg = win32con.MOUSEEVENTF_LEFTDOWN, win32con.MOUSEEVENTF_LEFTUP</span><br><span class="line">    <span class="keyword">if</span> mode == CLICK_MOUSE_RIGHT:</span><br><span class="line">        downMsg, upMsg = win32con.MOUSEEVENTF_RIGHTDOWN, win32con.MOUSEEVENTF_RIGHTUP</span><br><span class="line">    win32api.mouse_event(downMsg, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    win32api.mouse_event(upMsg, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> mode == CLICK_MOUSE_DOUBLE:</span><br><span class="line">        win32api.mouse_event(downMsg, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        win32api.mouse_event(upMsg, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#移动鼠标</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveMouse</span><span class="params">(x, y, byDrv = False)</span>:</span></span><br><span class="line">    w, h = win32api.GetSystemMetrics(<span class="number">0</span>), win32api.GetSystemMetrics(<span class="number">1</span>)</span><br><span class="line">    x, y = int(float(x) / w * <span class="number">65535</span>), int(float(y) / h * <span class="number">65535</span>)</span><br><span class="line">    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE, x, y, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#获得窗口尺寸</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getWindowRect</span><span class="params">(hwnd)</span>:</span></span><br><span class="line">    rect = tryExcept(win32gui.GetWindowRect, hwnd)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> isExcept(rect):</span><br><span class="line">        <span class="keyword">return</span> rect</span><br><span class="line"></span><br><span class="line"><span class="comment">#置顶窗口</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">topWindow</span><span class="params">(hwnd)</span>:</span></span><br><span class="line">    fgHwnd = win32gui.GetForegroundWindow()</span><br><span class="line">    <span class="keyword">if</span> fgHwnd == hwnd:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    rst = tryExcept(win32gui.SetForegroundWindow, hwnd)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> isExcept(rst):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> getWindowClass(fgHwnd) == <span class="string">'Progman'</span> <span class="keyword">and</span> getWindowText(fgHwnd) == <span class="string">'Program Manager'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##获取窗口文字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getWindowText</span><span class="params">(hwnd, buf = ctypes.c_buffer<span class="params">(<span class="number">1024</span>)</span>)</span>:</span></span><br><span class="line">    size = ctypes.sizeof(buf)</span><br><span class="line">    ctypes.memset(buf, <span class="number">0</span>, size)</span><br><span class="line">    tryExcept(win32gui.SendMessageTimeout, hwnd, win32con.WM_GETTEXT, size, buf, win32con.SMTO_ABORTIFHUNG, <span class="number">10</span>)</span><br><span class="line">    <span class="keyword">return</span> buf.value.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取窗口类名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getWindowClass</span><span class="params">(hwnd, buf = ctypes.c_buffer<span class="params">(<span class="number">1024</span>)</span>)</span>:</span></span><br><span class="line">    size = ctypes.sizeof(buf)</span><br><span class="line">    ctypes.memset(buf, <span class="number">0</span>, size)</span><br><span class="line">    ctypes.windll.user32.GetClassNameA(hwnd, ctypes.addressof(buf), size)</span><br><span class="line">    <span class="keyword">return</span> buf.value.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment">#查找第一个窗口</span></span><br><span class="line"><span class="comment">#title:text,class,ctrlid</span></span><br><span class="line"><span class="comment">#parentTitle:None,hwnd,text,class</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findWindow</span><span class="params">(title, parentTitle = None, isRaw = False)</span>:</span></span><br><span class="line">    hwndList = findWindows(title, parentTitle, isRaw)</span><br><span class="line">    <span class="keyword">if</span> hwndList:</span><br><span class="line">        <span class="keyword">return</span> hwndList[<span class="number">0</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findRawWindows</span><span class="params">(title, parentTitle = None)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> findWindows(title, parentTitle, <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#判断是否为非正常窗口</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isRawWindow</span><span class="params">(hwnd)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> win32gui.IsWindowVisible(hwnd) <span class="keyword">or</span> <span class="keyword">not</span> win32gui.IsWindowEnabled(hwnd) <span class="keyword">or</span> ctypes.windll.user32.IsHungAppWindow(hwnd)</span><br><span class="line"></span><br><span class="line"><span class="comment">#查找窗口</span></span><br><span class="line"><span class="comment">#title:text,class,ctrlid</span></span><br><span class="line"><span class="comment">#parentTitle:None,hwnd,text,class</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findWindows</span><span class="params">(title, parentTitle = None, isRaw = False)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enumWindowHandler__</span><span class="params">(hwnd, wndList)</span>:</span></span><br><span class="line">        text = re.split(<span class="string">'[r|n]+'</span>, getWindowText(hwnd))[<span class="number">0</span>].strip()</span><br><span class="line">        clazz = getWindowClass(hwnd).strip()</span><br><span class="line">        ctrlId = win32gui.GetDlgCtrlID(hwnd)</span><br><span class="line">        wndList.append((hwnd, text, clazz, ctrlId))</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> parentTitle:</span><br><span class="line">        parentHwndList = [<span class="keyword">None</span>]</span><br><span class="line">    <span class="keyword">elif</span> type(parentTitle) == int:</span><br><span class="line">        parentHwndList = [parentTitle]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        parentHwndList = findRawWindows(parentTitle)</span><br><span class="line">    hwndSet = set()</span><br><span class="line">    <span class="keyword">for</span> parentHwnd <span class="keyword">in</span> parentHwndList:</span><br><span class="line">        wndList = []</span><br><span class="line">        <span class="comment">#EnumWindows</span></span><br><span class="line">        <span class="keyword">if</span> parentHwnd:</span><br><span class="line">            tryExcept(win32gui.EnumChildWindows, parentHwnd, __enumWindowHandler__, wndList)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            win32gui.EnumWindows(__enumWindowHandler__, wndList)</span><br><span class="line">        <span class="comment">#FindWindowEx</span></span><br><span class="line">        hwnd, foundHwndList = <span class="keyword">None</span>, []</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            hwnd = tryExcept(win32gui.FindWindowEx, parentHwnd, hwnd, <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> hwnd <span class="keyword">or</span> isExcept(hwnd) <span class="keyword">or</span> hwnd <span class="keyword">in</span> foundHwndList:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            __enumWindowHandler__(hwnd, wndList)</span><br><span class="line">            foundHwndList.append(hwnd)</span><br><span class="line">        <span class="comment">#GetWindow</span></span><br><span class="line">        <span class="keyword">if</span> parentHwnd:</span><br><span class="line">            hwnd = tryExcept(win32gui.GetWindow, parentHwnd, win32con.GW_CHILD)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            hwnd = tryExcept(win32gui.GetWindow, win32gui.GetDesktopWindow(), win32con.GW_CHILD)</span><br><span class="line">        <span class="keyword">while</span> hwnd <span class="keyword">and</span> <span class="keyword">not</span> isExcept(hwnd):</span><br><span class="line">            __enumWindowHandler__(hwnd, wndList)</span><br><span class="line">            hwnd = tryExcept(win32gui.GetWindow, hwnd, win32con.GW_HWNDNEXT)</span><br><span class="line">        <span class="comment">#Combine</span></span><br><span class="line">        <span class="keyword">for</span> hwnd, text, clazz, ctrlId <span class="keyword">in</span> set(wndList):</span><br><span class="line">            <span class="keyword">if</span> type(title) == int:</span><br><span class="line">                <span class="keyword">if</span> ctrlId == title:</span><br><span class="line">                    hwndSet.add(hwnd)</span><br><span class="line">            <span class="keyword">elif</span> text == title <span class="keyword">or</span> re.match(<span class="string">'^'</span> + title + <span class="string">'$'</span>, text, re.S) <span class="keyword">or</span> clazz == title <span class="keyword">or</span> re.match(<span class="string">'^'</span> + title + <span class="string">'$'</span>, clazz, re.S):</span><br><span class="line">                hwndSet.add(hwnd)</span><br><span class="line">            <span class="keyword">if</span> parentHwnd:</span><br><span class="line">                hwndSet.update(findRawWindows(title, hwnd))</span><br><span class="line">    <span class="keyword">if</span> isRaw:</span><br><span class="line">        <span class="keyword">return</span> list(hwndSet)</span><br><span class="line">    hwndList = []</span><br><span class="line">    <span class="keyword">for</span> hwnd <span class="keyword">in</span> hwndSet:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isRawWindow(hwnd):</span><br><span class="line">            hwndList.append(hwnd)</span><br><span class="line">    <span class="keyword">return</span> hwndList</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置窗口文字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setWindowText</span><span class="params">(hwnd, text)</span>:</span></span><br><span class="line">    rst = tryExcept(win32gui.SendMessageTimeout, hwnd, win32con.WM_SETTEXT, <span class="number">0</span>, text, win32con.SMTO_ABORTIFHUNG, <span class="number">10</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> isExcept(rst)</span><br><span class="line"></span><br><span class="line"><span class="comment">#杀掉指定name的进程</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">killProcessByName</span><span class="params">(pname, user = None)</span>:</span></span><br><span class="line">    killProcessByNames([pname], user)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listFile</span><span class="params">(path, isDeep=True)</span>:</span></span><br><span class="line">    _list = []</span><br><span class="line">    <span class="keyword">if</span> isDeep:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">                <span class="keyword">for</span> fl <span class="keyword">in</span> files:</span><br><span class="line">                    _list.append(<span class="string">'%s%s'</span> % (root, fl))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> fn <span class="keyword">in</span> glob.glob( path + os.sep + <span class="string">'*'</span> ):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(fn):</span><br><span class="line">                _list.append(<span class="string">'%s'</span> % path + os.sep + fn[fn.rfind(<span class="string">''</span>)+<span class="number">1</span>:])</span><br><span class="line">    <span class="keyword">return</span> _list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#杀掉指定name的进程列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">killProcessByNames</span><span class="params">(pnameList, user = None)</span>:</span></span><br><span class="line">    cmd = <span class="string">'taskkill /F /T'</span></span><br><span class="line">    <span class="keyword">if</span> user:</span><br><span class="line">        cmd += <span class="string">' /FI "USERNAME eq %s"'</span> % user</span><br><span class="line">    <span class="keyword">for</span> pname <span class="keyword">in</span> pnameList:</span><br><span class="line">        cmd += <span class="string">' /IM %s'</span> % pname</span><br><span class="line">    createProcess(cmd, <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#超时设置</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handleTimeout</span><span class="params">(func, timeout, *params, **paramMap)</span>:</span></span><br><span class="line">    interval = <span class="number">0.8</span></span><br><span class="line">    <span class="keyword">if</span> type(timeout) == tuple:</span><br><span class="line">        timeout, interval = timeout</span><br><span class="line">    <span class="keyword">while</span> timeout &gt; <span class="number">0</span>:</span><br><span class="line">        t = time.time()</span><br><span class="line">        rst = func(*params, **paramMap)</span><br><span class="line">        <span class="keyword">if</span> rst <span class="keyword">and</span> <span class="keyword">not</span> isExcept(rst):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        time.sleep(interval)</span><br><span class="line">        timeout -= time.time() - t</span><br><span class="line">    <span class="keyword">return</span> rst</span><br><span class="line"></span><br><span class="line"><span class="comment">#写文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setFileData</span><span class="params">(filename, data, mode)</span>:</span></span><br><span class="line">    f = open(filename, mode)</span><br><span class="line">    f.write(data)</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">if</span> os.path.isfile(<span class="string">'md5.log'</span>):</span><br><span class="line">        os.system(<span class="string">'del md5.log'</span>)</span><br><span class="line"></span><br><span class="line">    parentHwnd = <span class="string">r'Hash.*?'</span></span><br><span class="line">    <span class="comment">#setWindowText(textblack,'123')</span></span><br><span class="line">    filedir = os.path.join(os.getcwd(),<span class="string">'needCheck'</span>)</span><br><span class="line">    filelist = listFile(filedir)</span><br><span class="line">    <span class="comment">#os.chdir(filedir)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> filelist:</span><br><span class="line">        <span class="comment">#启进程</span></span><br><span class="line">        createProcess(<span class="string">'Hash.exe'</span>)</span><br><span class="line">        <span class="comment">#查找浏览按钮</span></span><br><span class="line">        browse_button = findWindow(<span class="string">r'浏览.*?'</span>,parentHwnd)</span><br><span class="line">        <span class="comment">#点击浏览按钮</span></span><br><span class="line">        clickWindow(browse_button)</span><br><span class="line">        textblack = findWindow(<span class="number">0x47C</span>,<span class="string">'#32770'</span>)</span><br><span class="line">        handleTimeout(setWindowText,<span class="number">10</span>,textblack,file)</span><br><span class="line">        open_hwnd = findWindow(<span class="string">'打开.*?'</span>,<span class="string">'#32770'</span>)</span><br><span class="line">        <span class="comment">#点击打开按钮</span></span><br><span class="line">        clickWindow(open_hwnd)</span><br><span class="line">        <span class="comment">#获取文件md5信息</span></span><br><span class="line">        <span class="comment">#需要内容的行号</span></span><br><span class="line">        expect_content_id = [<span class="number">0</span>,<span class="number">4</span>]</span><br><span class="line">        content_hwnd = findWindow(<span class="number">0x3EA</span>,<span class="string">r'Hash.*?'</span>)</span><br><span class="line">        content_text = handleTimeout(getWindowText,<span class="number">20</span>,content_hwnd)</span><br><span class="line">        content = content_text.split(<span class="string">'rn'</span>)</span><br><span class="line">        md5content = [i.split(<span class="string">': '</span>)[<span class="number">1</span>].strip() <span class="keyword">for</span> ind, i <span class="keyword">in</span> enumerate(content) <span class="keyword">if</span> ind <span class="keyword">in</span> expect_content_id]</span><br><span class="line">        <span class="keyword">print</span> md5content</span><br><span class="line">        filename,md5value = md5content</span><br><span class="line">        setFileData(<span class="string">'md5.log'</span>,<span class="string">'文件名:'</span>+filename+<span class="string">'n'</span>+<span class="string">'md5:'</span>+ md5value+<span class="string">'nn'</span>,<span class="string">'a'</span>)</span><br><span class="line">        killProcessByName(<span class="string">'Hash.exe'</span>)</span><br><span class="line">    os.system(<span class="string">'pause'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">#! /usr/bin/env python
+#coding=gbk
 
-        
-        
-        
+import time,re,ctypes
+import os,sys,subprocess,win32gui,win32con,win32api
+import glob,time
+
+#启进程函数
+def createProcess(cmd, wait = False):
+    if wait:
+        proc = tryExcept(subprocess.Popen, cmd, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+    else:
+        proc = tryExcept(subprocess.Popen, cmd)
+    if isExcept(proc):
+        return
+    if not wait:
+        return proc.pid
+    proc.communicate()
+
+
+def tryExcept(func, *params, **paramMap):
+    try:
+        return func(*params, **paramMap)
+    except Exception, e:
+        return e
+def isExcept(e, eType = Exception):
+    return isinstance(e, eType)
+
+
+class BaseWindow:
+    @staticmethod
+    def parseClickConfig(clkCfg):
+        if clkCfg == None:
+            return None, None, False, 0
+        if type(clkCfg) == bool:
+            return None, None, clkCfg, 0
+        if type(clkCfg) == int:
+            return None, None, False, clkCfg
+        if len(clkCfg) == 2:
+            if type(clkCfg[0]) == int and type(clkCfg[1]) == int:
+                return clkCfg[0], clkCfg[1], False, 0
+            return None, None, clkCfg[0], clkCfg[1]
+        if len(clkCfg) == 3:
+            if type(clkCfg[2]) == bool:
+                return clkCfg[0], clkCfg[1], clkCfg[2], 0
+            return clkCfg[0], clkCfg[1], False, clkCfg[2]
+        return clkCfg
+
+
+#点击窗口
+#clkCfg:byDrv|mode|(x,y)|(byDrv,mode)|(x,y,byDrv)|(x,y,mode)|(x,y,byDrv,mode)
+def clickWindow(hwnd, clkCfg = None):
+    if isRawWindow(hwnd):
+        return
+    topWindow(hwnd)
+    rect = getWindowRect(hwnd)
+    if not rect:
+        return
+    x, y, byDrv, mode = BaseWindow.parseClickConfig(clkCfg)
+    if x == None:
+        x = (rect[0] + rect[2]) / 2
+    elif x &lt; 0:
+        x += rect[2]
+    else:
+        x += rect[0]
+    if y == None:
+        y = (rect[1] + rect[3]) / 2
+    elif y &lt; 0:
+        y += rect[3]
+    else:
+        y += rect[1]
+    clickMouse(x, y, byDrv, mode)
+
+#点击鼠标
+CLICK_MOUSE = 0
+CLICK_MOUSE_DOUBLE = 1
+CLICK_MOUSE_RIGHT = 2
+
+def clickMouse(x, y, byDrv = False, mode = CLICK_MOUSE):
+    moveMouse(x, y, byDrv)
+    downMsg, upMsg = win32con.MOUSEEVENTF_LEFTDOWN, win32con.MOUSEEVENTF_LEFTUP
+    if mode == CLICK_MOUSE_RIGHT:
+        downMsg, upMsg = win32con.MOUSEEVENTF_RIGHTDOWN, win32con.MOUSEEVENTF_RIGHTUP
+    win32api.mouse_event(downMsg, 0, 0, 0, 0)
+    win32api.mouse_event(upMsg, 0, 0, 0, 0)
+    if mode == CLICK_MOUSE_DOUBLE:
+        win32api.mouse_event(downMsg, 0, 0, 0, 0)
+        win32api.mouse_event(upMsg, 0, 0, 0, 0)
+
+#移动鼠标
+def moveMouse(x, y, byDrv = False):
+    w, h = win32api.GetSystemMetrics(0), win32api.GetSystemMetrics(1)
+    x, y = int(float(x) / w * 65535), int(float(y) / h * 65535)
+    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE | win32con.MOUSEEVENTF_ABSOLUTE, x, y, 0, 0)
+
+
+#获得窗口尺寸
+def getWindowRect(hwnd):
+    rect = tryExcept(win32gui.GetWindowRect, hwnd)
+    if not isExcept(rect):
+        return rect
+
+#置顶窗口
+def topWindow(hwnd):
+    fgHwnd = win32gui.GetForegroundWindow()
+    if fgHwnd == hwnd:
+        return True
+    rst = tryExcept(win32gui.SetForegroundWindow, hwnd)
+    if not isExcept(rst):
+        return True
+    return getWindowClass(fgHwnd) == &#39;Progman&#39; and getWindowText(fgHwnd) == &#39;Program Manager&#39;
+
+
+##获取窗口文字
+def getWindowText(hwnd, buf = ctypes.c_buffer(1024)):
+    size = ctypes.sizeof(buf)
+    ctypes.memset(buf, 0, size)
+    tryExcept(win32gui.SendMessageTimeout, hwnd, win32con.WM_GETTEXT, size, buf, win32con.SMTO_ABORTIFHUNG, 10)
+    return buf.value.strip()
+
+#获取窗口类名
+def getWindowClass(hwnd, buf = ctypes.c_buffer(1024)):
+    size = ctypes.sizeof(buf)
+    ctypes.memset(buf, 0, size)
+    ctypes.windll.user32.GetClassNameA(hwnd, ctypes.addressof(buf), size)
+    return buf.value.strip()
+
+#查找第一个窗口
+#title:text,class,ctrlid
+#parentTitle:None,hwnd,text,class
+def findWindow(title, parentTitle = None, isRaw = False):
+    hwndList = findWindows(title, parentTitle, isRaw)
+    if hwndList:
+        return hwndList[0]
+def findRawWindows(title, parentTitle = None):
+    return findWindows(title, parentTitle, True)
+
+#判断是否为非正常窗口
+def isRawWindow(hwnd):
+    return not win32gui.IsWindowVisible(hwnd) or not win32gui.IsWindowEnabled(hwnd) or ctypes.windll.user32.IsHungAppWindow(hwnd)
+
+#查找窗口
+#title:text,class,ctrlid
+#parentTitle:None,hwnd,text,class
+def findWindows(title, parentTitle = None, isRaw = False):
+    def __enumWindowHandler__(hwnd, wndList):
+        text = re.split(&#39;[r|n]+&#39;, getWindowText(hwnd))[0].strip()
+        clazz = getWindowClass(hwnd).strip()
+        ctrlId = win32gui.GetDlgCtrlID(hwnd)
+        wndList.append((hwnd, text, clazz, ctrlId))
+    if not parentTitle:
+        parentHwndList = [None]
+    elif type(parentTitle) == int:
+        parentHwndList = [parentTitle]
+    else:
+        parentHwndList = findRawWindows(parentTitle)
+    hwndSet = set()
+    for parentHwnd in parentHwndList:
+        wndList = []
+        #EnumWindows
+        if parentHwnd:
+            tryExcept(win32gui.EnumChildWindows, parentHwnd, __enumWindowHandler__, wndList)
+        else:
+            win32gui.EnumWindows(__enumWindowHandler__, wndList)
+        #FindWindowEx
+        hwnd, foundHwndList = None, []
+        while True:
+            hwnd = tryExcept(win32gui.FindWindowEx, parentHwnd, hwnd, None, None)
+            if not hwnd or isExcept(hwnd) or hwnd in foundHwndList:
+                break
+            __enumWindowHandler__(hwnd, wndList)
+            foundHwndList.append(hwnd)
+        #GetWindow
+        if parentHwnd:
+            hwnd = tryExcept(win32gui.GetWindow, parentHwnd, win32con.GW_CHILD)
+        else:
+            hwnd = tryExcept(win32gui.GetWindow, win32gui.GetDesktopWindow(), win32con.GW_CHILD)
+        while hwnd and not isExcept(hwnd):
+            __enumWindowHandler__(hwnd, wndList)
+            hwnd = tryExcept(win32gui.GetWindow, hwnd, win32con.GW_HWNDNEXT)
+        #Combine
+        for hwnd, text, clazz, ctrlId in set(wndList):
+            if type(title) == int:
+                if ctrlId == title:
+                    hwndSet.add(hwnd)
+            elif text == title or re.match(&#39;^&#39; + title + &#39;$&#39;, text, re.S) or clazz == title or re.match(&#39;^&#39; + title + &#39;$&#39;, clazz, re.S):
+                hwndSet.add(hwnd)
+            if parentHwnd:
+                hwndSet.update(findRawWindows(title, hwnd))
+    if isRaw:
+        return list(hwndSet)
+    hwndList = []
+    for hwnd in hwndSet:
+        if not isRawWindow(hwnd):
+            hwndList.append(hwnd)
+    return hwndList
+
+#设置窗口文字
+def setWindowText(hwnd, text):
+    rst = tryExcept(win32gui.SendMessageTimeout, hwnd, win32con.WM_SETTEXT, 0, text, win32con.SMTO_ABORTIFHUNG, 10)
+    return not isExcept(rst)
+
+#杀掉指定name的进程
+def killProcessByName(pname, user = None):
+    killProcessByNames([pname], user)
+
+def listFile(path, isDeep=True):
+    _list = []
+    if isDeep:
+        try:
+            for root, dirs, files in os.walk(path):
+                for fl in files:
+                    _list.append(&#39;%s%s&#39; % (root, fl))
+        except:
+            pass
+    else:
+        for fn in glob.glob( path + os.sep + &#39;*&#39; ):
+            if not os.path.isdir(fn):
+                _list.append(&#39;%s&#39; % path + os.sep + fn[fn.rfind(&#39;&#39;)+1:])
+    return _list
+
+
+#杀掉指定name的进程列表
+def killProcessByNames(pnameList, user = None):
+    cmd = &#39;taskkill /F /T&#39;
+    if user:
+        cmd += &#39; /FI &quot;USERNAME eq %s&quot;&#39; % user
+    for pname in pnameList:
+        cmd += &#39; /IM %s&#39; % pname
+    createProcess(cmd, True)
+
+#超时设置
+def handleTimeout(func, timeout, *params, **paramMap):
+    interval = 0.8
+    if type(timeout) == tuple:
+        timeout, interval = timeout
+    while timeout &gt; 0:
+        t = time.time()
+        rst = func(*params, **paramMap)
+        if rst and not isExcept(rst):
+            break
+        time.sleep(interval)
+        timeout -= time.time() - t
+    return rst
+
+#写文件
+def setFileData(filename, data, mode):
+    f = open(filename, mode)
+    f.write(data)
+    f.close()
+
+
+if __name__ == &#39;__main__&#39;:
+    if os.path.isfile(&#39;md5.log&#39;):
+        os.system(&#39;del md5.log&#39;)
+
+    parentHwnd = r&#39;Hash.*?&#39;
+    #setWindowText(textblack,&#39;123&#39;)
+    filedir = os.path.join(os.getcwd(),&#39;needCheck&#39;)
+    filelist = listFile(filedir)
+    #os.chdir(filedir)
+
+    for file in filelist:
+        #启进程
+        createProcess(&#39;Hash.exe&#39;)
+        #查找浏览按钮
+        browse_button = findWindow(r&#39;浏览.*?&#39;,parentHwnd)
+        #点击浏览按钮
+        clickWindow(browse_button)
+        textblack = findWindow(0x47C,&#39;#32770&#39;)
+        handleTimeout(setWindowText,10,textblack,file)
+        open_hwnd = findWindow(&#39;打开.*?&#39;,&#39;#32770&#39;)
+        #点击打开按钮
+        clickWindow(open_hwnd)
+        #获取文件md5信息
+        #需要内容的行号
+        expect_content_id = [0,4]
+        content_hwnd = findWindow(0x3EA,r&#39;Hash.*?&#39;)
+        content_text = handleTimeout(getWindowText,20,content_hwnd)
+        content = content_text.split(&#39;rn&#39;)
+        md5content = [i.split(&#39;: &#39;)[1].strip() for ind, i in enumerate(content) if ind in expect_content_id]
+        print md5content
+        filename,md5value = md5content
+        setFileData(&#39;md5.log&#39;,&#39;文件名:&#39;+filename+&#39;n&#39;+&#39;md5:&#39;+ md5value+&#39;nn&#39;,&#39;a&#39;)
+        killProcessByName(&#39;Hash.exe&#39;)
+    os.system(&#39;pause&#39;)
+</code></pre>
+
         <div class="article-footer-copyright">
-	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
-	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-	本文标题为: 使用python进行windows自动化测试（1）<br>
-	本文链接为：<a href="http://www.yangyanxing.com/article/920.html">http://www.yangyanxing.com/article/920.html</a><br>
-
-</div>
-        <br><br>
-        
-        
-  <!-- css -->
-  <style type="text/css">
-      .center {
-          text-align: center;
-      }
-      .hidden {
-          display: none;
-      }
-    .donate_bar a.btn_donate{
-      display: inline-block;
-      width: 82px;
-      height: 82px;
-      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-
-      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
-           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
-         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
-         嵌入其它博客时不一定要它们。 -->
-      -webkit-transition: background 0s;
-      -moz-transition: background 0s;
-      -o-transition: background 0s;
-      -ms-transition: background 0s;
-      transition: background 0s;
-      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
-    }
-
-    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
-    .donate_bar .donate_txt {
-      display: block;
-      color: #9d9d9d;
-      font: 14px/2 "Microsoft Yahei";
-    }
-    .bold{ font-weight: bold; }
-  </style>
-  <!-- /css -->
-
-    <!-- Donate Module -->
-    <div id="donate_module">
-
-  <!-- btn_donate & tips -->
-  <div id="donate_board" class="donate_bar center">
-      <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
+            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+            本文标题为: 使用python进行windows自动化测试（1）<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/920.html">http://www.yangyanxing.com/article/920.html</a><br>
+        </div>
+    </main>
+    <footer class="post-footer">
       
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
     
   </div>
-  <!-- /btn_donate & tips -->
+</div>
 
-  <!-- donate guide -->
+
+  
+  
+  <div class="post-nav">
     
-  <div id="donate_guide" class="donate_bar center hidden">
-        <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-
-    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
-      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-        
-        &nbsp;&nbsp;
-
-    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
-      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
-
+    <div class="post-nav-next post-nav-item">
+      <a href="/article/897.html" rel="next" title="通过hello world程序判断你的虚拟主机是否支持python">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">通过hello world程序判断你的虚拟主机是否支持python</span>
+      </a>
+    </div>
+    
+    
+    <div class="post-nav-prev post-nav-item">
+      <a href="/article/926.html" rel="prev" title="在中文windows下使用pywinauto进行窗口操作（一）">
+        <span class="nav-title">在中文windows下使用pywinauto进行窗口操作（一）</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
   </div>
-  <!-- /donate guide -->
-
-  <!-- donate script -->
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function() {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-
-    function donate_on_web(){
-      $('#donate').submit();
-        }
-
-    var original_window_onload = window.onload;
-        window.onload = function () {
-            if (original_window_onload) {
-                original_window_onload();
-            }
-            document.getElementById('donate_board_wdg').className = 'hidden';
-    }
-  </script>
-  <!-- /donate script -->
-</div>
-<!-- /Donate Module -->
-           
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/920.html" data-id="cjbnsifh0005308dnjvarpx2t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/920.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/article/926.html" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    在中文windows下使用pywinauto进行窗口操作（一）
-                
-            </div>
-        </a>
-    
-    
-        <a href="/article/897.html" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">通过hello world程序判断你的虚拟主机是否支持python</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="uyan_frame"></div>
+  
+  
 </section>
-    
 
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
-
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
+    
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
+    
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
+    
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
+    
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -712,38 +684,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>

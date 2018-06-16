@@ -1,0 +1,24 @@
+.article-footer-copyright {
+  border-top: 1px solid #d3d3d3;
+  margin: 20px auto;
+  padding-left: 2em;
+  width: 80%;
+}
+.article-footer-copyright p {
+  font-size: 1.2em;
+}
+.article-footer-copyright span,
+abbr {
+  color: #3d3d3d;
+}
+div.article-footer-copyright {
+  margin-top: 2em;
+  padding: 1.5em;
+  border: 1px solid #d3d3d3;
+  background-color: #deebf7;
+}
+.article-footer-copyright p {
+  line-height: 160%;
+  margin: 10px;
+  font-size: 100%;
+}

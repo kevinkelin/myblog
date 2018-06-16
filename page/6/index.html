@@ -1,1785 +1,924 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨彦星">
-<meta property="og:url" content="http://www.yangyanxing.com/page/6/index.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨彦星">
-<meta name="twitter:description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-    
-
-    
-
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
     
     
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
 
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="index" class="index">
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1032.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main">
-    <article id="post-963" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1032.html" itemprop="url">Ubuntu从安装到设置的一点记录</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-03-06T23:43:25+08:00">2014-03-06</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/963.html">python中的logging模块应用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/963.html">
-            <time datetime="2013-11-16T15:56:49.000Z" itemprop="datePublished">2013-11-16</time>
-        </a>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Linux相关/" itemprop="url" rel="index"><span itemprop="name">Linux相关</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>1.硬盘安装：<a href="http://www.linuxidc.com/Linux/2013-10/91565.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2013-10/91565.htm</a></p>
+<p>2.Nvidia显卡的安装，<a href="http://blog.csdn.net/wzcqr0501/article/details/8498659" target="_blank" rel="noopener">http://blog.csdn.net/wzcqr0501/article/details/8498659</a> 曾尝试安装，但第一次失败且改不回来，于是不准备安装了，自带的Nvidia显卡已经很好了</p>
+<p>3.修改hosts改变google的解析 sudo gedit /etc/hosts</p>
+<p>4.默认启动ubuntu后自动挂载windows分区 <a href="http://www.linuxidc.com/Linux/2013-02/79679.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2013-02/79679.htm</a></p>
+<p>创建挂载目录 sudo mkdir  /media/windows 等等</p>
+<p>查看磁盘分区的UUID sudo  blkid  记录UUID</p>
+<p>编辑fstab sudo gedit  /etc/fstab 写入如下内容</p>
+<p>UUID=D06ABBA96ABB8AAC /media/windows ntfs default 0 0</p>
+<p>5.解决中文乱码问题</p>
+<p>sudo gedit /etc/profile<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1032.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/linux/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> linux</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/Ubuntu/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> Ubuntu</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/994.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/994.html" itemprop="url">javascript DOM初学(一)</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-02-23T02:18:25+08:00">2014-02-23</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>开始学习javacript，这里做个总结<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/994.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/javascript/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> javascript</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/963.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/963.html" itemprop="url">python中的logging模块应用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-11-16T23:56:49+08:00">2013-11-16</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>python中有系统自带的logging模块，使用起来非常方便，并且要在程序中经常要使用这个模块，这样出了问题可以通过日志很方便的查找在哪里出了问题，比直接找代码要方便些</p>
+<p>我记录了一些经常用到的，不是很常用的可以到python文档中去查看 <a href="http://docs.python.org/2/library/logging.html" target="_blank" rel="noopener">http://docs.python.org/2/library/logging.html</a><br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/963.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/953.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-                    </div>
-                
-            </header>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/953.html" itemprop="url">使用web.py在BAE建立自已的电影网站</a>
+      </h2>
+      <div class="post-meta">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>python中有系统自带的logging模块，使用起来非常方便，并且要在程序中经常要使用这个模块，这样出了问题可以通过日志很方便的查找在哪里出了问题，比直接找代码要方便些</p>
-<p>我记录了一些经常用到的，不是很常用的可以到python文档中去查看 <a href="http://docs.python.org/2/library/logging.html" target="_blank" rel="noopener">http://docs.python.org/2/library/logging.html</a><br></p>
-            <p class="article-more-link">
-                <a href="/article/963.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-11-01T00:06:43+08:00">2013-11-01</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/963.html" data-id="cjbnsifew002n08dn182xm9eq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/963.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-953" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/953.html">使用web.py在BAE建立自已的电影网站</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/953.html">
-            <time datetime="2013-10-31T16:06:43.000Z" itemprop="datePublished">2013-11-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/webpy/">webpy</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近在网上看了一篇文章使用web.py在BAE上建立电影网站，<a href="http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html" target="_blank" rel="noopener">http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html</a> 我自已也在此基础上做了一些改进，也在一点点的熟悉使用web.py这个框架，可以看一下我弄了一半的应用 <a href="http://movie.yangyanxing.com" target="_blank" rel="noopener">http://movie.yangyanxing.com</a></p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近在网上看了一篇文章使用web.py在BAE上建立电影网站，<a href="http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html" target="_blank" rel="noopener">http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html</a> 我自已也在此基础上做了一些改进，也在一点点的熟悉使用web.py这个框架，可以看一下我弄了一半的应用 <a href="http://movie.yangyanxing.com" target="_blank" rel="noopener">http://movie.yangyanxing.com</a></p>
 <p>准备 BAE web.py</p>
 <h1 id="在BAE上建立一个python的应用"><a href="#在BAE上建立一个python的应用" class="headerlink" title="在BAE上建立一个python的应用"></a>在BAE上建立一个python的应用</h1><p>快速创建即可，选择Iframe</p>
-<p><a href="/image/2013/11/create.jpg"><img src="/image/2013/11/create_thumb.jpg" alt="create" title="create"></a><br></p>
-            <p class="article-more-link">
-                <a href="/article/953.html#more">查看更多</a>
-            </p>
+<p><a href="/image/2013/11/create.jpg"><img src="/image/2013/11/create_thumb.jpg" alt="create" title="create"></a><br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/953.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/953.html" data-id="cjbnsifjm008e08dnkgll2z02" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/953.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/webpy/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> webpy</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/932.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-932" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/932.html" itemprop="url">web.py中关于url的总结</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-22T01:42:41+08:00">2013-10-22</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/932.html">web.py中关于url的总结</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/932.html">
-            <time datetime="2013-10-21T17:42:41.000Z" itemprop="datePublished">2013-10-22</time>
-        </a>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>网页中的数据在传递的时候有GET和POST两种方式，GET是以网址的形式传参数，在web.py中有着很好的匹配，如果我们配置以下的urls</p>
+<pre><code class="python">  urls =(
+    &#39;/&#39;,&#39;index&#39;,
+    &#39;/weixin/(.*?)&#39;,&#39;WeixinInterface&#39;
+</code></pre>
+<p>先不考虑/weixin/后面的东西，现在我们来写index的类</p>
+<pre><code class="python">class index:
+    def GET(self):
+        i = web.input(name = &#39;kevinkelin&#39;,age = 100)
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/932.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/webpy/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> webpy</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/926.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/webpy/">webpy</a>
-    </div>
-
-                    </div>
-                
-            </header>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/926.html" itemprop="url">在中文windows下使用pywinauto进行窗口操作（一）</a>
+      </h2>
+      <div class="post-meta">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>网页中的数据在传递的时候有GET和POST两种方式，GET是以网址的形式传参数，在web.py中有着很好的匹配，如果我们配置以下的urls<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">urls =(</span><br><span class="line">  <span class="string">'/'</span>,<span class="string">'index'</span>,</span><br><span class="line">  <span class="string">'/weixin/(.*?)'</span>,<span class="string">'WeixinInterface'</span></span><br></pre></td></tr></table></figure></p>
-<p>先不考虑/weixin/后面的东西，现在我们来写index的类<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">index</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        i = web.input(name = <span class="string">'kevinkelin'</span>,age = <span class="number">100</span>)</span><br></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/article/932.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-07T03:42:56+08:00">2013-10-07</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/932.html" data-id="cjbnsiffp003q08dnli1lih7l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/932.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-926" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/926.html">在中文windows下使用pywinauto进行窗口操作（一）</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/926.html">
-            <time datetime="2013-10-06T19:42:56.000Z" itemprop="datePublished">2013-10-07</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="pywinauto"><a href="#pywinauto" class="headerlink" title="pywinauto;"></a>pywinauto;</h2><p> <a href="https://sourceforge.net/project/showfiles.php?group_id=157379" target="_blank" rel="noopener">https://sourceforge.net/project/showfiles.php?group_id=157379</a></p>
 <h2 id="Sendkeys"><a href="#Sendkeys" class="headerlink" title="Sendkeys"></a>Sendkeys</h2><p><a href="http://www.rutherfurd.net/python/sendkeys/index.html" target="_blank" rel="noopener">http://www.rutherfurd.net/python/sendkeys/index.html</a></p>
 <h2 id="ctypes-如果你是python2-3或者2-4"><a href="#ctypes-如果你是python2-3或者2-4" class="headerlink" title="ctypes (如果你是python2.3或者2.4)"></a>ctypes (如果你是python2.3或者2.4)</h2><p>检测你是否安装正确</p>
 <blockquote>
 <p>from pywinauto import application<br>app = application.Application.start(“notepad.exe”)<br>app.notepad.TypeKeys(“%FX”)</p>
-</blockquote></p>
-            <p class="article-more-link">
-                <a href="/article/926.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/926.html" data-id="cjbnsifi2006g08dn1r7neal8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/926.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+</blockquote>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/926.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/920.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-920" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/920.html" itemprop="url">使用python进行windows自动化测试（1）</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-05T01:41:33+08:00">2013-10-05</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/920.html">使用python进行windows自动化测试（1）</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/920.html">
-            <time datetime="2013-10-04T17:41:33.000Z" itemprop="datePublished">2013-10-05</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的</p>
 <p>主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作</p>
 <p>下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作</p>
-<p>所用的工具有SpyLite，用于查看窗口ID，句柄等信息<br></p>
-            <p class="article-more-link">
-                <a href="/article/920.html#more">查看更多</a>
-            </p>
+<p>所用的工具有SpyLite，用于查看窗口ID，句柄等信息<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/920.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/920.html" data-id="cjbnsifh0005308dnjvarpx2t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/920.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/897.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-897" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/897.html" itemprop="url">通过hello world程序判断你的虚拟主机是否支持python</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-09-25T01:37:52+08:00">2013-09-25</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/897.html">通过hello world程序判断你的虚拟主机是否支持python</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/897.html">
-            <time datetime="2013-09-24T17:37:52.000Z" itemprop="datePublished">2013-09-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下</p>
-<p>写一个hello world的小程序<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/python</span></span><br><span class="line">print 'Content-Type: text/plainn'</span><br></pre></td></tr></table></figure></p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下</p>
+<p>写一个hello world的小程序</p>
+<pre><code class="shell">#!/usr/bin/python
+print &#39;Content-Type: text/plainn&#39;
+</code></pre>
 <p>以二进制方式上传到自已的空间上，访问 <a href="http://static.yangyanxing.com/test.py" target="_blank" rel="noopener">http://static.yangyanxing.com/test.py</a></p>
-<p>居然一次性成功了，完美地显示hello world<br></p>
-            <p class="article-more-link">
-                <a href="/article/897.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/897.html" data-id="cjbnsifj7007v08dnne47qyfs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/897.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+<p>居然一次性成功了，完美地显示hello world<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/897.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/911.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-911" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/911.html" itemprop="url">Python中的urllib2库的使用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-09-12T01:06:43+08:00">2013-09-12</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/911.html">Python中的urllib2库的使用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/911.html">
-            <time datetime="2013-09-11T17:06:43.000Z" itemprop="datePublished">2013-09-12</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>今天研究了下urllib2这个库的使用，才发现以前有很多不明白的东西，现在写下来也做个记录</p>
-<h1 id="最基础的应用"><a href="#最基础的应用" class="headerlink" title="最基础的应用"></a>最基础的应用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line">url = <span class="string">r'http://www.baidu.com'</span></span><br><span class="line">html = urllib2.urlopen(url).read()</span><br></pre></td></tr></table></figure>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>今天研究了下urllib2这个库的使用，才发现以前有很多不明白的东西，现在写下来也做个记录</p>
+<h1 id="最基础的应用"><a href="#最基础的应用" class="headerlink" title="最基础的应用"></a>最基础的应用</h1><pre><code class="python">import urllib2
+url = r&#39;http://www.baidu.com&#39;
+html = urllib2.urlopen(url).read()
+</code></pre>
 <p>客户端与服务器端通过request与response来沟通，客户端先向服务端发送request，然后接收服务端返回的response</p>
-<p>urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line">url = <span class="string">r'http://www.baidu.com'</span></span><br><span class="line">req = urllib2.Request(url)</span><br><span class="line">html = urllib2.urlopen(req).read()</span><br></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/article/911.html#more">查看更多</a>
-            </p>
+<p>urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求</p>
+<pre><code class="python">import urllib2
+url = r&#39;http://www.baidu.com&#39;
+req = urllib2.Request(url)
+html = urllib2.urlopen(req).read()
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/911.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/911.html" data-id="cjbnsifdp001308dnolkuxqj0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/911.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/908.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-908" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/908.html" itemprop="url">python处理网页中的cookie</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-09-10T11:16:49+08:00">2013-09-10</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/908.html">python处理网页中的cookie</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/908.html">
-            <time datetime="2013-09-10T03:16:49.000Z" itemprop="datePublished">2013-09-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近想要搭建个小黄鸡的微信应用，但是一路来发现，现在很多的方法都已经不能用了，我在本地试过，也试用过requests获取session的方法也不行，但是这经过这次折腾，倒是对cookie有了更多的了解，以下以python登录人人网的例子来介绍cookie的使用。<br>cookie的定义可以参考百度百科，<a href="http://baike.baidu.com/subview/835/5062332.htm" target="_blank" rel="noopener">http://baike.baidu.com/subview/835/5062332.htm</a> 但是里面说的乱七八糟的，而且好多重复，使用firefox或者fiddler等工具来抓取cookie<br>在firefox下使用httpFox插件来查到人人网的登录时需要POST的地址是<a href="http://www.renren.com/ajaxLogin" title="http://www.renren.com/ajaxLogin" target="_blank" rel="noopener">http://www.renren.com/ajaxLogin</a>&#160;<br><a href="/image/2013/09/getUrl.png"><img src="/image/2013/09/getUrl_thumb.png" alt="getUrl" title="getUrl"></a><br></p>
-            <p class="article-more-link">
-                <a href="/article/908.html#more">查看更多</a>
-            </p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近想要搭建个小黄鸡的微信应用，但是一路来发现，现在很多的方法都已经不能用了，我在本地试过，也试用过requests获取session的方法也不行，但是这经过这次折腾，倒是对cookie有了更多的了解，以下以python登录人人网的例子来介绍cookie的使用。<br>cookie的定义可以参考百度百科，<a href="http://baike.baidu.com/subview/835/5062332.htm" target="_blank" rel="noopener">http://baike.baidu.com/subview/835/5062332.htm</a> 但是里面说的乱七八糟的，而且好多重复，使用firefox或者fiddler等工具来抓取cookie<br>在firefox下使用httpFox插件来查到人人网的登录时需要POST的地址是<a href="http://www.renren.com/ajaxLogin" title="http://www.renren.com/ajaxLogin" target="_blank" rel="noopener">http://www.renren.com/ajaxLogin</a>&#160;<br><a href="/image/2013/09/getUrl.png"><img src="/image/2013/09/getUrl_thumb.png" alt="getUrl" title="getUrl"></a><br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/908.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/908.html" data-id="cjbnsifft003u08dnsntmva5l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/908.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-877" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/877.html">使用python抓取360搜索联想词</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/877.html">
-            <time datetime="2013-09-03T17:09:19.000Z" itemprop="datePublished">2013-09-04</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>几乎所有的搜索引擎都提供联想词提示，这个小脚本其实功能性不大，只当作使用urllib2发http请求和如何使用代理来访问</p>
-<p>参考文章</p>
-<p><a href="http://video.sina.com.cn/v/b/113293169-1631501663.html" target="_blank" rel="noopener">http://video.sina.com.cn/v/b/113293169-1631501663.html</a><br></p>
-            <p class="article-more-link">
-                <a href="/article/877.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/877.html" data-id="cjbnsifgv005008dnt1ehdrlg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/877.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-874" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/874.html">python解析json</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/874.html">
-            <time datetime="2013-08-27T17:23:05.000Z" itemprop="datePublished">2013-08-28</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>相对于python解析XML来说，我还是比较喜欢json的格式返回，现在一般的api返回都会有json与XML格式的选择，json的解析起来个人觉得相对简单些</p>
-<p>先看一个简单的豆瓣的图书查询的api返回</p>
-            <p class="article-more-link">
-                <a href="/article/874.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/874.html" data-id="cjbnsifgk004i08dn0kt48uy5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/874.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">下一页 &raquo;</a>
-    </nav>
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fas fa-angle-right"></i></a>
+  </nav>
+  
+  
 </section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
-
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
+    
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
+    
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
+    
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
+    
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
+    
+  </ul>
+</div>
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -1795,38 +934,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>

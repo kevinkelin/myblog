@@ -1,721 +1,667 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>Xposed框架初体验 | 杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章用黑客思维做测试——神器 Xposed 框架介绍,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)手把手教你当微信运动第一名,于是对这个大名鼎鼎的Xpo">
-<meta name="keywords" content="android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Xposed框架初体验">
-<meta property="og:url" content="http://www.yangyanxing.com/article/first-use-Xposed.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章用黑客思维做测试——神器 Xposed 框架介绍,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)手把手教你当微信运动第一名,于是对这个大名鼎鼎的Xpo">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.yangyanxing.com/image/xposed.jpg">
-<meta property="og:image" content="http://www.yangyanxing.com/image/XposedSuc.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/showTime.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/xposedapi.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/xposedmodule.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/errorTime.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/loginSuc.png">
-<meta property="og:updated_time" content="2017-12-16T10:10:42.287Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xposed框架初体验">
-<meta name="twitter:description" content="想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章用黑客思维做测试——神器 Xposed 框架介绍,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)手把手教你当微信运动第一名,于是对这个大名鼎鼎的Xpo">
-<meta name="twitter:image" content="http://www.yangyanxing.com/image/xposed.jpg">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
+    
+    
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     
-
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
     
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
     
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Xposed框架初体验 | 杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/first-use-Xposed.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="杨彦星">
+       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+       <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main"><article id="post-first-use-Xposed" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">Xposed框架初体验</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-06-12T00:05:17+08:00">2016-06-12</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            Xposed框架初体验
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/first-use-Xposed.html">
-            <time datetime="2016-06-11T16:05:17.000Z" itemprop="datePublished">2016-06-12</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/android/">android</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章<a href="https://testerhome.com/topics/3819" target="_blank" rel="noopener">用黑客思维做测试——神器 Xposed 框架介绍</a>,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)<a href="http://drops.wooyun.org/tips/8416" target="_blank" rel="noopener">手把手教你当微信运动第一名</a>,于是对这个大名鼎鼎的Xposed学习了一番，觉得它有很多潜能！<br><a id="more"></a></p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <p>想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章<a href="https://testerhome.com/topics/3819" target="_blank" rel="noopener">用黑客思维做测试——神器 Xposed 框架介绍</a>,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)<a href="http://drops.wooyun.org/tips/8416" target="_blank" rel="noopener">手把手教你当微信运动第一名</a>,于是对这个大名鼎鼎的Xposed学习了一番，觉得它有很多潜能！<br><a id="more"></a></p>
 <p>参考文章<br><a href="https://testerhome.com/topics/3819" target="_blank" rel="noopener">用黑客思维做测试——神器 Xposed 框架介绍</a><br><a href="http://www.csdn.net/article/2015-08-14/2825462" target="_blank" rel="noopener">Android Hook神器：XPosed入门与登陆劫持演示</a><br><a href="http://repo.xposed.info/" target="_blank" rel="noopener">Xposed Home</a></p>
 <h1 id="关于Xposed"><a href="#关于Xposed" class="headerlink" title="关于Xposed"></a>关于Xposed</h1><p>Xposed 框架是一款可以在不修改APK的情况下影响程序运行（修改系统）的框架服务，基于它可以制作出许多功能强大的模块，且在功能不冲突的情况下同时运作。</p>
 <h1 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h1><p>Zygote 进程是 Android 的核心，所有的应用程序进程以及系统服务进程都是由Zygote进程 fork 出来的。Xposed Framework 深入到了 Android 核心机制中，通过改造 Zygote 来实现一些很牛逼的功能。Zygote 的启动配置在/init.rc 脚本中，由系统启动的时候开启此进程，对应的执行文件是/system/bin/app_process，这个文件完成类库加载及一些初始化函数调用的工作。 当系统中安装了 Xposed Framework 之后，会拿自己实现的 app_process 覆盖掉 Android 原生提供的文件，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalvik虚拟机的劫持。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在android5.0以上要使用不同的包，具体可以参考<a href="http://repo.xposed.info/module/de.robv.android.xposed.installer" target="_blank" rel="noopener">http://repo.xposed.info/module/de.robv.android.xposed.installer</a><br>为了方便我使用了一台android4.4的手机，只要安装一个apk即可，手机要有root，因为安装Xposed的时候需要root，但是一旦安装成功则不再需要root了，安装后启动<br><img src="/image/xposed.jpg" alt="Xposed"></p>
 <p>按照上面的说明点击安装，如果顺利的话重启后就可以正常的使用了<br><img src="/image/XposedSuc.png" alt="Xposed安装成功"></p>
 <h1 id="写hook模块使用"><a href="#写hook模块使用" class="headerlink" title="写hook模块使用"></a>写hook模块使用</h1><p>Xposed网站已经有很多别人写好的模块，可以直接下载安装使用，也可以自已写模块，模块其实就是一个apk，按照一定的规则生成的，当安装模块以后，Xposed会自已识别。<br>开始自已写一个小demo吧，采用testerhome中的那个hook取时间的例子。</p>
-<h2 id="首先先写测试的apk"><a href="#首先先写测试的apk" class="headerlink" title="首先先写测试的apk"></a>首先先写测试的apk</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.showtimer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.View.OnClickListener;</span><br><span class="line"><span class="keyword">import</span> android.view.Window;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.EditText;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        <span class="keyword">final</span> TextView tv = (TextView) findViewById(R.id.tv);</span><br><span class="line">        Button show = (Button) findViewById(R.id.showTimer);</span><br><span class="line">        show.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Calendar c = Calendar.getInstance();</span><br><span class="line">                <span class="keyword">int</span> year = c.get(Calendar.YEAR);</span><br><span class="line">                <span class="keyword">int</span> month = c.get(Calendar.MONTH);</span><br><span class="line">                <span class="keyword">int</span> day = c.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">                <span class="keyword">int</span> hour = c.get(Calendar.HOUR);</span><br><span class="line">                <span class="keyword">int</span> min = c.get(Calendar.MINUTE);</span><br><span class="line">                String time = <span class="string">""</span>+year+<span class="string">"-"</span>+month+<span class="string">"-"</span>+day+<span class="string">" "</span>+hour+<span class="string">":"</span>+min;</span><br><span class="line">                tv.setText(time);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="首先先写测试的apk"><a href="#首先先写测试的apk" class="headerlink" title="首先先写测试的apk"></a>首先先写测试的apk</h2><pre><code class="java">package com.example.showtimer;
+
+import java.util.Calendar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+        final TextView tv = (TextView) findViewById(R.id.tv);
+        Button show = (Button) findViewById(R.id.showTimer);
+        show.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int hour = c.get(Calendar.HOUR);
+                int min = c.get(Calendar.MINUTE);
+                String time = &quot;&quot;+year+&quot;-&quot;+month+&quot;-&quot;+day+&quot; &quot;+hour+&quot;:&quot;+min;
+                tv.setText(time);
+
+            }
+        });
+
+}
+</code></pre>
 <p>这个apk很简单，点击按钮后，显示了当前的时间</p>
 <p><img src="/image/showTime.png" alt="显示当前时间"></p>
 <h2 id="写hook模块"><a href="#写hook模块" class="headerlink" title="写hook模块"></a>写hook模块</h2><p>只要修改系统的java.util.Calendar类中的get函数，并修改相应的返回值则能达到hook目的</p>
 <h3 id="新建一个hookTest的android项目并将XposedBridgeApi-54-jar加入项目的build-path中"><a href="#新建一个hookTest的android项目并将XposedBridgeApi-54-jar加入项目的build-path中" class="headerlink" title="新建一个hookTest的android项目并将XposedBridgeApi-54.jar加入项目的build-path中"></a>新建一个hookTest的android项目并将XposedBridgeApi-54.jar加入项目的build-path中</h3><p>api下载地址 <a href="http://forum.xda-developers.com/xposed/xposed-api-changelog-developer-news-t2714067" target="_blank" rel="noopener">http://forum.xda-developers.com/xposed/xposed-api-changelog-developer-news-t2714067</a><br>在项目中新建一个lib目录，将jar包放进去，添加到build paht中<br><img src="/image/xposedapi.png" alt="将xposed加入到build path中"></p>
-<h3 id="新建一个Hook类实现IXposedHookLoadPackage接口"><a href="#新建一个Hook类实现IXposedHookLoadPackage接口" class="headerlink" title="新建一个Hook类实现IXposedHookLoadPackage接口"></a>新建一个Hook类实现IXposedHookLoadPackage接口</h3><p>实现handleLoadPackage方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!lpparam.packageName.equals(<span class="string">"com.example.showtimer"</span>))  </span><br><span class="line">            <span class="keyword">return</span>;  </span><br><span class="line">        XposedBridge.log(<span class="string">"Loaded app name   : "</span> + lpparam.packageName);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="新建一个Hook类实现IXposedHookLoadPackage接口"><a href="#新建一个Hook类实现IXposedHookLoadPackage接口" class="headerlink" title="新建一个Hook类实现IXposedHookLoadPackage接口"></a>新建一个Hook类实现IXposedHookLoadPackage接口</h3><p>实现handleLoadPackage方法</p>
+<pre><code class="java">public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
+        if (!lpparam.packageName.equals(&quot;com.example.showtimer&quot;))  
+            return;  
+        XposedBridge.log(&quot;Loaded app name   : &quot; + lpparam.packageName);
+    }
+</code></pre>
 <p>上面的代码定义了只有packageName是com.example.showtimer才进行hook操作，其它的放过</p>
-<p><code>findAndHookMethod()</code> 方法是找到并且Hook方法<br>findAndHookMethod的参数说明<br>第一个参数定义了要hook的类，对于某个akp来说就是其包名+activity，第二个参数是个固定的lpparam.classLoader，第三个是要hook的方法名，之后的参数是这个方法需要的参数类型class，有几个就写几个，最后是初始化一个XC_MethodHook的对象。然后重写其beforeHookedMethod与afterHookedMethod方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">findAndHookMethod(<span class="string">"java.util.Calendar"</span>, lpparam.classLoader,<span class="string">"get"</span>,<span class="keyword">int</span>.class,<span class="keyword">new</span> XC_MethodHook() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called before the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;beforeHookedMethod:Calendar.get"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called after the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;afterHookedMethod:Calendar.get"</span>);</span><br><span class="line">                param.setResult((<span class="keyword">int</span>)<span class="number">11</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>findAndHookMethod()</code> 方法是找到并且Hook方法<br>findAndHookMethod的参数说明<br>第一个参数定义了要hook的类，对于某个akp来说就是其包名+activity，第二个参数是个固定的lpparam.classLoader，第三个是要hook的方法名，之后的参数是这个方法需要的参数类型class，有几个就写几个，最后是初始化一个XC_MethodHook的对象。然后重写其beforeHookedMethod与afterHookedMethod方法。</p>
+<pre><code class="java">findAndHookMethod(&quot;java.util.Calendar&quot;, lpparam.classLoader,&quot;get&quot;,int.class,new XC_MethodHook() {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called before the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;beforeHookedMethod:Calendar.get&quot;);
+            }
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called after the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;afterHookedMethod:Calendar.get&quot;);
+                param.setResult((int)11);
+            }
+        });
+</code></pre>
 <p>在findAndHookMethod中重写了两个方法，beforeHookedMethod和afterHookedMethod，看名字也能猜出它们的作用，before是在hook之前，可以得到一些正常的值，after那个函数则可以修改一些返回值。上面这里就是将java.util.Calendar这个类的get方法所有返回值都修改为11</p>
-<p>Hook.java的总代码为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.xposedtest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.IXposedHookLoadPackage;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XC_MethodHook;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XposedBridge;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> de.robv.android.xposed.XposedHelpers.findAndHookMethod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.ViewGroup;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hook</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!lpparam.packageName.equals(<span class="string">"com.example.showtimer"</span>))  </span><br><span class="line">            <span class="keyword">return</span>;  </span><br><span class="line">        XposedBridge.log(<span class="string">"Loaded app name   : "</span> + lpparam.packageName);</span><br><span class="line">        findAndHookMethod(<span class="string">"java.util.Calendar"</span>, lpparam.classLoader,<span class="string">"get"</span>,<span class="keyword">int</span>.class,<span class="keyword">new</span> XC_MethodHook() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called before the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;beforeHookedMethod:Calendar.get"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called after the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;afterHookedMethod:Calendar.get"</span>);</span><br><span class="line">                param.setResult((<span class="keyword">int</span>)<span class="number">11</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Hook.java的总代码为</p>
+<pre><code class="java">package com.example.xposedtest;
+
+import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedBridge;
+import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
+import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast; 
+
+
+public class Hook implements IXposedHookLoadPackage {
+
+    @Override
+    public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
+        if (!lpparam.packageName.equals(&quot;com.example.showtimer&quot;))  
+            return;  
+        XposedBridge.log(&quot;Loaded app name   : &quot; + lpparam.packageName);
+        findAndHookMethod(&quot;java.util.Calendar&quot;, lpparam.classLoader,&quot;get&quot;,int.class,new XC_MethodHook() {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called before the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;beforeHookedMethod:Calendar.get&quot;);
+            }
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called after the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;afterHookedMethod:Calendar.get&quot;);
+                param.setResult((int)11);
+            }
+        });
+    }
+
+}
+</code></pre>
 <h3 id="声明主入口路径"><a href="#声明主入口路径" class="headerlink" title="声明主入口路径"></a>声明主入口路径</h3><p>需要在assets文件夹中新建一个xposed_init的文件，并在其中声明主入口类。如这里我们的主入口类为com.example.xposedtest.Hook</p>
-<h3 id="在AndroidManifest-xml文件中配置插件名称与Api版本号"><a href="#在AndroidManifest-xml文件中配置插件名称与Api版本号" class="headerlink" title="在AndroidManifest.xml文件中配置插件名称与Api版本号"></a>在AndroidManifest.xml文件中配置插件名称与Api版本号</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.example.xposedtest"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:versionCode</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:versionName</span>=<span class="string">"4.0"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-sdk</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:minSdkVersion</span>=<span class="string">"17"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:targetSdkVersion</span>=<span class="string">"21"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_launcher"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta-data</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"xposedmodule"</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</span>  </span><br><span class="line">            </span><br><span class="line">        <span class="tag">&lt;<span class="name">meta-data</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"xposeddescription"</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"劫持获得时间函数"</span> /&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">meta-data</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"xposedminversion"</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"30"</span> /&gt;</span>  </span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".MainActivity"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="在AndroidManifest-xml文件中配置插件名称与Api版本号"><a href="#在AndroidManifest-xml文件中配置插件名称与Api版本号" class="headerlink" title="在AndroidManifest.xml文件中配置插件名称与Api版本号"></a>在AndroidManifest.xml文件中配置插件名称与Api版本号</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.example.xposedtest&quot;
+    android:versionCode=&quot;1&quot;
+    android:versionName=&quot;4.0&quot; &gt;
+
+    &lt;uses-sdk
+        android:minSdkVersion=&quot;17&quot;
+        android:targetSdkVersion=&quot;21&quot; /&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@drawable/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:theme=&quot;@style/AppTheme&quot; &gt;
+        &lt;meta-data  
+            android:name=&quot;xposedmodule&quot;  
+            android:value=&quot;true&quot; /&gt;  
+
+        &lt;meta-data  
+            android:name=&quot;xposeddescription&quot;  
+            android:value=&quot;劫持获得时间函数&quot; /&gt;
+
+        &lt;meta-data  
+            android:name=&quot;xposedminversion&quot;  
+            android:value=&quot;30&quot; /&gt;  
+
+
+        &lt;activity
+            android:name=&quot;.MainActivity&quot;
+            android:label=&quot;@string/app_name&quot; &gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
 <h3 id="编译并安全这个apk"><a href="#编译并安全这个apk" class="headerlink" title="编译并安全这个apk"></a>编译并安全这个apk</h3><p>Xposed会自已识别，打开Xposed的”模块”，启用刚才安装的模块<br><img src="/image/xposedmodule.png" alt="安装好的模块"></p>
 <h3 id="再打开之前写的showTime应用，点击按钮看看"><a href="#再打开之前写的showTime应用，点击按钮看看" class="headerlink" title="再打开之前写的showTime应用，点击按钮看看"></a>再打开之前写的showTime应用，点击按钮看看</h3><p><img src="/image/errorTime.png" alt="被hook后的时间"></p>
 <p>使用XposedBridge.log() 记录的log可以在Xposed的日志里看到</p>
-<h1 id="Hook自定义的函数"><a href="#Hook自定义的函数" class="headerlink" title="Hook自定义的函数"></a>Hook自定义的函数</h1><p>刚才hook的是系统的函数，下面写一个hook自定义的函数<br>还是在刚才showTime的项目中再加一个用户登录的模拟操作<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.showtimer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Activity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.View.OnClickListener;</span><br><span class="line"><span class="keyword">import</span> android.view.Window;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.EditText;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        <span class="keyword">final</span> EditText usename = (EditText) findViewById(R.id.username);</span><br><span class="line">        <span class="keyword">final</span> EditText password = (EditText) findViewById(R.id.password);</span><br><span class="line">        Button login = (Button) findViewById(R.id.button1);</span><br><span class="line">        <span class="keyword">final</span> TextView tv = (TextView) findViewById(R.id.tv);</span><br><span class="line">        Button show = (Button) findViewById(R.id.showTimer);</span><br><span class="line">        show.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Calendar c = Calendar.getInstance();</span><br><span class="line">                <span class="keyword">int</span> year = c.get(Calendar.YEAR);</span><br><span class="line">                <span class="keyword">int</span> month = c.get(Calendar.MONTH);</span><br><span class="line">                <span class="keyword">int</span> day = c.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">                <span class="keyword">int</span> hour = c.get(Calendar.HOUR);</span><br><span class="line">                <span class="keyword">int</span> min = c.get(Calendar.MINUTE);</span><br><span class="line">                String time = <span class="string">""</span>+year+<span class="string">"-"</span>+month+<span class="string">"-"</span>+day+<span class="string">" "</span>+hour+<span class="string">":"</span>+min;</span><br><span class="line">                tv.setText(time);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        login.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                String user = usename.getText()+<span class="string">""</span>;</span><br><span class="line">                String pass = password.getText()+<span class="string">""</span>;</span><br><span class="line">                <span class="keyword">if</span> (validate(user,pass)) &#123;</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"登录成功"</span>, Toast.LENGTH_LONG).show();</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"登录失败"</span>, Toast.LENGTH_LONG).show();</span><br><span class="line">                &#125;               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">validate</span><span class="params">(String user, String pass)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (user.equals(<span class="string">"yang"</span>)&amp;&amp;pass.equals(<span class="string">"123"</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Hook自定义的函数"><a href="#Hook自定义的函数" class="headerlink" title="Hook自定义的函数"></a>Hook自定义的函数</h1><p>刚才hook的是系统的函数，下面写一个hook自定义的函数<br>还是在刚才showTime的项目中再加一个用户登录的模拟操作</p>
+<pre><code class="java">package com.example.showtimer;
+
+import java.util.Calendar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+        final EditText usename = (EditText) findViewById(R.id.username);
+        final EditText password = (EditText) findViewById(R.id.password);
+        Button login = (Button) findViewById(R.id.button1);
+        final TextView tv = (TextView) findViewById(R.id.tv);
+        Button show = (Button) findViewById(R.id.showTimer);
+        show.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int hour = c.get(Calendar.HOUR);
+                int min = c.get(Calendar.MINUTE);
+                String time = &quot;&quot;+year+&quot;-&quot;+month+&quot;-&quot;+day+&quot; &quot;+hour+&quot;:&quot;+min;
+                tv.setText(time);
+
+            }
+        });
+
+        login.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                String user = usename.getText()+&quot;&quot;;
+                String pass = password.getText()+&quot;&quot;;
+                if (validate(user,pass)) {
+                    Toast.makeText(MainActivity.this, &quot;登录成功&quot;, Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this, &quot;登录失败&quot;, Toast.LENGTH_LONG).show();
+                }               
+            }
+        });
+
+
+    }
+
+    private boolean validate(String user, String pass) {
+            if (user.equals(&quot;yang&quot;)&amp;&amp;pass.equals(&quot;123&quot;)) {
+                return true;
+            }
+            return false;
+    }
+
+}
+</code></pre>
 <p>这里自定义了一个validate方法，校验user为”yang”且pass为123则返回真，Toast显示登录成功<br>其它的都返回假。</p>
-<p>接着再刚才的Hook类中写hook方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.xposedtest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.IXposedHookLoadPackage;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XC_MethodHook;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.XposedBridge;</span><br><span class="line"><span class="keyword">import</span> de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> de.robv.android.xposed.XposedHelpers.findAndHookMethod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.ViewGroup;</span><br><span class="line"><span class="keyword">import</span> android.widget.TextView;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hook</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!lpparam.packageName.equals(<span class="string">"com.example.showtimer"</span>))  </span><br><span class="line">            <span class="keyword">return</span>;  </span><br><span class="line">        XposedBridge.log(<span class="string">"Loaded app name   : "</span> + lpparam.packageName);</span><br><span class="line">        XposedBridge.log(<span class="string">"Loaded app process: "</span> + lpparam.processName);</span><br><span class="line">        XposedBridge.log(<span class="string">"Loaded app appInfo: "</span> + lpparam.appInfo);</span><br><span class="line">        findAndHookMethod(<span class="string">"java.util.Calendar"</span>, lpparam.classLoader,<span class="string">"get"</span>,<span class="keyword">int</span>.class,<span class="keyword">new</span> XC_MethodHook() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called before the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;beforeHookedMethod:Calendar.get"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called after the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;afterHookedMethod:Calendar.get"</span>);</span><br><span class="line">                param.setResult((<span class="keyword">int</span>)<span class="number">11</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        findAndHookMethod(<span class="string">"com.example.showtimer.MainActivity"</span>, lpparam.classLoader, <span class="string">"validate"</span>, String.class,String.class,<span class="keyword">new</span> XC_MethodHook()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;beforeHookedMethod:validate"</span>);</span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod userName:"</span> + param.args[<span class="number">0</span>]);   </span><br><span class="line">                <span class="comment">//传入参数2   </span></span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod pass:"</span> + param.args[<span class="number">1</span>]);  </span><br><span class="line">                <span class="comment">//函数返回值  </span></span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod result:"</span> + param.getResult());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="comment">// this will be called after the clock was updated by the original method</span></span><br><span class="line">                XposedBridge.log(<span class="string">"Enter-&gt;afterHookedMethod:validate"</span>);</span><br><span class="line">                param.setResult(<span class="keyword">true</span>);</span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod userName:"</span> + param.args[<span class="number">0</span>]);   </span><br><span class="line">                <span class="comment">//传入参数2   </span></span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod pass:"</span> + param.args[<span class="number">1</span>]);  </span><br><span class="line">                <span class="comment">//函数返回值  </span></span><br><span class="line">                XposedBridge.log(<span class="string">"afterHookedMethod result:"</span> + param.getResult());  </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着再刚才的Hook类中写hook方法</p>
+<pre><code class="java">package com.example.xposedtest;
+
+import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedBridge;
+import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
+import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast; 
+
+
+public class Hook implements IXposedHookLoadPackage {
+
+    @Override
+    public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
+        if (!lpparam.packageName.equals(&quot;com.example.showtimer&quot;))  
+            return;  
+        XposedBridge.log(&quot;Loaded app name   : &quot; + lpparam.packageName);
+        XposedBridge.log(&quot;Loaded app process: &quot; + lpparam.processName);
+        XposedBridge.log(&quot;Loaded app appInfo: &quot; + lpparam.appInfo);
+        findAndHookMethod(&quot;java.util.Calendar&quot;, lpparam.classLoader,&quot;get&quot;,int.class,new XC_MethodHook() {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called before the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;beforeHookedMethod:Calendar.get&quot;);
+            }
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called after the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;afterHookedMethod:Calendar.get&quot;);
+                param.setResult((int)11);
+            }
+        });
+
+        findAndHookMethod(&quot;com.example.showtimer.MainActivity&quot;, lpparam.classLoader, &quot;validate&quot;, String.class,String.class,new XC_MethodHook(){
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                XposedBridge.log(&quot;Enter-&gt;beforeHookedMethod:validate&quot;);
+                XposedBridge.log(&quot;afterHookedMethod userName:&quot; + param.args[0]);   
+                //传入参数2   
+                XposedBridge.log(&quot;afterHookedMethod pass:&quot; + param.args[1]);  
+                //函数返回值  
+                XposedBridge.log(&quot;afterHookedMethod result:&quot; + param.getResult());
+            }
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                // this will be called after the clock was updated by the original method
+                XposedBridge.log(&quot;Enter-&gt;afterHookedMethod:validate&quot;);
+                param.setResult(true);
+                XposedBridge.log(&quot;afterHookedMethod userName:&quot; + param.args[0]);   
+                //传入参数2   
+                XposedBridge.log(&quot;afterHookedMethod pass:&quot; + param.args[1]);  
+                //函数返回值  
+                XposedBridge.log(&quot;afterHookedMethod result:&quot; + param.getResult());  
+            }
+
+        });
+}
+</code></pre>
 <p>在afterHookedMethod方法中将param.setResult(true);则无论输入什么或者不输入都会返回真，这样无论如何都能显示一个Toast登录成功。</p>
 <p><img src="/image/loginSuc.png" alt="登录成功"></p>
 <p>后记：<br>如果测试的apk用了混淆，则hook的时候也要修改相应的函数为混淆后的函数。<br>Xposed这个工具可以做很多事情，在测试行业里可以用于构造一些很不好模拟的环境，另外各种插件也能玩的很6。</p>
 
-        
-        
-        
         <div class="article-footer-copyright">
-	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
-	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-	本文标题为: Xposed框架初体验<br>
-	本文链接为：<a href="http://www.yangyanxing.com/article/first-use-Xposed.html">http://www.yangyanxing.com/article/first-use-Xposed.html</a><br>
-
-</div>
-        <br><br>
-        
-        
-  <!-- css -->
-  <style type="text/css">
-      .center {
-          text-align: center;
-      }
-      .hidden {
-          display: none;
-      }
-    .donate_bar a.btn_donate{
-      display: inline-block;
-      width: 82px;
-      height: 82px;
-      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-
-      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
-           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
-         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
-         嵌入其它博客时不一定要它们。 -->
-      -webkit-transition: background 0s;
-      -moz-transition: background 0s;
-      -o-transition: background 0s;
-      -ms-transition: background 0s;
-      transition: background 0s;
-      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
-    }
-
-    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
-    .donate_bar .donate_txt {
-      display: block;
-      color: #9d9d9d;
-      font: 14px/2 "Microsoft Yahei";
-    }
-    .bold{ font-weight: bold; }
-  </style>
-  <!-- /css -->
-
-    <!-- Donate Module -->
-    <div id="donate_module">
-
-  <!-- btn_donate & tips -->
-  <div id="donate_board" class="donate_bar center">
-      <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
+            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+            本文标题为: Xposed框架初体验<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/first-use-Xposed.html">http://www.yangyanxing.com/article/first-use-Xposed.html</a><br>
+        </div>
+    </main>
+    <footer class="post-footer">
       
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
     
   </div>
-  <!-- /btn_donate & tips -->
+</div>
 
-  <!-- donate guide -->
+
+  
+  
+  <div class="post-nav">
     
-  <div id="donate_guide" class="donate_bar center hidden">
-        <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-
-    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
-      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-        
-        &nbsp;&nbsp;
-
-    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
-      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
-
+    <div class="post-nav-next post-nav-item">
+      <a href="/article/use-wireshark-capture-https.html" rel="next" title="使用wireshark抓取解密https包">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">使用wireshark抓取解密https包</span>
+      </a>
+    </div>
+    
+    
+    <div class="post-nav-prev post-nav-item">
+      <a href="/article/use-mac-mount-ntfs-disk.html" rel="prev" title="在MAC下加载NTFS移动硬盘或者U盘">
+        <span class="nav-title">在MAC下加载NTFS移动硬盘或者U盘</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
   </div>
-  <!-- /donate guide -->
-
-  <!-- donate script -->
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function() {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-
-    function donate_on_web(){
-      $('#donate').submit();
-        }
-
-    var original_window_onload = window.onload;
-        window.onload = function () {
-            if (original_window_onload) {
-                original_window_onload();
-            }
-            document.getElementById('donate_board_wdg').className = 'hidden';
-    }
-  </script>
-  <!-- /donate script -->
-</div>
-<!-- /Donate Module -->
-           
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/first-use-Xposed.html" data-id="cjbnsifen002c08dnxuu463b1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/first-use-Xposed.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/article/use-mac-mount-ntfs-disk.html" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    在MAC下加载NTFS移动硬盘或者U盘
-                
-            </div>
-        </a>
-    
-    
-        <a href="/article/use-wireshark-capture-https.html" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">使用wireshark抓取解密https包</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="uyan_frame"></div>
+  
+  
 </section>
-    
 
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
-
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于Xposed"><span class="toc-text"><a href="#&#x5173;&#x4E8E;Xposed" class="headerlink" title="&#x5173;&#x4E8E;Xposed"></a>&#x5173;&#x4E8E;Xposed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本原理"><span class="toc-text"><a href="#&#x57FA;&#x672C;&#x539F;&#x7406;" class="headerlink" title="&#x57FA;&#x672C;&#x539F;&#x7406;"></a>&#x57FA;&#x672C;&#x539F;&#x7406;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写hook模块使用"><span class="toc-text"><a href="#&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;" class="headerlink" title="&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;"></a>&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先先写测试的apk"><span class="toc-text"><a href="#&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk" class="headerlink" title="&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk"></a>&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写hook模块"><span class="toc-text"><a href="#&#x5199;hook&#x6A21;&#x5757;" class="headerlink" title="&#x5199;hook&#x6A21;&#x5757;"></a>&#x5199;hook&#x6A21;&#x5757;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个hookTest的android项目并将XposedBridgeApi-54-jar加入项目的build-path中"><span class="toc-text"><a href="#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54-jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;" class="headerlink" title="&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54.jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;"></a>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54.jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个Hook类实现IXposedHookLoadPackage接口"><span class="toc-text"><a href="#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;" class="headerlink" title="&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;"></a>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明主入口路径"><span class="toc-text"><a href="#&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;" class="headerlink" title="&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;"></a>&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在AndroidManifest-xml文件中配置插件名称与Api版本号"><span class="toc-text"><a href="#&#x5728;AndroidManifest-xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;" class="headerlink" title="&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;"></a>&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译并安全这个apk"><span class="toc-text"><a href="#&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk" class="headerlink" title="&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk"></a>&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再打开之前写的showTime应用，点击按钮看看"><span class="toc-text"><a href="#&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;" class="headerlink" title="&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;"></a>&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hook自定义的函数"><span class="toc-text"><a href="#Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;" class="headerlink" title="Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;"></a>Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;</span></a></li></ol></div>
+</div>
+
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
+    
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
+    
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
+    
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
+    
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -731,38 +677,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>

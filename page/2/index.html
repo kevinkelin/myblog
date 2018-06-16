@@ -1,1782 +1,927 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨彦星">
-<meta property="og:url" content="http://www.yangyanxing.com/page/2/index.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨彦星">
-<meta name="twitter:description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-    
-
-    
-
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
     
     
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
+    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
 
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="index" class="index">
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/https-basic.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main">
-    <article id="post-use-watcher-in-uiautomator" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/https-basic.html" itemprop="url">HTTPS理论基础</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-06-09T15:51:32+08:00">2016-06-09</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/use-watcher-in-uiautomator.html">Uiautomator中watcher的使用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/use-watcher-in-uiautomator.html">
-            <time datetime="2016-05-13T15:09:30.000Z" itemprop="datePublished">2016-05-13</time>
-        </a>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/计算机相关/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>在网上看了好多https的相关文章，但一般都是千篇一律，越看越糊涂<br>今天在网上看了一篇文章，觉得还不错，讲的还比较清晰，看完以后对于https有了相对深入的理解<br><a href="http://blog.csdn.net/iispring/article/details/51615631" target="_blank" rel="noopener">HTTPS理论基础及其在Android中的最佳实践</a><br>以下是我读后的一些理解<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/https-basic.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/安全/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 安全</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/learning-context.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Android/">Android</a>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/learning-context.html" itemprop="url">(转)Android Context完全解析，你所不知道的Context的各种细节</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-05-29T23:55:59+08:00">2016-05-29</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>以下转自郭霖大神的博客</p>
+<p>转载请注明出处：<a href="http://blog.csdn.net/guolin_blog/article/details/47028975" target="_blank" rel="noopener">http://blog.csdn.net/guolin_blog/article/details/47028975</a><br>前几篇文章，我也是费劲心思写了一个ListView系列的三部曲，虽然在内容上可以说是绝对的精华，但是很多朋友都表示看不懂。好吧，这个系列不仅是把大家给难倒了，也确实是把我给难倒了，之前为了写瀑布流ListView的Demo就写了大半个月的时间。那么本篇文章我们就讲点轻松的东西，不去分析那么复杂的源码了，而是来谈一谈大家都熟知的Context。<br>Context相信所有的Android开发人员基本上每天都在接触，因为它太常见了。但是这并不代表Context没有什么东西好讲的，实际上Context有太多小的细节并不被大家所关注，那么今天我们就来学习一下那些你所不知道的细节。<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/learning-context.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> Android</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/use-watcher-in-uiautomator.html" itemprop="url">Uiautomator中watcher的使用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-05-13T23:09:30+08:00">2016-05-13</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>今天在uiautomator中实践了watcher的用法，这个也是之前在python中使用uiautomator中比较喜欢的功能，它可以提前定义一些条件，当满足一些条件时，进行一些操作，这个常用于处理测试过程中某些意料之外的或者不知道什么时候弹出来的框而阻碍测试的正常进行。<br>之前在写自动化用例的时候，遇到过小米手机在安装app的时候，会弹一个框来让用户点击安装，还有弹出一个升级检测的框点击“取消”按钮，或者遇到退出的时候点击确定，当然这些完全可以在用例里写逻辑来处理，而且有些还是程序本身要测试的检测点，当然这些对于大多数测试来说没有太大的意义，所以可以将其放入一个watcher里来让uiautomator来帮你进行相应的点击处理。<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/use-watcher-in-uiautomator.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> Android</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-                    </div>
-                
-            </header>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/use-uiautomator-for-uitest.html" itemprop="url">使用Uiautomator做基于UI界面的测试</a>
+      </h2>
+      <div class="post-meta">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>今天在uiautomator中实践了watcher的用法，这个也是之前在python中使用uiautomator中比较喜欢的功能，它可以提前定义一些条件，当满足一些条件时，进行一些操作，这个常用于处理测试过程中某些意料之外的或者不知道什么时候弹出来的框而阻碍测试的正常进行。<br>之前在写自动化用例的时候，遇到过小米手机在安装app的时候，会弹一个框来让用户点击安装，还有弹出一个升级检测的框点击“取消”按钮，或者遇到退出的时候点击确定，当然这些完全可以在用例里写逻辑来处理，而且有些还是程序本身要测试的检测点，当然这些对于大多数测试来说没有太大的意义，所以可以将其放入一个watcher里来让uiautomator来帮你进行相应的点击处理。<br></p>
-            <p class="article-more-link">
-                <a href="/article/use-watcher-in-uiautomator.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-05-12T01:04:03+08:00">2016-05-12</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html" data-id="cjbnsifea001v08dnfm2hks84" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>这两天在看原生的<code>uiautomator</code>的测试，之前也有使用，但是只是把Android官方的例子简单的实现一样，并没有什么实际的测试意思，<a href="http://www.yangyanxing.com/article/1264.html">Android官方的uiautomator例子的实现</a>,今天结合最近正在做的自动化项目，简单的使用uiautomator来实现了一下，只是做了一个小例子，但是基本上都如何编译jar与运行调通了，这里也简单的记录一下。<br>之前也有使用别人封装好的python做过，那个写起来也比较简单，<a href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html">使用uiautomator的python封装进行android的UI测试</a></p>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/use-uiautomator-for-uitest.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/java/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> java</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/Spring-Festival.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-use-uiautomator-for-uitest" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/Spring-Festival.html" itemprop="url">过年</a>
+      </h2>
+      <div class="post-meta">
         
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/use-uiautomator-for-uitest.html">使用Uiautomator做基于UI界面的测试</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/use-uiautomator-for-uitest.html">
-            <time datetime="2016-05-11T17:04:03.000Z" itemprop="datePublished">2016-05-12</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>这两天在看原生的<code>uiautomator</code>的测试，之前也有使用，但是只是把Android官方的例子简单的实现一样，并没有什么实际的测试意思，<a href="http://www.yangyanxing.com/article/1264.html">Android官方的uiautomator例子的实现</a>,今天结合最近正在做的自动化项目，简单的使用uiautomator来实现了一下，只是做了一个小例子，但是基本上都如何编译jar与运行调通了，这里也简单的记录一下。<br>之前也有使用别人封装好的python做过，那个写起来也比较简单，<a href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html">使用uiautomator的python封装进行android的UI测试</a></p></p>
-            <p class="article-more-link">
-                <a href="/article/use-uiautomator-for-uitest.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-02-13T20:11:19+08:00">2016-02-13</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html" data-id="cjbnsifgt004w08dn51egkxjr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Spring-Festival" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/生活记录/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a></span>
+          
+          
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/Spring-Festival.html">过年</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/Spring-Festival.html">
-            <time datetime="2016-02-13T12:11:19.000Z" itemprop="datePublished">2016-02-13</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/生活记录/">生活记录</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><img src="/image/665344343178029836.jpg" alt="新年快乐"></p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p><img src="/image/665344343178029836.jpg" alt="新年快乐"></p>
 <p>首都再见，北京你好<br>又是一年，这个年过的相对平静<br>年味少了很多，不像小时候那样还会放鞭炮，不会像小时候那样盼着大吃大喝<br>现在更加喜欢过了一个清淡的年</p>
-<p>春节，对于中国人来说是最重要的节日，家人可以放下手中的工作相聚一起<br>家在农村，平时在城市里工作生活，每逢周末回家，在家里总能睡个很好的觉</p></p>
-            <p class="article-more-link">
-                <a href="/article/Spring-Festival.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/Spring-Festival.html" data-id="cjbnsifj6007t08dnsnj86ipi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/Spring-Festival.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+<p>春节，对于中国人来说是最重要的节日，家人可以放下手中的工作相聚一起<br>家在农村，平时在城市里工作生活，每逢周末回家，在家里总能睡个很好的觉</p>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/Spring-Festival.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-ThinkPHP-workwith-weibo-sdk" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/ThinkPHP-workwith-weibo-sdk.html" itemprop="url">在ThinkPHP整合新浪微博SDK</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-02-10T22:28:32+08:00">2016-02-10</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/ThinkPHP-workwith-weibo-sdk.html">在ThinkPHP整合新浪微博SDK</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/ThinkPHP-workwith-weibo-sdk.html">
-            <time datetime="2016-02-10T14:28:32.000Z" itemprop="datePublished">2016-02-10</time>
-        </a>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近在玩PHP，在看了基本语法以后就开始看ThinkPHP了，几年以前接触过一些，但是基本上都忘的差不多了<br>现在再看的时候，发现版本更新了好多，添加了很多新的功能特性，使用时候也有很多不一样的，之前写了一篇边看边写的笔记，<a href="http://www.yangyanxing.com/article/thinkphp-study-note.html">ThinkPHP的学习笔记</a><br>今天结合<a href="http://document.thinkphp.cn/manual_3_2.html" target="_blank" rel="noopener">官方的文档</a>来整合一下新浪微博的SDK，在使用的过程中还是有一些问题需要注意的，我使用的是3.2.3版本<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/ThinkPHP-workwith-weibo-sdk.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/ThinkPHP/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> ThinkPHP</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/PHP/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> PHP</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/微博/" style="background: #47aaff" rel="tag"><i class="fas fa-tags"></i> 微博</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/thinkphp-study-note.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/PHP/">PHP</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/PHP/">PHP</a>, <a class="tag-link" href="/tags/ThinkPHP/">ThinkPHP</a>, <a class="tag-link" href="/tags/微博/">微博</a>
-    </div>
-
-                    </div>
-                
-            </header>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/thinkphp-study-note.html" itemprop="url">ThinkPHP的学习笔记</a>
+      </h2>
+      <div class="post-meta">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近在玩PHP，在看了基本语法以后就开始看ThinkPHP了，几年以前接触过一些，但是基本上都忘的差不多了<br>现在再看的时候，发现版本更新了好多，添加了很多新的功能特性，使用时候也有很多不一样的，之前写了一篇边看边写的笔记，<a href="http://www.yangyanxing.com/article/thinkphp-study-note.html">ThinkPHP的学习笔记</a><br>今天结合<a href="http://document.thinkphp.cn/manual_3_2.html" target="_blank" rel="noopener">官方的文档</a>来整合一下新浪微博的SDK，在使用的过程中还是有一些问题需要注意的，我使用的是3.2.3版本<br></p>
-            <p class="article-more-link">
-                <a href="/article/ThinkPHP-workwith-weibo-sdk.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-30T20:38:08+08:00">2016-01-30</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html" data-id="cjbnsifdk000v08dnibdwa59w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-thinkphp-study-note" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
+          
+          
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/thinkphp-study-note.html">ThinkPHP的学习笔记</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/thinkphp-study-note.html">
-            <time datetime="2016-01-30T12:38:08.000Z" itemprop="datePublished">2016-01-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/PHP/">PHP</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/PHP/">PHP</a>, <a class="tag-link" href="/tags/ThinkPHP/">ThinkPHP</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h1 id="初始化一个项目"><a href="#初始化一个项目" class="headerlink" title="初始化一个项目"></a>初始化一个项目</h1><p>thinkphp是单入口文件<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">define(<span class="string">"APP_NAME"</span>, <span class="string">"THINK_Study"</span>);</span><br><span class="line">define(<span class="string">"APP_PATH"</span>, <span class="string">"./study/"</span>);</span><br><span class="line">define(<span class="string">"APP_DEBUG"</span>, <span class="keyword">true</span>);</span><br><span class="line"><span class="keyword">require</span>(<span class="string">"./ThinkPHP/ThinkPHP.php"</span>);</span><br></pre></td></tr></table></figure></p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <h1 id="初始化一个项目"><a href="#初始化一个项目" class="headerlink" title="初始化一个项目"></a>初始化一个项目</h1><p>thinkphp是单入口文件</p>
+<pre><code class="php">&lt;?php
+define(&quot;APP_NAME&quot;, &quot;THINK_Study&quot;);
+define(&quot;APP_PATH&quot;, &quot;./study/&quot;);
+define(&quot;APP_DEBUG&quot;, true);
+require(&quot;./ThinkPHP/ThinkPHP.php&quot;);
+</code></pre>
 <p>Note:</p>
 <ol>
 <li>要先定义APP_PATH,后再include thinkphp 主入口文件，要不然会在当前目录上建立目录，很乱</li>
 <li>各种版本生成的目录有些不同，我现在用的是3.2.3 就没有lib目录，而是只有一个home目录,下面的Controller目录相当于之前版本的是lib目录，里面记录着控制器，是MVC中的C，同级目录还有Model和View目录，这样更明显</li>
-<li><p>各个项目下的<code>Conf\config.php</code> 里的内容只有自已的项目才能读取，其它项目读取不了，比如<code>admin</code>读不了<code>study</code>配置</p></p>
-            <p class="article-more-link">
-                <a href="/article/thinkphp-study-note.html#more">查看更多</a>
-            </p>
+<li><p>各个项目下的<code>Conf\config.php</code> 里的内容只有自已的项目才能读取，其它项目读取不了，比如<code>admin</code>读不了<code>study</code>配置</p>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/thinkphp-study-note.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/thinkphp-study-note.html" data-id="cjbnsife0001k08dnbsdl0ty2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/thinkphp-study-note.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+        <a class="post-tag button" href="/tags/ThinkPHP/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> ThinkPHP</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/PHP/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> PHP</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-python-dircompare.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-use-python-dircompare" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/use-python-dircompare.html" itemprop="url">使用python进行文件夹对比</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-12-29T23:09:30+08:00">2015-12-29</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/use-python-dircompare.html">使用python进行文件夹对比</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/use-python-dircompare.html">
-            <time datetime="2015-12-29T15:09:30.000Z" itemprop="datePublished">2015-12-29</time>
-        </a>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近写一个小脚本，在使用系统急救箱扫描并且处理完后，要将处理以后的样本和提供的标准进行对比<br>已经提供了样本与处理以后的文件，我要写的脚本就是启急救箱并且将两个文件夹进行比较<br>启动并且扫描比较好实现，但是在进行文件夹对比的时候走了一些弯路<br>上网查到python的标准库里有一个filecmp类，这个类可以对文件夹或者文件进行对比，使用起来还是比较方便的<br><a href="http://python.usyiyi.cn/python_278/library/filecmp.html" title="filecmp官方文档" target="_blank" rel="noopener">filecmp官方文档/</a></p>
+<p>使用最下面的例子程序，我又对其进行了扩充<br>我想达到的目的就是先对两个文件夹进行比较，输出不同的文件，然后再输出各自文件夹中独有的文件<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/use-python-dircompare.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1389.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1389.html" itemprop="url">使用国内镜像源来加速python pypi包的安装</a>
+      </h2>
+      <div class="post-meta">
         
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近写一个小脚本，在使用系统急救箱扫描并且处理完后，要将处理以后的样本和提供的标准进行对比<br>已经提供了样本与处理以后的文件，我要写的脚本就是启急救箱并且将两个文件夹进行比较<br>启动并且扫描比较好实现，但是在进行文件夹对比的时候走了一些弯路<br>上网查到python的标准库里有一个filecmp类，这个类可以对文件夹或者文件进行对比，使用起来还是比较方便的<br><a href="http://python.usyiyi.cn/python_278/library/filecmp.html" title="filecmp官方文档" target="_blank" rel="noopener">filecmp官方文档/</a></p>
-<p>使用最下面的例子程序，我又对其进行了扩充<br>我想达到的目的就是先对两个文件夹进行比较，输出不同的文件，然后再输出各自文件夹中独有的文件<br></p>
-            <p class="article-more-link">
-                <a href="/article/use-python-dircompare.html#more">查看更多</a>
-            </p>
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-10-10T22:57:44+08:00">2015-10-10</time>
+        </span>
         
         
         
+        <span class="post-meta-divider"> | </span>
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/use-python-dircompare.html" data-id="cjbnsifh4005908dnf5khfjd0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/use-python-dircompare.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-1389" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/1389.html">使用国内镜像源来加速python pypi包的安装</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/1389.html">
-            <time datetime="2015-10-10T14:57:44.000Z" itemprop="datePublished">2015-10-10</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>在国内使用pip安装包的时候，很多时候由于各种原因无法正常使用pypi.python.org的源，还好有国内的良心网站提供了国内镜像</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>在国内使用pip安装包的时候，很多时候由于各种原因无法正常使用pypi.python.org的源，还好有国内的良心网站提供了国内镜像</p>
 <p>网上的方法都是在%HOMEPATH%中新建pip目录，再新建一个pip.ini，可是我试了以后还是不能用，也不知道原作者是否可以用</p>
-<p>后来我看了一下它的文档</p>
-            <p class="article-more-link">
-                <a href="/article/1389.html#more">查看更多</a>
-            </p>
+<p>后来我看了一下它的文档
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1389.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/1389.html" data-id="cjbnsifh7005c08dnpek3k4fx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/1389.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1385.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-    
-</article>
-
-
-
-    <article id="post-1385" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1385.html" itemprop="url">Android中的listView与ArrayAdapter与LayoutInflater的使用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-10-06T01:21:03+08:00">2015-10-06</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/1385.html">Android中的listView与ArrayAdapter与LayoutInflater的使用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/1385.html">
-            <time datetime="2015-10-05T17:21:03.000Z" itemprop="datePublished">2015-10-06</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/android/">android</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近在看《第一行代码-android》，这本书讲的不错，从最android基础的开始讲起，由浅入深，一步一步的教怎么使用android开发中的各种内容，今天看到listView，书中讲到listView可能是使用最多也是最难的一个组件，看过之后觉得还是需要好好消化一下的，借助书中的代码，来记录一下学习的过程</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近在看《第一行代码-android》，这本书讲的不错，从最android基础的开始讲起，由浅入深，一步一步的教怎么使用android开发中的各种内容，今天看到listView，书中讲到listView可能是使用最多也是最难的一个组件，看过之后觉得还是需要好好消化一下的，借助书中的代码，来记录一下学习的过程</p>
 <p>一、在listView中简单的显示一行文字</p>
-<p>这个应该是listView应用中最简单的了，在使用listView中，一般的步骤应该是，先在main_activity.xml中创建好listView的布局<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"</span><br><span class="line">xmlns:tools="http://schemas.android.com/tools"</span><br><span class="line">android:layout_width="match_parent"</span><br><span class="line">android:layout_height="match_parent"</span><br><span class="line">android:orientation="vertical" &gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ListView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/list_view"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">ListView</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/article/1385.html#more">查看更多</a>
-            </p>
+<p>这个应该是listView应用中最简单的了，在使用listView中，一般的步骤应该是，先在main_activity.xml中创建好listView的布局</p>
+<pre><code class="html">LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+android:orientation=&quot;vertical&quot; &gt;
+
+&lt;ListView
+    android:id=&quot;@+id/list_view&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    &gt;
+
+&lt;/ListView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1385.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
         
         
         
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/1385.html" data-id="cjbnsifd7000f08dnqa7mjkvw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/1385.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-1381" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
         
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/1381.html">使用jquery在一个页面中有多个form表单做数据有效性校验</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/1381.html">
-            <time datetime="2015-10-02T08:23:48.000Z" itemprop="datePublished">2015-10-02</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/jquery/">jquery</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近在做一个小网站的项目，有一个小问题，可能在有经验的前端er面前不是什么问题，但是由于我接触前端很少，所以这个问题也搞了好一会才解决</p>
-<p>在一个页面里有两个表单，在各自点击提交时，先要对相应的input里做非空校验，然后再对里面的数据做下简单的字符串判断<br></p>
-            <p class="article-more-link">
-                <a href="/article/1381.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/1381.html" data-id="cjbnsifgm004m08dnhe5efvak" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/1381.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-how-to-use-uiautomator-with-python" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/article/how-to-use-uiautomator-with-python.html">使用uiautomator的python封装进行android的UI测试</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/how-to-use-uiautomator-with-python.html">
-            <time datetime="2015-08-27T17:17:30.000Z" itemprop="datePublished">2015-08-28</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/android/">android</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作</p>
-<p>基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截</p>
-<p>考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是有很多需要注意的地方<br></p>
-            <p class="article-more-link">
-                <a href="/article/how-to-use-uiautomator-with-python.html#more">查看更多</a>
-            </p>
-        
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html" data-id="cjbnsifgp004p08dnn4jik20w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
-    </nav>
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a>
+  </nav>
+  
+  
 </section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
-
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
+    
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
+    
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
+    
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
+    
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
+    
+  </ul>
+</div>
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -1792,38 +937,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>

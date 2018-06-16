@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yangyanxing.com/article/put-html-to-qiniu.html</loc>
+    
+    <lastmod>2018-06-13T15:21:08.515Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yangyanxing.com/article/try_in_python.html</loc>
+    
+    <lastmod>2018-04-27T15:51:49.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yangyanxing.com/article/use-selenium-op-browser.html</loc>
+    
+    <lastmod>2018-04-26T16:50:55.574Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yangyanxing.com/article/use-python-get-house-info.html</loc>
+    
+    <lastmod>2018-01-27T05:18:53.748Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yangyanxing.com/article/use-apscheduler.html</loc>
+    
+    <lastmod>2017-12-26T16:10:18.786Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yangyanxing.com/README.html</loc>
     
     <lastmod>2017-12-18T14:40:59.764Z</lastmod>
@@ -145,27 +180,6 @@
     <loc>http://www.yangyanxing.com/article/use-webpy.html</loc>
     
     <lastmod>2017-12-16T10:11:00.516Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.yangyanxing.com/article/try_in_python.html</loc>
-    
-    <lastmod>2017-12-16T10:11:00.513Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.yangyanxing.com/article/use-apscheduler.html</loc>
-    
-    <lastmod>2017-12-16T10:11:00.505Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.yangyanxing.com/article/use-python-get-house-info.html</loc>
-    
-    <lastmod>2017-12-16T10:11:00.502Z</lastmod>
     
   </url>
   

@@ -1,0 +1,2602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>杨彦星</title>
+  
+  <subtitle>序语程言</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.yangyanxing.com/"/>
+  <updated>2018-06-13T15:21:08.515Z</updated>
+  <id>http://www.yangyanxing.com/</id>
+  
+  <author>
+    <name>杨彦星</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将hexo生成的静态网站部署到七牛</title>
+    <link href="http://www.yangyanxing.com/article/put-html-to-qiniu.html"/>
+    <id>http://www.yangyanxing.com/article/put-html-to-qiniu.html</id>
+    <published>2018-06-13T15:53:38.000Z</published>
+    <updated>2018-06-13T15:21:08.515Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近由于百度的BAE引擎取消了对基础版的支持，所以没有办法，继续寻找可以托管html的服务器。&lt;br&gt;之前用过gitpages,coding与bae，这几个可以说各有各的特点，也各有各的缺点&lt;br&gt;gitpages什么都好，就是访问相对慢，coding非要你加一个它们的链接，否则就要在访问网站最开始加个广告&lt;br&gt;BAE呢，其实BAE基础版挺好的，访问速度快，价钱也合理，没想到他们将要取消了。&lt;br&gt;在查找新的部署方案时发现有人提到七牛云存储，看了一下他们的文档，可以暂时的满足托管html纯静态网页需求。&lt;br&gt;开始动工！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+      <category term="web" scheme="http://www.yangyanxing.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用python操作selenium操作第三方浏览器(360浏览器)</title>
+    <link href="http://www.yangyanxing.com/article/use-selenium-op-browser.html"/>
+    <id>http://www.yangyanxing.com/article/use-selenium-op-browser.html</id>
+    <published>2018-04-26T14:41:32.000Z</published>
+    <updated>2018-04-26T16:50:55.574Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在测试一个项目，使用360浏览器来做一些操作&lt;br&gt;之前使用过selenium来操作chrome和FireFox，这里记录一下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中的异常处理</title>
+    <link href="http://www.yangyanxing.com/article/try_in_python.html"/>
+    <id>http://www.yangyanxing.com/article/try_in_python.html</id>
+    <published>2017-08-19T15:53:38.000Z</published>
+    <updated>2018-04-27T15:51:49.557Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用python抓取自住房信息</title>
+    <link href="http://www.yangyanxing.com/article/use-python-get-house-info.html"/>
+    <id>http://www.yangyanxing.com/article/use-python-get-house-info.html</id>
+    <published>2017-07-11T14:41:32.000Z</published>
+    <updated>2018-01-27T05:18:53.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用python也有一段时间了，最近比较关注自住房信息，虽说它更新的比较缓慢，但是平时也不怎么会特意的去它的网站上去看，&lt;br&gt;于是就想用python抓它的信息，如果有新的信息就给自己发个邮件，这样手机上得到通知以后就可以再去它的网站上看看。&lt;br&gt;功能比较简单，但是用到的点还是挺多的，这里记录一下。&lt;br&gt;主要有以下几个步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;python beautifulsoup 与requests的使用&lt;/li&gt;
+&lt;li&gt;ubuntu 中安装 mysql 与mysql-python &lt;/li&gt;
+&lt;li&gt;beautifulsoup与requests编码的问题&lt;/li&gt;
+&lt;li&gt;使用gmail发送邮件，其中gmail采用两步认证要单独申请一个密码&lt;/li&gt;
+&lt;li&gt;在ubuntu中使用crontab定时来触发脚本&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用于python的定时任务apscheduler的使用</title>
+    <link href="http://www.yangyanxing.com/article/use-apscheduler.html"/>
+    <id>http://www.yangyanxing.com/article/use-apscheduler.html</id>
+    <published>2017-06-17T13:42:13.000Z</published>
+    <updated>2017-12-26T16:10:18.786Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启&lt;br&gt;于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的&lt;br&gt;这里记录一下它的使用&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpy的常规使用与踩过的坑</title>
+    <link href="http://www.yangyanxing.com/article/use-webpy.html"/>
+    <id>http://www.yangyanxing.com/article/use-webpy.html</id>
+    <published>2016-12-21T13:42:13.000Z</published>
+    <updated>2017-12-16T10:11:00.516Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下&lt;/p&gt;
+&lt;h1 id=&quot;基础的框架搭建&quot;&gt;&lt;a href=&quot;#基础的框架搭建&quot; class=&quot;headerlink&quot; title=&quot;基础的框架搭建&quot;&gt;&lt;/a&gt;基础的框架搭建&lt;/h1&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;pip install web.py -i https://pypi.douban.com/simple
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在MAC下加载NTFS移动硬盘或者U盘</title>
+    <link href="http://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html"/>
+    <id>http://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html</id>
+    <published>2016-07-12T05:49:01.000Z</published>
+    <updated>2017-12-16T10:10:41.887Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在windows下使用的移动硬盘或者U盘大部分都是ntfs格式，在MAC下默认是不支持的，将一块硬盘分两个区一个给windows用一个给MAC用也不大方便，可以借用第三方软件来支持，其实仔细想想这样的功能苹果公司在技术上肯定是可以支持的，只是由于种种原因微软不让其默认支持，以下的方法不借用任何第三方软件，几条命令搞定在MAC下挂载nfts硬盘。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="mac" scheme="http://www.yangyanxing.com/categories/mac/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Xposed框架初体验</title>
+    <link href="http://www.yangyanxing.com/article/first-use-Xposed.html"/>
+    <id>http://www.yangyanxing.com/article/first-use-Xposed.html</id>
+    <published>2016-06-11T16:05:17.000Z</published>
+    <updated>2017-12-16T10:10:42.287Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想必很多人都听说过微信抢红包插件，但是很少有人想过它是怎么实现的，以前我以为是可能通过监听某个消息广播或者什么的，但是前几天在testerhome中看到有一篇介绍Xposed框架的文章&lt;a href=&quot;https://testerhome.com/topics/3819&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;用黑客思维做测试——神器 Xposed 框架介绍&lt;/a&gt;,我觉得这应该是广大抢红包插件的实现。正好有个同事和我说过有一个微信计步的作弊器(汗，怎么这个东西净用在这方面呢)&lt;a href=&quot;http://drops.wooyun.org/tips/8416&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;手把手教你当微信运动第一名&lt;/a&gt;,于是对这个大名鼎鼎的Xposed学习了一番，觉得它有很多潜能！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用wireshark抓取解密https包</title>
+    <link href="http://www.yangyanxing.com/article/use-wireshark-capture-https.html"/>
+    <id>http://www.yangyanxing.com/article/use-wireshark-capture-https.html</id>
+    <published>2016-06-11T14:40:07.000Z</published>
+    <updated>2017-12-16T10:10:41.871Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在看https的相关技术，于是想要使用wireshark抓取并解密https流量&lt;br&gt;关于https的基础可以看看这篇文章&lt;br&gt;&lt;a href=&quot;http://www.yangyanxing.com/article/https-basic.html&quot;&gt;HTTPS理论基础&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文参考文章&lt;br&gt;&lt;a href=&quot;https://imququ.com/post/http2-traffic-in-wireshark.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用 Wireshark 调试 HTTP/2 流量&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在wireshark上显示host</title>
+    <link href="http://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html"/>
+    <id>http://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html</id>
+    <published>2016-06-10T14:19:45.000Z</published>
+    <updated>2017-12-16T10:10:42.100Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;wireshark默认不显示目标的host，只显示IP，有时对于查看非常不直观。&lt;br&gt;可以自定义显示一些列&lt;br&gt;&lt;img src=&quot;/image/wireshark.jpg&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTPS理论基础</title>
+    <link href="http://www.yangyanxing.com/article/https-basic.html"/>
+    <id>http://www.yangyanxing.com/article/https-basic.html</id>
+    <published>2016-06-09T07:51:32.000Z</published>
+    <updated>2017-12-16T10:10:42.337Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网上看了好多https的相关文章，但一般都是千篇一律，越看越糊涂&lt;br&gt;今天在网上看了一篇文章，觉得还不错，讲的还比较清晰，看完以后对于https有了相对深入的理解&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/iispring/article/details/51615631&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HTTPS理论基础及其在Android中的最佳实践&lt;/a&gt;&lt;br&gt;以下是我读后的一些理解&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(转)Android Context完全解析，你所不知道的Context的各种细节</title>
+    <link href="http://www.yangyanxing.com/article/learning-context.html"/>
+    <id>http://www.yangyanxing.com/article/learning-context.html</id>
+    <published>2016-05-29T15:55:59.000Z</published>
+    <updated>2017-12-16T10:10:41.944Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以下转自郭霖大神的博客&lt;/p&gt;
+&lt;p&gt;转载请注明出处：&lt;a href=&quot;http://blog.csdn.net/guolin_blog/article/details/47028975&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/guolin_blog/article/details/47028975&lt;/a&gt;&lt;br&gt;前几篇文章，我也是费劲心思写了一个ListView系列的三部曲，虽然在内容上可以说是绝对的精华，但是很多朋友都表示看不懂。好吧，这个系列不仅是把大家给难倒了，也确实是把我给难倒了，之前为了写瀑布流ListView的Demo就写了大半个月的时间。那么本篇文章我们就讲点轻松的东西，不去分析那么复杂的源码了，而是来谈一谈大家都熟知的Context。&lt;br&gt;Context相信所有的Android开发人员基本上每天都在接触，因为它太常见了。但是这并不代表Context没有什么东西好讲的，实际上Context有太多小的细节并不被大家所关注，那么今天我们就来学习一下那些你所不知道的细节。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Uiautomator中watcher的使用</title>
+    <link href="http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html"/>
+    <id>http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html</id>
+    <published>2016-05-13T15:09:30.000Z</published>
+    <updated>2017-12-16T10:10:42.473Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在uiautomator中实践了watcher的用法，这个也是之前在python中使用uiautomator中比较喜欢的功能，它可以提前定义一些条件，当满足一些条件时，进行一些操作，这个常用于处理测试过程中某些意料之外的或者不知道什么时候弹出来的框而阻碍测试的正常进行。&lt;br&gt;之前在写自动化用例的时候，遇到过小米手机在安装app的时候，会弹一个框来让用户点击安装，还有弹出一个升级检测的框点击“取消”按钮，或者遇到退出的时候点击确定，当然这些完全可以在用例里写逻辑来处理，而且有些还是程序本身要测试的检测点，当然这些对于大多数测试来说没有太大的意义，所以可以将其放入一个watcher里来让uiautomator来帮你进行相应的点击处理。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/tags/Android/"/>
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Uiautomator做基于UI界面的测试</title>
+    <link href="http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html"/>
+    <id>http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html</id>
+    <published>2016-05-11T17:04:03.000Z</published>
+    <updated>2017-12-16T10:10:42.253Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在看原生的&lt;code&gt;uiautomator&lt;/code&gt;的测试，之前也有使用，但是只是把Android官方的例子简单的实现一样，并没有什么实际的测试意思，&lt;a href=&quot;http://www.yangyanxing.com/article/1264.html&quot;&gt;Android官方的uiautomator例子的实现&lt;/a&gt;,今天结合最近正在做的自动化项目，简单的使用uiautomator来实现了一下，只是做了一个小例子，但是基本上都如何编译jar与运行调通了，这里也简单的记录一下。&lt;br&gt;之前也有使用别人封装好的python做过，那个写起来也比较简单，&lt;a href=&quot;http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html&quot;&gt;使用uiautomator的python封装进行android的UI测试&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="java" scheme="http://www.yangyanxing.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>过年</title>
+    <link href="http://www.yangyanxing.com/article/Spring-Festival.html"/>
+    <id>http://www.yangyanxing.com/article/Spring-Festival.html</id>
+    <published>2016-02-13T12:11:19.000Z</published>
+    <updated>2017-12-16T10:10:42.343Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/image/665344343178029836.jpg&quot; alt=&quot;新年快乐&quot;&gt;&lt;/p&gt;
+&lt;p&gt;首都再见，北京你好&lt;br&gt;又是一年，这个年过的相对平静&lt;br&gt;年味少了很多，不像小时候那样还会放鞭炮，不会像小时候那样盼着大吃大喝&lt;br&gt;现在更加喜欢过了一个清淡的年&lt;/p&gt;
+&lt;p&gt;春节，对于中国人来说是最重要的节日，家人可以放下手中的工作相聚一起&lt;br&gt;家在农村，平时在城市里工作生活，每逢周末回家，在家里总能睡个很好的觉&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在ThinkPHP整合新浪微博SDK</title>
+    <link href="http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html"/>
+    <id>http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html</id>
+    <published>2016-02-10T14:28:32.000Z</published>
+    <updated>2017-12-16T10:10:42.381Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在玩PHP，在看了基本语法以后就开始看ThinkPHP了，几年以前接触过一些，但是基本上都忘的差不多了&lt;br&gt;现在再看的时候，发现版本更新了好多，添加了很多新的功能特性，使用时候也有很多不一样的，之前写了一篇边看边写的笔记，&lt;a href=&quot;http://www.yangyanxing.com/article/thinkphp-study-note.html&quot;&gt;ThinkPHP的学习笔记&lt;/a&gt;&lt;br&gt;今天结合&lt;a href=&quot;http://document.thinkphp.cn/manual_3_2.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方的文档&lt;/a&gt;来整合一下新浪微博的SDK，在使用的过程中还是有一些问题需要注意的，我使用的是3.2.3版本&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/tags/PHP/"/>
+    
+      <category term="微博" scheme="http://www.yangyanxing.com/tags/%E5%BE%AE%E5%8D%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP的学习笔记</title>
+    <link href="http://www.yangyanxing.com/article/thinkphp-study-note.html"/>
+    <id>http://www.yangyanxing.com/article/thinkphp-study-note.html</id>
+    <published>2016-01-30T12:38:08.000Z</published>
+    <updated>2017-12-16T10:10:41.896Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;初始化一个项目&quot;&gt;&lt;a href=&quot;#初始化一个项目&quot; class=&quot;headerlink&quot; title=&quot;初始化一个项目&quot;&gt;&lt;/a&gt;初始化一个项目&lt;/h1&gt;&lt;p&gt;thinkphp是单入口文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&amp;lt;?php
+define(&amp;quot;APP_NAME&amp;quot;, &amp;quot;THINK_Study&amp;quot;);
+define(&amp;quot;APP_PATH&amp;quot;, &amp;quot;./study/&amp;quot;);
+define(&amp;quot;APP_DEBUG&amp;quot;, true);
+require(&amp;quot;./ThinkPHP/ThinkPHP.php&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;要先定义APP_PATH,后再include thinkphp 主入口文件，要不然会在当前目录上建立目录，很乱&lt;/li&gt;
+&lt;li&gt;各种版本生成的目录有些不同，我现在用的是3.2.3 就没有lib目录，而是只有一个home目录,下面的Controller目录相当于之前版本的是lib目录，里面记录着控制器，是MVC中的C，同级目录还有Model和View目录，这样更明显&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;各个项目下的&lt;code&gt;Conf\config.php&lt;/code&gt; 里的内容只有自已的项目才能读取，其它项目读取不了，比如&lt;code&gt;admin&lt;/code&gt;读不了&lt;code&gt;study&lt;/code&gt;配置&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用python进行文件夹对比</title>
+    <link href="http://www.yangyanxing.com/article/use-python-dircompare.html"/>
+    <id>http://www.yangyanxing.com/article/use-python-dircompare.html</id>
+    <published>2015-12-29T15:09:30.000Z</published>
+    <updated>2017-12-16T10:10:42.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近写一个小脚本，在使用系统急救箱扫描并且处理完后，要将处理以后的样本和提供的标准进行对比&lt;br&gt;已经提供了样本与处理以后的文件，我要写的脚本就是启急救箱并且将两个文件夹进行比较&lt;br&gt;启动并且扫描比较好实现，但是在进行文件夹对比的时候走了一些弯路&lt;br&gt;上网查到python的标准库里有一个filecmp类，这个类可以对文件夹或者文件进行对比，使用起来还是比较方便的&lt;br&gt;&lt;a href=&quot;http://python.usyiyi.cn/python_278/library/filecmp.html&quot; title=&quot;filecmp官方文档&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;filecmp官方文档/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用最下面的例子程序，我又对其进行了扩充&lt;br&gt;我想达到的目的就是先对两个文件夹进行比较，输出不同的文件，然后再输出各自文件夹中独有的文件&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用国内镜像源来加速python pypi包的安装</title>
+    <link href="http://www.yangyanxing.com/article/1389.html"/>
+    <id>http://www.yangyanxing.com/article/1389.html</id>
+    <published>2015-10-10T14:57:44.000Z</published>
+    <updated>2017-12-16T16:15:57.185Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在国内使用pip安装包的时候，很多时候由于各种原因无法正常使用pypi.python.org的源，还好有国内的良心网站提供了国内镜像&lt;/p&gt;
+&lt;p&gt;网上的方法都是在%HOMEPATH%中新建pip目录，再新建一个pip.ini，可是我试了以后还是不能用，也不知道原作者是否可以用&lt;/p&gt;
+&lt;p&gt;后来我看了一下它的文档
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中的listView与ArrayAdapter与LayoutInflater的使用</title>
+    <link href="http://www.yangyanxing.com/article/1385.html"/>
+    <id>http://www.yangyanxing.com/article/1385.html</id>
+    <published>2015-10-05T17:21:03.000Z</published>
+    <updated>2017-12-16T16:16:36.344Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在看《第一行代码-android》，这本书讲的不错，从最android基础的开始讲起，由浅入深，一步一步的教怎么使用android开发中的各种内容，今天看到listView，书中讲到listView可能是使用最多也是最难的一个组件，看过之后觉得还是需要好好消化一下的，借助书中的代码，来记录一下学习的过程&lt;/p&gt;
+&lt;p&gt;一、在listView中简单的显示一行文字&lt;/p&gt;
+&lt;p&gt;这个应该是listView应用中最简单的了，在使用listView中，一般的步骤应该是，先在main_activity.xml中创建好listView的布局&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
+xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot;
+android:layout_width=&amp;quot;match_parent&amp;quot;
+android:layout_height=&amp;quot;match_parent&amp;quot;
+android:orientation=&amp;quot;vertical&amp;quot; &amp;gt;
+
+&amp;lt;ListView
+    android:id=&amp;quot;@+id/list_view&amp;quot;
+    android:layout_width=&amp;quot;match_parent&amp;quot;
+    android:layout_height=&amp;quot;match_parent&amp;quot;
+    &amp;gt;
+
+&amp;lt;/ListView&amp;gt;
+
+&amp;lt;/LinearLayout&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用jquery在一个页面中有多个form表单做数据有效性校验</title>
+    <link href="http://www.yangyanxing.com/article/1381.html"/>
+    <id>http://www.yangyanxing.com/article/1381.html</id>
+    <published>2015-10-02T08:23:48.000Z</published>
+    <updated>2017-12-16T16:17:49.128Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在做一个小网站的项目，有一个小问题，可能在有经验的前端er面前不是什么问题，但是由于我接触前端很少，所以这个问题也搞了好一会才解决&lt;/p&gt;
+&lt;p&gt;在一个页面里有两个表单，在各自点击提交时，先要对相应的input里做非空校验，然后再对里面的数据做下简单的字符串判断&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+      <category term="javascript" scheme="http://www.yangyanxing.com/tags/javascript/"/>
+    
+      <category term="jquery" scheme="http://www.yangyanxing.com/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用uiautomator的python封装进行android的UI测试</title>
+    <link href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html"/>
+    <id>http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html</id>
+    <published>2015-08-27T17:17:30.000Z</published>
+    <updated>2017-12-16T10:10:42.396Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近项目中有个需求要在至少100台手机上对应用进行兼容性测试，首先想到的就是自动化来操作，不想一台台的操作相同的重复操作&lt;/p&gt;
+&lt;p&gt;基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截&lt;/p&gt;
+&lt;p&gt;考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是有很多需要注意的地方&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用wxPython建立一个计算文件md5的GUI工具</title>
+    <link href="http://www.yangyanxing.com/article/1350.html"/>
+    <id>http://www.yangyanxing.com/article/1350.html</id>
+    <published>2015-06-25T17:13:43.000Z</published>
+    <updated>2017-12-16T10:10:41.969Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在看wxPython，一开始觉得它的布局好乱，半天整不明白，这里通过写一个小工具来记录一下wxPython的一些基本使用&lt;/p&gt;
+&lt;p&gt;小工具最终是下面这个样子，将文件拖到上面会自动计算其md5与size&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/image/2015/06/1.png&quot;&gt;&lt;img src=&quot;/image/2015/06/1_thumb.png&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笨方法实现webpy的表单校验功能</title>
+    <link href="http://www.yangyanxing.com/article/1340.html"/>
+    <id>http://www.yangyanxing.com/article/1340.html</id>
+    <published>2015-05-02T09:43:01.000Z</published>
+    <updated>2017-12-16T10:10:42.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在写一个小的demo，简单的用户注册与登录，检查在注册的时候要先检测用户名是否已经存在了，还要检查一下密码长度要不得小于3个字符&lt;/p&gt;
+&lt;p&gt;检查用户是否存在我是写在了一个单独的model.py里&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;def check(uname):
+info = db.select(&amp;#39;pytest&amp;#39;,where=&amp;quot;username=$uname&amp;quot;,vars=locals())
+if len(info)&amp;gt;0:
+return False
+else:
+return True
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那天遇到一个杀马特</title>
+    <link href="http://www.yangyanxing.com/article/1329.html"/>
+    <id>http://www.yangyanxing.com/article/1329.html</id>
+    <published>2015-03-11T15:51:11.000Z</published>
+    <updated>2017-12-16T10:10:42.421Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上小学的时候对于别人如果能有零花钱就感觉很羡慕&lt;br&gt;因为他们可以买到自已喜欢的吃的&lt;br&gt;但是我不会去奢求渴望父母也给我&lt;br&gt;到了初中，我会觉得那些染着黄毛，成天不上学开着大摩托的人比较牛气&lt;br&gt;因为他们可以不用上学，不用写作业，想打认谁就打谁，可以为别人拔份儿&lt;br&gt;可以我也不羡慕他们，我也不会去搞个彩毛儿，穿个喇叭裤&lt;br&gt;到了高中，我觉得那些长的帅气，会打篮球，会弹吉他，会讨女孩子开心的人很好&lt;br&gt;于是我也会在学习之于搞些自已喜欢的东西&lt;br&gt;到了大学，那种八面玲珑，左右逢源的人很好&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>成就感，一种很久违了的感觉</title>
+    <link href="http://www.yangyanxing.com/article/1327.html"/>
+    <id>http://www.yangyanxing.com/article/1327.html</id>
+    <published>2015-03-11T15:48:27.000Z</published>
+    <updated>2017-12-16T10:10:42.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以前看到的文字，看到之时已泪流满面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我的孩子,我希望你好好学习,不是因为我要你跟别人比,而是因为我希望你将来会拥有选择的权利,选择有意义你又喜爱的工作,而不是被迫谋生。&lt;br&gt;当你的工作在你心中有意义,你就有成就感，成就感会给你带去快
+        
+      
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Android stadio上使用robotium初体验</title>
+    <link href="http://www.yangyanxing.com/article/1320.html"/>
+    <id>http://www.yangyanxing.com/article/1320.html</id>
+    <published>2015-03-05T14:57:37.000Z</published>
+    <updated>2017-12-16T10:10:42.234Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Android Stadio(as)上创建一个app的时候默认会自动创建相应的test类，可以直接在里面写单元测试用例&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/image/2015/03/image.png&quot;&gt;&lt;img src=&quot;/image/2015/03/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;一、在项目(module)中导入robotium的jar包，右键app-&amp;gt;new-&amp;gt;directory,输入libs&lt;/p&gt;
+&lt;p&gt;然后将robotium-solo-5.3.1.jar复制进去，然后右键robotium-solo-5.3.1.jar选择add as library,之后就可以写测试用例了&lt;/p&gt;
+&lt;p&gt;如果还有问题，看一下项目的build gradle&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dependencies {   
+ compile fileTree(include: [&amp;#39;*.jar&amp;#39;], dir: &amp;#39;libs&amp;#39;)    
+ compile &amp;#39;com.android.support:appcompat-v7:21.0.3&amp;#39;    
+ compile files(&amp;#39;libs/robotium-solo-5.3.1.jar&amp;#39;)    
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sql注入初步</title>
+    <link href="http://www.yangyanxing.com/article/1314.html"/>
+    <id>http://www.yangyanxing.com/article/1314.html</id>
+    <published>2015-02-22T10:40:30.000Z</published>
+    <updated>2017-12-16T10:10:42.279Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自已用php+mysql写了一个登录页面。其中包含多个sql注入漏洞，在mysql中创建一个表，其中有username password email一个列，添加三个数据&lt;/p&gt;
+&lt;p&gt;+————-+————-+—————–+&lt;br&gt;| username    | password    | email           |&lt;br&gt;+————-+————-+—————–+&lt;br&gt;| admin       | admin       | admin@admin.com |&lt;br&gt;| yangyanxing | yangyanxing | yyx@yyx.com     |&lt;br&gt;+————-+————-+—————–+&lt;/p&gt;
+&lt;p&gt;在phpmyadmin中使用一条sql命令&lt;/p&gt;
+&lt;p&gt;SELECT * FROM &lt;code&gt;admin&lt;/code&gt; WHERE 1 &lt;/p&gt;
+&lt;p&gt;where 1 是一个永真，这样它会把admin表中的所有数据返回&lt;/p&gt;
+&lt;p&gt;写一个testsql.php文件来尝试使用sql注入的方式登录这个系统
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="sql" scheme="http://www.yangyanxing.com/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spinner和适配器模式</title>
+    <link href="http://www.yangyanxing.com/article/1310.html"/>
+    <id>http://www.yangyanxing.com/article/1310.html</id>
+    <published>2015-02-21T16:41:48.000Z</published>
+    <updated>2017-12-16T10:10:42.307Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原文 &lt;a href=&quot;http://www.cnblogs.com/UUUP/p/3983394.html&quot; title=&quot;http://www.cnblogs.com/UUUP/p/3983394.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.cnblogs.com/UUUP/p/3983394.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;spinner相当于html表单中的select下拉列表。&lt;/p&gt;
+&lt;h1 id=&quot;第一种方式&quot;&gt;&lt;a href=&quot;#第一种方式&quot; class=&quot;headerlink&quot; title=&quot;第一种方式&quot;&gt;&lt;/a&gt;第一种方式&lt;/h1&gt;&lt;p&gt;在string.xml中添加一个数组spinner_data：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; 
+&amp;lt;resources&amp;gt; 
+&amp;lt;string-array name=&amp;quot;spinner_data&amp;quot;&amp;gt; 
+&amp;lt;item &amp;gt;北京&amp;lt;/item&amp;gt; 
+&amp;lt;item &amp;gt;湖南&amp;lt;/item&amp;gt; 
+&amp;lt;item &amp;gt;湖北&amp;lt;/item&amp;gt; 
+&amp;lt;/string-array&amp;gt; 
+&amp;lt;/resources&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中的UI线程阻塞</title>
+    <link href="http://www.yangyanxing.com/article/1308.html"/>
+    <id>http://www.yangyanxing.com/article/1308.html</id>
+    <published>2015-02-19T17:05:19.000Z</published>
+    <updated>2017-12-16T10:10:42.466Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当一个应用程序启动之后，android系统会为这个应用程序创建一个主线程，这个线程非常重要，它负责渲染视图，分发事件到响应监听器并执行，对界面进行轮询的监听，一般叫做“UI主线程”&lt;/p&gt;
+&lt;p&gt;Android系统不会给应用程序的多个元素组件建立多个线程来执行，一个视图(activity)中的多个view组件运行在同一个UI线程当中，因此，多个view组件的监听器的执行可能会相互影响。&lt;/p&gt;
+&lt;p&gt;如有以下两个button，其中一个在会在主view中进行移动动画，另外一个button在点击以后将线程sleep 5秒&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android开发初步</title>
+    <link href="http://www.yangyanxing.com/article/1303.html"/>
+    <id>http://www.yangyanxing.com/article/1303.html</id>
+    <published>2015-02-19T11:36:23.000Z</published>
+    <updated>2017-12-16T10:10:42.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;绑定单击事件有两种方法，一种是通过绑定android:onClick属性，一种是绑定一个setOnClickListener回调函数&lt;/p&gt;
+&lt;h1 id=&quot;通过绑定onClick属性&quot;&gt;&lt;a href=&quot;#通过绑定onClick属性&quot; class=&quot;headerlink&quot; title=&quot;通过绑定onClick属性&quot;&gt;&lt;/a&gt;通过绑定onClick属性&lt;/h1&gt;&lt;p&gt;在activity_main.xml对应的组件上设置android:onClick=”test” 属性，然后再Java文件里定义一个test方法来实现，这个test方法是MainActivity类的一个方法&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+public void test(View view){
+        Toast.makeText(MainActivity.this, &amp;quot;你还真敢点啊！&amp;quot;, Toast.LENGTH_LONG).show();
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的view就是要使用的控件，如果是绑定的是个button，那么view就是这个button&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>没事别蹭wifi-告诉你公共的wifi有多不安全</title>
+    <link href="http://www.yangyanxing.com/article/1298.html"/>
+    <id>http://www.yangyanxing.com/article/1298.html</id>
+    <published>2015-02-11T16:13:33.000Z</published>
+    <updated>2017-12-16T15:34:10.794Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经常看到一些朋友每到一个地方就先找wifi，没有密码就直接上了！汗……&lt;/p&gt;
+&lt;p&gt;今天通过两个小工具来显示一下公共wifi的安全隐患（爱蹭网的代价）&lt;/p&gt;
+&lt;h1 id=&quot;工具：wireshark与cain&quot;&gt;&lt;a href=&quot;#工具：wireshark与cain&quot; class=&quot;headerlink&quot; title=&quot;工具：wireshark与cain&quot;&gt;&lt;/a&gt;工具：wireshark与cain&lt;/h1&gt;&lt;h1 id=&quot;下载：wireshark&quot;&gt;&lt;a href=&quot;#下载：wireshark&quot; class=&quot;headerlink&quot; title=&quot;下载：wireshark&quot;&gt;&lt;/a&gt;下载：wireshark&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.wireshark.org/download.html&quot; title=&quot;https://www.wireshark.org/download.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.wireshark.org/download.html&lt;/a&gt;&lt;br&gt;Cain &amp;amp; Abel &lt;a href=&quot;http://www.oxid.it/cain.html&quot; title=&quot;http://www.oxid.it/cain.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.oxid.it/cain.html&lt;/a&gt; (被墙) 百度网盘链接：&lt;a href=&quot;http://pan.baidu.com/s/18kshg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://pan.baidu.com/s/18kshg&lt;/a&gt; 密码：9owu&lt;/p&gt;
+&lt;p&gt;md5:EA2EF30C99ECECB1EDA9AA128631FF31 sha1:82407EAF6437D6956F63E85B28C0EC6CA58D298A  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果没有校验工具，我写了一个python脚本来校验 链接：&lt;a href=&quot;http://pan.baidu.com/s/1i3j93sp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://pan.baidu.com/s/1i3j93sp&lt;/a&gt; 密码：h6gz&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>appium简明教程(转)</title>
+    <link href="http://www.yangyanxing.com/article/1266.html"/>
+    <id>http://www.yangyanxing.com/article/1266.html</id>
+    <published>2015-01-03T12:03:13.000Z</published>
+    <updated>2017-12-16T15:40:04.317Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客&quot;&gt;&lt;a href=&quot;#乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客&quot; class=&quot;headerlink&quot; title=&quot;乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.cnblogs.com/nbkhic/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;乙醇&lt;/a&gt;的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客&lt;/h3&gt;&lt;h3 id=&quot;appium简明教程（1）——appium和它的哲学世界&quot;&gt;&lt;a href=&quot;#appium简明教程（1）——appium和它的哲学世界&quot; class=&quot;headerlink&quot; title=&quot;appium简明教程（1）——appium和它的哲学世界&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.cnblogs.com/nbkhic/p/3803804.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;appium简明教程（1）——appium和它的哲学世界&lt;/a&gt;&lt;/h3&gt;&lt;h3 id=&quot;什么是appium？&quot;&gt;&lt;a href=&quot;#什么是appium？&quot; class=&quot;headerlink&quot; title=&quot;什么是appium？&quot;&gt;&lt;/a&gt;什么是appium？&lt;/h3&gt;&lt;p&gt;下面这段介绍来自于appium的官网。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Appium is an open-source tool you can use to automate mobile native, mobile web, and mobile hybrid applications on iOS and Android platforms. “Mobile native apps” are those written using the iOS or Android SDKs. “Mobile web apps” are web apps accessed using a mobile browser (Appium supports Safari on iOS and Chrome on Android). “Mobile hybrid apps” have a native wrapper around a “webview” – a native control that enables interaction with web content. Projects like &lt;a href=&quot;http://phonegap.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Phonegap&lt;/a&gt;, for example, make it easy to build apps using web technologies that are then bundled into a native wrapper – these are hybrid apps.&lt;/p&gt;
+&lt;p&gt;Importantly, Appium is “cross-platform”: it allows you to write tests against multiple platforms (iOS, Android), using the same API. This enables a large or total amount of code reuse between iOS and Android testsuites.&lt;br&gt;我们可以从上面的介绍里获得这样的一些信息：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1，appium是开源的移动端自动化测试框架；&lt;/li&gt;
+&lt;li&gt;2，appium可以测试原生的、混合的、以及移动端的web项目；&lt;/li&gt;
+&lt;li&gt;3，appium可以测试ios，android应用（当然了，还有firefox os）；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4，appium是跨平台的，可以用在osx，windows以及linux桌面系统上；&lt;br&gt;appium的哲学
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android官方的uiautomator例子的实现</title>
+    <link href="http://www.yangyanxing.com/article/1264.html"/>
+    <id>http://www.yangyanxing.com/article/1264.html</id>
+    <published>2014-12-28T17:04:49.000Z</published>
+    <updated>2017-12-16T15:42:55.686Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android的自动化测试有很多框架，其中uiautomator是google官方提供的黑盒UI相关的自动化测试工具，case使用java写，今天实践了一下&lt;a href=&quot;http://developer.android.com/tools/help/uiautomator/UiDevice.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;中样例程序，其中还是有一些小问题需要总结一下的。&lt;br&gt;前几天试着使用uiautoamtor在真实的项目中写了一个简单的测试&lt;br&gt;&lt;a href=&quot;http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html&quot;&gt;使用Uiautomator做基于UI界面的测试&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;使用ADT创建一个java的项目&quot;&gt;&lt;a href=&quot;#使用ADT创建一个java的项目&quot; class=&quot;headerlink&quot; title=&quot;使用ADT创建一个java的项目&quot;&gt;&lt;/a&gt;使用ADT创建一个java的项目&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;在创建项目的时候要加上JUnit与你使用的Android platforms中对应的android.jar与uiautomator.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;/image/2014/12/image16.png&quot;&gt;&lt;img src=&quot;/image/2014/12/image16.png&quot; alt=&quot;image&quot; title=&quot;image&quot;&gt;&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++获取系统信息与拷贝文件到windows目录下</title>
+    <link href="http://www.yangyanxing.com/article/1220.html"/>
+    <id>http://www.yangyanxing.com/article/1220.html</id>
+    <published>2014-12-06T14:28:33.000Z</published>
+    <updated>2017-12-16T15:43:44.756Z</updated>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;windows.h&amp;gt;
+using namespace std;
+
+void main(){
+char szSelfName[MAX_PATH] = {0};//定义存储文件的名字的变量
+char szWindowsPath[MAX_PATH] = {0};//定义winsows路径的变量
+char szSystemPath[MAX_PATH] = {0};//定义存储system的变量
+char szTmpPath[MAX_PATH] = {0};
+
+GetModuleFileName(NULL,szSelfName,MAX_PATH);//得到文件的名字，NULL的时候是文件自身
+GetWindowsDirectory(szWindowsPath,MAX_PATH);//得到windows目录
+GetSystemDirectory(szSystemPath,MAX_PATH);//得到system目录
+
+cout&amp;lt;&amp;lt;szSelfName&amp;lt;&amp;lt;endl&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;endl&amp;lt;&amp;lt;szSystemPath&amp;lt;&amp;lt;endl;
+strcat(szWindowsPath,&amp;quot;\123.exe&amp;quot;);//定义拷贝后的名字
+cout&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;endl;
+cout&amp;lt;&amp;lt;CopyFile(szSelfName,szWindowsPath,FALSE);
+
+char szComputerName[MAXBYTE] = {0};//定义存储computer的变量
+char szUserName[MAXBYTE] = {0};//定义userName存储的变量
+unsigned long nSize = MAXBYTE;
+
+OSVERSIONINFO OsVer;
+//Before calling the GetVersionEx function, set the dwOSVersionInfoSize member of the OSVERSIONINFO data structure to sizeof(OSVERSIONINFO).
+OsVer.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+GetVersionEx(&amp;amp;OsVer);//将得到的系统信息存储在OsVer中
+cout&amp;lt;&amp;lt;OsVer.dwMajorVersion&amp;lt;&amp;lt;&amp;quot;.&amp;quot;&amp;lt;&amp;lt;OsVer.dwMinorVersion&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;OsVer.dwPlatformId&amp;lt;&amp;lt;endl;
+if(OsVer.dwMajorVersion == 6 &amp;amp;&amp;amp; OsVer.dwMinorVersion == 1){
+cout&amp;lt;&amp;lt;&amp;quot;你的系统是win7&amp;quot;&amp;lt;&amp;lt;endl;
+}else{
+cout&amp;lt;&amp;lt;&amp;quot;你的系统不是win7&amp;quot;&amp;lt;&amp;lt;endl;
+}
+GetComputerName(szComputerName,&amp;amp;nSize);
+GetUserName(szUserName,&amp;amp;nSize);
+cout&amp;lt;&amp;lt;szComputerName&amp;lt;&amp;lt;endl;
+cout&amp;lt;&amp;lt;szUserName&amp;lt;&amp;lt;endl;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++中windows编程基础</title>
+    <link href="http://www.yangyanxing.com/article/1216.html"/>
+    <id>http://www.yangyanxing.com/article/1216.html</id>
+    <published>2014-12-06T14:20:08.000Z</published>
+    <updated>2017-12-16T15:44:49.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;一、宽字符与多字节字符
+#include &amp;quot;tchar.h&amp;quot;
+void main(){
+TCHAR p[] = _T(&amp;quot;IT学吧&amp;quot;);
+int l1 = sizeof(p);//I1 T1 学2 吧2 1
+int l2 = _tcslen(p);
+int l4 = wcslen(p);
+//int l3 = strlen(p);
+return;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在多字节字符集中，每个汉字占两个字节，英文字母占一个字节，sizeof(p) = 7 _tcslen(p)=6(字符串长度等于6，I1 T1 学2 吧2)&lt;/p&gt;
+&lt;p&gt;在宽字节（unicode）字符集中，所有有字符都是占两个字节 sizeof(p) = 10 _tcslen(p)=4(I1 T1 学1 吧1)&lt;br&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>c++语言基础(hello world,数据类型,构造方法,指针的常见错误,常量指针,指针与引用)</title>
+    <link href="http://www.yangyanxing.com/article/1212.html"/>
+    <id>http://www.yangyanxing.com/article/1212.html</id>
+    <published>2014-12-06T14:13:08.000Z</published>
+    <updated>2017-12-16T15:45:51.109Z</updated>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;一、hello world
+#include&amp;lt;iostream&amp;gt;  这里可以用#include&amp;lt;iostream.h&amp;gt; 加载一个非标准的库，由于.h还没有名字空间的概念，所以之后也就没有使用std的操作
+using namespace std; 声明定义使用std 名字空间
+namespace a
+{
+     int b = 5;
+}
+namespace c{
+     int b = 8;
+}
+int main(){
+     std::cout&amp;lt;&amp;lt;&amp;quot;我喜欢C++n&amp;quot;;
+     std::cout&amp;lt;&amp;lt;&amp;quot;五年一班数学成绩n&amp;quot;;
+     std::cout&amp;lt;&amp;lt;&amp;quot;第一名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;100;
+     std::cout&amp;lt;&amp;lt;std::endl;
+     std::cout&amp;lt;&amp;lt;&amp;quot;第二名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;90+8;
+     std::cout&amp;lt;&amp;lt;std::endl;
+     std::cout&amp;lt;&amp;lt;&amp;quot;第三名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;(float)5/8;
+     std::cout&amp;lt;&amp;lt;std::endl;
+
+     cout&amp;lt;&amp;lt;&amp;quot;我是没有使用std的&amp;quot;&amp;lt;&amp;lt;endl;
+     int b = 10;
+
+     cout&amp;lt;&amp;lt;b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;a::b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;c::b&amp;lt;&amp;lt;endl;
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>dev c++安装使用</title>
+    <link href="http://www.yangyanxing.com/article/1208.html"/>
+    <id>http://www.yangyanxing.com/article/1208.html</id>
+    <published>2014-12-06T14:08:03.000Z</published>
+    <updated>2017-12-16T15:47:10.836Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近开始接触C++，在练习基本的语法的时候，不想使用臃肿的VS，于是查了下，dev c++为个挺小巧，但麻雀虽小五脏具全，对于基本语法的学习使用已经足够了。&lt;/p&gt;
+&lt;p&gt;下载安装，下载还是挺麻烦的，我下载好了共享在360云盘上了，&lt;a href=&quot;http://yunpan.cn/cAaf826jiSdie&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://yunpan.cn/cAaf826jiSdie&lt;/a&gt; （提取码：7b0a）这个是有minGW的，安装的时候选择full&lt;/p&gt;
+&lt;p&gt;在翻译的时候输出debug，当然你不这样设置的话在以后要调试的时候也会提示你是否设置的 工具–翻译选项&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>被潜意识蒙蔽的理性</title>
+    <link href="http://www.yangyanxing.com/article/1199.html"/>
+    <id>http://www.yangyanxing.com/article/1199.html</id>
+    <published>2014-10-27T16:20:02.000Z</published>
+    <updated>2017-12-16T10:10:41.991Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在观察一些事情，发现很多时候我们的理性往往都被潜意识所蒙蔽。&lt;/p&gt;
+&lt;p&gt;公司内网中有段时间经常有人发表一些自已的东西被“偷”的帖子，于是在人们脑海中就有一个公司里有很多小偷的意识，自已的东西一旦找不到了，首先想到的就是被别人偷走了，甚至一些人还总发表一些放在冰箱里的食物饮料等被莫名的拿走的帖子，这些人无疑首先说的就是“偷”，遇到这样的事情首先想到的也是被别人拿走了，被别人吃掉了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>七牛cdn缓存导致ajax评论失效</title>
+    <link href="http://www.yangyanxing.com/article/1151.html"/>
+    <id>http://www.yangyanxing.com/article/1151.html</id>
+    <published>2014-10-06T16:41:23.000Z</published>
+    <updated>2017-12-16T15:47:50.565Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用了七牛的CDN后，发现在评论的时候会出现405错误&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;{“error”:”get from image source failed: E405”} &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在网上查了查，这个问题出现的还挺多的，解决办法是改&lt;span style=&quot;color: #000000;&quot;&gt;comments-ajax.js这个文件&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;1.在comments-ajax.js文件中下面这段程序的后面（参考&lt;a href=&quot;http://www.tennfy.com/503.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;cdn缓存导致ajax评论失效&lt;/a&gt;）：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var i = 0, got = -1, len = document.getElementsByTagName(&amp;#39;script&amp;#39;).length;
+while ( i &amp;lt;= len &amp;amp;&amp;amp; got == -1){
+    var js_url = document.getElementsByTagName(&amp;#39;script&amp;#39;)[i].src,
+            got = js_url.indexOf(&amp;#39;comments-ajax.js&amp;#39;); i++ ;
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="wordpress" scheme="http://www.yangyanxing.com/tags/wordpress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql与mongodb命令对比</title>
+    <link href="http://www.yangyanxing.com/article/1128.html"/>
+    <id>http://www.yangyanxing.com/article/1128.html</id>
+    <published>2014-09-28T17:01:51.000Z</published>
+    <updated>2017-12-16T10:10:42.312Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;之前一直在使用mysql,最近开始接触mongodb，觉得还是有一些相似的地方，只是相应的命令不大一样，这里做下记录，对比记应该相对简单一些,mongodb使用的是python的接口&lt;/p&gt;
+&lt;p&gt;连接：&lt;br&gt;mysql: mysql -h localhost -u
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="sql" scheme="http://www.yangyanxing.com/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修改Gwibber脚本成功添加新浪微博账户（解决一直正在认证的问题）</title>
+    <link href="http://www.yangyanxing.com/article/1115.html"/>
+    <id>http://www.yangyanxing.com/article/1115.html</id>
+    <published>2014-09-21T15:38:38.000Z</published>
+    <updated>2017-12-16T10:10:42.440Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Gwibber是linux下使用python基于 WebKit 和 GTK的客户端，其实本身功能大大陆基本上都用不了，只有一个新浪微博能用，但是里面的api认证还是用的几年前的oauth1,新浪早就将其停用了，现在 都采用的是oauth2认证，但是这个客户端还没有更新，在使用的时候会显示一直在认证页面。&lt;/p&gt;
+&lt;p&gt;其实本来也不想用它来发看微博，只是想完成认证，后面经过修改以后主界面报异常，不管了，这个客户端总之太挫了……&lt;/p&gt;
+&lt;p&gt;使用官方推荐的由@&lt;a href=&quot;http://weibo.com/206069909&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;廖雪峰&lt;/a&gt; 写的python SDK，&lt;a href=&quot;https://github.com/michaelliao/sinaweibopy/wiki/OAuth2-HOWTO&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/michaelliao/sinaweibopy/wiki/OAuth2-HOWTO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将python SDK中的weibo.py放到&lt;strong&gt;init&lt;/strong&gt;.py同级目录下&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中面向对象的一点学习总结</title>
+    <link href="http://www.yangyanxing.com/article/1108.html"/>
+    <id>http://www.yangyanxing.com/article/1108.html</id>
+    <published>2014-08-24T15:33:40.000Z</published>
+    <updated>2017-12-16T10:10:42.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近开始看java的一些东西，感觉比python麻烦些，今天学习了面向对象的一些东西，觉得挺多挺复杂，这里做个知识总结&lt;/p&gt;
+&lt;p&gt;以一个简单的例子来说明java面向对象的三大特性，封装，继承，多态，有一个动物(Animal)基类，定义了run与eat方法，然后有一个猫(Cat)与狗(Dog)的子类继承了动物这个父类，子类重写(override)了父类的run与eat方法，同步又重载(overload)了run与eat方法，同时又定义了一个交配(Icopulation)的接口，让狗来implements交配接口，同时又创建一个Human类来专门implements交配接口&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/image/2014/08/795ab47fjw1ejo4u6epeoj20ab083jrh.jpg&quot;&gt;&lt;img src=&quot;/image/2014/08/795ab47fjw1ejo4u6epeoj20ab083jrh_thumb.jpg&quot; alt=&quot;795ab47fjw1ejo4u6epeoj20ab083jrh&quot; title=&quot;795ab47fjw1ejo4u6epeoj20ab083jrh&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;下面是具体的实现代码，没有什么实际的应用，只是作为学习用&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="java" scheme="http://www.yangyanxing.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中国男人形象气质差配不上中国女人?</title>
+    <link href="http://www.yangyanxing.com/article/1106.html"/>
+    <id>http://www.yangyanxing.com/article/1106.html</id>
+    <published>2014-08-20T15:34:21.000Z</published>
+    <updated>2017-12-16T10:10:42.210Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前段时间网络上有人撰文说中国男人形象气质差配不上中国女人&lt;a href=&quot;http://news.qq.com/a/20140723/062566.htm&quot; title=&quot;http://news.qq.com/a/20140723/062566.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://news.qq.com/a/20140723/062566.htm&lt;/a&gt;&amp;#160;&lt;/p&gt;
+&lt;p&gt;其实很久之前我也有过同样的感受，中国女人，无论气质谈吐似乎都要比身边的男士要更加优雅，偶尔遇到一些炸毛女，但观其身边的男人也无非是一些洗剪吹之流，女人如果出口成脏的话她身边的男人也更是流毒之辈。&lt;/p&gt;
+&lt;p&gt;男人如果能在形象气质上达到某个层次以后，也会刻意的寻找一些使自已进步的，同样的，如果你只是一个洗剪吹，那么在你的生活里接触到的也无非是一个炸毛女。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python中的Queue与多进程（multiprocessing）</title>
+    <link href="http://www.yangyanxing.com/article/1103.html"/>
+    <id>http://www.yangyanxing.com/article/1103.html</id>
+    <published>2014-07-29T16:59:27.000Z</published>
+    <updated>2017-12-16T15:49:56.197Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近接触一个项目，要在多个虚拟机中运行任务，参考别人之前项目的代码，采用了多进程来处理，于是上网查了查python中的多进程&lt;/p&gt;
+&lt;p&gt;一、先说说Queue（队列对象）&lt;/p&gt;
+&lt;p&gt;Queue是python中的标准库，可以直接import 引用，之前学习的时候有听过著名的“先吃先拉”与“后吃先吐”，其实就是这里说的队列，队列的构造的时候可以定义它的容量，别吃撑了，吃多了，就会报错,构造的时候不写或者写个小于1的数则表示无限多&lt;/p&gt;
+&lt;p&gt;import Queue&lt;/p&gt;
+&lt;p&gt;q = Queue.Queue(10)&lt;/p&gt;
+&lt;p&gt;向队列中放值(put)&lt;/p&gt;
+&lt;p&gt;q.put(‘yang’)&lt;/p&gt;
+&lt;p&gt;q.put(4)&lt;/p&gt;
+&lt;p&gt;q.put([‘yan’,’xing’])&lt;/p&gt;
+&lt;p&gt;在队列中取值get()&lt;/p&gt;
+&lt;p&gt;默认的队列是先进先出的&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python操作selenium的基本操作</title>
+    <link href="http://www.yangyanxing.com/article/1085.html"/>
+    <id>http://www.yangyanxing.com/article/1085.html</id>
+    <published>2014-06-17T14:59:00.000Z</published>
+    <updated>2017-12-16T10:10:42.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的requests初步使用</title>
+    <link href="http://www.yangyanxing.com/article/1079.html"/>
+    <id>http://www.yangyanxing.com/article/1079.html</id>
+    <published>2014-06-15T15:20:53.000Z</published>
+    <updated>2017-12-16T10:10:42.076Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早就听说requests的库的强大，只是还没有接触，今天接触了一下，发现以前使用urllib，urllib2等方法真是太搓了……&lt;/p&gt;
+&lt;p&gt;这里写些简单的使用初步作为一个记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="requests" scheme="http://www.yangyanxing.com/tags/requests/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与wordpress垃圾评论斗争到底</title>
+    <link href="http://www.yangyanxing.com/article/1069.html"/>
+    <id>http://www.yangyanxing.com/article/1069.html</id>
+    <published>2014-06-09T15:05:11.000Z</published>
+    <updated>2017-12-16T10:10:42.349Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于本人个人博客小站的空间与mysql空间有限，共享服务器资源也有限，所以这些垃圾评论一定要拦截在写入数据库之外。&lt;/p&gt;
+&lt;p&gt;更可气的是看到空间的统计，很几千的IP访问，但基本上都是这个垃圾评论的IP，所以实在不能忍&lt;/p&gt;
+&lt;p&gt;网上找了一些方法，主要有三个，如果将这三个一块使用基本上就可以拦截绝大多数垃圾评论&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>切换google的公共库缓解网站访问慢的问题</title>
+    <link href="http://www.yangyanxing.com/article/1052.html"/>
+    <id>http://www.yangyanxing.com/article/1052.html</id>
+    <published>2014-06-07T14:58:32.000Z</published>
+    <updated>2017-12-16T10:10:42.115Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近期谷(zheng)歌(fu)抽疯，很多google的公共库文件访问缓慢或者根本就是无法访问，很多网站前端以前都是直接引用google的地址，这会或多或少的影响网站打开速度。本人博客也“不幸”引入了一些google的公共库，换了几个服务器，无论是BAE还是SAE或者国外的服务器再或者是国内的服务器，都很慢，今天查了查，将其换为360网站卫士提供的公共库资源（&lt;a href=&quot;http://libs.useso.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://libs.useso.com/&lt;/a&gt;），效果果然提高不少。&lt;/p&gt;
+&lt;p&gt;这个是由360网站卫士CDN驱动的常用前端公共库以及和谐使用Google公共库&amp;amp;字体库的调用方法。&lt;/p&gt;
+&lt;p&gt;打开Chrome开发者工具(F12),打开网站，查看到一些引用都是error，其中一个是
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python中的中文编码问题</title>
+    <link href="http://www.yangyanxing.com/article/1050.html"/>
+    <id>http://www.yangyanxing.com/article/1050.html</id>
+    <published>2014-06-01T16:25:02.000Z</published>
+    <updated>2017-12-16T10:10:41.984Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在编程领域中，中文编码问题一向是个很头疼的问题，今天写点总结一下解决的方法&lt;/p&gt;
+&lt;p&gt;unicode与utf-8和gbk之间的转换，涉及到的函数有decode与encode&lt;/p&gt;
+&lt;p&gt;首先明确一下，python中的字符串都是以某种编码来存储的，就中文来说，以gbk与utf-8的，你虽然可以这样定义一个变量 s = u’杨彦星’,但是你可以用type(s) 来看一下它的类型，此时这个s 不是字符串，而是unicode类型，当你定义s = ‘杨彦星’的时候，这时type(s)才是str类型，但是当你直接定义s = ‘杨彦星’时会在不同的场景下出现不同的问题，windows下的cmd还好，换到一个utf-8的解析器里就是乱码，所以最好的方式是在定义有中文（或者说非英文的）字符串时以unicode来定义，然后再去解码输出。&lt;/p&gt;
+&lt;p&gt;将字符串decode成unicode&lt;/p&gt;
+&lt;p&gt;s = ‘杨彦星’&lt;/p&gt;
+&lt;p&gt;s_uni = s.decode(‘gbk’) #将s转换成unicode，decode的时候就加上这个字符原来的编码类型&lt;/p&gt;
+&lt;p&gt;s_utf8 = s_uni.encode(‘utf-8’)&lt;/p&gt;
+&lt;p&gt;s_gbk = s_uni.encode(‘gbk’)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu从安装到设置的一点记录</title>
+    <link href="http://www.yangyanxing.com/article/1032.html"/>
+    <id>http://www.yangyanxing.com/article/1032.html</id>
+    <published>2014-03-06T15:43:25.000Z</published>
+    <updated>2017-12-16T10:10:42.185Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.硬盘安装：&lt;a href=&quot;http://www.linuxidc.com/Linux/2013-10/91565.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.linuxidc.com/Linux/2013-10/91565.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.Nvidia显卡的安装，&lt;a href=&quot;http://blog.csdn.net/wzcqr0501/article/details/8498659&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/wzcqr0501/article/details/8498659&lt;/a&gt; 曾尝试安装，但第一次失败且改不回来，于是不准备安装了，自带的Nvidia显卡已经很好了&lt;/p&gt;
+&lt;p&gt;3.修改hosts改变google的解析 sudo gedit /etc/hosts&lt;/p&gt;
+&lt;p&gt;4.默认启动ubuntu后自动挂载windows分区 &lt;a href=&quot;http://www.linuxidc.com/Linux/2013-02/79679.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.linuxidc.com/Linux/2013-02/79679.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;创建挂载目录 sudo mkdir  /media/windows 等等&lt;/p&gt;
+&lt;p&gt;查看磁盘分区的UUID sudo  blkid  记录UUID&lt;/p&gt;
+&lt;p&gt;编辑fstab sudo gedit  /etc/fstab 写入如下内容&lt;/p&gt;
+&lt;p&gt;UUID=D06ABBA96ABB8AAC /media/windows ntfs default 0 0&lt;/p&gt;
+&lt;p&gt;5.解决中文乱码问题&lt;/p&gt;
+&lt;p&gt;sudo gedit /etc/profile&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="linux" scheme="http://www.yangyanxing.com/tags/linux/"/>
+    
+      <category term="Ubuntu" scheme="http://www.yangyanxing.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript DOM初学(一)</title>
+    <link href="http://www.yangyanxing.com/article/994.html"/>
+    <id>http://www.yangyanxing.com/article/994.html</id>
+    <published>2014-02-22T18:18:25.000Z</published>
+    <updated>2017-12-16T10:10:42.446Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始学习javacript，这里做个总结&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+      <category term="javascript" scheme="http://www.yangyanxing.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中的logging模块应用</title>
+    <link href="http://www.yangyanxing.com/article/963.html"/>
+    <id>http://www.yangyanxing.com/article/963.html</id>
+    <published>2013-11-16T15:56:49.000Z</published>
+    <updated>2017-12-16T10:10:42.068Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python中有系统自带的logging模块，使用起来非常方便，并且要在程序中经常要使用这个模块，这样出了问题可以通过日志很方便的查找在哪里出了问题，比直接找代码要方便些&lt;/p&gt;
+&lt;p&gt;我记录了一些经常用到的，不是很常用的可以到python文档中去查看 &lt;a href=&quot;http://docs.python.org/2/library/logging.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://docs.python.org/2/library/logging.html&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用web.py在BAE建立自已的电影网站</title>
+    <link href="http://www.yangyanxing.com/article/953.html"/>
+    <id>http://www.yangyanxing.com/article/953.html</id>
+    <published>2013-10-31T16:06:43.000Z</published>
+    <updated>2017-12-16T10:10:42.085Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在网上看了一篇文章使用web.py在BAE上建立电影网站，&lt;a href=&quot;http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.51bigfool.com/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8bae%E5%92%8Cweb-py%E6%89%93%E9%80%A0%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1top100%E7%9A%84.html&lt;/a&gt; 我自已也在此基础上做了一些改进，也在一点点的熟悉使用web.py这个框架，可以看一下我弄了一半的应用 &lt;a href=&quot;http://movie.yangyanxing.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://movie.yangyanxing.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;准备 BAE web.py&lt;/p&gt;
+&lt;h1 id=&quot;在BAE上建立一个python的应用&quot;&gt;&lt;a href=&quot;#在BAE上建立一个python的应用&quot; class=&quot;headerlink&quot; title=&quot;在BAE上建立一个python的应用&quot;&gt;&lt;/a&gt;在BAE上建立一个python的应用&lt;/h1&gt;&lt;p&gt;快速创建即可，选择Iframe&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/image/2013/11/create.jpg&quot;&gt;&lt;img src=&quot;/image/2013/11/create_thumb.jpg&quot; alt=&quot;create&quot; title=&quot;create&quot;&gt;&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web.py中关于url的总结</title>
+    <link href="http://www.yangyanxing.com/article/932.html"/>
+    <id>http://www.yangyanxing.com/article/932.html</id>
+    <published>2013-10-21T17:42:41.000Z</published>
+    <updated>2017-12-16T10:10:41.904Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网页中的数据在传递的时候有GET和POST两种方式，GET是以网址的形式传参数，在web.py中有着很好的匹配，如果我们配置以下的urls&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;  urls =(
+    &amp;#39;/&amp;#39;,&amp;#39;index&amp;#39;,
+    &amp;#39;/weixin/(.*?)&amp;#39;,&amp;#39;WeixinInterface&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;先不考虑/weixin/后面的东西，现在我们来写index的类&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;class index:
+    def GET(self):
+        i = web.input(name = &amp;#39;kevinkelin&amp;#39;,age = 100)
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在中文windows下使用pywinauto进行窗口操作（一）</title>
+    <link href="http://www.yangyanxing.com/article/926.html"/>
+    <id>http://www.yangyanxing.com/article/926.html</id>
+    <published>2013-10-06T19:42:56.000Z</published>
+    <updated>2017-12-16T10:10:42.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。&lt;/p&gt;
+&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;h2 id=&quot;pywinauto&quot;&gt;&lt;a href=&quot;#pywinauto&quot; class=&quot;headerlink&quot; title=&quot;pywinauto;&quot;&gt;&lt;/a&gt;pywinauto;&lt;/h2&gt;&lt;p&gt; &lt;a href=&quot;https://sourceforge.net/project/showfiles.php?group_id=157379&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://sourceforge.net/project/showfiles.php?group_id=157379&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Sendkeys&quot;&gt;&lt;a href=&quot;#Sendkeys&quot; class=&quot;headerlink&quot; title=&quot;Sendkeys&quot;&gt;&lt;/a&gt;Sendkeys&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.rutherfurd.net/python/sendkeys/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.rutherfurd.net/python/sendkeys/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ctypes-如果你是python2-3或者2-4&quot;&gt;&lt;a href=&quot;#ctypes-如果你是python2-3或者2-4&quot; class=&quot;headerlink&quot; title=&quot;ctypes (如果你是python2.3或者2.4)&quot;&gt;&lt;/a&gt;ctypes (如果你是python2.3或者2.4)&lt;/h2&gt;&lt;p&gt;检测你是否安装正确&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;from pywinauto import application&lt;br&gt;app = application.Application.start(“notepad.exe”)&lt;br&gt;app.notepad.TypeKeys(“%FX”)&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用python进行windows自动化测试（1）</title>
+    <link href="http://www.yangyanxing.com/article/920.html"/>
+    <id>http://www.yangyanxing.com/article/920.html</id>
+    <published>2013-10-04T17:41:33.000Z</published>
+    <updated>2017-12-16T10:10:42.368Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的&lt;/p&gt;
+&lt;p&gt;主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作&lt;/p&gt;
+&lt;p&gt;下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作&lt;/p&gt;
+&lt;p&gt;所用的工具有SpyLite，用于查看窗口ID，句柄等信息&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过hello world程序判断你的虚拟主机是否支持python</title>
+    <link href="http://www.yangyanxing.com/article/897.html"/>
+    <id>http://www.yangyanxing.com/article/897.html</id>
+    <published>2013-09-24T17:37:52.000Z</published>
+    <updated>2017-12-16T10:10:41.998Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下&lt;/p&gt;
+&lt;p&gt;写一个hello world的小程序&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;#!/usr/bin/python
+print &amp;#39;Content-Type: text/plainn&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以二进制方式上传到自已的空间上，访问 &lt;a href=&quot;http://static.yangyanxing.com/test.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://static.yangyanxing.com/test.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;居然一次性成功了，完美地显示hello world&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的urllib2库的使用</title>
+    <link href="http://www.yangyanxing.com/article/911.html"/>
+    <id>http://www.yangyanxing.com/article/911.html</id>
+    <published>2013-09-11T17:06:43.000Z</published>
+    <updated>2017-12-16T10:10:42.494Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天研究了下urllib2这个库的使用，才发现以前有很多不明白的东西，现在写下来也做个记录&lt;/p&gt;
+&lt;h1 id=&quot;最基础的应用&quot;&gt;&lt;a href=&quot;#最基础的应用&quot; class=&quot;headerlink&quot; title=&quot;最基础的应用&quot;&gt;&lt;/a&gt;最基础的应用&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import urllib2
+url = r&amp;#39;http://www.baidu.com&amp;#39;
+html = urllib2.urlopen(url).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;客户端与服务器端通过request与response来沟通，客户端先向服务端发送request，然后接收服务端返回的response&lt;/p&gt;
+&lt;p&gt;urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import urllib2
+url = r&amp;#39;http://www.baidu.com&amp;#39;
+req = urllib2.Request(url)
+html = urllib2.urlopen(req).read()
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python处理网页中的cookie</title>
+    <link href="http://www.yangyanxing.com/article/908.html"/>
+    <id>http://www.yangyanxing.com/article/908.html</id>
+    <published>2013-09-10T03:16:49.000Z</published>
+    <updated>2017-12-16T10:10:42.039Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近想要搭建个小黄鸡的微信应用，但是一路来发现，现在很多的方法都已经不能用了，我在本地试过，也试用过requests获取session的方法也不行，但是这经过这次折腾，倒是对cookie有了更多的了解，以下以python登录人人网的例子来介绍cookie的使用。&lt;br&gt;cookie的定义可以参考百度百科，&lt;a href=&quot;http://baike.baidu.com/subview/835/5062332.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://baike.baidu.com/subview/835/5062332.htm&lt;/a&gt; 但是里面说的乱七八糟的，而且好多重复，使用firefox或者fiddler等工具来抓取cookie&lt;br&gt;在firefox下使用httpFox插件来查到人人网的登录时需要POST的地址是&lt;a href=&quot;http://www.renren.com/ajaxLogin&quot; title=&quot;http://www.renren.com/ajaxLogin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.renren.com/ajaxLogin&lt;/a&gt;&amp;#160;&lt;br&gt;&lt;a href=&quot;/image/2013/09/getUrl.png&quot;&gt;&lt;img src=&quot;/image/2013/09/getUrl_thumb.png&quot; alt=&quot;getUrl&quot; title=&quot;getUrl&quot;&gt;&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用python抓取360搜索联想词</title>
+    <link href="http://www.yangyanxing.com/article/877.html"/>
+    <id>http://www.yangyanxing.com/article/877.html</id>
+    <published>2013-09-03T17:09:19.000Z</published>
+    <updated>2017-12-16T15:53:24.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;几乎所有的搜索引擎都提供联想词提示，这个小脚本其实功能性不大，只当作使用urllib2发http请求和如何使用代理来访问&lt;/p&gt;
+&lt;p&gt;参考文章&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://video.sina.com.cn/v/b/113293169-1631501663.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://video.sina.com.cn/v/b/113293169-1631501663.html&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python解析json</title>
+    <link href="http://www.yangyanxing.com/article/874.html"/>
+    <id>http://www.yangyanxing.com/article/874.html</id>
+    <published>2013-08-27T17:23:05.000Z</published>
+    <updated>2017-12-16T10:10:42.129Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相对于python解析XML来说，我还是比较喜欢json的格式返回，现在一般的api返回都会有json与XML格式的选择，json的解析起来个人觉得相对简单些&lt;/p&gt;
+&lt;p&gt;先看一个简单的豆瓣的图书查询的api返回
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python解析XML文档</title>
+    <link href="http://www.yangyanxing.com/article/872.html"/>
+    <id>http://www.yangyanxing.com/article/872.html</id>
+    <published>2013-08-27T16:32:24.000Z</published>
+    <updated>2017-12-16T10:10:42.294Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;解析XML主要用到pytohn自带的XML库，其次还是lxml库&lt;/p&gt;
+&lt;h1 id=&quot;XML结构&quot;&gt;&lt;a href=&quot;#XML结构&quot; class=&quot;headerlink&quot; title=&quot;XML结构&quot;&gt;&lt;/a&gt;XML结构&lt;/h1&gt;&lt;p&gt;先以一个相对简单但功能比较全的XML文档为例&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;utf-8&amp;#39;?&amp;gt;
+&amp;lt;feed xmlns=&amp;#39;http://www.w3.org/2005/Atom&amp;#39; xml:lang=&amp;#39;en&amp;#39;&amp;gt;
+  &amp;lt;title&amp;gt;dive into mark&amp;lt;/title&amp;gt;
+  &amp;lt;subtitle&amp;gt;currently between addictions&amp;lt;/subtitle&amp;gt;
+  &amp;lt;id&amp;gt;tag:diveintomark.org,2001-07-29:/&amp;lt;/id&amp;gt;
+  &amp;lt;updated&amp;gt;2009-03-27T21:56:07Z&amp;lt;/updated&amp;gt;
+  &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39; href=&amp;#39;http://diveintomark.org/&amp;#39;/&amp;gt;
+  &amp;lt;entry&amp;gt;
+    &amp;lt;author&amp;gt;
+      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
+      &amp;lt;uri&amp;gt;http://diveintomark.org/&amp;lt;/uri&amp;gt;
+    &amp;lt;/author&amp;gt;
+    &amp;lt;title&amp;gt;Dive into history, 2009 edition&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
+      href=&amp;#39;http://diveintomark.org/archives/2009/03/27/dive-into-history-2009-edition&amp;#39;/&amp;gt;
+    &amp;lt;id&amp;gt;tag:diveintomark.org,2009-03-27:/archives/20090327172042&amp;lt;/id&amp;gt;
+    &amp;lt;updated&amp;gt;2009-03-27T21:56:07Z&amp;lt;/updated&amp;gt;
+    &amp;lt;published&amp;gt;2009-03-27T17:20:42Z&amp;lt;/published&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;diveintopython&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;docbook&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;html&amp;#39;/&amp;gt;
+    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;Putting an entire chapter on one page sounds
+      bloated, but consider this &amp;amp;mdash; my longest chapter so far
+      would be 75 printed pages, and it loads in under 5 seconds&amp;amp;hellip;
+      On dialup.&amp;lt;/summary&amp;gt;
+  &amp;lt;/entry&amp;gt;
+  &amp;lt;entry&amp;gt;
+    &amp;lt;author&amp;gt;
+      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
+      &amp;lt;uri&amp;gt;http://diveintomark.org/&amp;lt;/uri&amp;gt;
+    &amp;lt;/author&amp;gt;
+    &amp;lt;title&amp;gt;Accessibility is a harsh mistress&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
+      href=&amp;#39;http://diveintomark.org/archives/2009/03/21/accessibility-is-a-harsh-mistress&amp;#39;/&amp;gt;
+    &amp;lt;id&amp;gt;tag:diveintomark.org,2009-03-21:/archives/20090321200928&amp;lt;/id&amp;gt;
+    &amp;lt;updated&amp;gt;2009-03-22T01:05:37Z&amp;lt;/updated&amp;gt;
+    &amp;lt;published&amp;gt;2009-03-21T20:09:28Z&amp;lt;/published&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;accessibility&amp;#39;/&amp;gt;
+    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;The accessibility orthodoxy does not permit people to
+      question the value of features that are rarely useful and rarely used.&amp;lt;/summary&amp;gt;
+  &amp;lt;/entry&amp;gt;
+  &amp;lt;entry&amp;gt;
+    &amp;lt;author&amp;gt;
+      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
+    &amp;lt;/author&amp;gt;
+    &amp;lt;title&amp;gt;A gentle introduction to video encoding, part 1: container formats&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
+      href=&amp;#39;http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats&amp;#39;/&amp;gt;
+    &amp;lt;id&amp;gt;tag:diveintomark.org,2008-12-18:/archives/20081218155422&amp;lt;/id&amp;gt;
+    &amp;lt;updated&amp;gt;2009-01-11T19:39:22Z&amp;lt;/updated&amp;gt;
+    &amp;lt;published&amp;gt;2008-12-18T15:54:22Z&amp;lt;/published&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;asf&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;avi&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;encoding&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;flv&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;GIVE&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;mp4&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;ogg&amp;#39;/&amp;gt;
+    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;video&amp;#39;/&amp;gt;
+    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;These notes will eventually become part of a
+      tech talk on video encoding.&amp;lt;/summary&amp;gt;
+  &amp;lt;/entry&amp;gt;
+&amp;lt;/feed&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;先简单的看一下这个XML的结构
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="xml" scheme="http://www.yangyanxing.com/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用python一步一步搭建微信公众平台（一）</title>
+    <link href="http://www.yangyanxing.com/article/871.html"/>
+    <id>http://www.yangyanxing.com/article/871.html</id>
+    <published>2013-08-24T11:03:05.000Z</published>
+    <updated>2017-12-16T15:55:19.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近无聊，想玩玩微信的公众平台，后来发现乐趣无穷啊~&lt;/p&gt;
+&lt;p&gt;使用的工具，python 新浪SAE平台，微信的公众平台&lt;/p&gt;
+&lt;p&gt;你需要先在微信的公众平台与新浪SAE平台上各种注册，微信平台注册的时候需要你拍张手持身份证的照片，还有几天的审核期&lt;/p&gt;
+&lt;p&gt;微信公众平台：&lt;a href=&quot;http://mp.weixin.qq.com/&quot; title=&quot;微信公众平台&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://mp.weixin.qq.com&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python发邮件是件很简单的事情</title>
+    <link href="http://www.yangyanxing.com/article/870.html"/>
+    <id>http://www.yangyanxing.com/article/870.html</id>
+    <published>2013-08-07T16:09:33.000Z</published>
+    <updated>2017-12-16T10:10:42.402Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;利用python的smtplib，发邮件将是一件非常简单的事情，下文以用163邮箱来发邮件为例，说明smtplib的应用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
+import smtplib
+
+def
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>可爱的python中的一个与递归相关的小问题</title>
+    <link href="http://www.yangyanxing.com/article/821.html"/>
+    <id>http://www.yangyanxing.com/article/821.html</id>
+    <published>2013-06-22T17:41:21.000Z</published>
+    <updated>2017-12-16T10:10:42.319Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可爱的python一书中有一个练习题，是在一个目录中查找特定扩展名的文件，并且读取里面的内容，然后用户输入一个关键词，在这些文件中进行搜索，如果找到后就把这一行内容打印出来，他提出的问题是如果里面还有目录，目录里面还有更深的目录，解决这个问题，我想到的只能是递归。。。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
+import os,sys
+
+def cdGrep(keyword,filepath):
+    filelist = os.listdir(filepath)
+
+    for cdc in filelist:
+        if os.path.isdir(cdc):
+            filepath2 = os.path.join(filepath,cdc)
+            cdGrep(keyword,filepath2)
+
+        elif &amp;#39;.txt&amp;#39; in cdc:
+#            print filepath+cdc
+            f = open(filepath+&amp;#39;&amp;#39;+ cdc)
+            for line in f.readlines():
+                linelower = line.lower()
+                if keyword in linelower:
+
+                    print &amp;#39;您查找的关键词在%s中找到&amp;#39;% (filepath+&amp;#39;&amp;#39;+cdc)
+                    print line
+                f.close()
+
+if __name__ == &amp;#39;__main__&amp;#39;:
+    keword = raw_input(&amp;#39;请输入想要查询的关键字&amp;#39;)
+    pw = os.getcwd()
+    cdGrep(keword,pw)
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>通过一个python小脚本来下载最新的360杀毒安装程序</title>
+    <link href="http://www.yangyanxing.com/article/817.html"/>
+    <id>http://www.yangyanxing.com/article/817.html</id>
+    <published>2013-06-03T11:21:12.000Z</published>
+    <updated>2017-12-16T10:10:41.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;小脚本很简单，主要是练习一下正则匹配，与简单的urllib库的应用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding: utf8
+import urllib,re
+import os
+
+def getLastinstall():
+
+   
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中的OOP</title>
+    <link href="http://www.yangyanxing.com/article/813.html"/>
+    <id>http://www.yangyanxing.com/article/813.html</id>
+    <published>2013-06-01T14:17:55.000Z</published>
+    <updated>2017-12-16T10:10:42.222Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;直接上代码，已经在后面有注释了&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf8
+
+name = &amp;#39;yangyanxing&amp;#39;
+class Test():
+    class kevin():
+        var1 =
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个python的小脚本登录人人并抓取新鲜事</title>
+    <link href="http://www.yangyanxing.com/article/806.html"/>
+    <id>http://www.yangyanxing.com/article/806.html</id>
+    <published>2013-05-28T16:30:48.000Z</published>
+    <updated>2017-12-16T10:10:42.024Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from sgmllib import SGMLParser
+import sys,urllib2,urllib,cookielib
+class spider(SGMLParser):
+    def
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(转)抛砖引玉 正则表达式完成电话号码的匹配</title>
+    <link href="http://www.yangyanxing.com/article/779.html"/>
+    <id>http://www.yangyanxing.com/article/779.html</id>
+    <published>2013-03-18T15:24:26.000Z</published>
+    <updated>2017-12-16T16:00:10.301Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原来地址：&lt;a href=&quot;http://www.diveintopython.net/regular_expressions/phone_numbers.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.diveintopython.net/regular_expressions/phone_numbers.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;迄今为止，你主要是匹配整个模式，不论是匹配上，还是没有匹配上。但是正则表达式还有比这更为强大的功能。当一个模式确实 匹配上时，你可以获取模式中特定的片断，你可以发现具体匹配的位置。 这个例子来源于我遇到的另一个现实世界的问题，也是在以前的工作中遇到的。问题是：解析一个美国电话号码。客户要能 (在一个单一的区域中) 输入任何数字，然后存储区号、干线号、电话号和一个可选的独立的分机号到公司数据库里。为此，我通过网络找了很多正则表达式的例子，但是没有一个能够完全满足我的要求。 这里列举了我必须能够接受的电话号码：&lt;br&gt; 800-555-1212&lt;br&gt; 800 555 1212&lt;br&gt; 800.555.1212&lt;br&gt; (800) 555-1212&lt;br&gt; 1-800-555-1212&lt;br&gt; 800-555-1212-1234&lt;br&gt; 800-555-1212x1234&lt;br&gt; 800-555-1212 ext. 1234&lt;br&gt; work 1-(800) 555.1212 #1234&lt;br&gt;格式可真够多的！我需要知道区号是 800，干线号是 555，电话号的其他数字为 1212。对于那些有分机号的，我需要知道分机号为 1234。 让我们完成电话号码解析这个工作，这个例子展示第一步。&lt;br&gt;例 7.10. 发现数字&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;phonePattern = re.compile(r’^(d{3})-(d{3})-(d{4})$’) (1)&lt;br&gt;phonePattern.search(‘800-555-1212’).groups() (2)&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>(转)Python 参数知识（变量前加星号的意义）</title>
+    <link href="http://www.yangyanxing.com/article/775.html"/>
+    <id>http://www.yangyanxing.com/article/775.html</id>
+    <published>2013-03-16T12:24:01.000Z</published>
+    <updated>2017-12-16T10:10:42.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原文地址：&lt;a href=&quot;http://blog.csdn.net/qinyilang/article/details/5484415&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/qinyilang/article/details/5484415&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;**过量的参数&lt;/p&gt;
+&lt;p&gt;**在运行时知道一个函数有什么参数，通常是不可能的。另一个情况是一个函数能操作很多对象。更有甚者，调用自身的函数变成一种api提供给可用的应用。&lt;/p&gt;
+&lt;p&gt;对于这些情况，python提供了两种特别的方法来定义函数的参数，允许函数接受过量的参数，不用显式声明参数。这些“额外”的参数下一步再解释。&lt;/p&gt;
+&lt;p&gt;注意args和kwargs只是python的约定。任何函数参数，你可以自己喜欢的方式命名，但是最好和python标准的惯用法一致，以便你的代码，其他的程序员也能轻松读懂。&lt;br&gt;&lt;strong&gt;&lt;br&gt;位置参数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在参数名之前使用一个星号，就是让函数接受任意多的位置参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def multiply(*args):
+...     total = 1
+...     for arg in args:
+...         total *= arg
+...     return total
+...
+&amp;gt;&amp;gt;&amp;gt; multiply(2, 3)
+6
+&amp;gt;&amp;gt;&amp;gt; multiply(2, 3, 4, 5, 6)
+720
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迟暮之年，感慨之春</title>
+    <link href="http://www.yangyanxing.com/article/760.html"/>
+    <id>http://www.yangyanxing.com/article/760.html</id>
+    <published>2013-03-08T18:04:37.000Z</published>
+    <updated>2017-12-16T10:10:42.520Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早上匆匆忙忙的上了拥挤的公交，其实后面还有更拥挤的地铁，麻木的内心其实早已习惯这种乱哄哄的狭小空间，打开手机，习惯性的打开阅读软件，浏览着早已下载好的离线新闻，公交每到一站，任凭司机撕心裂肺的倡导，能动则随着人流动，不能动就当什么都没有听到，当有乘客在拥挤的车厢内挤来挤去，有意无意的一些身体接触摩擦过后，一股想骂人的冲动只因为在转头都困难的环境下就忍了吧。&lt;/p&gt;
+&lt;p&gt;怎知每天这时都会有很多老年人来凑热闹，我有时真是由衷的佩服他们，满头白发，却还做着有些年轻人都不想做但不得不做的事情，挤来挤去的，也有不开眼的在座位上的乘客，依然玩着自己的手机或者补着晚上还没有做完的梦，于是老年人在还可以移动的情况下会继续寻找属于自己的“专座”。&lt;/p&gt;
+&lt;p&gt;而今天我放下了手机，不再看那些用数据堆起来的专题。只因两位特别的老人。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python中用print方法向文件中写入内容</title>
+    <link href="http://www.yangyanxing.com/article/749.html"/>
+    <id>http://www.yangyanxing.com/article/749.html</id>
+    <published>2013-02-02T15:40:21.000Z</published>
+    <updated>2017-12-16T10:10:42.142Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个小功能，我就是想用print功能实现，不想用write&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import os
+
+os.chdir(&amp;quot;/usr/tem&amp;quot;)
+char=&amp;quot;my name is yangyanxing&amp;quot;
+f = open(&amp;quot;test.txt&amp;quot;,&amp;quot;w&amp;quot;)
+print &amp;gt;&amp;gt;f,char
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是Python3中还可以用以下的方式&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import os
+
+os.chdir(&amp;quot;/usr/tem&amp;quot;)
+char=&amp;quot;my name is yangyanxing&amp;quot;
+f = open(&amp;quot;test.txt&amp;quot;,&amp;quot;w&amp;quot;)
+print(char,file=f)
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用新浪SAE storage服务做图床</title>
+    <link href="http://www.yangyanxing.com/article/460.html"/>
+    <id>http://www.yangyanxing.com/article/460.html</id>
+    <published>2012-12-10T15:37:16.000Z</published>
+    <updated>2017-12-16T10:10:42.526Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;新浪SAE 为用户提供storage服务，来永久性存储文件，这很好的为用户提供图片等文件存储服务，以下通过方法来建立一个自己的图床&lt;/p&gt;
+&lt;p&gt;需求：上传一张照片，返回这张照片的地址&lt;/p&gt;
+&lt;p&gt;实现 &lt;a href=&quot;http://kevinkelin.sinaapp.com/fileupload.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://kevinkelin.sinaapp.com/fileupload.php&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;首先在SAE上建立一个storage-的domain&quot;&gt;&lt;a href=&quot;#首先在SAE上建立一个storage-的domain&quot; class=&quot;headerlink&quot; title=&quot;首先在SAE上建立一个storage 的domain&quot;&gt;&lt;/a&gt;首先在SAE上建立一个storage 的domain&lt;/h1&gt;&lt;p&gt;首先在SAE上建立一个storage 的domain,(其实再之前你需要有一个应用，这里不写了)&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决wordpress后台写日志时编辑器加载慢</title>
+    <link href="http://www.yangyanxing.com/article/444.html"/>
+    <id>http://www.yangyanxing.com/article/444.html</id>
+    <published>2012-12-07T16:05:04.000Z</published>
+    <updated>2017-12-16T10:10:42.361Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;空间放在国外的人基本都有一个感受，有时加载很慢，我最近用wordpress写文章的时候，默认的编辑器加载很慢&lt;br&gt;有时都无法写博客下图中红框圈出来的位置加载太慢，后来网上查了查相应的资料，原来是有一个.js文件导致的，那个文件有200多K&lt;br&gt;所以有时对于主机放在国外的朋友很慢，其实这里只要把这个js文件放到国内服务器，加载速度就能提高很快&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/795ab47fjw1dzlljowwkkj.jpg&quot; alt=&quot;&quot; title=&quot;reload&quot;&gt;&lt;/p&gt;
+&lt;p&gt;到你的wordpress目录 wp-includes/js/tinymce取出tiny_mce.js文件，然后将其放到国内一个访问快的服务器，别说你没有啊，实在没有的话用新浪的SAE。然后找到打开wp-includes/class-wp-editor.php 这个文件，找到大概540行左右&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>（转）Python装饰器与面向切面编程</title>
+    <link href="http://www.yangyanxing.com/article/416.html"/>
+    <id>http://www.yangyanxing.com/article/416.html</id>
+    <published>2012-12-05T15:18:05.000Z</published>
+    <updated>2017-12-16T16:07:40.668Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文用了一个很通俗的例子还一步步的让读者理解Python中的装饰器的概念&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&quot;http://www.cnblogs.com/huxi/archive/2011/03/01/1967600.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>北京工业大学内两个网卡分别访问内网与外网的方法</title>
+    <link href="http://www.yangyanxing.com/article/413.html"/>
+    <id>http://www.yangyanxing.com/article/413.html</id>
+    <published>2012-11-30T13:50:34.000Z</published>
+    <updated>2017-12-16T10:10:42.538Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相信很多在北京工业大学的童鞋都知道内网有很多资源，但是由于学校内的网络是按流量收费的，所以对于外网拥有的更多好资源有时只能另想办法，于是很多宿舍开始办理201宽带，但是最快的网速也不及内网10M/s下载爽，于是我在网上找了一些方法，结合北工大的网络环境，写了一个批处理文件来解决同时访问内网与外网的方法&lt;/p&gt;
+&lt;p&gt;1.网络现状：有线接内网，无线接ADSL宽带。&lt;/p&gt;
+&lt;p&gt;2.首先查看自己内网与ADSL的IP与网关&lt;/p&gt;
+&lt;p&gt;内网  IP  172.27.28.96 网关 172.27.28.254&lt;/p&gt;
+&lt;p&gt;ADSL IP  192.168.1.105 网关 192.168.1.1&lt;/p&gt;
+&lt;p&gt;3. 再建一个txt文档，输入以下信息，重新保存为.bat文件，
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决新浪开放平台应用（oauth2）网站无法认证的问题</title>
+    <link href="http://www.yangyanxing.com/article/407.html"/>
+    <id>http://www.yangyanxing.com/article/407.html</id>
+    <published>2012-11-29T15:10:50.000Z</published>
+    <updated>2017-12-16T10:10:42.416Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前些天一直在倒腾新浪微博的开放平台，一开始用的oauth1，利用官方的PHP SDK写了一个简单发微博的应用，但是很遗憾，没有成功，这里简单的写一下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&amp;lt;?php
+
+session_start();
+include_once( &amp;#39;config.php&amp;#39; );
+include_once( &amp;#39;weibooauth.php&amp;#39; );
+$c = new WeiboClient( WB_AKEY , WB_SKEY , $_SESSION[&amp;#39;last_key&amp;#39;][&amp;#39;oauth_token&amp;#39;] , $_SESSION[&amp;#39;last_key&amp;#39;][&amp;#39;oauth_token_secret&amp;#39;] );
+
+?&amp;gt;
+
+&amp;lt;form action=&amp;quot;&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;
+&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;text&amp;quot; id=&amp;quot;1&amp;quot;&amp;gt;
+&amp;lt;input type=&amp;quot;submit&amp;quot; name=&amp;quot;submit&amp;quot; value=&amp;quot;发表微博&amp;quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;?php
+if(isset($_POST[&amp;#39;text&amp;#39;])){
+$rr=$c-&amp;gt;update($_POST[&amp;#39;text&amp;#39;]);
+
+echo &amp;quot;发表成功&amp;quot;;
+
+}
+
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>通过小程序练习Python中关于os模块的方法</title>
+    <link href="http://www.yangyanxing.com/article/397.html"/>
+    <id>http://www.yangyanxing.com/article/397.html</id>
+    <published>2012-11-15T17:14:18.000Z</published>
+    <updated>2017-12-16T16:10:07.607Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过一个小程序来熟悉一下os模块中的方法，OS模块在以后会经常的使用，操作目录与文件等&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个Python的小例子来理解字典与while循环</title>
+    <link href="http://www.yangyanxing.com/article/393.html"/>
+    <id>http://www.yangyanxing.com/article/393.html</id>
+    <published>2012-11-11T17:23:59.000Z</published>
+    <updated>2017-12-16T10:10:42.433Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;现在要实现一个需求，弹出一个界面，可以让用户选择是新建用户还是登录已有账户，或者直接退出，在登录账户的时候，密码输入错误不能超过三次，超过三次要回到主界面，用户名输入‘q’的时候也可以退出并回到主界面&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用Chrome或者极速浏览器屏蔽烦人的广告</title>
+    <link href="http://www.yangyanxing.com/article/375.html"/>
+    <id>http://www.yangyanxing.com/article/375.html</id>
+    <published>2012-09-21T15:52:03.000Z</published>
+    <updated>2017-12-16T10:10:42.031Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先得声明，广告做为互联网中一个不可或缺元素，也是网站的主要收益来源，但频繁的广告会使人烦死，如一些垃圾网站的鼠标点击弹出色情游戏广告，有时还不止一个，还有优酷有广告，动辄就45S，实在受不了，基于此，寻找各路大仙&lt;/p&gt;
+&lt;p&gt;浏览器，Chrome或者基于Chrome核的浏览器，像360极速浏览器，在Chrome商店中（&lt;a href=&quot;https://chrome.google.com/webstore/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://chrome.google.com/webstore/&lt;/a&gt;）搜索Adblock Plus (&lt;a href=&quot;https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://chrome.google.com/webstore/detail/cfhdojbkjhnklbpkdaibdccddilifddb&lt;/a&gt;) 最新版的Chrome要必须从Chrome商店中安装应用，如果是极速浏览器的话可以直接点击 &lt;a href=&quot;http://adblockplus.org/devbuilds/adblockpluschrome/00latest.crx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://adblockplus.org/devbuilds/adblockpluschrome/00latest.crx&lt;/a&gt; 这个好处是直接就集成了&lt;a href=&quot;https://code.google.com/p/adblock-chinalist/&quot; title=&quot;https://easylist-downloads.adblockplus.org/chinalist+easylist.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ChinaList+EasyList&lt;/a&gt; ，当中有中国大多数网站中的广告元素，新装的时候会有一段时间的数据下载过程，取决于你的网速，数据请看 &lt;a href=&quot;https://easylist-downloads.adblockplus.org/chinalist+easylist.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://easylist-downloads.adblockplus.org/chinalist+easylist.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来你就可以轻松的访问各种网站了，注意现在访问的时候在浏览器的地址栏最右边会出现一个红色的ABP标识，因为即使在那个ChianList里面，也不是能把中国所以的网站广告都屏蔽了，有时还需要自己手工的添加，用鼠标点击那个红色标识，接着再点击“轻松建立过滤规则”，接下来把鼠标放到你想屏蔽广告的地方，那个地方会就成半透明的黄色，点击一下即可，在弹出来的对话框点击确定&lt;/p&gt;
+&lt;p&gt;当然也有想看网站广告的时候，
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP之简单的用户增删改查</title>
+    <link href="http://www.yangyanxing.com/article/702.html"/>
+    <id>http://www.yangyanxing.com/article/702.html</id>
+    <published>2012-08-19T16:05:15.000Z</published>
+    <updated>2017-12-16T10:10:42.053Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此篇文章简单的应用了之前所介绍的CURD&lt;/p&gt;
+&lt;p&gt;在IndexAction.class.php中写入以下代码&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP中的CURD之C</title>
+    <link href="http://www.yangyanxing.com/article/373.html"/>
+    <id>http://www.yangyanxing.com/article/373.html</id>
+    <published>2012-08-09T17:53:09.000Z</published>
+    <updated>2017-12-16T10:10:41.864Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CURD 增 删 改 查&lt;/p&gt;
+&lt;p&gt;C&lt;/p&gt;
+&lt;p&gt;create方法&lt;/p&gt;
+&lt;p&gt;每当实例化一个数据对象后，当需要接收post来值的时候，要用create方法来创建一个对象，根据表单提交的POST数据创建数据对象，并保存在内存中，可以通过dump($user)查看，返回值是一个数组&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;$user=M(&amp;#39;user&amp;#39;);
+
+$vo=$user-&amp;gt;create();
+
+dupm($vo); //这时会遍历出得到的（post）值
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP四种实例化模型的方法</title>
+    <link href="http://www.yangyanxing.com/article/372.html"/>
+    <id>http://www.yangyanxing.com/article/372.html</id>
+    <published>2012-08-06T17:00:18.000Z</published>
+    <updated>2017-12-16T10:10:42.460Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设数据库中有一个think_user的数据表&lt;/p&gt;
+&lt;h1 id=&quot;普通方式&quot;&gt;&lt;a href=&quot;#普通方式&quot; class=&quot;headerlink&quot; title=&quot;普通方式&quot;&gt;&lt;/a&gt;普通方式&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;$user=new Model(&amp;#39;user&amp;#39;);
+
+$user=M(&amp;#39;user&amp;#39;);
+
+/*
+
+user的U可以大写，也可以小写，当库中还有一个think_user_message等表的时候，可以使用
+
+new Model(&amp;#39;userMessage&amp;#39;) 或者new Model(user_message)，也就是说大写的首字母相当于带下划线的单词
+
+此方法也可以用快捷方法，M方法
+
+*/
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过新浪SAE搭建自己的个人博客</title>
+    <link href="http://www.yangyanxing.com/article/371.html"/>
+    <id>http://www.yangyanxing.com/article/371.html</id>
+    <published>2012-04-22T17:02:55.000Z</published>
+    <updated>2017-12-16T10:10:42.545Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;新浪SAE是个好东西，对于学习PHP的同学是一个不错的练习空间，（现在已经推出了java了，不过需要邀请码）不用在四处寻找廉价的主机，而且 平台上已经集成了很多现成的应用，博客空间有wordpress，emlog等，PHP框架有thinkPHP,cakephp等，而且还是 ecshop，最土等电子商务系统，更方便的应用于用户，感兴趣的同学可以体验一下，现在我将写一篇关于搭建wordpress博客应用和自己创建一个新 浪微博的简单应用来抛砖引玉，让更多的同学朋友了解SAE。&lt;/p&gt;
+&lt;p&gt;SAE地址 &lt;a href=&quot;http://rrurl.cn/fzgC5N&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://sae.sina.com.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要准备：新浪微博账号（必须），自己注册的域名（可选），SAE提供二级域名的访问，xxx.sinaapp.com 也可以绑定自己的域名，注意这里的域名可以不用备案哦~&lt;/p&gt;
+&lt;h1 id=&quot;搭建wordpress博客应用&quot;&gt;&lt;a href=&quot;#搭建wordpress博客应用&quot; class=&quot;headerlink&quot; title=&quot;搭建wordpress博客应用&quot;&gt;&lt;/a&gt;搭建wordpress博客应用&lt;/h1&gt;&lt;p&gt;具体步骤&lt;br&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在SUSE中用Pidgin整合QQ与新浪微博</title>
+    <link href="http://www.yangyanxing.com/article/227.html"/>
+    <id>http://www.yangyanxing.com/article/227.html</id>
+    <published>2012-01-13T17:57:08.000Z</published>
+    <updated>2017-12-16T10:10:42.532Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TX官方出的qq for linux实在是太恶心了，好友不全也就罢了，关键是还总崩溃，忍不了了，一开始我还总是用WEB qq还将就下，可以感觉这个实在是不方便，在网上找了些方法 ， lumqq很久之前就不更新也，不不支持现在的qq登录了，于是找到了传说中的Pidgin，下载了一个最新的2.10.0 软件源，默认的光盘里就有这个软件&lt;/p&gt;
+&lt;p&gt;下载安装，其实这个软件可以兼容MSN Gtalk facebook,我还额外的下载了一个新浪微博的插件 pidgin-microblog-sina&lt;/p&gt;
+&lt;!--StartFragment--&gt;&lt;a href=&quot;http://download.opensuse.org/repositories/home:/opensuse_zh/openSUSE_12.1/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://download.opensuse.org/repositories/home:/opensuse_zh/openSUSE_12.1/&lt;/a&gt;   软件源&lt;br&gt;&lt;br&gt;但这个插件表现一般，比官方的air客户端差好多，当时只是好奇&lt;br&gt;&lt;br&gt;第一次启动的时候会弹出添加账号窗口，这里选择新浪微博&lt;br&gt;&lt;br&gt;&lt;a href=&quot;/image/2012/01/pidgin1.jpeg&quot;&gt;&lt;img src=&quot;/image/2012/01/pidgin1.jpeg&quot; alt=&quot;&quot; title=&quot;pidgin add sina account &quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;填写好后点击添加会弹出与新浪微博的授权页面，授权后会得到一串数字，填写到弹出的对话框中即可&lt;br&gt;&lt;br&gt;添加QQ有点困难&lt;br&gt;&lt;br&gt;首先下载libqq,
+    
+    </summary>
+    
+      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>美化opensuse中的字体</title>
+    <link href="http://www.yangyanxing.com/article/221.html"/>
+    <id>http://www.yangyanxing.com/article/221.html</id>
+    <published>2012-01-10T15:37:57.000Z</published>
+    <updated>2017-12-16T10:10:42.515Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原文地址&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://forums.opensuse.org/ae-ae-chinese/aes-aeoe-e-e-ae-zae-aeoe/c-ae-zae-aeoe/470464-opensuse-c-aeoe-oec-zcs-ae-ae-az-e-c-i-oec-ae-mactype.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://forums.opensuse.org/ae-ae-chinese/aes-aeoe-e-e-ae-zae-aeoe/c-ae-zae-aeoe/470464-opensuse-c-aeoe-oec-zcs-ae-ae-az-e-c-i-oec-ae-mactype.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;openSUSE 目前最完美的中文字型设置，类似 Mactype&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于Audacious中字体乱码的解决办法</title>
+    <link href="http://www.yangyanxing.com/article/216.html"/>
+    <id>http://www.yangyanxing.com/article/216.html</id>
+    <published>2012-01-10T15:30:03.000Z</published>
+    <updated>2017-12-16T10:10:42.240Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装完Audatious可以正常播放后，可以播放列表里确是惨不忍睹……&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/image/2012/01/audacious1.jpeg&quot;&gt;&lt;img src=&quot;/image/2012/01/audacious1.jpeg&quot; alt=&quot;&quot; title=&quot;audacious1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原因不说了，因为在windows下使用的不同标准的字体&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>opensuse12.1从安装到使用的一些札记</title>
+    <link href="http://www.yangyanxing.com/article/210.html"/>
+    <id>http://www.yangyanxing.com/article/210.html</id>
+    <published>2012-01-10T15:11:27.000Z</published>
+    <updated>2017-12-16T10:10:42.300Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;opensuse也玩了很久了，但我还是觉得自己是一个初学者，写这篇文章主要是想记录一下自己使用中的问题，以后如果再次安装好做一个记录&lt;/p&gt;
+&lt;p&gt;本文主要参考网张上的文章&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cn.opensuse.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://cn.opensuse.org&lt;/a&gt; 中文wiki&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://hi.baidu.com/winland0704/home&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://hi.baidu.com/winland0704/home&lt;/a&gt;  winland的百度空间&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://lug.ustc.edu.cn/sites/opensuse-guide/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://lug.ustc.edu.cn/sites/opensuse-guide/&lt;/a&gt;   Unofficial guide&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="linux" scheme="http://www.yangyanxing.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于PHP面向对象的一点网摘(继承性与访问类型)</title>
+    <link href="http://www.yangyanxing.com/article/205.html"/>
+    <id>http://www.yangyanxing.com/article/205.html</id>
+    <published>2011-12-18T09:32:20.000Z</published>
+    <updated>2017-12-16T10:10:42.093Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;类的继承&lt;/strong&gt;&lt;br&gt;继承作为面向对象的三个重要特性的一个方面，在面向对象的领域有着极其重要的作用，好像没听说哪个面向对象的语言不支持继承。继承是PHP5 面向对象程序设计的重要特性之 一，它是指建立一个新的派生类，从一个或多个先前定义的类中继承数据和函数，而且可以 重新定义或加进新数据和函数，从而建立了类的层次或等级。说的简单点就是，继承性是子类自动共享父类的数据结构和方法的机制，这是类之间的一种关系。在定义和实现一个类的 时候，可以在一个已经存在的类的基础之上来进行，把这个已经存在的类所定义的内容作为 自己的内容，并加入若干新的内容。比如你现在已经有一个“人”这个类了，这个类里面有 两个成员属性“姓名和年龄”以及还有两个成员方法“说话的方法和走路的方法”，如果现在 程序需要一个学生的类，因为学生的也是人，所以学生也有成员属性“姓名和年龄”以及成 员方法“说话的方法和走路的方法”，这个时候你就可以让学生类来继承人这个类，继承之后， 学生类就会把人类里面的所有的属性都继承过来，就不用你再去重新声明一遍这些成员属性 和方法了，因为学生类里面还有所在学校的属性和学习的方法，所以在你做的学生类里面有 继承自人类里面的属性和方法之外在加上学生特有的“所在学校属性”和“学习的方法”, 这样一个学生类就声明完成了，继承我们也可以叫做“扩展”，从上面我们就可以看出，学生 类对人类进行了扩展，在人类里原有两个属性和两个方法的基础上加上一个属性和一个方法 扩展出来一个新的学生类。 通过继承机制，可以利用已有的数据类型来定义新的数据类型。所定义的新的数据类型 不仅拥有新定义的成员，而且还同时拥有旧的成员。我们称已存在的用来派生新类的类为基 类，又称为父类以及超类。由已存在的类派生出的新类称为派生类，又称为子类。 在软件开发中，类的继承性使所建立的软件具有开放性、可扩充性，这是信息组织与分 类的行之有效的方法，它简化了对象、类的创建工作量，增加了代码的可重性。采用继承性， 提供了类的规范的等级结构。通过类的继承关系，使公共的特性能够共享，提高了软件的重&lt;br&gt;用性。&lt;br&gt;在C++语言中，一个派生类可以从一个基类派生，也可以从多个基类派生。从一个基类派生的继承称为单继承；从多个基类派生的继承称为多继承。&lt;span style=&quot;color: #ff0000;&quot;&gt;但是在PHP 和Java 语言里面没有多继承，只有单继承，也就是说，一个类只能直接从 一个类中继承数据，这就是我们所说的单继承。 也就是说一个子类只能有一个父类，但一个父类可以有多个子类&lt;/span&gt;&lt;br&gt;例如：&lt;br&gt;下面是“人”类的抽象
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于PHP面向对象的一点网摘(基本概念与封装性)</title>
+    <link href="http://www.yangyanxing.com/article/199.html"/>
+    <id>http://www.yangyanxing.com/article/199.html</id>
+    <published>2011-12-15T16:50:04.000Z</published>
+    <updated>2017-12-16T10:10:42.454Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文大部门摘自网络，作为我学习的一点总结也还不错&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PHP面向对象技术&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;本部分一共包括以下一些技术点：&lt;br&gt;1.面向对象的概念&lt;br&gt;2.什么是类，什么是对象，类和对象这间的关系&lt;br&gt;3.什么是面向对象编程呢？&lt;br&gt;4.如何抽象出一个类？&lt;br&gt;5.如何实例化对象？&lt;br&gt;6.如何去使用对象中的成员？&lt;br&gt;7.特殊的引用“$this”的使用&lt;br&gt;8.构造方法与析构方法&lt;br&gt;9.封装性
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>说说大学里的打工赚钱</title>
+    <link href="http://www.yangyanxing.com/article/131.html"/>
+    <id>http://www.yangyanxing.com/article/131.html</id>
+    <published>2011-11-13T16:02:04.000Z</published>
+    <updated>2017-12-16T10:10:42.408Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在收拾屋子的时候发现了多年前办的一张农业银行的信用卡，虽然那张卡我始终没有激活，但是却让我开始想起大学里的关于打工挣钱的话题。那张卡是我当时一个不认识的同学打了份零工，就是替银行办理信用卡，办理一张有多少钱给他，我是在我一个同学要求下，不得已而办的，因为我知道不激活那张卡也没有用，自己也没有什么损失。可是没有想到这个农业银行要是从不舍弃放弃，给我发个快四年的短信…… 直到我换了手机号……  endless……&lt;/p&gt;
+&lt;p&gt;于是我就在想一个问题，我这不是为了一个我从来不认识的人而给自己造成这么多年的麻烦吗？&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>说说微博与RSS</title>
+    <link href="http://www.yangyanxing.com/article/129.html"/>
+    <id>http://www.yangyanxing.com/article/129.html</id>
+    <published>2011-11-06T14:04:18.000Z</published>
+    <updated>2017-12-16T16:12:03.575Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;/image/2011/11/sinarss.jpg&quot;&gt;&lt;img src=&quot;/image/2011/11/sinarss.jpg&quot; alt=&quot;&quot; title=&quot;sinarss&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;已经把人人网注销了一段时间了，因为在微博出现之后，我觉得人人网的信息量太少了，而且翻来覆去就那点东西，不是爱就是情，不是星座就是愤青，信息更新太慢了，而且我惭惭觉得SNS在影响着人们正常的沟通方式，看上去在网上大家聊的挺欢，但在现实生活中我们却很少和对方打声招呼。&lt;/p&gt;
+&lt;p&gt;微博出现以后其实强大的信息量很吸引我，到目前为止我关注了397人，基本上可以分为朋友，互联网信息，企业高管，名星，普通网友，每当我刷新的时候总会有很多信息出现，起初我还是因为微博上好玩的图片多而喜欢上微博，但后来当我快习惯了微博后，开始搜索一些与文化，生活，购物等的微博来关注，可以说微博是我主要获得信息的渠道，以前我总会用一个例子来说明，给你一分钟，你可以阅读多少条微博？但如果在SNS你可以阅读多少篇日志？或者说是多少条无病呻吟的状态？在微博的世界里，你不必关注有多少人回复你，而在SNS里，你却很在乎有多少朋友在关心你，在回复你，因为微博是一个信息获取的渠道，你在乎的是我在这段时间里又获得了多少信息。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IT关注" scheme="http://www.yangyanxing.com/categories/IT%E5%85%B3%E6%B3%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>是否还能保持一种学习的态度</title>
+    <link href="http://www.yangyanxing.com/article/124.html"/>
+    <id>http://www.yangyanxing.com/article/124.html</id>
+    <published>2011-08-21T15:26:08.000Z</published>
+    <updated>2017-12-16T10:10:42.017Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记得很小的时候，听大人们说到了他们的年龄就没有学习的心思了&lt;/p&gt;
+&lt;p&gt;现在也开始明白了&lt;/p&gt;
+&lt;p&gt;那天突然很羡慕那些还在校园里的同学，因为你们还有寒暑假，因为你们能够在校园里学习自己喜欢的知识&lt;/p&gt;
+&lt;p&gt;想我在学校里的时候 也不是爱学习本专业的知识，经常和教务处的老师打交道&lt;/p&gt;
+&lt;p&gt;但还好的是我不玩游戏，我把时间放在了计算机上&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用猫抓老鼠的实例理解java中面向对象的编程与类和对象以及方法的概念</title>
+    <link href="http://www.yangyanxing.com/article/121.html"/>
+    <id>http://www.yangyanxing.com/article/121.html</id>
+    <published>2011-06-02T18:16:17.000Z</published>
+    <updated>2017-12-16T10:10:41.879Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看到马士兵讲的关于面向对象编程的思路，用了一个猫抓老鼠的例子，我觉得这个例子非常形象，于是写在这里，方便学习理解和以后查看&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大学就这么过了（4）</title>
+    <link href="http://www.yangyanxing.com/article/105.html"/>
+    <id>http://www.yangyanxing.com/article/105.html</id>
+    <published>2010-12-26T15:14:08.000Z</published>
+    <updated>2017-12-16T10:10:42.061Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在第一周的某个晚上，又传来了陌生人的敲门声&lt;/p&gt;
+&lt;p&gt;你们好，我们是材料学院科协的，我们现在在招新，我是主席王东辰”&lt;/p&gt;
+&lt;p&gt;科协？这个是做什么的？”&lt;/p&gt;
+&lt;p&gt;我们这个组织是在学院管理下，从事一些实验工作，在我们这里你可以提前进入实验室，见到学科的带头负责人，如果做的好的话对你们有很大帮助的”&lt;/p&gt;
+&lt;p&gt;我心想这个不错啊，进入大学了就是想要锻炼一下自己的各种能力的，加入个组织也不错哦！&lt;/p&gt;
+&lt;p&gt;于是我就报名了，可谁又曾想到，我的真正大学生活由此开始了，以至于以后发生的各种各种，我现在一直认为，加入科协，是我第一个转折点，这个转折点并不是我在科协里学到了什么，办成了什么事情，而是我认识了一个人，他叫姜晓希！&lt;/p&gt;
+&lt;p&gt;他和我一样，加入了科协和我分一个部门，那次好像是为全学院的新生做一个讲座，主讲我们实验室的构成，我们学院的分支可以简称为“三室三所”，那天来了很多长老级别的人物，可是当时我们都不知道他们有多么牛逼。&lt;/p&gt;
+&lt;p&gt;这个暂时不提了，总之讲的东西当时听不懂，现在也听不懂！
+    
+    </summary>
+    
+      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大学就这么过了（3）</title>
+    <link href="http://www.yangyanxing.com/article/104.html"/>
+    <id>http://www.yangyanxing.com/article/104.html</id>
+    <published>2010-12-26T13:51:46.000Z</published>
+    <updated>2017-12-16T10:10:42.203Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上文说到我正迷茫于为什么而学习这个问题上，由于找不到很好的理由，在上大学之前也曾经为自己设定过很多的目标，很多的想法，大学要这样过，那样走，可是总是有心插花花不成！&lt;/p&gt;
+&lt;p&gt;应该是在我还没有正式上课的某个晚上，突然有人来敲门，我们也很客气的说“请进”&lt;/p&gt;
+&lt;p&gt;来的人我们并不认识，他是一个形态略胖的一个矮个子男生，带着一个眼镜，手中拿着很多东西，到我们屋来后也很客气的和我们说&lt;/p&gt;
+&lt;p&gt;“你们好，我是大二电控学院的崔澜波，你们是新大一吧？”&lt;/p&gt;
+&lt;p&gt;“嗯”，我们说是的&lt;/p&gt;
+&lt;p&gt;“你们知道现在在大学里最重要的是什么么？”—-“英语！！！！”&lt;/p&gt;
+&lt;p&gt;“哦”&lt;br&gt;
+    
+    </summary>
+    
+      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大学就这么过了（2）</title>
+    <link href="http://www.yangyanxing.com/article/103.html"/>
+    <id>http://www.yangyanxing.com/article/103.html</id>
+    <published>2010-12-24T05:15:39.000Z</published>
+    <updated>2017-12-16T10:10:42.136Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;书接上文，上文写到我老爸去了我姑家，以后的事情我就不知道了&lt;/p&gt;
+&lt;p&gt;我一个人在学校里随便溜达，突然想起我的一个高中同学上行已经先到学校报道了，他叫张路，是和我在高中时候三个人一个宿舍的好兄弟，还有另外一个兄弟叫邓爱光，当时我们三个人一个大宿舍，回想起来真是爽啊，我们平时也是无话不说，还想起高考前的那个晚上，我们聊了很长时间的天，也不知道几点睡觉的，当时我们聊自己心中的大学，自己要在大学里怎么怎么样，不过现在看来好像都没有按照自己所设想的那样，爱光同学还号称自己要在20岁时破处，不过好像现在还是个处男，呵呵！&lt;/p&gt;
+&lt;p&gt;张路说他在5号楼，于是我就去打听哪里是5号楼，结果来到了一个非常幽静的地方，当时我也不知道是哪里，可是看到楼牌号上明明写着5号楼，但是这里根本没有新生入学的气氛，我小心翼翼地走到大厅，看到一个阿姨，我就问，这里是5号楼吗？她说是，我说这里有新本科生吗？她很是诧异的看着我，这里是研究生宿舍！没有本科生！&lt;/p&gt;
+&lt;p&gt;晕死！！！&lt;/p&gt;
+&lt;p&gt;我又给张路打电话，问他是哪呢，他说他在1号楼5层……&lt;/p&gt;
+&lt;p&gt;唉
+    
+    </summary>
+    
+      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大学就这么过了（1）</title>
+    <link href="http://www.yangyanxing.com/article/102.html"/>
+    <id>http://www.yangyanxing.com/article/102.html</id>
+    <published>2010-12-23T06:33:03.000Z</published>
+    <updated>2017-12-16T10:10:42.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是2010年12月23日，距离我工作已经有很长时间了，目前我从事的一份生产性行业，最近工作是在车间查看炉子，工作很轻松，于是有了很多胡思乱想的时间，最近我一直在思考一个问题，我现在一直在回想我的大学有多少个转折点？我是怎样走到我现在的路的？我是怎么认识那么多朋友的？于是由此所引导，回想起我大学这四年的时光，真的有很多值得回忆，值得思考，认识很多朋友，经历很多事情，足以让我回味一生。&lt;/p&gt;
+&lt;p&gt; 我也不知道从哪里说起，还是从我上学来报道那天说吧。&lt;/p&gt;
+&lt;p&gt; 那天是我老爸陪我一起来报道的，我们从家里在坐公交来到这个学校，那天我是从学校西门进来的，第一眼看到让我有点失望，呵呵，其实我一直在想，如果那天我是从学校南门进来的，可能会让我对这个学校第一印象会好些，不过后来我听说有人是从学校北门进来的，这样一想我还是比较庆幸，北门是一个连车都不来的门！&lt;/p&gt;
+&lt;p&gt; 其实到现在我还是对于北京工业大学里面转着向，一直认为西门是南门，也许我天生的方向感就不是很强，做在车里左转右转就不知道哪是哪了！&lt;/p&gt;
+&lt;p&gt; 我和老爸拿着大包小包在学校里拿着转单走来走去，我担心我老爸跟着我转来转去累，于是我对他说您先在这歇会吧，我先自己去办里各种证件吧，老爸说好，注意身上的钱。我清楚的记得我在找我的班级时候，足足排了有半个多小时的队，中途还遇到了我一个高中同学，他叫卢国轩，我们以前都是运河中学的，他在8班，我在9班，平时见面的时候只是打个招呼，没想到现在竟然成了一个学院的同学了，我问他是哪个宿舍的，他说他在4号楼203，我一看我在4号楼225，唉，怎么离这么远啊？&lt;/p&gt;
+&lt;p&gt; 我还清楚的记得，
+    
+    </summary>
+    
+      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Twitter常用术语和名词解析</title>
+    <link href="http://www.yangyanxing.com/article/83.html"/>
+    <id>http://www.yangyanxing.com/article/83.html</id>
+    <published>2010-07-13T02:08:08.000Z</published>
+    <updated>2017-12-16T16:13:14.369Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网上看到的一个关于Twitter的基础的东西，我想很多人都知道Twitter，但并不是很会用~ 不会的来看看吧~&lt;/p&gt;
+&lt;p&gt;如果你是早期的twitter用户并一直使用 ，那对twitter的相关术语和名词肯定是比较熟悉的。而如果是新手用户，对一堆的twitter术语尤其是各种涎生的twitter合成词会找不着北。&lt;/p&gt;
+&lt;p&gt;常用的twitter术语&lt;/p&gt;
+&lt;p&gt;1、@reply&lt;/p&gt;
+&lt;p&gt;表示你想对其他 Twitter 用户发表公开的信息，例如回复别人或者提及别人。在使用的时候需要把 reply 换成某个 Twitter 用户名。顺便说一句，Reply 也是一个 Twitter 用户名，不过它不发表任何信息，也不 Follower 任何人，但是居然有 400 多个 Followers!&lt;br&gt;
+    
+    </summary>
+    
+      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>小鸭子</title>
+    <link href="http://www.yangyanxing.com/article/850.html"/>
+    <id>http://www.yangyanxing.com/article/850.html</id>
+    <published>2009-12-05T01:09:39.000Z</published>
+    <updated>2017-12-16T10:10:42.191Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天读一本书，读着读着读到了一个关于小鸭子的故事&lt;/p&gt;
+&lt;p&gt;于是我联想到了很多我小时候的事情……&lt;/p&gt;
+&lt;p&gt;小时候家里养过100多只鸭子，从它们刚出壳没几天身上只有一点点绒毛的时候，到最近养的肥肥大大的&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+  </entry>
+  
+</feed>

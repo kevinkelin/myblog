@@ -1,259 +1,173 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>在中文windows下使用pywinauto进行窗口操作（一） | 杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。 安装pywinauto; https://sourceforge.net/project/showf">
-<meta property="og:type" content="article">
-<meta property="og:title" content="在中文windows下使用pywinauto进行窗口操作（一）">
-<meta property="og:url" content="http://www.yangyanxing.com/article/926.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。 安装pywinauto; https://sourceforge.net/project/showf">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.yangyanxing.com/image/2013/10/1_thumb.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/2013/10/2_thumb.png">
-<meta property="og:updated_time" content="2017-12-16T10:10:42.482Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在中文windows下使用pywinauto进行窗口操作（一）">
-<meta name="twitter:description" content="这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。 安装pywinauto; https://sourceforge.net/project/showf">
-<meta name="twitter:image" content="http://www.yangyanxing.com/image/2013/10/1_thumb.png">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
+    
+    
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     
-
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
     
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
     
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>在中文windows下使用pywinauto进行窗口操作（一） | 杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/926.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="杨彦星">
+       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+       <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main"><article id="post-926" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">在中文windows下使用pywinauto进行窗口操作（一）</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-07T03:42:56+08:00">2013-10-07</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            在中文windows下使用pywinauto进行窗口操作（一）
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/926.html">
-            <time datetime="2013-10-06T19:42:56.000Z" itemprop="datePublished">2013-10-07</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <p>这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="pywinauto"><a href="#pywinauto" class="headerlink" title="pywinauto;"></a>pywinauto;</h2><p> <a href="https://sourceforge.net/project/showfiles.php?group_id=157379" target="_blank" rel="noopener">https://sourceforge.net/project/showfiles.php?group_id=157379</a></p>
 <h2 id="Sendkeys"><a href="#Sendkeys" class="headerlink" title="Sendkeys"></a>Sendkeys</h2><p><a href="http://www.rutherfurd.net/python/sendkeys/index.html" target="_blank" rel="noopener">http://www.rutherfurd.net/python/sendkeys/index.html</a></p>
 <h2 id="ctypes-如果你是python2-3或者2-4"><a href="#ctypes-如果你是python2-3或者2-4" class="headerlink" title="ctypes (如果你是python2.3或者2.4)"></a>ctypes (如果你是python2.3或者2.4)</h2><p>检测你是否安装正确</p>
@@ -262,12 +176,16 @@
 </blockquote>
 <a id="more"></a>
 <p>都安装好了以后，我们来正式进入pywinauto的世界</p>
-<h1 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pywinauto <span class="keyword">import</span> application</span><br><span class="line">app = application.Application.start(<span class="string">'notepad.exe'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h1><pre><code class="python">from pywinauto import application
+app = application.Application.start(&#39;notepad.exe&#39;)
+</code></pre>
 <p>start() 函数里也可以接路径+程序名</p>
 <p>使用spy++lite查看notepad的信息</p>
 <p><a href="/image/2013/10/1.png"><img src="/image/2013/10/1_thumb.png" alt="1" title="1"></a> </p>
 <p>里面的窗口类名与标题文本相关重要，以后的查找窗口基本上都要用的到</p>
-<p>现在我们来点击“帮助-&gt;关于记事本”操作<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.Notepad.MenuSelect(<span class="string">'帮助-&gt;关于记事本'</span>.decode(<span class="string">'gb2312'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>现在我们来点击“帮助-&gt;关于记事本”操作</p>
+<pre><code class="python">app.Notepad.MenuSelect(&#39;帮助-&gt;关于记事本&#39;.decode(&#39;gb2312&#39;))
+</code></pre>
 <p>这里的app是你刚才实例的对象，Notepad是类名，可以从spy++lite中看到,MenuSelect方法可以自动检索Notepad上的菜单选项，</p>
 <p>decode(‘gb2312’)方法是把中文强制转换为unicode编码，对于非英文的操作系统都是要转换的，后面还有更简单的方法</p>
 <h1 id="查找“关于记事本”的窗口"><a href="#查找“关于记事本”的窗口" class="headerlink" title="查找“关于记事本”的窗口"></a>查找“关于记事本”的窗口</h1><p>还是使用spy++lite来查看“关于记事本”的信息</p>
@@ -284,445 +202,271 @@
 <p>说明我们得到的是一个application.WindowSpecification对象</p>
 <h1 id="在”关于记事本”窗口上找到“确定”按钮-button"><a href="#在”关于记事本”窗口上找到“确定”按钮-button" class="headerlink" title="在”关于记事本”窗口上找到“确定”按钮(button)"></a>在”关于记事本”窗口上找到“确定”按钮(button)</h1><p>在pywinauto中，对话框下面的是controller，button,checkbox,textbox等都是controller</p>
 <p>我们可以使用print_control_identifiers() 方法来打印出该窗口中所有的controller</p>
-<p>会得到以下的输出<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Control Identifiers:</span><br><span class="line">Static - ''   (L312, T265, R738, B267)</span><br><span class="line">'' '0' '1' 'Static' 'Static0' 'Static1'</span><br><span class="line">Static - ''   (L308, T280, R340, B313)</span><br><span class="line">'2' 'Static2'</span><br><span class="line">Static - 'Microsoft Windows'   (L350, T280, R695, B295)</span><br><span class="line">'Microsoft Windows' 'Microsoft WindowsStatic' 'Static3'</span><br><span class="line">Static - 'u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)'   (L350, T295, R748, B310)</span><br><span class="line">'Static4' 'u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)' 'u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)Static'</span><br><span class="line">Static - 'u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002'   (L350, T310, R710, B325)</span><br><span class="line">'Static5' 'u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002' 'u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002Static'</span><br><span class="line">Static - 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002'   (L350, T325, R710, B385)</span><br><span class="line">'Static6' 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002' 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static' 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static0' 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static1'</span><br><span class="line">Static - ''   (L350, T385, R665, B415)</span><br><span class="line">'Static7' 'Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static2'</span><br><span class="line">SysLink - 'u6839u636e <span class="tag">&lt;<span class="name">A</span>&gt;</span>Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e<span class="tag">&lt;/<span class="name">A</span>&gt;</span>uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:'   (L350, T415, R665, B445)</span><br><span class="line">'SysLink' 'u6839u636e <span class="tag">&lt;<span class="name">A</span>&gt;</span>Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e<span class="tag">&lt;/<span class="name">A</span>&gt;</span>uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:' 'u6839u636e <span class="tag">&lt;<span class="name">A</span>&gt;</span>Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e<span class="tag">&lt;/<span class="name">A</span>&gt;</span>uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:SysLink'</span><br><span class="line">Static - 'kevin'   (L365, T445, R680, B460)</span><br><span class="line">'Static8' 'kevin' 'kevinStatic' 'kevinStatic0' 'kevinStatic1'</span><br><span class="line">Static - ''   (L365, T460, R680, B475)</span><br><span class="line">'Static9' 'kevinStatic2'</span><br><span class="line">Button - 'u786eu5b9a'   (L672, T503, R747, B524)</span><br><span class="line">'Button' 'u786eu5b9a' 'u786eu5b9aButton'</span><br></pre></td></tr></table></figure></p>
+<p>会得到以下的输出</p>
+<pre><code class="html">
+Control Identifiers:
+Static - &#39;&#39;   (L312, T265, R738, B267)
+&#39;&#39; &#39;0&#39; &#39;1&#39; &#39;Static&#39; &#39;Static0&#39; &#39;Static1&#39;
+Static - &#39;&#39;   (L308, T280, R340, B313)
+&#39;2&#39; &#39;Static2&#39;
+Static - &#39;Microsoft Windows&#39;   (L350, T280, R695, B295)
+&#39;Microsoft Windows&#39; &#39;Microsoft WindowsStatic&#39; &#39;Static3&#39;
+Static - &#39;u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)&#39;   (L350, T295, R748, B310)
+&#39;Static4&#39; &#39;u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)&#39; &#39;u7248u672c 6.1 (u5185u90e8u7248u672c 7601: Service Pack 1)Static&#39;
+Static - &#39;u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002&#39;   (L350, T310, R710, B325)
+&#39;Static5&#39; &#39;u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002&#39; &#39;u7248u6743u6240u6709 xa9 2009 Microsoft Corporationu3002u4fddu7559u6240u6709u6743u5229u3002Static&#39;
+Static - &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002&#39;   (L350, T325, R710, B385)
+&#39;Static6&#39; &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002&#39; &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static&#39; &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static0&#39; &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static1&#39;
+Static - &#39;&#39;   (L350, T385, R665, B415)
+&#39;Static7&#39; &#39;Windows 7 u65d7u8230u7248 u64cdu4f5cu7cfbu7edfu53cau5176u7528u6237u754cu9762u53d7u7f8eu56fdu548cu5176u4ed6u56fdu5bb6/u5730u533au7684u5546u6807u6cd5u548cu5176u4ed6u5f85u9881u5e03u6216u5df2u9881u5e03u7684u77e5u8bc6u4ea7u6743u6cd5u4fddu62a4u3002Static2&#39;
+SysLink - &#39;u6839u636e &lt;A&gt;Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e&lt;/A&gt;uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:&#39;   (L350, T415, R665, B445)
+&#39;SysLink&#39; &#39;u6839u636e &lt;A&gt;Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e&lt;/A&gt;uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:&#39; &#39;u6839u636e &lt;A&gt;Microsoft u8f6fu4ef6u8bb8u53efu6761u6b3e&lt;/A&gt;uff0cu672cu4ea7u54c1u4f7fu7528u6743u5c5eu4e8e:SysLink&#39;
+Static - &#39;kevin&#39;   (L365, T445, R680, B460)
+&#39;Static8&#39; &#39;kevin&#39; &#39;kevinStatic&#39; &#39;kevinStatic0&#39; &#39;kevinStatic1&#39;
+Static - &#39;&#39;   (L365, T460, R680, B475)
+&#39;Static9&#39; &#39;kevinStatic2&#39;
+Button - &#39;u786eu5b9a&#39;   (L672, T503, R747, B524)
+&#39;Button&#39; &#39;u786eu5b9a&#39; &#39;u786eu5b9aButton&#39;
+</code></pre>
 <p>static，SysLink,button等是它类型，后面接的是title，都是unicode的，这里面就有没有title的controller，再后面的（L,T,R,B）是这个控件的位置，分别对应着左上右下</p>
 <p>在”关于记事本”窗口上找到“确定”按钮，可以通过app.window_()方法，传入的参数可以是title,也可以是class_name,所以我说这两个值相当重要，一直在用，这里的title支持正则表达式，非常方便</p>
 <p>在app上先找到about_dlg,然后再about_dlg上找确定button</p>
 <p>app.window_(title<em>re = u’关于“记事本”’).window</em>(title_re = u’确定’)，然后通过Click()方法来单击这个button</p>
-<p>另外一种方法也是官方推荐的在非英文系统下的方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OK = <span class="string">u'确定'</span></span><br><span class="line">about_dlg[OK].Click()</span><br></pre></td></tr></table></figure></p>
+<p>另外一种方法也是官方推荐的在非英文系统下的方法</p>
+<pre><code class="python">OK = u&#39;确定&#39;
+about_dlg[OK].Click()
+</code></pre>
 <p>这个的意思就是在about_dlg下找到u’确定’，看起来比上面要简练好理解，理解了这种方式，接下来还有更简单的，都不用找about_dlg</p>
 <p>直接 app[u’关于“记事本”’][u’确定’].Click()</p>
-<h1 id="在记事本里写点东西"><a href="#在记事本里写点东西" class="headerlink" title="在记事本里写点东西"></a>在记事本里写点东西</h1><p>这个其实在校验pywinauto的时候已经做过了全用TypeKeys函数，但是这里如果要输入中文还是要u一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.notepad.TypeKeys(<span class="string">u"杨彦星"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="在记事本里写点东西"><a href="#在记事本里写点东西" class="headerlink" title="在记事本里写点东西"></a>在记事本里写点东西</h1><p>这个其实在校验pywinauto的时候已经做过了全用TypeKeys函数，但是这里如果要输入中文还是要u一下</p>
+<pre><code class="python">app.notepad.TypeKeys(u&quot;杨彦星&quot;)
+</code></pre>
 <h1 id="一个比较恶心的问题"><a href="#一个比较恶心的问题" class="headerlink" title="一个比较恶心的问题"></a>一个比较恶心的问题</h1><p>在MenuSelect函数中不支持正则，完全是全文匹配，如我输入</p>
 <p>dig = app.Notepad.MenuSelect(“编辑-&gt;替换”.decode(‘gb2312’)) 是找不到对象的</p>
 <p>必须要</p>
 <p>dig = app.Notepad.MenuSelect(“编辑(E)-&gt;替换(R)”.decode(‘gb2312’)) 这样才行，得把(R) (E)写上才行，但是奇怪的是上面的“帮助-&gt;关于记事本”就不用输入，所以说是一个挺恶心的问题，我也不知道这是为什么…… </p>
-<p>最后把上面的函数合并一下，跑下来应该会很快<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment">#coding=gbk</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> pywinauto <span class="keyword">import</span> application</span><br><span class="line">app = application.Application.start(<span class="string">'notepad.exe'</span>)</span><br><span class="line">app.Notepad.MenuSelect(<span class="string">'帮助-&gt;关于记事本'</span>.decode(<span class="string">'gb2312'</span>))</span><br><span class="line">time.sleep(<span class="number">.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这里有两种方法可以进行定位“关于记事本”的对话框</span></span><br><span class="line"><span class="comment">#top_dlg = app.top_window_() 不推荐这种方式，因为可能得到的并不是你想要的</span></span><br><span class="line">about_dlg = app.window_(title_re = <span class="string">u"关于"</span>, class_name = <span class="string">"#32770"</span>)<span class="comment">#这里可以进行正则匹配title</span></span><br><span class="line"><span class="comment">#about_dlg.print_control_identifiers()</span></span><br><span class="line">app.window_(title_re = <span class="string">u'关于“记事本”'</span>).window_(title_re = <span class="string">u'确定'</span>).Click()</span><br><span class="line">app.Notepad.MenuSelect(<span class="string">'帮助-&gt;关于记事本'</span>.decode(<span class="string">'gb2312'</span>))</span><br><span class="line">time.sleep(<span class="number">.5</span>) <span class="comment">#停0.5s 否则你都看不出来它是否弹出来了！</span></span><br><span class="line">ABOUT = <span class="string">u'关于“记事本”'</span></span><br><span class="line">OK = <span class="string">u'确定'</span></span><br><span class="line"><span class="comment">#about_dlg[OK].Click()</span></span><br><span class="line"><span class="comment">#app[ABOUT][OK].Click()</span></span><br><span class="line">app[<span class="string">u'关于“记事本”'</span>][<span class="string">u'确定'</span>].Click()</span><br><span class="line"></span><br><span class="line">app.Notepad.TypeKeys(<span class="string">u"杨彦星"</span>)</span><br><span class="line">dig = app.Notepad.MenuSelect(<span class="string">"编辑(E)-&gt;替换(R)"</span>.decode(<span class="string">'gb2312'</span>))</span><br><span class="line">Replace = <span class="string">u'替换'</span></span><br><span class="line">Cancle = <span class="string">u'取消'</span></span><br><span class="line">time.sleep(<span class="number">.5</span>)</span><br><span class="line">app[Replace][Cancle].Click()</span><br><span class="line">dialogs = app.windows_()</span><br></pre></td></tr></table></figure></p>
+<p>最后把上面的函数合并一下，跑下来应该会很快</p>
+<pre><code class="python">#! /usr/bin/env python
+#coding=gbk
+
+
+import time
+from pywinauto import application
+app = application.Application.start(&#39;notepad.exe&#39;)
+app.Notepad.MenuSelect(&#39;帮助-&gt;关于记事本&#39;.decode(&#39;gb2312&#39;))
+time.sleep(.5)
+
+#这里有两种方法可以进行定位“关于记事本”的对话框
+#top_dlg = app.top_window_() 不推荐这种方式，因为可能得到的并不是你想要的
+about_dlg = app.window_(title_re = u&quot;关于&quot;, class_name = &quot;#32770&quot;)#这里可以进行正则匹配title
+#about_dlg.print_control_identifiers()
+app.window_(title_re = u&#39;关于“记事本”&#39;).window_(title_re = u&#39;确定&#39;).Click()
+app.Notepad.MenuSelect(&#39;帮助-&gt;关于记事本&#39;.decode(&#39;gb2312&#39;))
+time.sleep(.5) #停0.5s 否则你都看不出来它是否弹出来了！
+ABOUT = u&#39;关于“记事本”&#39;
+OK = u&#39;确定&#39;
+#about_dlg[OK].Click()
+#app[ABOUT][OK].Click()
+app[u&#39;关于“记事本”&#39;][u&#39;确定&#39;].Click()
+
+app.Notepad.TypeKeys(u&quot;杨彦星&quot;)
+dig = app.Notepad.MenuSelect(&quot;编辑(E)-&gt;替换(R)&quot;.decode(&#39;gb2312&#39;))
+Replace = u&#39;替换&#39;
+Cancle = u&#39;取消&#39;
+time.sleep(.5)
+app[Replace][Cancle].Click()
+dialogs = app.windows_()
+</code></pre>
 <p>先写这么多，以后再写点更多的应用~</p>
 </pywinauto.application.windowspecification>
-        
-        
-        
         <div class="article-footer-copyright">
-	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
-	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-	本文标题为: 在中文windows下使用pywinauto进行窗口操作（一）<br>
-	本文链接为：<a href="http://www.yangyanxing.com/article/926.html">http://www.yangyanxing.com/article/926.html</a><br>
-
-</div>
-        <br><br>
-        
-        
-  <!-- css -->
-  <style type="text/css">
-      .center {
-          text-align: center;
-      }
-      .hidden {
-          display: none;
-      }
-    .donate_bar a.btn_donate{
-      display: inline-block;
-      width: 82px;
-      height: 82px;
-      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-
-      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
-           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
-         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
-         嵌入其它博客时不一定要它们。 -->
-      -webkit-transition: background 0s;
-      -moz-transition: background 0s;
-      -o-transition: background 0s;
-      -ms-transition: background 0s;
-      transition: background 0s;
-      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
-    }
-
-    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
-    .donate_bar .donate_txt {
-      display: block;
-      color: #9d9d9d;
-      font: 14px/2 "Microsoft Yahei";
-    }
-    .bold{ font-weight: bold; }
-  </style>
-  <!-- /css -->
-
-    <!-- Donate Module -->
-    <div id="donate_module">
-
-  <!-- btn_donate & tips -->
-  <div id="donate_board" class="donate_bar center">
-      <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
+            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+            本文标题为: 在中文windows下使用pywinauto进行窗口操作（一）<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/926.html">http://www.yangyanxing.com/article/926.html</a><br>
+        </div>
+    </main>
+    <footer class="post-footer">
       
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
     
   </div>
-  <!-- /btn_donate & tips -->
+</div>
 
-  <!-- donate guide -->
+
+  
+  
+  <div class="post-nav">
     
-  <div id="donate_guide" class="donate_bar center hidden">
-        <br>
-      ------------------------------------------------------------------------------------------------------------------------------
-      <br>
-
-    <a href="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="用微信扫一扫哦" class="fancybox" rel="article0">
-      <img src="http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg" title="微信打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-        
-        &nbsp;&nbsp;
-
-    <a href="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="用支付宝扫一扫即可" class="fancybox" rel="article0">
-      <img src="http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg" title="支付宝打赏 杨彦星" height="190px" width="auto"/>
-    </a>
-
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>
-
+    <div class="post-nav-next post-nav-item">
+      <a href="/article/920.html" rel="next" title="使用python进行windows自动化测试（1）">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">使用python进行windows自动化测试（1）</span>
+      </a>
+    </div>
+    
+    
+    <div class="post-nav-prev post-nav-item">
+      <a href="/article/932.html" rel="prev" title="web.py中关于url的总结">
+        <span class="nav-title">web.py中关于url的总结</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
   </div>
-  <!-- /donate guide -->
-
-  <!-- donate script -->
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function() {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-
-    function donate_on_web(){
-      $('#donate').submit();
-        }
-
-    var original_window_onload = window.onload;
-        window.onload = function () {
-            if (original_window_onload) {
-                original_window_onload();
-            }
-            document.getElementById('donate_board_wdg').className = 'hidden';
-    }
-  </script>
-  <!-- /donate script -->
-</div>
-<!-- /Donate Module -->
-           
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.yangyanxing.com/article/926.html" data-id="cjbnsifi2006g08dn1r7neal8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/926.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/article/932.html" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    web.py中关于url的总结
-                
-            </div>
-        </a>
-    
-    
-        <a href="/article/920.html" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">使用python进行windows自动化测试（1）</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="uyan_frame"></div>
+  
+  
 </section>
-    
 
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
-
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
     
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pywinauto"><span class="toc-text"><a href="#pywinauto" class="headerlink" title="pywinauto;"></a>pywinauto;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sendkeys"><span class="toc-text"><a href="#Sendkeys" class="headerlink" title="Sendkeys"></a>Sendkeys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ctypes-如果你是python2-3或者2-4"><span class="toc-text"><a href="#ctypes-&#x5982;&#x679C;&#x4F60;&#x662F;python2-3&#x6216;&#x8005;2-4" class="headerlink" title="ctypes (&#x5982;&#x679C;&#x4F60;&#x662F;python2.3&#x6216;&#x8005;2.4)"></a>ctypes (&#x5982;&#x679C;&#x4F60;&#x662F;python2.3&#x6216;&#x8005;2.4)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动程序"><span class="toc-text"><a href="#&#x542F;&#x52A8;&#x7A0B;&#x5E8F;" class="headerlink" title="&#x542F;&#x52A8;&#x7A0B;&#x5E8F;"></a>&#x542F;&#x52A8;&#x7A0B;&#x5E8F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查找“关于记事本”的窗口"><span class="toc-text"><a href="#&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;" class="headerlink" title="&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;"></a>&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在”关于记事本”窗口上找到“确定”按钮-button"><span class="toc-text"><a href="#&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;-button" class="headerlink" title="&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;(button)"></a>&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;(button)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在记事本里写点东西"><span class="toc-text"><a href="#&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;" class="headerlink" title="&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;"></a>&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个比较恶心的问题"><span class="toc-text"><a href="#&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;"></a>&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;</span></a></li></ol></div>
+</div>
+
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
+    
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
+    
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
+    
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
+    
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -738,38 +482,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>

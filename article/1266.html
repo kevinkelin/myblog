@@ -1,267 +1,173 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <title>appium简明教程(转) | 杨彦星</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客appium简明教程（1）——appium和它的哲学世界什么是appium？下面这段介绍来自于appium的官网。  Appium is an open-source tool you can use to automate mobile native, mobile web, and mobile hybrid applicati">
-<meta name="keywords" content="自动化测试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="appium简明教程(转)">
-<meta property="og:url" content="http://www.yangyanxing.com/article/1266.html">
-<meta property="og:site_name" content="杨彦星">
-<meta property="og:description" content="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客appium简明教程（1）——appium和它的哲学世界什么是appium？下面这段介绍来自于appium的官网。  Appium is an open-source tool you can use to automate mobile native, mobile web, and mobile hybrid applicati">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.yangyanxing.com/image/appium1.png">
-<meta property="og:image" content="http://www.yangyanxing.com/imageappium2.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/appium3.png">
-<meta property="og:image" content="http://www.yangyanxing.com/image/appium4.gif">
-<meta property="og:updated_time" content="2017-12-16T15:40:04.317Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="appium简明教程(转)">
-<meta name="twitter:description" content="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客appium简明教程（1）——appium和它的哲学世界什么是appium？下面这段介绍来自于appium的官网。  Appium is an open-source tool you can use to automate mobile native, mobile web, and mobile hybrid applicati">
-<meta name="twitter:image" content="http://www.yangyanxing.com/image/appium1.png">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
+    
+    
+    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    
+    
+    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     
-
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/[object Object].css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
     
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
     
     
-
-
-</head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                
-                <span class="site-title">杨彦星</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">首页</a>
-                
-                    <a class="main-nav-link" href="/archives">归档</a>
-                
-                    <a class="main-nav-link" href="/categories">分类</a>
-                
-                    <a class="main-nav-link" href="/tags">标签</a>
-                
-                    <a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a>
-                
-                    <a class="main-nav-link" href="/about">关于</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/1.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">    
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+      
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+      prettyPrint();
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>appium简明教程(转) | 杨彦星 - 序语程言</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">杨彦星</a></h1>
+        <h2 class="subtitle">序语程言</h2>
+      </div>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/.">首页</a></li>
+    
+    <li><a href="/archives">归档</a></li>
+    
+    <li><a href="/categories">分类</a></li>
+    
+    <li><a href="/tags">标签</a></li>
+    
+    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
+    
+    <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
 
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">归档</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
-                
-                    <td><a class="main-nav-link" href="http://yangyanxing.lofter.com">时光</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">关于</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-    </div>
 
-                </td>
-            </tr>
-        </table>
-    </div>
+  </div>
 </header>
 
-        <div class="outer">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/1.jpg" />
-            <h2 id="name">杨彦星</h2>
-            <h3 id="title">序语程言</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="http://github.com/kevinkelin">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                99
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                19
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="mailto:admin@yangyanxing.com" target="_blank" title="envelope" class=tooltip>
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://weibo.com/kevinkelin" target="_blank" title="weibo" class=tooltip>
-                            <i class="fa fa-weibo"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://github.com/kevinkelin" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://twitter.com/yangyanxing" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="http://www.facebook.com/yangyanxing" target="_blank" title="facebook" class=tooltip>
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1266.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="杨彦星">
+       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+       <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="杨彦星">
+      </span>
     </div>
-</aside>
-
-            
-            <section id="main"><article id="post-1266" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">appium简明教程(转)</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-01-03T20:03:13+08:00">2015-01-03</time>
+        </span>
         
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            appium简明教程(转)
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/article/1266.html">
-            <time datetime="2015-01-03T12:03:13.000Z" itemprop="datePublished">2015-01-03</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Python/">Python</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/自动化测试/">自动化测试</a>
-    </div>
-
-                    </div>
-                
-            </header>
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
         
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h3 id="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客"><a href="#乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客" class="headerlink" title="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客"></a><a href="http://www.cnblogs.com/nbkhic/" target="_blank" rel="noopener">乙醇</a>的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客</h3><h3 id="appium简明教程（1）——appium和它的哲学世界"><a href="#appium简明教程（1）——appium和它的哲学世界" class="headerlink" title="appium简明教程（1）——appium和它的哲学世界"></a><a href="http://www.cnblogs.com/nbkhic/p/3803804.html" target="_blank" rel="noopener">appium简明教程（1）——appium和它的哲学世界</a></h3><h3 id="什么是appium？"><a href="#什么是appium？" class="headerlink" title="什么是appium？"></a>什么是appium？</h3><p>下面这段介绍来自于appium的官网。</p>
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <h3 id="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客"><a href="#乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客" class="headerlink" title="乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客"></a><a href="http://www.cnblogs.com/nbkhic/" target="_blank" rel="noopener">乙醇</a>的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客</h3><h3 id="appium简明教程（1）——appium和它的哲学世界"><a href="#appium简明教程（1）——appium和它的哲学世界" class="headerlink" title="appium简明教程（1）——appium和它的哲学世界"></a><a href="http://www.cnblogs.com/nbkhic/p/3803804.html" target="_blank" rel="noopener">appium简明教程（1）——appium和它的哲学世界</a></h3><h3 id="什么是appium？"><a href="#什么是appium？" class="headerlink" title="什么是appium？"></a>什么是appium？</h3><p>下面这段介绍来自于appium的官网。</p>
 <blockquote>
 <p>Appium is an open-source tool you can use to automate mobile native, mobile web, and mobile hybrid applications on iOS and Android platforms. “Mobile native apps” are those written using the iOS or Android SDKs. “Mobile web apps” are web apps accessed using a mobile browser (Appium supports Safari on iOS and Chrome on Android). “Mobile hybrid apps” have a native wrapper around a “webview” – a native control that enables interaction with web content. Projects like <a href="http://phonegap.com/" target="_blank" rel="noopener">Phonegap</a>, for example, make it easy to build apps using web technologies that are then bundled into a native wrapper – these are hybrid apps.</p>
 <p>Importantly, Appium is “cross-platform”: it allows you to write tests against multiple platforms (iOS, Android), using the same API. This enables a large or total amount of code reuse between iOS and Android testsuites.<br>我们可以从上面的介绍里获得这样的一些信息：</p>
@@ -440,12 +346,40 @@
 </blockquote>
 <p><strong>然后请打开android的模拟器，如果没有请新建一个虚拟设备。请自行解除设备锁定（手动把屏幕解锁了），以防万一。</strong></p>
 <p>下面的代码以启动android原生的计算器程序为例</p>
-<h3 id="ruby篇"><a href="#ruby篇" class="headerlink" title="ruby篇"></a>ruby篇</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'appium_lib'</span></span><br><span class="line"></span><br><span class="line">caps   = &#123; <span class="symbol">caps:</span>&#123; <span class="symbol">platformName:</span> <span class="string">'Android'</span>, <span class="symbol">appActivity:</span> <span class="string">'.Calculator'</span>, <span class="symbol">appPackage:</span> <span class="string">'com.android.calculator2'</span> &#125;,</span><br><span class="line">           <span class="symbol">appium_lib:</span> &#123; <span class="symbol">sauce_username:</span> <span class="literal">nil</span>, <span class="symbol">sauce_access_key:</span> <span class="literal">nil</span> &#125; &#125;</span><br><span class="line">driver = Appium::Driver.new(caps).start_driver</span><br></pre></td></tr></table></figure>
+<h3 id="ruby篇"><a href="#ruby篇" class="headerlink" title="ruby篇"></a>ruby篇</h3><pre><code class="ruby">require &#39;appium_lib&#39;
+
+caps   = { caps:{ platformName: &#39;Android&#39;, appActivity: &#39;.Calculator&#39;, appPackage: &#39;com.android.calculator2&#39; },
+           appium_lib: { sauce_username: nil, sauce_access_key: nil } }
+driver = Appium::Driver.new(caps).start_driver
+</code></pre>
 <p>讨论：可以看出ruby lib里面的Appium::Driver类实际上就是原生的webdriver类的子类，当然了，由于ruby语法灵活，也可以使用monkey patch来实现类似功能。</p>
-<h3 id="python篇"><a href="#python篇" class="headerlink" title="python篇"></a>python篇</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> appium <span class="keyword">import</span> webdriver</span><br><span class="line">desired_caps = &#123;&#125;</span><br><span class="line">desired_caps[<span class="string">'platformName'</span>] = <span class="string">'Android'</span></span><br><span class="line">desired_caps[<span class="string">'platformVersion'</span>] = <span class="string">'4.2'</span></span><br><span class="line">desired_caps[<span class="string">'deviceName'</span>] = <span class="string">'Android Emulator'</span></span><br><span class="line">desired_caps[<span class="string">'appPackage'</span>] = <span class="string">'com.android.calculator2'</span></span><br><span class="line">desired_caps[<span class="string">'appActivity'</span>] = <span class="string">'.Calculator'</span></span><br><span class="line"></span><br><span class="line">driver = webdriver.Remote(<span class="string">'http://localhost:4723/wd/hub'</span>, desired_caps)</span><br></pre></td></tr></table></figure>
+<h3 id="python篇"><a href="#python篇" class="headerlink" title="python篇"></a>python篇</h3><pre><code class="python">from appium import webdriver
+desired_caps = {}
+desired_caps[&#39;platformName&#39;] = &#39;Android&#39;
+desired_caps[&#39;platformVersion&#39;] = &#39;4.2&#39;
+desired_caps[&#39;deviceName&#39;] = &#39;Android Emulator&#39;
+desired_caps[&#39;appPackage&#39;] = &#39;com.android.calculator2&#39;
+desired_caps[&#39;appActivity&#39;] = &#39;.Calculator&#39;
+
+driver = webdriver.Remote(&#39;http://localhost:4723/wd/hub&#39;, desired_caps)
+</code></pre>
 <p>讨论：webdriver.Remote实际上就是原生webdriver的子类，另外Remote()构造函数的第一个参数中需要显示指定appium server监听的端口</p>
 <h3 id="java篇"><a href="#java篇" class="headerlink" title="java篇"></a>java篇</h3><p><strong>新建java项目时候，请注意将selenium-webdriver以及appium client的jar包导入</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io.appium.java_client.AppiumDriver;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.WebElement;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.remote.CapabilityType;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.remote.DesiredCapabilities;</span><br><span class="line"></span><br><span class="line">DesiredCapabilities capabilities = <span class="keyword">new</span> DesiredCapabilities();</span><br><span class="line">capabilities.setCapability(CapabilityType.BROWSER_NAME, <span class="string">""</span>);<span class="comment">//这句不是必须的</span></span><br><span class="line">capabilities.setCapability(<span class="string">"deviceName"</span>,<span class="string">"Android Emulator"</span>);</span><br><span class="line">capabilities.setCapability(<span class="string">"platformVersion"</span>, <span class="string">"4.4"</span>);</span><br><span class="line">capabilities.setCapability(<span class="string">"platformName"</span>,<span class="string">"Android"</span>);</span><br><span class="line">capabilities.setCapability(<span class="string">"appPackage"</span>, <span class="string">"com.android.calculator2"</span>);</span><br><span class="line">capabilities.setCapability(<span class="string">"appActivity"</span>, <span class="string">".Calculator"</span>);</span><br><span class="line">AppiumDriver driver = <span class="keyword">new</span> AppiumDriver(<span class="keyword">new</span> URL(<span class="string">"http://127.0.0.1:4723/wd/hub"</span>), capabilities);</span><br></pre></td></tr></table></figure>
+<pre><code class="java">import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.setCapability(CapabilityType.BROWSER_NAME, &quot;&quot;);//这句不是必须的
+capabilities.setCapability(&quot;deviceName&quot;,&quot;Android Emulator&quot;);
+capabilities.setCapability(&quot;platformVersion&quot;, &quot;4.4&quot;);
+capabilities.setCapability(&quot;platformName&quot;,&quot;Android&quot;);
+capabilities.setCapability(&quot;appPackage&quot;, &quot;com.android.calculator2&quot;);
+capabilities.setCapability(&quot;appActivity&quot;, &quot;.Calculator&quot;);
+AppiumDriver driver = new AppiumDriver(new URL(&quot;http://127.0.0.1:4723/wd/hub&quot;), capabilities);
+</code></pre>
 <p>讨论:AppiumDrvier是原生webdriver的子类。</p>
 <p>在这里我们可以看到，新建driver的时候必须要指定一个DesiredCapabilities 对象，该对象究竟是何方神圣，我们下一节会仔细讲解。</p>
 <h3 id="appium简明教程（7）——Desired-Capabilities详解"><a href="#appium简明教程（7）——Desired-Capabilities详解" class="headerlink" title="appium简明教程（7）——Desired Capabilities详解"></a><a href="http://www.cnblogs.com/nbkhic/p/3805805.html" target="_blank" rel="noopener">appium简明教程（7）——Desired Capabilities详解</a></h3><p>Desired Capabilities在启动session的时候是必须提供的。</p>
@@ -539,7 +473,11 @@
 <li><code>-android uiautomator</code>: a string corresponding to a recursive element search using the UiAutomator Api (Android-only)</li>
 <li><code>accessibility id</code>: a string corresponding to a recursive element search using the Id/Name that the native Accessibility options utilize.<br>在appium 的client对<a href="https://code.google.com/p/selenium/source/browse/spec-draft.md?repo=mobile" target="_blank" rel="noopener">Mobile JSON Wire Protocol</a>中定义的方法进行了封装，使其调用起来更加方便</li>
 </ul>
-<h4 id="ruby篇-1"><a href="#ruby篇-1" class="headerlink" title="ruby篇"></a>ruby篇</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find_element <span class="symbol">:accessibility_id</span>, <span class="string">'Animation'</span></span><br><span class="line">find_elements <span class="symbol">:accessibility_id</span>, <span class="string">'Animation'</span></span><br><span class="line">find_element <span class="symbol">:uiautomator</span>, <span class="string">'new UiSelector().clickable(true)'</span></span><br><span class="line">find_elements <span class="symbol">:uiautomator</span>, <span class="string">'new UiSelector().clickable(true)'</span></span><br></pre></td></tr></table></figure>
+<h4 id="ruby篇-1"><a href="#ruby篇-1" class="headerlink" title="ruby篇"></a>ruby篇</h4><pre><code class="ruby">find_element :accessibility_id, &#39;Animation&#39;
+find_elements :accessibility_id, &#39;Animation&#39;
+find_element :uiautomator, &#39;new UiSelector().clickable(true)&#39;
+find_elements :uiautomator, &#39;new UiSelector().clickable(true)&#39;
+</code></pre>
 <p>当然了，你也可以使用原生的webdriver方法</p>
 <blockquote>
 <p>find_element id: ‘resource_id’</p>
@@ -549,7 +487,16 @@
 <li>text(value_or_index) :Find the first TextView that contains value or by index. If int then the TextView at that index is returned.</li>
 <li>button(value_or_index):Find the first button that contains value or by index. If int then the button at that index is returned<br>更多请看<a href="https://github.com/appium/ruby_lib/blob/master/docs/android_docs.md" target="_blank" rel="noopener">这里</a></li>
 </ul>
-<h4 id="python篇-1"><a href="#python篇-1" class="headerlink" title="python篇"></a>python篇</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">el = self.driver.find_element_by_android_uiautomator(<span class="string">'new UiSelector().description("Animation")'</span>)</span><br><span class="line">self.assertIsNotNone(el)</span><br><span class="line">els = self.driver.find_elements_by_android_uiautomator(<span class="string">'new UiSelector().clickable(true)'</span>)</span><br><span class="line">self.assertIsInstance(els, list)</span><br><span class="line"></span><br><span class="line">el = self.driver.find_element_by_accessibility_id(<span class="string">'Animation'</span>)</span><br><span class="line">self.assertIsNotNone(el)</span><br><span class="line">els = self.driver.find_elements_by_accessibility_id(<span class="string">'Animation'</span>)</span><br><span class="line">self.assertIsInstance(els, list)</span><br></pre></td></tr></table></figure>
+<h4 id="python篇-1"><a href="#python篇-1" class="headerlink" title="python篇"></a>python篇</h4><pre><code class="python">el = self.driver.find_element_by_android_uiautomator(&#39;new UiSelector().description(&quot;Animation&quot;)&#39;)
+self.assertIsNotNone(el)
+els = self.driver.find_elements_by_android_uiautomator(&#39;new UiSelector().clickable(true)&#39;)
+self.assertIsInstance(els, list)
+
+el = self.driver.find_element_by_accessibility_id(&#39;Animation&#39;)
+self.assertIsNotNone(el)
+els = self.driver.find_elements_by_accessibility_id(&#39;Animation&#39;)
+self.assertIsInstance(els, list)
+</code></pre>
 <p>总的来说就是在driver里增加了</p>
 <ul>
 <li>find_element_by_accessibility_id</li>
@@ -557,7 +504,14 @@
 <li>find_element_by_android_uiautomator</li>
 <li>find_element_by_android_uiautomator<br>等方法</li>
 </ul>
-<h4 id="java篇-1"><a href="#java篇-1" class="headerlink" title="java篇"></a>java篇</h4><p>前面也讲过了，新增了这些方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">findElementByAccessibilityId()</span><br><span class="line">findElementsByAccessibilityId()</span><br><span class="line">findElementByIosUIAutomation()</span><br><span class="line">findElementsByIosUIAutomation()</span><br><span class="line">findElementByAndroidUIAutomator()</span><br><span class="line">findElementsByAndroidUIAutomator()</span><br></pre></td></tr></table></figure></p>
+<h4 id="java篇-1"><a href="#java篇-1" class="headerlink" title="java篇"></a>java篇</h4><p>前面也讲过了，新增了这些方法</p>
+<pre><code class="java">findElementByAccessibilityId()
+findElementsByAccessibilityId()
+findElementByIosUIAutomation()
+findElementsByIosUIAutomation()
+findElementByAndroidUIAutomator()
+findElementsByAndroidUIAutomator()
+</code></pre>
 <p>讨论：从上面可以看出来，python 和 java client对移动端控件定位的封装是比较初级的。ruby lib中封装了很多方便和简洁的方法，因此可以看出，使用ruby lib是优于python和java的选择。当然，如果忽略性能的话。</p>
 <p>下一节我们开始具体看下如何用resource id去定位控件。</p>
 <h3 id="appium简明教程（11）——使用resource-id定位"><a href="#appium简明教程（11）——使用resource-id定位" class="headerlink" title="appium简明教程（11）——使用resource id定位"></a><a href="http://www.cnblogs.com/nbkhic/p/3813792.html" target="_blank" rel="noopener">appium简明教程（11）——使用resource id定位</a></h3><p>上一节乙醇带大家了解了appium的定位策略。实际上appium的控件定位方式是完全遵守webdriver的mobile扩展协议的。</p>
@@ -573,334 +527,259 @@
 <p>现在就以上图所示的android原生计算器程序为例，看一下每种语言是如何实现点击【9】这个按钮的。</p>
 <h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><p>点击计算器上的【9】这个按钮。该按钮的id是<code>com.android.calculator2:id/digit6</code> 。先甜后苦，从ruby开始。</p>
 <p><strong>本文版权归乙醇所有，欢迎转载，但请注明作者与出处，严禁用于任何商业用途</strong></p>
-<h5 id="Ruby篇"><a href="#Ruby篇" class="headerlink" title="Ruby篇"></a>Ruby篇</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'appium_lib'</span></span><br><span class="line">caps   = &#123; <span class="symbol">caps:</span>&#123; <span class="symbol">platformName:</span> <span class="string">'Android'</span>, <span class="symbol">appActivity:</span> <span class="string">'.Calculator'</span>, <span class="symbol">appPackage:</span> <span class="string">'com.android.calculator2'</span> &#125;,</span><br><span class="line">           <span class="symbol">appium_lib:</span> &#123; <span class="symbol">sauce_username:</span> <span class="literal">nil</span>, <span class="symbol">sauce_access_key:</span> <span class="literal">nil</span>, <span class="symbol">debug:</span> <span class="literal">true</span>&#125; &#125;</span><br><span class="line">dr = Appium::Driver.new(caps).start_driver</span><br><span class="line">dr.find_element(<span class="symbol">id:</span> <span class="string">'com.android.calculator2:id/digit9'</span>).click</span><br></pre></td></tr></table></figure>
-<h5 id="Python篇"><a href="#Python篇" class="headerlink" title="Python篇"></a>Python篇</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> appium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line">desired_caps = &#123;&#125;</span><br><span class="line">desired_caps[<span class="string">'platformName'</span>] = <span class="string">'Android'</span></span><br><span class="line">desired_caps[<span class="string">'platformVersion'</span>] = <span class="string">'4.4'</span></span><br><span class="line">desired_caps[<span class="string">'deviceName'</span>] = <span class="string">'Android Emulator'</span></span><br><span class="line">desired_caps[<span class="string">'app'</span>] = <span class="string">'Calculator.apk'</span></span><br><span class="line">desired_caps[<span class="string">'appPackage'</span>] = <span class="string">'com.android.calculator2'</span></span><br><span class="line">desired_caps[<span class="string">'appActivity'</span>] = <span class="string">'.Calculator'</span></span><br><span class="line"></span><br><span class="line">dr = webdriver.Remote(<span class="string">'http://localhost:4723/wd/hub'</span>, desired_caps)</span><br><span class="line">sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">dr.find_element_by_id(<span class="string">'com.android.calculator2:id/digit9'</span>).click()</span><br></pre></td></tr></table></figure>
-<h5 id="Java篇"><a href="#Java篇" class="headerlink" title="Java篇"></a>Java篇</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新建一个FindById类位于info.itest.www package下面</span></span><br><span class="line"><span class="keyword">package</span> info.itest.www;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.appium.java_client.AppiumDriver;</span><br><span class="line"><span class="keyword">import</span> java.net.MalformedURLException;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.remote.CapabilityType;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.remote.DesiredCapabilities;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindById</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> MalformedURLException </span>&#123;</span><br><span class="line">        DesiredCapabilities cap = <span class="keyword">new</span> DesiredCapabilities();</span><br><span class="line">        cap.setCapability(CapabilityType.BROWSER_NAME, <span class="string">""</span>);</span><br><span class="line">        cap.setCapability(<span class="string">"platformName"</span>, <span class="string">"Android"</span>);</span><br><span class="line">        cap.setCapability(<span class="string">"deviceName"</span>, <span class="string">"Android Emulator"</span>);</span><br><span class="line">        cap.setCapability(<span class="string">"platformVersion"</span>, <span class="string">"4.4"</span>);</span><br><span class="line">        cap.setCapability(<span class="string">"appPackage"</span>, <span class="string">"com.android.calculator2"</span>);</span><br><span class="line">        cap.setCapability(<span class="string">"appActivity"</span>, <span class="string">".Calculator"</span>);</span><br><span class="line"></span><br><span class="line">        AppiumDriver dr = <span class="keyword">new</span> AppiumDriver(<span class="keyword">new</span> URL(<span class="string">"http://127.0.0.1:4723/wd/hub"</span>), cap);</span><br><span class="line"></span><br><span class="line">        dr.findElement(By.id(<span class="string">"com.android.calculator2:id/digit9"</span>)).click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Ruby篇"><a href="#Ruby篇" class="headerlink" title="Ruby篇"></a>Ruby篇</h5><pre><code class="ruby">require &#39;appium_lib&#39;
+caps   = { caps:{ platformName: &#39;Android&#39;, appActivity: &#39;.Calculator&#39;, appPackage: &#39;com.android.calculator2&#39; },
+           appium_lib: { sauce_username: nil, sauce_access_key: nil, debug: true} }
+dr = Appium::Driver.new(caps).start_driver
+dr.find_element(id: &#39;com.android.calculator2:id/digit9&#39;).click
+</code></pre>
+<h5 id="Python篇"><a href="#Python篇" class="headerlink" title="Python篇"></a>Python篇</h5><pre><code class="python">#coding:utf-8
+from appium import webdriver
+from time import sleep
+
+desired_caps = {}
+desired_caps[&#39;platformName&#39;] = &#39;Android&#39;
+desired_caps[&#39;platformVersion&#39;] = &#39;4.4&#39;
+desired_caps[&#39;deviceName&#39;] = &#39;Android Emulator&#39;
+desired_caps[&#39;app&#39;] = &#39;Calculator.apk&#39;
+desired_caps[&#39;appPackage&#39;] = &#39;com.android.calculator2&#39;
+desired_caps[&#39;appActivity&#39;] = &#39;.Calculator&#39;
+
+dr = webdriver.Remote(&#39;http://localhost:4723/wd/hub&#39;, desired_caps)
+sleep(3)
+
+dr.find_element_by_id(&#39;com.android.calculator2:id/digit9&#39;).click()
+</code></pre>
+<h5 id="Java篇"><a href="#Java篇" class="headerlink" title="Java篇"></a>Java篇</h5><pre><code class="java">//新建一个FindById类位于info.itest.www package下面
+package info.itest.www;
+
+import io.appium.java_client.AppiumDriver;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class FindById {
+    public static void main(String args[]) throws MalformedURLException {
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability(CapabilityType.BROWSER_NAME, &quot;&quot;);
+        cap.setCapability(&quot;platformName&quot;, &quot;Android&quot;);
+        cap.setCapability(&quot;deviceName&quot;, &quot;Android Emulator&quot;);
+        cap.setCapability(&quot;platformVersion&quot;, &quot;4.4&quot;);
+        cap.setCapability(&quot;appPackage&quot;, &quot;com.android.calculator2&quot;);
+        cap.setCapability(&quot;appActivity&quot;, &quot;.Calculator&quot;);
+
+        AppiumDriver dr = new AppiumDriver(new URL(&quot;http://127.0.0.1:4723/wd/hub&quot;), cap);
+
+        dr.findElement(By.id(&quot;com.android.calculator2:id/digit9&quot;)).click();
+    }
+}
+</code></pre>
 <p>如果读者对webdriver很熟悉的话，那么掌握这个方法是非常简单的。如果对webdriver不熟悉，那么可以参考<a href="https://github.com/easonhan007/webdriver_guide/blob/master/README.md" target="_blank" rel="noopener">乙醇的webdriver实用指南</a>，先学习一下webdriver的基础知识。</p>
 <p>这一节我们写了一些脚本去进行控件定位，在实际的项目中，这些没有任何断言的脚本是基本上无法完成测试用例的功能的。</p>
 <p>先卖个关子，下下一节乙醇将会带大家写第一个appium的测试用例。</p>
 <p>那么下一节我们将学习如何使用class name进行定位。</p>
 
-        
-        
-        
         <div class="article-footer-copyright">
-	本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
-	非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-	本文标题为: appium简明教程(转)<br>
-	本文链接为：<a href="http://www.yangyanxing.com/article/1266.html">http://www.yangyanxing.com/article/1266.html</a><br>
-
+            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+            本文标题为: appium简明教程(转)<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/1266.html">http://www.yangyanxing.com/article/1266.html</a><br>
+        </div>
+    </main>
+    <footer class="post-footer">
+      
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
 </div>
-        <br><br>
-        
-        
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
 
 
+  
+  
+  <div class="post-nav">
+    
+    <div class="post-nav-next post-nav-item">
+      <a href="/article/1264.html" rel="next" title="Android官方的uiautomator例子的实现">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">Android官方的uiautomator例子的实现</span>
+      </a>
+    </div>
+    
+    
+    <div class="post-nav-prev post-nav-item">
+      <a href="/article/1298.html" rel="prev" title="没事别蹭wifi-告诉你公共的wifi有多不安全">
+        <span class="nav-title">没事别蹭wifi-告诉你公共的wifi有多不安全</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
+  </div>
+  
+  
+</section>
 
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
+  
+  <p class="author-name">杨彦星</p>
+  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
+  <div class="site-count">
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  
 </div>
 
-    <a data-url="http://www.yangyanxing.com/article/1266.html" data-id="cjbnsifef001z08dn7c3fc81c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
 
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                      '<input class="article-share-input" value="' + url + '">',
-                      '<div class="article-share-links">',
-                        '<a href="http://service.weibo.com/share/share.php?appkey=3655160394&url=' + encodedUrl + '" class="fa fa-weibo article-share-weibo" target="_blank" title="Weibo"></a>',
-                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                      '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://www.yangyanxing.com/article/1266.html#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/article/1298.html" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    没事别蹭wifi-告诉你公共的wifi有多不安全
-                
-            </div>
-        </a>
+  <div class="sidebar-sticky">
     
     
-        <a href="/article/1264.html" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Android官方的uiautomator例子的实现</div>
-        </a>
-    
-</nav>
 
 
-    
-</article>
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#乙醇的自动化教程写的挺好的，以下是转自他的cnblogs上面的博客"><span class="toc-text"><a href="#&#x4E59;&#x9187;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6559;&#x7A0B;&#x5199;&#x7684;&#x633A;&#x597D;&#x7684;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x8F6C;&#x81EA;&#x4ED6;&#x7684;cnblogs&#x4E0A;&#x9762;&#x7684;&#x535A;&#x5BA2;" class="headerlink" title="&#x4E59;&#x9187;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6559;&#x7A0B;&#x5199;&#x7684;&#x633A;&#x597D;&#x7684;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x8F6C;&#x81EA;&#x4ED6;&#x7684;cnblogs&#x4E0A;&#x9762;&#x7684;&#x535A;&#x5BA2;"></a><a href="http://www.cnblogs.com/nbkhic/" target="_blank" rel="noopener">&#x4E59;&#x9187;</a>&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6559;&#x7A0B;&#x5199;&#x7684;&#x633A;&#x597D;&#x7684;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x8F6C;&#x81EA;&#x4ED6;&#x7684;cnblogs&#x4E0A;&#x9762;&#x7684;&#x535A;&#x5BA2;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（1）——appium和它的哲学世界"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;1&#xFF09;&#x2014;&#x2014;appium&#x548C;&#x5B83;&#x7684;&#x54F2;&#x5B66;&#x4E16;&#x754C;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;1&#xFF09;&#x2014;&#x2014;appium&#x548C;&#x5B83;&#x7684;&#x54F2;&#x5B66;&#x4E16;&#x754C;"></a><a href="http://www.cnblogs.com/nbkhic/p/3803804.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;1&#xFF09;&#x2014;&#x2014;appium&#x548C;&#x5B83;&#x7684;&#x54F2;&#x5B66;&#x4E16;&#x754C;</a></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是appium？"><span class="toc-text"><a href="#&#x4EC0;&#x4E48;&#x662F;appium&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;appium&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F;appium&#xFF1F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium的技术架构"><span class="toc-text"><a href="#appium&#x7684;&#x6280;&#x672F;&#x67B6;&#x6784;" class="headerlink" title="appium&#x7684;&#x6280;&#x672F;&#x67B6;&#x6784;"></a>appium&#x7684;&#x6280;&#x672F;&#x67B6;&#x6784;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium的设计思想"><span class="toc-text"><a href="#appium&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;" class="headerlink" title="appium&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;"></a>appium&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（2）——appium的基本概念"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;2&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;2&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a><a href="http://www.cnblogs.com/nbkhic/p/3803830.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;2&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</a></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Client-Server-Architecture"><span class="toc-text"><a href="#Client-Server-Architecture" class="headerlink" title="Client/Server Architecture"></a><strong>Client/Server Architecture</strong></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session"><span class="toc-text"><a href="#Session" class="headerlink" title="Session"></a><strong>Session</strong></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Appium-Server"><span class="toc-text"><a href="#Appium-Server" class="headerlink" title="Appium Server"></a><strong>Appium Server</strong></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Appium-Clients"><span class="toc-text"><a href="#Appium-Clients" class="headerlink" title="Appium Clients"></a><strong>Appium Clients</strong></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Appium-app-Appium-exe"><span class="toc-text"><a href="#Appium-app-Appium-exe" class="headerlink" title="Appium.app, Appium.exe"></a><strong>Appium.app, Appium.exe</strong></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（3）——appium的安装windows版"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;3&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x5B89;&#x88C5;windows&#x7248;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;3&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x5B89;&#x88C5;windows&#x7248;"></a><a href="http://www.cnblogs.com/nbkhic/p/3803883.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;3&#xFF09;&#x2014;&#x2014;appium&#x7684;&#x5B89;&#x88C5;windows&#x7248;</a></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#限制"><span class="toc-text"><a href="#&#x9650;&#x5236;" class="headerlink" title="&#x9650;&#x5236;"></a>&#x9650;&#x5236;</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开始安装"><span class="toc-text"><a href="#&#x5F00;&#x59CB;&#x5B89;&#x88C5;" class="headerlink" title="&#x5F00;&#x59CB;&#x5B89;&#x88C5;"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85" target="_blank" rel="noopener"></a>&#x5F00;&#x59CB;&#x5B89;&#x88C5;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#运行Appium"><span class="toc-text"><a href="#&#x8FD0;&#x884C;Appium" class="headerlink" title="&#x8FD0;&#x884C;Appium"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E8%BF%90%E8%A1%8Cappium" target="_blank" rel="noopener"></a>&#x8FD0;&#x884C;Appium</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#备注"><span class="toc-text"><a href="#&#x5907;&#x6CE8;" class="headerlink" title="&#x5907;&#x6CE8;"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E5%A4%87%E6%B3%A8" target="_blank" rel="noopener"></a>&#x5907;&#x6CE8;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最简略的安装方式"><span class="toc-text"><a href="#&#x6700;&#x7B80;&#x7565;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;" class="headerlink" title="&#x6700;&#x7B80;&#x7565;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E6%9C%80%E7%AE%80%E7%95%A5%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F" target="_blank" rel="noopener"></a>&#x6700;&#x7B80;&#x7565;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装appium"><span class="toc-text"><a href="#&#x5B89;&#x88C5;appium" class="headerlink" title="&#x5B89;&#x88C5;appium"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E5%AE%89%E8%A3%85appium" target="_blank" rel="noopener"></a>&#x5B89;&#x88C5;appium</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#运行appium"><span class="toc-text"><a href="#&#x8FD0;&#x884C;appium" class="headerlink" title="&#x8FD0;&#x884C;appium"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E8%BF%90%E8%A1%8Cappium-1" target="_blank" rel="noopener"></a>&#x8FD0;&#x884C;appium</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新appium"><span class="toc-text"><a href="#&#x66F4;&#x65B0;appium" class="headerlink" title="&#x66F4;&#x65B0;appium"></a><a href="https://github.com/appium/appium/blob/master/docs/cn/running-on-windows.cn.md#%E6%9B%B4%E6%96%B0appium" target="_blank" rel="noopener"></a>&#x66F4;&#x65B0;appium</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（4）——appium-client的安装"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;4&#xFF09;&#x2014;&#x2014;appium-client&#x7684;&#x5B89;&#x88C5;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;4&#xFF09;&#x2014;&#x2014;appium client&#x7684;&#x5B89;&#x88C5;"></a><a href="http://www.cnblogs.com/nbkhic/p/3804592.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;4&#xFF09;&#x2014;&#x2014;appium client&#x7684;&#x5B89;&#x88C5;</a></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装appium-client"><span class="toc-text"><a href="#&#x5B89;&#x88C5;appium-client" class="headerlink" title="&#x5B89;&#x88C5;appium client"></a>&#x5B89;&#x88C5;appium client</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ruby篇（一定要在线安装）"><span class="toc-text"><a href="#ruby&#x7BC7;&#xFF08;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;" class="headerlink" title="ruby&#x7BC7;&#xFF08;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;"></a>ruby&#x7BC7;&#xFF08;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#python篇（尽量在线安装）"><span class="toc-text"><a href="#python&#x7BC7;&#xFF08;&#x5C3D;&#x91CF;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;" class="headerlink" title="python&#x7BC7;&#xFF08;&#x5C3D;&#x91CF;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;"></a>python&#x7BC7;&#xFF08;&#x5C3D;&#x91CF;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java篇（在线安装）"><span class="toc-text"><a href="#java&#x7BC7;&#xFF08;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;" class="headerlink" title="java&#x7BC7;&#xFF08;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;"></a>java&#x7BC7;&#xFF08;&#x5728;&#x7EBF;&#x5B89;&#x88C5;&#xFF09;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（5）——appium-client方法一览"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;5&#xFF09;&#x2014;&#x2014;appium-client&#x65B9;&#x6CD5;&#x4E00;&#x89C8;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;5&#xFF09;&#x2014;&#x2014;appium client&#x65B9;&#x6CD5;&#x4E00;&#x89C8;"></a><a href="http://www.cnblogs.com/nbkhic/p/3804611.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;5&#xFF09;&#x2014;&#x2014;appium client&#x65B9;&#x6CD5;&#x4E00;&#x89C8;</a></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（6）——启动appium及android模拟器"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;6&#xFF09;&#x2014;&#x2014;&#x542F;&#x52A8;appium&#x53CA;android&#x6A21;&#x62DF;&#x5668;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;6&#xFF09;&#x2014;&#x2014;&#x542F;&#x52A8;appium&#x53CA;android&#x6A21;&#x62DF;&#x5668;"></a><a href="http://www.cnblogs.com/nbkhic/p/3804637.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;6&#xFF09;&#x2014;&#x2014;&#x542F;&#x52A8;appium&#x53CA;android&#x6A21;&#x62DF;&#x5668;</a></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ruby篇"><span class="toc-text"><a href="#ruby&#x7BC7;" class="headerlink" title="ruby&#x7BC7;"></a>ruby&#x7BC7;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python篇"><span class="toc-text"><a href="#python&#x7BC7;" class="headerlink" title="python&#x7BC7;"></a>python&#x7BC7;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java篇"><span class="toc-text"><a href="#java&#x7BC7;" class="headerlink" title="java&#x7BC7;"></a>java&#x7BC7;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（7）——Desired-Capabilities详解"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;7&#xFF09;&#x2014;&#x2014;Desired-Capabilities&#x8BE6;&#x89E3;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;7&#xFF09;&#x2014;&#x2014;Desired Capabilities&#x8BE6;&#x89E3;"></a><a href="http://www.cnblogs.com/nbkhic/p/3805805.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;7&#xFF09;&#x2014;&#x2014;Desired Capabilities&#x8BE6;&#x89E3;</a></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Appium的Desired-Capabilities是扩展了webdriver的Desired-Capabilities的，下面的一些通用配置是需要指定的："><span class="toc-text"><a href="#Appium&#x7684;Desired-Capabilities&#x662F;&#x6269;&#x5C55;&#x4E86;webdriver&#x7684;Desired-Capabilities&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x914D;&#x7F6E;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7684;&#xFF1A;" class="headerlink" title="Appium&#x7684;Desired Capabilities&#x662F;&#x6269;&#x5C55;&#x4E86;webdriver&#x7684;Desired Capabilities&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x914D;&#x7F6E;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7684;&#xFF1A;"></a>Appium&#x7684;Desired Capabilities&#x662F;&#x6269;&#x5C55;&#x4E86;webdriver&#x7684;Desired Capabilities&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x914D;&#x7F6E;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7684;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下面这些属性是android平台特定的："><span class="toc-text"><a href="#&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x662F;android&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7684;&#xFF1A;" class="headerlink" title="&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x662F;android&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7684;&#xFF1A;"></a>&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x662F;android&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7684;&#xFF1A;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（8）——那些工具"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;8&#xFF09;&#x2014;&#x2014;&#x90A3;&#x4E9B;&#x5DE5;&#x5177;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;8&#xFF09;&#x2014;&#x2014;&#x90A3;&#x4E9B;&#x5DE5;&#x5177;"></a><a href="http://www.cnblogs.com/nbkhic/p/3806886.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;8&#xFF09;&#x2014;&#x2014;&#x90A3;&#x4E9B;&#x5DE5;&#x5177;</a></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#monitor-bat（hierarchyviewer-bat已经不赞成继续使用了）"><span class="toc-text"><a href="#monitor-bat&#xFF08;hierarchyviewer-bat&#x5DF2;&#x7ECF;&#x4E0D;&#x8D5E;&#x6210;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4E86;&#xFF09;" class="headerlink" title="monitor.bat&#xFF08;hierarchyviewer.bat&#x5DF2;&#x7ECF;&#x4E0D;&#x8D5E;&#x6210;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4E86;&#xFF09;"></a>monitor.bat&#xFF08;hierarchyviewer.bat&#x5DF2;&#x7ECF;&#x4E0D;&#x8D5E;&#x6210;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4E86;&#xFF09;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uiautomatorviewer-bat"><span class="toc-text"><a href="#uiautomatorviewer-bat" class="headerlink" title="uiautomatorviewer.bat"></a>uiautomatorviewer.bat</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（9）——如何获取android-app的Activity"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;9&#xFF09;&#x2014;&#x2014;&#x5982;&#x4F55;&#x83B7;&#x53D6;android-app&#x7684;Activity" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;9&#xFF09;&#x2014;&#x2014;&#x5982;&#x4F55;&#x83B7;&#x53D6;android app&#x7684;Activity"></a><a href="http://www.cnblogs.com/nbkhic/p/3806951.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;9&#xFF09;&#x2014;&#x2014;&#x5982;&#x4F55;&#x83B7;&#x53D6;android app&#x7684;Activity</a></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法一"><span class="toc-text"><a href="#&#x65B9;&#x6CD5;&#x4E00;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E00;"></a>&#x65B9;&#x6CD5;&#x4E00;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法二"><span class="toc-text"><a href="#&#x65B9;&#x6CD5;&#x4E8C;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E8C;"></a>&#x65B9;&#x6CD5;&#x4E8C;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法三"><span class="toc-text"><a href="#&#x65B9;&#x6CD5;&#x4E09;" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E09;"></a>&#x65B9;&#x6CD5;&#x4E09;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（10）——控件定位基础"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;10&#xFF09;&#x2014;&#x2014;&#x63A7;&#x4EF6;&#x5B9A;&#x4F4D;&#x57FA;&#x7840;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;10&#xFF09;&#x2014;&#x2014;&#x63A7;&#x4EF6;&#x5B9A;&#x4F4D;&#x57FA;&#x7840;"></a><a href="http://www.cnblogs.com/nbkhic/p/3807871.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;10&#xFF09;&#x2014;&#x2014;&#x63A7;&#x4EF6;&#x5B9A;&#x4F4D;&#x57FA;&#x7840;</a></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ruby篇-1"><span class="toc-text"><a href="#ruby&#x7BC7;-1" class="headerlink" title="ruby&#x7BC7;"></a>ruby&#x7BC7;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python篇-1"><span class="toc-text"><a href="#python&#x7BC7;-1" class="headerlink" title="python&#x7BC7;"></a>python&#x7BC7;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java篇-1"><span class="toc-text"><a href="#java&#x7BC7;-1" class="headerlink" title="java&#x7BC7;"></a>java&#x7BC7;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#appium简明教程（11）——使用resource-id定位"><span class="toc-text"><a href="#appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;11&#xFF09;&#x2014;&#x2014;&#x4F7F;&#x7528;resource-id&#x5B9A;&#x4F4D;" class="headerlink" title="appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;11&#xFF09;&#x2014;&#x2014;&#x4F7F;&#x7528;resource id&#x5B9A;&#x4F4D;"></a><a href="http://www.cnblogs.com/nbkhic/p/3813792.html" target="_blank" rel="noopener">appium&#x7B80;&#x660E;&#x6559;&#x7A0B;&#xFF08;11&#xFF09;&#x2014;&#x2014;&#x4F7F;&#x7528;resource id&#x5B9A;&#x4F4D;</a></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#目的"><span class="toc-text"><a href="#&#x76EE;&#x7684;" class="headerlink" title="&#x76EE;&#x7684;"></a>&#x76EE;&#x7684;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Ruby篇"><span class="toc-text"><a href="#Ruby&#x7BC7;" class="headerlink" title="Ruby&#x7BC7;"></a>Ruby&#x7BC7;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python篇"><span class="toc-text"><a href="#Python&#x7BC7;" class="headerlink" title="Python&#x7BC7;"></a>Python&#x7BC7;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java篇"><span class="toc-text"><a href="#Java&#x7BC7;" class="headerlink" title="Java&#x7BC7;"></a>Java&#x7BC7;</span></a></li></ol></li></ol></li></ol></div>
+</div>
+
 
 
     
     
-        <section id="comments">
-    <div id="uyan_frame"></div>
-</section>
     
-
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/try_in_python.html" class="thumbnail">
+<hr>
+<div class="social-link sidebar-item">
+  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <ul>
     
+    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
     
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/try_in_python.html" class="title">python中的异常处理</a></p>
-                            <p class="item-date"><time datetime="2017-08-19T15:53:38.000Z" itemprop="datePublished">2017-08-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-python-get-house-info.html" class="thumbnail">
+    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
     
+    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
     
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
-                            <p class="item-title"><a href="/article/use-python-get-house-info.html" class="title">使用python抓取自住房信息</a></p>
-                            <p class="item-date"><time datetime="2017-07-11T14:41:32.000Z" itemprop="datePublished">2017-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-apscheduler.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-apscheduler.html" class="title">用于python的定时任务apscheduler的使用</a></p>
-                            <p class="item-date"><time datetime="2017-06-17T13:42:13.000Z" itemprop="datePublished">2017-06-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-webpy.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/article/use-webpy.html" class="title">webpy的常规使用与踩过的坑</a></p>
-                            <p class="item-date"><time datetime="2016-12-21T13:42:13.000Z" itemprop="datePublished">2016-12-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/article/use-mac-mount-ntfs-disk.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/mac/">mac</a></p>
-                            <p class="item-title"><a href="/article/use-mac-mount-ntfs-disk.html" class="title">在MAC下加载NTFS移动硬盘或者U盘</a></p>
-                            <p class="item-date"><time datetime="2016-07-12T05:49:01.000Z" itemprop="datePublished">2016-07-12</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">39</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a><span class="category-list-count">11</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 12px;">Android</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/ThinkPHP/" style="font-size: 14px;">ThinkPHP</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/android/" style="font-size: 18px;">android</a> <a href="/tags/java/" style="font-size: 12px;">java</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python/" style="font-size: 10px;">python -</a> <a href="/tags/requests/" style="font-size: 10px;">requests</a> <a href="/tags/sql/" style="font-size: 12px;">sql</a> <a href="/tags/webpy/" style="font-size: 14px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/安全/" style="font-size: 14px;">安全</a> <a href="/tags/微博/" style="font-size: 10px;">微博</a> <a href="/tags/自动化测试/" style="font-size: 16px;">自动化测试</a>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/">廖雪峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/itfootball">D.Q的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://opentest.360.cn/">360开测</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://testerhome.com/">TesterHome</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.androiddevtools.cn/">AndroidDev</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://blog.csdn.net/guolin_blog">郭霖的专栏</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://coolshell.cn/">酷壳</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://www.ruanyifeng.com/blog/archives.html">阮一峰</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://stormzhang.com/">stormzhang博客</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://imququ.com/">Jerry Qu</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+  </ul>
+</div>
 
 
     
-    <div id="toTop" class="fa fa-angle-up"></div>
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <p><i class="fas fa-link"></i> 友情链接</p>
+  <ul>
+    
+    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
+    
+    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
+    
+    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
+    
+    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
+    
+    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
+    
+    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
+    
+    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
+    
+    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
+    
+    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
+    
+    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
 
-            
+
+          
         </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2017 杨彦星<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">杨彦星</span>
+          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
+          
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+          
+          <br>
+          <span>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 
             <script>
 				(function(){
@@ -916,38 +795,24 @@
 				    s.parentNode.insertBefore(bp, s);
 				})();
 			</script>
-
         </div>
-    </div>
-</footer>
         
-    
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1800284"></script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于 <i class="fab fa-github-alt"></i> <a href="https://portal.qiniu.com/signup?code=3l9fjkyhf6udu" target="_blank">七牛</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  
+</footer>
+
+
+  </body>
 </html>
