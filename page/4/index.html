@@ -128,6 +128,71 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1308.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1308.html" itemprop="url">Android中的UI线程阻塞</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-02-20T01:05:19+08:00">2015-02-20</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>当一个应用程序启动之后，android系统会为这个应用程序创建一个主线程，这个线程非常重要，它负责渲染视图，分发事件到响应监听器并执行，对界面进行轮询的监听，一般叫做“UI主线程”</p>
+<p>Android系统不会给应用程序的多个元素组件建立多个线程来执行，一个视图(activity)中的多个view组件运行在同一个UI线程当中，因此，多个view组件的监听器的执行可能会相互影响。</p>
+<p>如有以下两个button，其中一个在会在主view中进行移动动画，另外一个button在点击以后将线程sleep 5秒<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1308.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1303.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -721,80 +786,6 @@ int main(){
       
     </main>
     <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1151.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1151.html" itemprop="url">七牛cdn缓存导致ajax评论失效</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-10-07T00:41:23+08:00">2014-10-07</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/计算机相关/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>在使用了七牛的CDN后，发现在评论的时候会出现405错误</p>
-<blockquote>
-<p>{“error”:”get from image source failed: E405”} </p>
-</blockquote>
-<p>在网上查了查，这个问题出现的还挺多的，解决办法是改<span style="color: #000000;">comments-ajax.js这个文件</span></p>
-<p>1.在comments-ajax.js文件中下面这段程序的后面（参考<a href="http://www.tennfy.com/503.html" target="_blank" rel="noopener">cdn缓存导致ajax评论失效</a>）：</p>
-<pre><code class="javascript">var i = 0, got = -1, len = document.getElementsByTagName(&#39;script&#39;).length;
-while ( i &lt;= len &amp;&amp; got == -1){
-    var js_url = document.getElementsByTagName(&#39;script&#39;)[i].src,
-            got = js_url.indexOf(&#39;comments-ajax.js&#39;); i++ ;
-}
-</code></pre>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1151.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/wordpress/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> wordpress</a>
-        
-        
-      </div>
       
     </footer>
   </article>

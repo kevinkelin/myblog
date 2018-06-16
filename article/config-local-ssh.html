@@ -83,7 +83,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>将hexo生成的静态网站部署到七牛 | 杨彦星 - 序语程言</title>
+    <title>配置多个ssh密钥对并且永久多ssh管理 | 杨彦星 - 序语程言</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -130,7 +130,7 @@
   
   <article class="post-container card " itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/put-html-to-qiniu.html">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/config-local-ssh.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="杨彦星">
        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
@@ -142,12 +142,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-       <span class="">将hexo生成的静态网站部署到七牛</span>
+       <span class="">配置多个ssh密钥对并且永久多ssh管理</span>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-13T23:53:38+08:00">2018-06-13</time>
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-16T23:53:38+08:00">2018-06-16</time>
         </span>
         
         
@@ -167,29 +167,54 @@
       </div>
     </header>
     <main class="post-body" itemprop="articleBody">
-      <p>最近由于百度的BAE引擎取消了对基础版的支持，所以没有办法，继续寻找可以托管html的服务器。<br>之前用过gitpages,coding与bae，这几个可以说各有各的特点，也各有各的缺点<br>gitpages什么都好，就是访问相对慢，coding非要你加一个它们的链接，否则就要在访问网站最开始加个广告<br>BAE呢，其实BAE基础版挺好的，访问速度快，价钱也合理，没想到他们将要取消了。<br>在查找新的部署方案时发现有人提到七牛云存储，看了一下他们的文档，可以暂时的满足托管html纯静态网页需求。<br>开始动工！</p>
+      <p>这两天捣腾SSH，一直对其使用一知半解，由于要把博客迁移，弄来弄去发现还是部署到国内的coding吧<br>之前也弄过，但是由于重新安装了git-for-windows客户端，所以一开始用hexo d命令部署的时候报错了<br>趁着这次迁移也好好弄了一下本地的ssh管理，虽然还有些问题，但是至少比之前清晰一些了，这里也记录一下过程中遇到的问题</p>
 <a id="more"></a>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
-<li>备了案的域名</li>
-<li>七牛账户，并且充了10块钱</li>
+<p>我的目的，将hexo生成的静态文件同时部署到github与coding上</p>
+<h2 id="安装git-for-windows客户端"><a href="#安装git-for-windows客户端" class="headerlink" title="安装git-for-windows客户端"></a>安装git-for-windows客户端</h2><p>下载地址 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a><br>无论是github还是coding都需要上传你的公钥，这两个地方可以上传相同的公钥，但也可以像我这样闲的蛋疼上传不同的公钥。</p>
+<h2 id="创建密钥对"><a href="#创建密钥对" class="headerlink" title="创建密钥对"></a>创建密钥对</h2><p>使用<code>ssh-keygen</code> 来创建密钥对，命令为 <code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code>,其实这里-C 后面的email地址无所谓，可以随便写，只是为了你方便而已。<br>输入完该命令以后，首先会让你给密钥文件起个名字，这个是文件名，叫什么随心情<br><img src="/image/2018/usessh1.png" alt="生成密钥对"><br>接下来让你输入密码，我这里直接回车，不用密码<br>然后它就会生成一个密钥对，像我这个设置就会生成yyxtest和yyxtest_pub两个文件，yyxtest.pub是公钥，谁都可以给，但是你私钥要自已保存好，谁拿到了你私钥就呵呵了。</p>
+<h2 id="上传公钥到github与coding中"><a href="#上传公钥到github与coding中" class="headerlink" title="上传公钥到github与coding中"></a>上传公钥到github与coding中</h2><p>根据github上的提示将公钥上传到github上你的个人账户中的ssh中<br><img src="/image/2018/usessh2.png" alt="上传公钥到github中"></p>
+<p>同样的操作再生成一对密钥，将公钥上传到coding中，注意我这里是为了测试，你完全没有必要重新生成，你当然可以上传刚才生成的yyxtest.pub这个公钥，当然后面会有一些问题，之后再详细说明。</p>
+<h2 id="上传文件到github上"><a href="#上传文件到github上" class="headerlink" title="上传文件到github上"></a>上传文件到github上</h2><p> 赶紧上传个文件到github上试试吧(使用hexo d 来部署)，其实你可以先不用上传文件，可以用<code>ssh -vT git@github.com</code> 来查看一下信息<br>这里你不用试了，肯定是不行的…… 抗都被我踩了<br><img src="/image/2018/usessh4.png" alt="Permission denied"><br>提示Permission denied,原因是你现在用的私钥还是id_rsa，并不是刚才生成的yyxtest，<br>ssh默认使用id_rsa，如果连id_rsa都没有，那你还不赶紧生成一个默认的。</p>
+<h2 id="添加yyxtest私钥到git-bash中"><a href="#添加yyxtest私钥到git-bash中" class="headerlink" title="添加yyxtest私钥到git bash中"></a>添加yyxtest私钥到git bash中</h2><p>根据github上的提示<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">generate SSH keys</a> 先将yyxtest添加到git bash中,<br>    使用<code>ssh-add ~/.ssh/yyxtest</code> ,然后顺利提交代码成功，但是在提交文件到coding时又不行了，提示</p>
+<blockquote>
+<p>Error: git@git.coding.net: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+</blockquote>
+<p>没办法，再用刚才的ssh-add 命令将用于coding的私钥也添加到git bash中，这次coding也可以提交了</p>
+<h2 id="配置ssh本地的config文件"><a href="#配置ssh本地的config文件" class="headerlink" title="配置ssh本地的config文件"></a>配置ssh本地的config文件</h2><p>试试关掉这个git bash,然后再试着用hexo d 提交一些文件，这次又不行了，还是提示Permission denied，这怎么能行，总不能每次提交更新都输入ssh-add 添加各种私钥吧，这时就要用到config这个文件了。<br>如果git安装是默认的话，将会把生成的公钥保存在C:\Users\username.ssh目录中(我用的是windows，不丢人)，里面如果没有config文件，自已生成一个,里面写一些配置信息,各种字段说明如下</p>
+<blockquote>
+<p>  <strong>Host</strong>：代码托管平台的别名,但是这个别名和后面要用到的ssh链接 git@github.com:xxx/xxx.git 中的 @ 符号后面的内容要一致，而一般来说github默认提供的就是git@github.com，因此为了方便，github的Host写github.com即可，别取别名了<br>    <strong>HostName</strong>：代码托管平台真正的IP地址或域名,写域名就行，<br>    <strong>IdentityFile</strong>：对应的密钥文件路径。必须写绝对路径，windows下可以写 C:\Users\xxx.ssh\yyxtest<br>    <strong>PreferredAuthentications</strong>：配置登录时用什么权限认证。可设为publickey，password publickey，keyboard-interactive等<br>    <strong>User</strong>：对应的用户名。</p>
+</blockquote>
+<p>我这里有两个私钥，所以我的配置文件如下</p>
+<pre><code class="python">Host git.coding.net
+    HostName git.coding.net
+    IdentityFile C:\Users\kevin\.ssh\rsa_coding
+    PreferredAuthentications publickey
+    User yangyanxing
+
+Host github.com
+    HostName github.com
+    IdentityFile C:\Users\kevin\.ssh\yyx
+    PreferredAuthentications publickey
+    User kevinkelin
+</code></pre>
+<p>之前说过，你没有必要为不同的网站生成不同的密钥，用同一份也可以，如果用同一份，这里IdentityFile也要写一样的<br>保存之后先不用着急提交，使用ssh -vT 查看一下连接是否有问题<br>github 提示 <code>Hi kevinkelin! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>coding提示 <code>yangyanxing，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</code><br>这样就可以直接使用<code>hexo d</code>来提交文件更新了！</p>
+<p>注意的问题</p>
+<ol>
+<li>config文件中的host 配置是区分大小写的，github.com 和github.COM是不同的，一定要写对</li>
+<li>coding的host是git.coding.net 而不是coding.net</li>
 </ol>
-<p>一、使用hexo生成静态html资源，这个不用多说，使用hexo的都知道<br>二、登录七牛账号，进入管理控制台，点击<code>镜像存储</code>，新建一个存储空间，访问控制一定要选择<code>公开空间</code><br>三、再点击<code>绑定域名</code>,将你网站的域名绑定到刚才创建的空间<br><img src="/image/2018/qiniu1.png" alt="绑定域名"><br>四、将静态网站资源上传到七牛，这里七牛会提供一些工具，windows下有可视化工具，linux与mac下有对应的命令行工具，选自已喜欢的，由于我现在是在windows下操作，所以我使用了可视化工具,下载<br><a href="https://developer.qiniu.com/kodo/tools/1666/qsunsync" target="_blank" rel="noopener">https://developer.qiniu.com/kodo/tools/1666/qsunsync</a><br>打开这个工具，先点击<code>账号设置</code>,输入你的AK与SK,这两个值可以到<code>个人中心</code>下的<code>密钥管理</code>中获取<br><img src="/image/2018/qiniu2.png" alt="设定AK与SK"><br>AK与SK设置好了以后就可以点击<code>新建同步任务</code><br><img src="/image/2018/qiniu3.png" alt="新建同步任务"><br>本地目录选择hexo生成的public目录，目标空间选择你刚才创建的空间<br>切换到高级设置，这里一定要设置一下，遇到空间中存在同名文件则强制覆盖，否则之后生成的html如果同名的话就不会上传了<br>每次同步前检查本地增量文件并上传也要勾上，否则新产生的文件不会上传<br><img src="/image/2018/qiniu4.png" alt="新建同步任务"></p>
-<p>设置好了以后就可以点击<code>开始同步</code>了<br>上传过程有点慢，要耐心等待。</p>
-<p>五、根据七牛的提示，将域名cname到它给你的地址<br><img src="/image/2018/qiniu5.png" alt="设置cname"></p>
-<p>六、最最关键的一步，空间设置<br>如果不设置空间，那么你现在的七牛就是一个普通的存储文件的地址，还不能通过域名访问<br>比如你的首页是 <a href="http://www.abc.com/" target="_blank" rel="noopener">http://www.abc.com/</a> 如果你现在访问这个，会提示 error: “Document not found”，必须要加上 <a href="http://www.abc.com/index.html" target="_blank" rel="noopener">http://www.abc.com/index.html</a><br>七牛现在比较人性化的添加了默认首页展示设定，一定要将其打开<br><img src="/image/2018/qiniu6.png" alt="默认首页展示"></p>
-<p>这样就可以通过 <a href="http://www.abc.com/" target="_blank" rel="noopener">http://www.abc.com/</a> 来访问网页了，访问categories等也会自动跳到相应的index.html页面</p>
-<p>当cname生效以后就可以正常访问了</p>
-<p>更新文章以后，有一个问题，七牛的缓存刷新的很慢，或者说刷新规则里设置的很慢，可以在域名管理处点击绑定的域名然后设置一些缓存规则<br><img src="/image/2018/qiniu7.png" alt="域名设置"></p>
-<p>点击修改配置<br><img src="/image/2018/qiniu8.png" alt="缓存设置"><br>我将html的更新频率设置为1小时，并且全站缓存设置为1分钟</p>
-<p>另外还可以根据自身的需求设置一些防盗链</p>
-<p>大功告成，享受一下吧</p>
-<p>要时刻关注一下域名的备案信息，如果哪天积案被注销了，七牛也会停止该域名的访问的！！！</p>
+<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>git bash客户端，如果在非C盘上右键的方式启动，那么还是不行，它会寻找当前盘的中的.ssh目录，根本不存在的目录，所有找私钥肯定也找不到，只能先启动git bash,然后cd 到操作的目录中，这个我再研究研究怎么回事。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://blog.csdn.net/Yvettre/article/details/79639700" target="_blank" rel="noopener">配置本地和github的ssh密钥对：永久多ssh管理(win10)</a></li>
+<li><a href="https://blog.csdn.net/w410589502/article/details/53607691" target="_blank" rel="noopener">git window下配置SSH连接GitHub</a></li>
+<li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></li>
+</ul>
 
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-            本文标题为: 将hexo生成的静态网站部署到七牛<br>
-            本文链接为：<a href="http://www.yangyanxing.com/article/put-html-to-qiniu.html">http://www.yangyanxing.com/article/put-html-to-qiniu.html</a><br>
+            本文标题为: 配置多个ssh密钥对并且永久多ssh管理<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/config-local-ssh.html">http://www.yangyanxing.com/article/config-local-ssh.html</a><br>
         </div>
     </main>
     <footer class="post-footer">
@@ -237,19 +262,12 @@
   <div class="post-nav">
     
     <div class="post-nav-next post-nav-item">
-      <a href="/article/use-selenium-op-browser.html" rel="next" title="使用python操作selenium操作第三方浏览器(360浏览器)">
+      <a href="/article/put-html-to-qiniu.html" rel="next" title="将hexo生成的静态网站部署到七牛">
         <i class="fas fa-angle-left"></i>
-        <span class="nav-title">使用python操作selenium操作第三方浏览器(360浏览器)</span>
+        <span class="nav-title">将hexo生成的静态网站部署到七牛</span>
       </a>
     </div>
     
-    
-    <div class="post-nav-prev post-nav-item">
-      <a href="/article/config-local-ssh.html" rel="prev" title="配置多个ssh密钥对并且永久多ssh管理">
-        <span class="nav-title">配置多个ssh密钥对并且永久多ssh管理</span>
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
     
   </div>
   
@@ -299,7 +317,7 @@
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <p><i class="fas fa-list-ol"></i> Table of Contents</p>
-  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text"><a href="#&#x51C6;&#x5907;" class="headerlink" title="&#x51C6;&#x5907;"></a>&#x51C6;&#x5907;</span></a></li></ol></div>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git-for-windows客户端"><span class="toc-text"><a href="#&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;" class="headerlink" title="&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;"></a>&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建密钥对"><span class="toc-text"><a href="#&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;" class="headerlink" title="&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;"></a>&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传公钥到github与coding中"><span class="toc-text"><a href="#&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;" class="headerlink" title="&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;"></a>&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传文件到github上"><span class="toc-text"><a href="#&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;" class="headerlink" title="&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;"></a>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加yyxtest私钥到git-bash中"><span class="toc-text"><a href="#&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git-bash&#x4E2D;" class="headerlink" title="&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git bash&#x4E2D;"></a>&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git bash&#x4E2D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置ssh本地的config文件"><span class="toc-text"><a href="#&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;" class="headerlink" title="&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;"></a>&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遗留问题"><span class="toc-text"><a href="#&#x9057;&#x7559;&#x95EE;&#x9898;" class="headerlink" title="&#x9057;&#x7559;&#x95EE;&#x9898;"></a>&#x9057;&#x7559;&#x95EE;&#x9898;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text"><a href="#&#x53C2;&#x8003;&#x6587;&#x7AE0;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x7AE0;"></a>&#x53C2;&#x8003;&#x6587;&#x7AE0;</span></a></li></ol></div>
 </div>
 
 

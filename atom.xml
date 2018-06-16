@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yangyanxing.com/"/>
-  <updated>2018-06-13T15:21:08.515Z</updated>
+  <updated>2018-06-16T18:13:22.499Z</updated>
   <id>http://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置多个ssh密钥对并且永久多ssh管理</title>
+    <link href="http://www.yangyanxing.com/article/config-local-ssh.html"/>
+    <id>http://www.yangyanxing.com/article/config-local-ssh.html</id>
+    <published>2018-06-16T15:53:38.000Z</published>
+    <updated>2018-06-16T18:13:22.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天捣腾SSH，一直对其使用一知半解，由于要把博客迁移，弄来弄去发现还是部署到国内的coding吧&lt;br&gt;之前也弄过，但是由于重新安装了git-for-windows客户端，所以一开始用hexo d命令部署的时候报错了&lt;br&gt;趁着这次迁移也好好弄了一下本地的ssh管理，虽然还有些问题，但是至少比之前清晰一些了，这里也记录一下过程中遇到的问题&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+    
+    
+      <category term="web" scheme="http://www.yangyanxing.com/tags/web/"/>
+    
+  </entry>
   
   <entry>
     <title>将hexo生成的静态网站部署到七牛</title>

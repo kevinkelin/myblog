@@ -128,6 +128,61 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/779.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/779.html" itemprop="url">(转)抛砖引玉 正则表达式完成电话号码的匹配</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-03-18T23:24:26+08:00">2013-03-18</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>原来地址：<a href="http://www.diveintopython.net/regular_expressions/phone_numbers.html" target="_blank" rel="noopener">http://www.diveintopython.net/regular_expressions/phone_numbers.html</a></p>
+<p>迄今为止，你主要是匹配整个模式，不论是匹配上，还是没有匹配上。但是正则表达式还有比这更为强大的功能。当一个模式确实 匹配上时，你可以获取模式中特定的片断，你可以发现具体匹配的位置。 这个例子来源于我遇到的另一个现实世界的问题，也是在以前的工作中遇到的。问题是：解析一个美国电话号码。客户要能 (在一个单一的区域中) 输入任何数字，然后存储区号、干线号、电话号和一个可选的独立的分机号到公司数据库里。为此，我通过网络找了很多正则表达式的例子，但是没有一个能够完全满足我的要求。 这里列举了我必须能够接受的电话号码：<br> 800-555-1212<br> 800 555 1212<br> 800.555.1212<br> (800) 555-1212<br> 1-800-555-1212<br> 800-555-1212-1234<br> 800-555-1212x1234<br> 800-555-1212 ext. 1234<br> work 1-(800) 555.1212 #1234<br>格式可真够多的！我需要知道区号是 800，干线号是 555，电话号的其他数字为 1212。对于那些有分机号的，我需要知道分机号为 1234。 让我们完成电话号码解析这个工作，这个例子展示第一步。<br>例 7.10. 发现数字</p>
+<blockquote>
+<p>phonePattern = re.compile(r’^(d{3})-(d{3})-(d{4})$’) (1)<br>phonePattern.search(‘800-555-1212’).groups() (2)</p>
+</blockquote>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/779.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/775.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -834,69 +889,6 @@ echo &quot;发表成功&quot;;
       <p>通过一个小程序来熟悉一下os模块中的方法，OS模块在以后会经常的使用，操作目录与文件等<br>
       <div class="post-readmore">
         <a class="readmore button" href="/article/397.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/393.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/393.html" itemprop="url">一个Python的小例子来理解字典与while循环</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2012-11-12T01:23:59+08:00">2012-11-12</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>现在要实现一个需求，弹出一个界面，可以让用户选择是新建用户还是登录已有账户，或者直接退出，在登录账户的时候，密码输入错误不能超过三次，超过三次要回到主界面，用户名输入‘q’的时候也可以退出并回到主界面<br>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/393.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>

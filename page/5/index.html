@@ -128,6 +128,80 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1151.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1151.html" itemprop="url">七牛cdn缓存导致ajax评论失效</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-10-07T00:41:23+08:00">2014-10-07</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/计算机相关/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>在使用了七牛的CDN后，发现在评论的时候会出现405错误</p>
+<blockquote>
+<p>{“error”:”get from image source failed: E405”} </p>
+</blockquote>
+<p>在网上查了查，这个问题出现的还挺多的，解决办法是改<span style="color: #000000;">comments-ajax.js这个文件</span></p>
+<p>1.在comments-ajax.js文件中下面这段程序的后面（参考<a href="http://www.tennfy.com/503.html" target="_blank" rel="noopener">cdn缓存导致ajax评论失效</a>）：</p>
+<pre><code class="javascript">var i = 0, got = -1, len = document.getElementsByTagName(&#39;script&#39;).length;
+while ( i &lt;= len &amp;&amp; got == -1){
+    var js_url = document.getElementsByTagName(&#39;script&#39;)[i].src,
+            got = js_url.indexOf(&#39;comments-ajax.js&#39;); i++ ;
+}
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1151.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/wordpress/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> wordpress</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1128.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -750,76 +824,6 @@ browser.quit()
       
     </main>
     <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1050.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1050.html" itemprop="url">python中的中文编码问题</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-06-02T00:25:02+08:00">2014-06-02</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>在编程领域中，中文编码问题一向是个很头疼的问题，今天写点总结一下解决的方法</p>
-<p>unicode与utf-8和gbk之间的转换，涉及到的函数有decode与encode</p>
-<p>首先明确一下，python中的字符串都是以某种编码来存储的，就中文来说，以gbk与utf-8的，你虽然可以这样定义一个变量 s = u’杨彦星’,但是你可以用type(s) 来看一下它的类型，此时这个s 不是字符串，而是unicode类型，当你定义s = ‘杨彦星’的时候，这时type(s)才是str类型，但是当你直接定义s = ‘杨彦星’时会在不同的场景下出现不同的问题，windows下的cmd还好，换到一个utf-8的解析器里就是乱码，所以最好的方式是在定义有中文（或者说非英文的）字符串时以unicode来定义，然后再去解码输出。</p>
-<p>将字符串decode成unicode</p>
-<p>s = ‘杨彦星’</p>
-<p>s_uni = s.decode(‘gbk’) #将s转换成unicode，decode的时候就加上这个字符原来的编码类型</p>
-<p>s_utf8 = s_uni.encode(‘utf-8’)</p>
-<p>s_gbk = s_uni.encode(‘gbk’)</p>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1050.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
       
     </footer>
   </article>

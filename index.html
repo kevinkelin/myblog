@@ -128,6 +128,69 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/config-local-ssh.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/config-local-ssh.html" itemprop="url">配置多个ssh密钥对并且永久多ssh管理</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-16T23:53:38+08:00">2018-06-16</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>这两天捣腾SSH，一直对其使用一知半解，由于要把博客迁移，弄来弄去发现还是部署到国内的coding吧<br>之前也弄过，但是由于重新安装了git-for-windows客户端，所以一开始用hexo d命令部署的时候报错了<br>趁着这次迁移也好好弄了一下本地的ssh管理，虽然还有些问题，但是至少比之前清晰一些了，这里也记录一下过程中遇到的问题</p>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/config-local-ssh.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/web/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> web</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/put-html-to-qiniu.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -680,69 +743,6 @@
       <div class="post-readmore">
         <a class="readmore button" href="/article/use-wireshark-capture-https.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/安全/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 安全</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/display-host-clumn-in-wireshark.html" itemprop="url">在wireshark上显示host</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-06-10T22:19:45+08:00">2016-06-10</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/计算机相关/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>wireshark默认不显示目标的host，只显示IP，有时对于查看非常不直观。<br>可以自定义显示一些列<br><img src="/image/wireshark.jpg" alt="wireshark"></p>
-<p>点击”编辑”–&gt;”首选项”<br><img src="/image/wiresharkOption.png" alt="首选项"></p>
-<p>点击下面的”+”，添加一个列，类型选择Custom,字段那填写http.host,字段发生那填写0,点击OK，界面上就会显示host字段了<br><img src="/image/showhost.png" alt="显示host"></p>
-
       
     </main>
     <footer class="post-footer">
