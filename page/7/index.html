@@ -127,6 +127,137 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/897.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/897.html" itemprop="url">通过hello world程序判断你的虚拟主机是否支持python</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-09-25T01:37:52+08:00">2013-09-25</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下</p>
+<p>写一个hello world的小程序</p>
+<pre><code class="shell">#!/usr/bin/python
+print &#39;Content-Type: text/plainn&#39;
+</code></pre>
+<p>以二进制方式上传到自已的空间上，访问 <a href="http://static.yangyanxing.com/test.py" target="_blank" rel="noopener">http://static.yangyanxing.com/test.py</a></p>
+<p>居然一次性成功了，完美地显示hello world<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/897.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/911.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/911.html" itemprop="url">Python中的urllib2库的使用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-09-12T01:06:43+08:00">2013-09-12</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>今天研究了下urllib2这个库的使用，才发现以前有很多不明白的东西，现在写下来也做个记录</p>
+<h1 id="最基础的应用"><a href="#最基础的应用" class="headerlink" title="最基础的应用"></a>最基础的应用</h1><pre><code class="python">import urllib2
+url = r&#39;http://www.baidu.com&#39;
+html = urllib2.urlopen(url).read()
+</code></pre>
+<p>客户端与服务器端通过request与response来沟通，客户端先向服务端发送request，然后接收服务端返回的response</p>
+<p>urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求</p>
+<pre><code class="python">import urllib2
+url = r&#39;http://www.baidu.com&#39;
+req = urllib2.Request(url)
+html = urllib2.urlopen(req).read()
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/911.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/908.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -167,7 +298,7 @@
       
       <p>最近想要搭建个小黄鸡的微信应用，但是一路来发现，现在很多的方法都已经不能用了，我在本地试过，也试用过requests获取session的方法也不行，但是这经过这次折腾，倒是对cookie有了更多的了解，以下以python登录人人网的例子来介绍cookie的使用。<br>cookie的定义可以参考百度百科，<a href="http://baike.baidu.com/subview/835/5062332.htm" target="_blank" rel="noopener">http://baike.baidu.com/subview/835/5062332.htm</a> 但是里面说的乱七八糟的，而且好多重复，使用firefox或者fiddler等工具来抓取cookie<br>在firefox下使用httpFox插件来查到人人网的登录时需要POST的地址是<a href="http://www.renren.com/ajaxLogin" title="http://www.renren.com/ajaxLogin" target="_blank" rel="noopener">http://www.renren.com/ajaxLogin</a>&#160;<br><a href="/image/2013/09/getUrl.png"><img src="/image/2013/09/getUrl_thumb.png" alt="getUrl" title="getUrl"></a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/908.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/908.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -232,7 +363,7 @@
 <p>参考文章</p>
 <p><a href="http://video.sina.com.cn/v/b/113293169-1631501663.html" target="_blank" rel="noopener">http://video.sina.com.cn/v/b/113293169-1631501663.html</a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/877.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/877.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -296,7 +427,7 @@
       <p>相对于python解析XML来说，我还是比较喜欢json的格式返回，现在一般的api返回都会有json与XML格式的选择，json的解析起来个人觉得相对简单些</p>
 <p>先看一个简单的豆瓣的图书查询的api返回
       <div class="post-readmore">
-        <a class="readmore button" href="/article/874.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/874.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -425,7 +556,7 @@
 </code></pre>
 <p>先简单的看一下这个XML的结构
       <div class="post-readmore">
-        <a class="readmore button" href="/article/872.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/872.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -495,7 +626,7 @@
 <p>你需要先在微信的公众平台与新浪SAE平台上各种注册，微信平台注册的时候需要你拍张手持身份证的照片，还有几天的审核期</p>
 <p>微信公众平台：<a href="http://mp.weixin.qq.com/" title="微信公众平台" target="_blank" rel="noopener">http://mp.weixin.qq.com</a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/871.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/871.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -675,7 +806,7 @@ if __name__ == &#39;__main__&#39;:
     cdGrep(keword,pw)
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/821.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/821.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -772,280 +903,6 @@ if __name__ ==&#39;__main__&#39;:
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/813.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/813.html" itemprop="url">python中的OOP</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-06-01T22:17:55+08:00">2013-06-01</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>直接上代码，已经在后面有注释了</p>
-<pre><code class="python">#coding:utf8
-
-name = &#39;yangyanxing&#39;
-class Test():
-    class kevin():
-        var1 = &#39;我是内部类&#39;
-
-    name = &#39;kvein&#39;
-    gae = &#39;26&#39;
-
-    def fun1(self):
-        print self.name
-        print &#39;我是公共方法&#39;
-        self.__fun2() #可以通过公有就去来调用私有方法，在调用的过程中可以进行更改
-
-    def __fun2(self):
-        print &#39;我是私有方法&#39;
-
-    @classmethod
-    def fun3(self): #可以不通过实例来访问这个类方法
-        print &#39;#&#39;*40
-        print self.name
-        print &#39;我是类方法&#39;
-
-    @staticmethod #静态方法，也是可以不通过实例对象就可以访问的方法但是在定义的时候不用加self
-    def fun4():
-        print Test.name
-        print name #这里的name是全局变量
-        Test.fun3()
-        print &#39;我是静态方法&#39;
-
-print Test.name #公有属性可以直接方法，不用实例化对象
-yang = Test() #实例化一个类
-interyang = Test.kevin() #实例化一个内部类
-yang.fun1() #方法类里面的公共属性
-print interyang.var1 # 访问内部类里的属性
-Test.fun3()#访问类方法
-Test.fun4()
-</code></pre>
-<pre><code class="python">#coding:utf8
-
-class Test():
-    var1 = &#39;类的公有属性&#39;
-    __var2 = &#39;类的私有属性&#39;
-
-    def fun(self):
-        self.var2 = &#39;对象的公有属性&#39; # 这里定义了一个对象的公有属性
-        self.__var3 = &#39;对象的私有属性&#39;# 这里定义了一个对象的私有属性
-        var4 = &#39;函数的局部变量&#39; #这里定义了一个函数的局部变量，这里面的var4只有在函数内部使用
-
-kevin = Test() #实例了一个对象
-yang = Test() #又实例了另外一个对象
-print kevin.var1
-##print kevin.__var2 #这里将无法访问
-kevin.fun()
-print kevin.var2 #在没有调用fun函数之前是没有var2的
-##print kevin.__var3 对象的私有属性是无法调用的
-##print yang.var2 #这里因为没有调用yang的fun方法，所以还是无法访问yang里的var2
-</code></pre>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/806.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/806.html" itemprop="url">一个python的小脚本登录人人并抓取新鲜事</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-05-29T00:30:48+08:00">2013-05-29</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <pre><code class="python">from sgmllib import SGMLParser
-import sys,urllib2,urllib,cookielib
-class spider(SGMLParser):
-    def __init__(self,email,password):
-        SGMLParser.__init__(self)
-        self.h3=False
-        self.h3_is_ready=False
-        self.div=False
-        self.h3_and_div=False
-        self.a=False
-        self.depth=0
-        self.names=&quot;&quot;
-        self.dic={}
-
-        self.email=email
-        self.password=password
-        self.domain=&#39;renren.com&#39;
-        try:
-            cookie=cookielib.CookieJar()
-            cookieProc=urllib2.HTTPCookieProcessor(cookie)
-        except:
-            raise
-        else:
-            opener=urllib2.build_opener(cookieProc)
-            urllib2.install_opener(opener)
-
-    def login(self):
-        url=&#39;http://www.renren.com/PLogin.do&#39;
-        postdata={
-                  &#39;email&#39;:self.email,
-                  &#39;password&#39;:self.password,
-                  &#39;domain&#39;:self.domain
-                  }
-        req=urllib2.Request(
-                            url,
-                            urllib.urlencode(postdata)
-                            )
-
-        self.file=urllib2.urlopen(req).read()
-        #print self.file
-    def start_h3(self,attrs):
-        self.h3 = True
-    def end_h3(self):
-        self.h3=False
-        self.h3_is_ready=True
-
-    def start_a(self,attrs):
-        if self.h3 or self.div:
-            self.a=True
-    def end_a(self):
-        self.a=False
-
-    def start_div(self,attrs):
-        if self.h3_is_ready == False:
-            return
-        if self.div==True:
-            self.depth += 1
-
-        for k,v in attrs:
-            if k == &#39;class&#39; and v == &#39;content&#39;:
-                self.div=True;
-                self.h3_and_div=True   #h3 and div is connected
-    def end_div(self):
-        if self.depth == 0:
-            self.div=False
-            self.h3_and_div=False
-            self.h3_is_ready=False
-            self.names=&quot;&quot;
-        if self.div == True:
-            self.depth-=1
-    def handle_data(self,text):
-        #record the name
-        if self.h3 and self.a:
-            self.names+=text
-        #record says
-        if self.h3 and (self.a==False):
-            if not text:pass
-            else: self.dic.setdefault(self.names,[]).append(text)
-            return
-        if self.h3_and_div:
-            self.dic.setdefault(self.names,[]).append(text)
-
-    def show(self):
-        type = sys.getfilesystemencoding()
-        for key in self.dic:
-            print ( (&#39;&#39;.join(key)).replace(&#39; &#39;,&#39;&#39;)).decode(&#39;utf-8&#39;).encode(type),
-                  ( (&#39;&#39;.join(self.dic[key])).replace(&#39; &#39;,&#39;&#39;)).decode(&#39;utf-8&#39;).encode(type)
-
-if __name__ ==&#39;__main__&#39;:
-    renrenspider=spider(&#39;email&#39;,&#39;password&#39;)
-    renrenspider.login()
-    renrenspider.feed(renrenspider.file)
-    renrenspider.show()
-</code></pre>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/6/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fas fa-angle-right"></i></a>
@@ -1062,7 +919,7 @@ if __name__ ==&#39;__main__&#39;:
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -1093,7 +950,7 @@ if __name__ ==&#39;__main__&#39;:
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> Social Links</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -1115,7 +972,7 @@ if __name__ ==&#39;__main__&#39;:
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> Blogroll</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -1192,7 +1049,7 @@ if __name__ ==&#39;__main__&#39;:
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

@@ -336,18 +336,18 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">Reward</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
-      <span>微信支付</span>
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
+      <span>WechatPay</span>
     </div>
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
+      <span>AliPay</span>
     </div>
     
     
@@ -387,7 +387,7 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -421,7 +421,7 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建wordpress博客应用"><span class="toc-text"><a href="#&#x642D;&#x5EFA;wordpress&#x535A;&#x5BA2;&#x5E94;&#x7528;" class="headerlink" title="&#x642D;&#x5EFA;wordpress&#x535A;&#x5BA2;&#x5E94;&#x7528;"></a>&#x642D;&#x5EFA;wordpress&#x535A;&#x5BA2;&#x5E94;&#x7528;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用新浪微博账号授权"><span class="toc-text"><a href="#&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x8D26;&#x53F7;&#x6388;&#x6743;" class="headerlink" title="&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x8D26;&#x53F7;&#x6388;&#x6743;"></a>&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x8D26;&#x53F7;&#x6388;&#x6743;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点击安装些应"><span class="toc-text"><a href="#&#x70B9;&#x51FB;&#x5B89;&#x88C5;&#x4E9B;&#x5E94;" class="headerlink" title="&#x70B9;&#x51FB;&#x5B89;&#x88C5;&#x4E9B;&#x5E94;"></a>&#x70B9;&#x51FB;&#x5B89;&#x88C5;&#x4E9B;&#x5E94;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置站点信息"><span class="toc-text"><a href="#&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x4FE1;&#x606F;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x4FE1;&#x606F;"></a>&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x4FE1;&#x606F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定自己的域名"><span class="toc-text"><a href="#&#x7ED1;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;" class="headerlink" title="&#x7ED1;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;"></a>&#x7ED1;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wordpress-的模板添加与修改"><span class="toc-text"><a href="#wordpress-&#x7684;&#x6A21;&#x677F;&#x6DFB;&#x52A0;&#x4E0E;&#x4FEE;&#x6539;" class="headerlink" title="wordpress &#x7684;&#x6A21;&#x677F;&#x6DFB;&#x52A0;&#x4E0E;&#x4FEE;&#x6539;"></a>wordpress &#x7684;&#x6A21;&#x677F;&#x6DFB;&#x52A0;&#x4E0E;&#x4FEE;&#x6539;</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单的调用新浪微博API来更新自己的微博"><span class="toc-text"><a href="#&#x7B80;&#x5355;&#x7684;&#x8C03;&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;API&#x6765;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x7684;&#x5FAE;&#x535A;" class="headerlink" title="&#x7B80;&#x5355;&#x7684;&#x8C03;&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;API&#x6765;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x7684;&#x5FAE;&#x535A;"></a>&#x7B80;&#x5355;&#x7684;&#x8C03;&#x7528;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;API&#x6765;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x7684;&#x5FAE;&#x535A;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更多"><span class="toc-text"><a href="#&#x66F4;&#x591A;" class="headerlink" title="&#x66F4;&#x591A;"></a>&#x66F4;&#x591A;</span></a></li></ol></div>
 </div>
 
@@ -432,7 +432,7 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> Social Links</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -454,7 +454,7 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> Blogroll</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -531,7 +531,7 @@ echo &quot;&lt;p&gt;发送完成&lt;/p&gt;&quot; ;
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

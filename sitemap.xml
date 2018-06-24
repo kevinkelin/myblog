@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yangyanxing.com/article/python-logging-day-file.html</loc>
+    
+    <lastmod>2018-06-24T17:55:17.078Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yangyanxing.com/article/use-logging-in-python.html</loc>
+    
+    <lastmod>2018-06-24T17:24:34.104Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yangyanxing.com/article/config-local-ssh.html</loc>
     
     <lastmod>2018-06-16T18:21:46.106Z</lastmod>

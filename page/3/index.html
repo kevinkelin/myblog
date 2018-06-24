@@ -127,6 +127,135 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-python-dircompare.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/use-python-dircompare.html" itemprop="url">使用python进行文件夹对比</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-12-29T23:09:30+08:00">2015-12-29</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近写一个小脚本，在使用系统急救箱扫描并且处理完后，要将处理以后的样本和提供的标准进行对比<br>已经提供了样本与处理以后的文件，我要写的脚本就是启急救箱并且将两个文件夹进行比较<br>启动并且扫描比较好实现，但是在进行文件夹对比的时候走了一些弯路<br>上网查到python的标准库里有一个filecmp类，这个类可以对文件夹或者文件进行对比，使用起来还是比较方便的<br><a href="http://python.usyiyi.cn/python_278/library/filecmp.html" title="filecmp官方文档" target="_blank" rel="noopener">filecmp官方文档/</a></p>
+<p>使用最下面的例子程序，我又对其进行了扩充<br>我想达到的目的就是先对两个文件夹进行比较，输出不同的文件，然后再输出各自文件夹中独有的文件<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/use-python-dircompare.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1389.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1389.html" itemprop="url">使用国内镜像源来加速python pypi包的安装</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-10-10T22:57:44+08:00">2015-10-10</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>在国内使用pip安装包的时候，很多时候由于各种原因无法正常使用pypi.python.org的源，还好有国内的良心网站提供了国内镜像</p>
+<p>网上的方法都是在%HOMEPATH%中新建pip目录，再新建一个pip.ini，可是我试了以后还是不能用，也不知道原作者是否可以用</p>
+<p>后来我看了一下它的文档
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1389.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1385.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -185,7 +314,7 @@ android:orientation=&quot;vertical&quot; &gt;
 &lt;/LinearLayout&gt;
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1385.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1385.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -249,7 +378,7 @@ android:orientation=&quot;vertical&quot; &gt;
       <p>最近在做一个小网站的项目，有一个小问题，可能在有经验的前端er面前不是什么问题，但是由于我接触前端很少，所以这个问题也搞了好一会才解决</p>
 <p>在一个页面里有两个表单，在各自点击提交时，先要对相应的input里做非空校验，然后再对里面的数据做下简单的字符串判断<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1381.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1381.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -318,7 +447,7 @@ android:orientation=&quot;vertical&quot; &gt;
 <p>基本的需求是这样的，安装被测试的应用，启动并退出，然后安装测试样本，检测是否有相应的弹窗拦截</p>
 <p>考虑到市面上的各种测试框架与自已熟悉的编程语言，最后选择了google自家的uiautomator来搞，借助于前人对其进行了python封装，所以一开始还是挺顺利的，但是整个过程中还是有很多需要注意的地方<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/how-to-use-uiautomator-with-python.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/how-to-use-uiautomator-with-python.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -391,7 +520,7 @@ android:orientation=&quot;vertical&quot; &gt;
 <p>小工具最终是下面这个样子，将文件拖到上面会自动计算其md5与size</p>
 <p><a href="/image/2015/06/1.png"><img src="/image/2015/06/1_thumb.png" alt="1" title="1"></a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1350.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1350.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -462,7 +591,7 @@ else:
 return True
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1340.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1340.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -525,7 +654,7 @@ return True
       
       <p>上小学的时候对于别人如果能有零花钱就感觉很羡慕<br>因为他们可以买到自已喜欢的吃的<br>但是我不会去奢求渴望父母也给我<br>到了初中，我会觉得那些染着黄毛，成天不上学开着大摩托的人比较牛气<br>因为他们可以不用上学，不用写作业，想打认谁就打谁，可以为别人拔份儿<br>可以我也不羡慕他们，我也不会去搞个彩毛儿，穿个喇叭裤<br>到了高中，我觉得那些长的帅气，会打篮球，会弹吉他，会讨女孩子开心的人很好<br>于是我也会在学习之于搞些自已喜欢的东西<br>到了大学，那种八面玲珑，左右逢源的人很好<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1329.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1329.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -639,153 +768,7 @@ return True
 }
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1320.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1314.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1314.html" itemprop="url">sql注入初步</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-02-22T18:40:30+08:00">2015-02-22</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>自已用php+mysql写了一个登录页面。其中包含多个sql注入漏洞，在mysql中创建一个表，其中有username password email一个列，添加三个数据</p>
-<p>+————-+————-+—————–+<br>| username    | password    | email           |<br>+————-+————-+—————–+<br>| admin       | admin       | admin@admin.com |<br>| yangyanxing | yangyanxing | yyx@yyx.com     |<br>+————-+————-+—————–+</p>
-<p>在phpmyadmin中使用一条sql命令</p>
-<p>SELECT * FROM <code>admin</code> WHERE 1 </p>
-<p>where 1 是一个永真，这样它会把admin表中的所有数据返回</p>
-<p>写一个testsql.php文件来尝试使用sql注入的方式登录这个系统
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1314.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/安全/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 安全</a>
-        
-        
-        
-        <a class="post-tag button" href="/tags/sql/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> sql</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1310.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1310.html" itemprop="url">spinner和适配器模式</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-02-22T00:41:48+08:00">2015-02-22</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>原文 <a href="http://www.cnblogs.com/UUUP/p/3983394.html" title="http://www.cnblogs.com/UUUP/p/3983394.html" target="_blank" rel="noopener">http://www.cnblogs.com/UUUP/p/3983394.html</a></p>
-<p>spinner相当于html表单中的select下拉列表。</p>
-<h1 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h1><p>在string.xml中添加一个数组spinner_data：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
-&lt;resources&gt; 
-&lt;string-array name=&quot;spinner_data&quot;&gt; 
-&lt;item &gt;北京&lt;/item&gt; 
-&lt;item &gt;湖南&lt;/item&gt; 
-&lt;item &gt;湖北&lt;/item&gt; 
-&lt;/string-array&gt; 
-&lt;/resources&gt;
-</code></pre>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1310.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1320.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -822,7 +805,7 @@ return True
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -853,7 +836,7 @@ return True
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> Social Links</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -875,7 +858,7 @@ return True
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> Blogroll</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -952,7 +935,7 @@ return True
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

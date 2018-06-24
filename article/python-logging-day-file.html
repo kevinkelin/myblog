@@ -42,7 +42,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Archives | 杨彦星 - 序语程言</title>
+    <title>python中的日志按天保存单独的文件 | 杨彦星 - 序语程言</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -125,79 +125,146 @@
         <div class="main-container">
           <div class="content">
             
-<section id="archive" class="archive">
-  <div class="archive-container">
-    <div class="archive-counter">
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/python-logging-day-file.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="杨彦星">
+       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+       <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">python中的日志按天保存单独的文件</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-24T23:53:38+08:00">2018-06-24</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <p>在运行web的python程序时,日志最好是使用按天的保存,这样查看起来会很方便,也不至于日志文件太大不好打开<br>python 自带的logging模块有着非常强大的作用</p>
+<a id="more"></a>
+<pre><code class="python">
+import logging
+import time,sys
+from logging.handlers import TimedRotatingFileHandler
+
+
+log = logging.getLogger(&#39;yyx&#39;)
+log.setLevel(logging.DEBUG)
+formatter = logging.Formatter(&quot;%(asctime)s - %(name)s - %(levelname)s - %(message)s&quot;)
+
+log_file_handler = TimedRotatingFileHandler(filename=&quot;log&quot;, when=&quot;S&quot;, interval=2)
+log_file_handler.setFormatter(formatter)
+log_file_handler.setLevel(logging.DEBUG)
+log.addHandler(log_file_handler)
+
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+log.addHandler(stream_handler)
+
+log.debug(&#39;111&#39;)
+log.error(&#39;11error&#39;)
+log.info(&#39;11info&#39;)
+time.sleep(2)
+log.error(&#39;222&#39;)
+time.sleep(2)
+log.info(&#39;333&#39;)
+</code></pre>
+<p>TimedRotatingFileHandler类的参数意义如下:</p>
+<ul>
+<li>filename：日志文件名的prefix；</li>
+<li>when：是一个字符串，用于描述滚动周期的基本单位，字符串的值及意义如下：<br>&nbsp;“S”: Seconds<br>&nbsp;“M”: Minutes<br>&nbsp;“H”: Hours<br>&nbsp;“D”: Days<br>&nbsp;“W”: Week day (0=Monday)<br>&nbsp;“midnight”: Roll over at midnight</li>
+<li>interval: 滚动周期，单位有when指定，比如：when=’D’,interval=1，表示每天产生一个日志文件；</li>
+<li>backupCount: 表示日志文件的保留个数； 不写则全保存</li>
+</ul>
+<p>除了上述参数之外，TimedRotatingFileHandler还有两个比较重要的成员变量，它们分别是suffix和extMatch。suffix是指日志文件名的后缀,suffix中通常带有格式化的时间字符串，filename和suffix由“.”连接构成文件名（例如：filename=“runtime”， suffix=“%Y-%m-%d.log”,生成的文件名为runtime.2015-07-06.log）</p>
+
+        <div class="article-footer-copyright">
+            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+            本文标题为: python中的日志按天保存单独的文件<br>
+            本文链接为：<a href="http://www.yangyanxing.com/article/python-logging-day-file.html">http://www.yangyanxing.com/article/python-logging-day-file.html</a><br>
+        </div>
+    </main>
+    <footer class="post-footer">
       
-      <p>You have 104 posts!</p>
       
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
+  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
+      <span>WechatPay</span>
     </div>
     
     
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
+      <span>AliPay</span>
+    </div>
     
-    
-    <h1 class="archive-title">2014</h1>
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1264.html" itemprop="url">Android官方的uiautomator例子的实现</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-29T01:04:49+08:00">12-29</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1220.html" itemprop="url">C++获取系统信息与拷贝文件到windows目录下</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:28:33+08:00">12-06</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1216.html" itemprop="url">C++中windows编程基础</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:20:08+08:00">12-06</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1212.html" itemprop="url">c++语言基础(hello world,数据类型,构造方法,指针的常见错误,常量指针,指针与引用)</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:13:08+08:00">12-06</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1208.html" itemprop="url">dev c++安装使用</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:08:03+08:00">12-06</time>
-        </span>
-        
-      </h2>
-    </article>
     
   </div>
+</div>
+
+
+  
+  
+  <div class="post-nav">
+    
+    <div class="post-nav-next post-nav-item">
+      <a href="/article/use-logging-in-python.html" rel="next" title="利用logging模块轻松地进行Python日志记录(转)">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">利用logging模块轻松地进行Python日志记录(转)</span>
+      </a>
+    </div>
+    
+    
+  </div>
+  
   
 </section>
 
@@ -235,6 +302,14 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+
+
     
     
     

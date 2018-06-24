@@ -127,6 +127,152 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1314.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1314.html" itemprop="url">sql注入初步</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-02-22T18:40:30+08:00">2015-02-22</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>自已用php+mysql写了一个登录页面。其中包含多个sql注入漏洞，在mysql中创建一个表，其中有username password email一个列，添加三个数据</p>
+<p>+————-+————-+—————–+<br>| username    | password    | email           |<br>+————-+————-+—————–+<br>| admin       | admin       | admin@admin.com |<br>| yangyanxing | yangyanxing | yyx@yyx.com     |<br>+————-+————-+—————–+</p>
+<p>在phpmyadmin中使用一条sql命令</p>
+<p>SELECT * FROM <code>admin</code> WHERE 1 </p>
+<p>where 1 是一个永真，这样它会把admin表中的所有数据返回</p>
+<p>写一个testsql.php文件来尝试使用sql注入的方式登录这个系统
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1314.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/安全/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> 安全</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/sql/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> sql</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1310.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1310.html" itemprop="url">spinner和适配器模式</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-02-22T00:41:48+08:00">2015-02-22</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>原文 <a href="http://www.cnblogs.com/UUUP/p/3983394.html" title="http://www.cnblogs.com/UUUP/p/3983394.html" target="_blank" rel="noopener">http://www.cnblogs.com/UUUP/p/3983394.html</a></p>
+<p>spinner相当于html表单中的select下拉列表。</p>
+<h1 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h1><p>在string.xml中添加一个数组spinner_data：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;resources&gt; 
+&lt;string-array name=&quot;spinner_data&quot;&gt; 
+&lt;item &gt;北京&lt;/item&gt; 
+&lt;item &gt;湖南&lt;/item&gt; 
+&lt;item &gt;湖北&lt;/item&gt; 
+&lt;/string-array&gt; 
+&lt;/resources&gt;
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1310.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1308.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -169,7 +315,7 @@
 <p>Android系统不会给应用程序的多个元素组件建立多个线程来执行，一个视图(activity)中的多个view组件运行在同一个UI线程当中，因此，多个view组件的监听器的执行可能会相互影响。</p>
 <p>如有以下两个button，其中一个在会在主view中进行移动动画，另外一个button在点击以后将线程sleep 5秒<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1308.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1308.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -239,7 +385,7 @@ public void test(View view){
 </code></pre>
 <p>这里的view就是要使用的控件，如果是绑定的是个button，那么view就是这个button<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1303.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1303.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -308,7 +454,7 @@ public void test(View view){
 </blockquote>
 <p>如果没有校验工具，我写了一个python脚本来校验 链接：<a href="http://pan.baidu.com/s/1i3j93sp" target="_blank" rel="noopener">http://pan.baidu.com/s/1i3j93sp</a> 密码：h6gz<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1298.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1298.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -368,7 +514,7 @@ public void test(View view){
 <li>3，appium可以测试ios，android应用（当然了，还有firefox os）；</li>
 <li><p>4，appium是跨平台的，可以用在osx，windows以及linux桌面系统上；<br>appium的哲学
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1266.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1266.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -433,7 +579,7 @@ public void test(View view){
 <h1 id="使用ADT创建一个java的项目"><a href="#使用ADT创建一个java的项目" class="headerlink" title="使用ADT创建一个java的项目"></a>使用ADT创建一个java的项目</h1><pre><code>在创建项目的时候要加上JUnit与你使用的Android platforms中对应的android.jar与uiautomator.jar
 </code></pre><p><a href="/image/2014/12/image16.png"><img src="/image/2014/12/image16.png" alt="image" title="image"></a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1264.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1264.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -533,7 +679,7 @@ cout&lt;&lt;szComputerName&lt;&lt;endl;
 cout&lt;&lt;szUserName&lt;&lt;endl;
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1220.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1220.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -597,7 +743,7 @@ return;
 <p>在多字节字符集中，每个汉字占两个字节，英文字母占一个字节，sizeof(p) = 7 _tcslen(p)=6(字符串长度等于6，I1 T1 学2 吧2)</p>
 <p>在宽字节（unicode）字符集中，所有有字符都是占两个字节 sizeof(p) = 10 _tcslen(p)=4(I1 T1 学1 吧1)<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1216.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1216.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -675,112 +821,7 @@ int main(){
 }
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1212.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1208.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1208.html" itemprop="url">dev c++安装使用</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:08:03+08:00">2014-12-06</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>最近开始接触C++，在练习基本的语法的时候，不想使用臃肿的VS，于是查了下，dev c++为个挺小巧，但麻雀虽小五脏具全，对于基本语法的学习使用已经足够了。</p>
-<p>下载安装，下载还是挺麻烦的，我下载好了共享在360云盘上了，<a href="http://yunpan.cn/cAaf826jiSdie" target="_blank" rel="noopener">http://yunpan.cn/cAaf826jiSdie</a> （提取码：7b0a）这个是有minGW的，安装的时候选择full</p>
-<p>在翻译的时候输出debug，当然你不这样设置的话在以后要调试的时候也会提示你是否设置的 工具–翻译选项</p>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1208.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1199.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1199.html" itemprop="url">被潜意识蒙蔽的理性</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-10-28T00:20:02+08:00">2014-10-28</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/生活记录/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>最近在观察一些事情，发现很多时候我们的理性往往都被潜意识所蒙蔽。</p>
-<p>公司内网中有段时间经常有人发表一些自已的东西被“偷”的帖子，于是在人们脑海中就有一个公司里有很多小偷的意识，自已的东西一旦找不到了，首先想到的就是被别人偷走了，甚至一些人还总发表一些放在冰箱里的食物饮料等被莫名的拿走的帖子，这些人无疑首先说的就是“偷”，遇到这样的事情首先想到的也是被别人拿走了，被别人吃掉了。<br>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1199.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1212.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -805,7 +846,7 @@ int main(){
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -836,7 +877,7 @@ int main(){
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> Social Links</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -858,7 +899,7 @@ int main(){
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> Blogroll</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -935,7 +976,7 @@ int main(){
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
