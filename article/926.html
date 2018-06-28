@@ -294,18 +294,18 @@ dialogs = app.windows_()
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
-      <span>WechatPay</span>
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
-      <span>AliPay</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
     
     
@@ -345,7 +345,7 @@ dialogs = app.windows_()
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -379,7 +379,7 @@ dialogs = app.windows_()
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pywinauto"><span class="toc-text"><a href="#pywinauto" class="headerlink" title="pywinauto;"></a>pywinauto;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sendkeys"><span class="toc-text"><a href="#Sendkeys" class="headerlink" title="Sendkeys"></a>Sendkeys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ctypes-如果你是python2-3或者2-4"><span class="toc-text"><a href="#ctypes-&#x5982;&#x679C;&#x4F60;&#x662F;python2-3&#x6216;&#x8005;2-4" class="headerlink" title="ctypes (&#x5982;&#x679C;&#x4F60;&#x662F;python2.3&#x6216;&#x8005;2.4)"></a>ctypes (&#x5982;&#x679C;&#x4F60;&#x662F;python2.3&#x6216;&#x8005;2.4)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动程序"><span class="toc-text"><a href="#&#x542F;&#x52A8;&#x7A0B;&#x5E8F;" class="headerlink" title="&#x542F;&#x52A8;&#x7A0B;&#x5E8F;"></a>&#x542F;&#x52A8;&#x7A0B;&#x5E8F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查找“关于记事本”的窗口"><span class="toc-text"><a href="#&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;" class="headerlink" title="&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;"></a>&#x67E5;&#x627E;&#x201C;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7684;&#x7A97;&#x53E3;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在”关于记事本”窗口上找到“确定”按钮-button"><span class="toc-text"><a href="#&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;-button" class="headerlink" title="&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;(button)"></a>&#x5728;&#x201D;&#x5173;&#x4E8E;&#x8BB0;&#x4E8B;&#x672C;&#x201D;&#x7A97;&#x53E3;&#x4E0A;&#x627E;&#x5230;&#x201C;&#x786E;&#x5B9A;&#x201D;&#x6309;&#x94AE;(button)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在记事本里写点东西"><span class="toc-text"><a href="#&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;" class="headerlink" title="&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;"></a>&#x5728;&#x8BB0;&#x4E8B;&#x672C;&#x91CC;&#x5199;&#x70B9;&#x4E1C;&#x897F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个比较恶心的问题"><span class="toc-text"><a href="#&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;" class="headerlink" title="&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;"></a>&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6076;&#x5FC3;&#x7684;&#x95EE;&#x9898;</span></a></li></ol></div>
 </div>
 
@@ -390,7 +390,7 @@ dialogs = app.windows_()
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -412,7 +412,7 @@ dialogs = app.windows_()
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -489,7 +489,7 @@ dialogs = app.windows_()
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

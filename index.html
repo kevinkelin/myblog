@@ -127,6 +127,69 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/python-list-sort.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/python-list-sort.html" itemprop="url">python中的list排序问题以及sort,sorted的使用</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-28T23:53:38+08:00">2018-06-28</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>列表list排序是一种非常常见的操作，里面有很多的方法也有很多的坑，这里简单的记录一下。</p>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/python-list-sort.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/python-logging-day-file.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -167,7 +230,7 @@
       
       <p>在运行web的python程序时,日志最好是使用按天的保存,这样查看起来会很方便,也不至于日志文件太大不好打开<br>python 自带的logging模块有着非常强大的作用</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/python-logging-day-file.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/python-logging-day-file.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -230,7 +293,7 @@
       
       <p>在开发过程中，如果程序运行出现了问题，我们是可以使用我们自己的 Debug 工具来检测到到底是哪一步出现了问题，如果出现了问题的话，是很容易排查的。但程序开发完成之后，我们会将它部署到生产环境中去，这时候代码相当于是在一个黑盒环境下运行的，我们只能看到其运行的效果，是不能直接看到代码运行过程中每一步的状态的。在这个环境下，运行过程中难免会在某个地方出现问题，甚至这个问题可能是我们开发过程中未曾遇到的问题，碰到这种情况应该怎么办？<br>如果我们现在只能得知当前问题的现象，而没有其他任何信息的话，如果我们想要解决掉这个问题的话，那么只能根据问题的现象来试图复现一下，然后再一步步去调试，这恐怕是很难的，很大的概率上我们是无法精准地复现这个问题的，而且 Debug 的过程也会耗费巨多的时间，这样一旦生产环境上出现了问题，修复就会变得非常棘手。但这如果我们当时有做日志记录的话，不论是正常运行还是出现报错，都有相关的时间记录，状态记录，错误记录等，那么这样我们就可以方便地追踪到在当时的运行过程中出现了怎样的状况，从而可以快速排查问题。<br>因此，日志记录是非常有必要的，任何一款软件如果没有标准的日志记录，都不能算作一个合格的软件。作为开发者，我们需要重视并做好日志记录过程。</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/use-logging-in-python.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/use-logging-in-python.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -293,7 +356,7 @@
       
       <p>这两天捣腾SSH，一直对其使用一知半解，由于要把博客迁移，弄来弄去发现还是部署到国内的coding吧<br>之前也弄过，但是由于重新安装了git-for-windows客户端，所以一开始用hexo d命令部署的时候报错了<br>趁着这次迁移也好好弄了一下本地的ssh管理，虽然还有些问题，但是至少比之前清晰一些了，这里也记录一下过程中遇到的问题</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/config-local-ssh.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/config-local-ssh.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -356,7 +419,7 @@
       
       <p>最近由于百度的BAE引擎取消了对基础版的支持，所以没有办法，继续寻找可以托管html的服务器。<br>之前用过gitpages,coding与bae，这几个可以说各有各的特点，也各有各的缺点<br>gitpages什么都好，就是访问相对慢，coding非要你加一个它们的链接，否则就要在访问网站最开始加个广告<br>BAE呢，其实BAE基础版挺好的，访问速度快，价钱也合理，没想到他们将要取消了。<br>在查找新的部署方案时发现有人提到七牛云存储，看了一下他们的文档，可以暂时的满足托管html纯静态网页需求。<br>开始动工！</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/put-html-to-qiniu.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/put-html-to-qiniu.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -419,7 +482,7 @@
       
       <p>最近在测试一个项目，使用360浏览器来做一些操作<br>之前使用过selenium来操作chrome和FireFox，这里记录一下</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/use-selenium-op-browser.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/use-selenium-op-browser.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -486,7 +549,7 @@
       
       <p>写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下<br>这里记录一下try在python中的使用。</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/try_in_python.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/try_in_python.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -556,7 +619,7 @@
 <li>在ubuntu中使用crontab定时来触发脚本</li>
 </ol>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/use-python-get-house-info.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/use-python-get-house-info.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -619,7 +682,7 @@
       
       <p>最近在项目中有一个比较特殊的需求，要求在每个月第二个周二暂停任务，然后周三再开启<br>于是在网上查了一下，python中有一个apscheduler库可以实现，而且这个框架还挺强大的<br>这里记录一下它的使用</p>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/use-apscheduler.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/use-apscheduler.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -684,7 +747,7 @@
 <h1 id="基础的框架搭建"><a href="#基础的框架搭建" class="headerlink" title="基础的框架搭建"></a>基础的框架搭建</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install web.py -i https://pypi.douban.com/simple
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/use-webpy.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/use-webpy.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -709,57 +772,6 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/use-mac-mount-ntfs-disk.html" itemprop="url">在MAC下加载NTFS移动硬盘或者U盘</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2016-07-12T13:49:01+08:00">2016-07-12</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>在windows下使用的移动硬盘或者U盘大部分都是ntfs格式，在MAC下默认是不支持的，将一块硬盘分两个区一个给windows用一个给MAC用也不大方便，可以借用第三方软件来支持，其实仔细想想这样的功能苹果公司在技术上肯定是可以支持的，只是由于种种原因微软不让其默认支持，以下的方法不借用任何第三方软件，几条命令搞定在MAC下挂载nfts硬盘。<br>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/use-mac-mount-ntfs-disk.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
@@ -776,7 +788,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -807,7 +819,7 @@
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -829,7 +841,7 @@
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -906,7 +918,7 @@
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

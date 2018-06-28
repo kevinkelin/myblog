@@ -280,18 +280,18 @@ public class Runer extends UiAutomatorTestCase {
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
-      <span>WechatPay</span>
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
-      <span>AliPay</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
     
     
@@ -331,7 +331,7 @@ public class Runer extends UiAutomatorTestCase {
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -365,7 +365,7 @@ public class Runer extends UiAutomatorTestCase {
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用ADT创建一个java的项目"><span class="toc-text"><a href="#&#x4F7F;&#x7528;ADT&#x521B;&#x5EFA;&#x4E00;&#x4E2A;java&#x7684;&#x9879;&#x76EE;" class="headerlink" title="&#x4F7F;&#x7528;ADT&#x521B;&#x5EFA;&#x4E00;&#x4E2A;java&#x7684;&#x9879;&#x76EE;"></a>&#x4F7F;&#x7528;ADT&#x521B;&#x5EFA;&#x4E00;&#x4E2A;java&#x7684;&#x9879;&#x76EE;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新建一个包-我这里就只叫com"><span class="toc-text"><a href="#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;-&#x6211;&#x8FD9;&#x91CC;&#x5C31;&#x53EA;&#x53EB;com" class="headerlink" title="&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;(&#x6211;&#x8FD9;&#x91CC;&#x5C31;&#x53EA;&#x53EB;com)"></a>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;(&#x6211;&#x8FD9;&#x91CC;&#x5C31;&#x53EA;&#x53EB;com)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#再这个包下创建一个class"><span class="toc-text"><a href="#&#x518D;&#x8FD9;&#x4E2A;&#x5305;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;class" class="headerlink" title="&#x518D;&#x8FD9;&#x4E2A;&#x5305;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;class"></a>&#x518D;&#x8FD9;&#x4E2A;&#x5305;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;class</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用ant工具生成build-xml"><span class="toc-text"><a href="#&#x4F7F;&#x7528;ant&#x5DE5;&#x5177;&#x751F;&#x6210;build-xml" class="headerlink" title="&#x4F7F;&#x7528;ant&#x5DE5;&#x5177;&#x751F;&#x6210;build.xml"></a>&#x4F7F;&#x7528;ant&#x5DE5;&#x5177;&#x751F;&#x6210;build.xml</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将这个AutoRunner-jar文件push到模拟器中"><span class="toc-text"><a href="#&#x5C06;&#x8FD9;&#x4E2A;AutoRunner-jar&#x6587;&#x4EF6;push&#x5230;&#x6A21;&#x62DF;&#x5668;&#x4E2D;" class="headerlink" title="&#x5C06;&#x8FD9;&#x4E2A;AutoRunner.jar&#x6587;&#x4EF6;push&#x5230;&#x6A21;&#x62DF;&#x5668;&#x4E2D;"></a>&#x5C06;&#x8FD9;&#x4E2A;AutoRunner.jar&#x6587;&#x4EF6;push&#x5230;&#x6A21;&#x62DF;&#x5668;&#x4E2D;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用adb-shell-uiautomator-runtest-AutoRunner-jar-–c-com-Runer-使Runer类运行"><span class="toc-text"><a href="#&#x4F7F;&#x7528;adb-shell-uiautomator-runtest-AutoRunner-jar-&#x2013;c-com-Runer-&#x4F7F;Runer&#x7C7B;&#x8FD0;&#x884C;" class="headerlink" title="&#x4F7F;&#x7528;adb shell uiautomator runtest AutoRunner.jar &#x2013;c com.Runer &#x4F7F;Runer&#x7C7B;&#x8FD0;&#x884C;"></a>&#x4F7F;&#x7528;adb shell uiautomator runtest AutoRunner.jar &#x2013;c com.Runer &#x4F7F;Runer&#x7C7B;&#x8FD0;&#x884C;</span></a></li></ol></div>
 </div>
 
@@ -376,7 +376,7 @@ public class Runer extends UiAutomatorTestCase {
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -398,7 +398,7 @@ public class Runer extends UiAutomatorTestCase {
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -475,7 +475,7 @@ public class Runer extends UiAutomatorTestCase {
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

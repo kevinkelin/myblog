@@ -127,6 +127,79 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1320.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1320.html" itemprop="url">Android stadio上使用robotium初体验</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-03-05T22:57:37+08:00">2015-03-05</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>在Android Stadio(as)上创建一个app的时候默认会自动创建相应的test类，可以直接在里面写单元测试用例</p>
+<p><a href="/image/2015/03/image.png"><img src="/image/2015/03/image_thumb.png" alt="image" title="image"></a> </p>
+<p>一、在项目(module)中导入robotium的jar包，右键app-&gt;new-&gt;directory,输入libs</p>
+<p>然后将robotium-solo-5.3.1.jar复制进去，然后右键robotium-solo-5.3.1.jar选择add as library,之后就可以写测试用例了</p>
+<p>如果还有问题，看一下项目的build gradle</p>
+<pre><code>dependencies {   
+ compile fileTree(include: [&#39;*.jar&#39;], dir: &#39;libs&#39;)    
+ compile &#39;com.android.support:appcompat-v7:21.0.3&#39;    
+ compile files(&#39;libs/robotium-solo-5.3.1.jar&#39;)    
+}
+</code></pre>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/1320.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/android/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> android</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1314.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -172,7 +245,7 @@
 <p>where 1 是一个永真，这样它会把admin表中的所有数据返回</p>
 <p>写一个testsql.php文件来尝试使用sql注入的方式登录这个系统
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1314.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1314.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -250,7 +323,7 @@
 &lt;/resources&gt;
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1310.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1310.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -315,7 +388,7 @@
 <p>Android系统不会给应用程序的多个元素组件建立多个线程来执行，一个视图(activity)中的多个view组件运行在同一个UI线程当中，因此，多个view组件的监听器的执行可能会相互影响。</p>
 <p>如有以下两个button，其中一个在会在主view中进行移动动画，另外一个button在点击以后将线程sleep 5秒<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1308.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1308.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -385,7 +458,7 @@ public void test(View view){
 </code></pre>
 <p>这里的view就是要使用的控件，如果是绑定的是个button，那么view就是这个button<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1303.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1303.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -454,7 +527,7 @@ public void test(View view){
 </blockquote>
 <p>如果没有校验工具，我写了一个python脚本来校验 链接：<a href="http://pan.baidu.com/s/1i3j93sp" target="_blank" rel="noopener">http://pan.baidu.com/s/1i3j93sp</a> 密码：h6gz<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1298.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1298.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -514,7 +587,7 @@ public void test(View view){
 <li>3，appium可以测试ios，android应用（当然了，还有firefox os）；</li>
 <li><p>4，appium是跨平台的，可以用在osx，windows以及linux桌面系统上；<br>appium的哲学
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1266.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1266.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -579,7 +652,7 @@ public void test(View view){
 <h1 id="使用ADT创建一个java的项目"><a href="#使用ADT创建一个java的项目" class="headerlink" title="使用ADT创建一个java的项目"></a>使用ADT创建一个java的项目</h1><pre><code>在创建项目的时候要加上JUnit与你使用的Android platforms中对应的android.jar与uiautomator.jar
 </code></pre><p><a href="/image/2014/12/image16.png"><img src="/image/2014/12/image16.png" alt="image" title="image"></a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1264.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1264.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -679,7 +752,7 @@ cout&lt;&lt;szComputerName&lt;&lt;endl;
 cout&lt;&lt;szUserName&lt;&lt;endl;
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1220.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1220.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -743,85 +816,7 @@ return;
 <p>在多字节字符集中，每个汉字占两个字节，英文字母占一个字节，sizeof(p) = 7 _tcslen(p)=6(字符串长度等于6，I1 T1 学2 吧2)</p>
 <p>在宽字节（unicode）字符集中，所有有字符都是占两个字节 sizeof(p) = 10 _tcslen(p)=4(I1 T1 学1 吧1)<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/1216.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1212.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1212.html" itemprop="url">c++语言基础(hello world,数据类型,构造方法,指针的常见错误,常量指针,指针与引用)</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:13:08+08:00">2014-12-06</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <pre><code class="cpp">一、hello world
-#include&lt;iostream&gt;  这里可以用#include&lt;iostream.h&gt; 加载一个非标准的库，由于.h还没有名字空间的概念，所以之后也就没有使用std的操作
-using namespace std; 声明定义使用std 名字空间
-namespace a
-{
-     int b = 5;
-}
-namespace c{
-     int b = 8;
-}
-int main(){
-     std::cout&lt;&lt;&quot;我喜欢C++n&quot;;
-     std::cout&lt;&lt;&quot;五年一班数学成绩n&quot;;
-     std::cout&lt;&lt;&quot;第一名许凡的成绩t&quot;&lt;&lt;100;
-     std::cout&lt;&lt;std::endl;
-     std::cout&lt;&lt;&quot;第二名许凡的成绩t&quot;&lt;&lt;90+8;
-     std::cout&lt;&lt;std::endl;
-     std::cout&lt;&lt;&quot;第三名许凡的成绩t&quot;&lt;&lt;(float)5/8;
-     std::cout&lt;&lt;std::endl;
-
-     cout&lt;&lt;&quot;我是没有使用std的&quot;&lt;&lt;endl;
-     int b = 10;
-
-     cout&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;a::b&lt;&lt;&quot; &quot;&lt;&lt;c::b&lt;&lt;endl;
-
-     return 0;
-}
-</code></pre>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1212.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/1216.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -846,7 +841,7 @@ int main(){
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -877,7 +872,7 @@ int main(){
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -899,7 +894,7 @@ int main(){
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -976,7 +971,7 @@ int main(){
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

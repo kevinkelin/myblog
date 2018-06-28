@@ -127,6 +127,94 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/817.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/817.html" itemprop="url">通过一个python小脚本来下载最新的360杀毒安装程序</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-06-03T19:21:12+08:00">2013-06-03</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>小脚本很简单，主要是练习一下正则匹配，与简单的urllib库的应用</p>
+<pre><code class="python">#coding: utf8
+import urllib,re
+import os
+
+def getLastinstall():
+
+    page = urllib.urlopen(r&#39;http://sd.360.cn/download_center.html&#39;)
+    html = page.read()
+    page.close()
+    rematch = r&#39;http://down.360.cn/360sd/360sd_se_(.*?)exe&#39;
+    replusmatch = r&#39;http://down.360.cn/360sd/360sd_plus_(.*?)exe&#39;
+    stdname = &#39;360sd_&#39;+(str(re.compile(rematch).findall(html)[0]))+&#39;exe&#39;
+    downurlstd = r&#39;http://down.360.cn/360sd/360sd_&#39;+(str(re.compile(rematch).findall(html)[0]))+&#39;exe&#39;
+    powname = &#39;360sd_plus_&#39;+(str(re.compile(replusmatch).findall(html)[0]))+&#39;exe&#39;
+    downurlpow = r&#39;http://down.360.cn/360sd/360sd_plus_&#39;+(str(re.compile(replusmatch).findall(html)[0]))+&#39;exe&#39;
+    localpath = os.getcwd()+r&#39;/installpack&#39;
+    if not (os.path.isfile(stdname) and os.path.isfile(powname)):
+        if not os.path.isdir(&#39;installpack&#39;):
+            os.makedirs(&#39;installpack&#39;)
+        urllib.urlretrieve(downurlstd,localpath+&#39;/&#39;+stdname)
+        urllib.urlretrieve(downurlpow,localpath+&#39;/&#39;+powname)
+    else:
+        print &#39;目录中已经是线上最新版杀毒安装程序&#39;
+
+if __name__ ==&#39;__main__&#39;:
+    getLastinstall()
+</code></pre>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/813.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -445,7 +533,7 @@ if __name__ ==&#39;__main__&#39;:
 <p>phonePattern = re.compile(r’^(d{3})-(d{3})-(d{4})$’) (1)<br>phonePattern.search(‘800-555-1212’).groups() (2)</p>
 </blockquote>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/779.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/779.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -512,7 +600,7 @@ if __name__ ==&#39;__main__&#39;:
 720
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/775.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/775.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -577,7 +665,7 @@ if __name__ ==&#39;__main__&#39;:
 <p>怎知每天这时都会有很多老年人来凑热闹，我有时真是由衷的佩服他们，满头白发，却还做着有些年轻人都不想做但不得不做的事情，挤来挤去的，也有不开眼的在座位上的乘客，依然玩着自己的手机或者补着晚上还没有做完的梦，于是老年人在还可以移动的情况下会继续寻找属于自己的“专座”。</p>
 <p>而今天我放下了手机，不再看那些用数据堆起来的专题。只因两位特别的老人。<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/760.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/760.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -643,7 +731,7 @@ f = open(&quot;test.txt&quot;,&quot;w&quot;)
 print(char,file=f)
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/749.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/749.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -709,7 +797,7 @@ print(char,file=f)
 <p>实现 <a href="http://kevinkelin.sinaapp.com/fileupload.php" target="_blank" rel="noopener">http://kevinkelin.sinaapp.com/fileupload.php</a></p>
 <h1 id="首先在SAE上建立一个storage-的domain"><a href="#首先在SAE上建立一个storage-的domain" class="headerlink" title="首先在SAE上建立一个storage 的domain"></a>首先在SAE上建立一个storage 的domain</h1><p>首先在SAE上建立一个storage 的domain,(其实再之前你需要有一个应用，这里不写了)<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/460.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/460.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -762,7 +850,7 @@ print(char,file=f)
 <p><img src="http://ww1.sinaimg.cn/large/795ab47fjw1dzlljowwkkj.jpg" alt="" title="reload"></p>
 <p>到你的wordpress目录 wp-includes/js/tinymce取出tiny_mce.js文件，然后将其放到国内一个访问快的服务器，别说你没有啊，实在没有的话用新浪的SAE。然后找到打开wp-includes/class-wp-editor.php 这个文件，找到大概540行左右<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/444.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/444.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -989,62 +1077,6 @@ print foo.__name__
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/413.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/413.html" itemprop="url">北京工业大学内两个网卡分别访问内网与外网的方法</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2012-11-30T21:50:34+08:00">2012-11-30</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/计算机相关/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>相信很多在北京工业大学的童鞋都知道内网有很多资源，但是由于学校内的网络是按流量收费的，所以对于外网拥有的更多好资源有时只能另想办法，于是很多宿舍开始办理201宽带，但是最快的网速也不及内网10M/s下载爽，于是我在网上找了一些方法，结合北工大的网络环境，写了一个批处理文件来解决同时访问内网与外网的方法</p>
-<p>1.网络现状：有线接内网，无线接ADSL宽带。</p>
-<p>2.首先查看自己内网与ADSL的IP与网关</p>
-<p>内网  IP  172.27.28.96 网关 172.27.28.254</p>
-<p>ADSL IP  192.168.1.105 网关 192.168.1.1</p>
-<p>3. 再建一个txt文档，输入以下信息，重新保存为.bat文件，
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/413.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/7/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fas fa-angle-right"></i></a>
@@ -1061,7 +1093,7 @@ print foo.__name__
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -1092,7 +1124,7 @@ print foo.__name__
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -1114,7 +1146,7 @@ print foo.__name__
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -1191,7 +1223,7 @@ print foo.__name__
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

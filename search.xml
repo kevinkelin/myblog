@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>python中的list排序问题以及sort,sorted的使用</title>
+      <link href="/article/python-list-sort.html"/>
+      <url>/article/python-list-sort.html</url>
+      <content type="html"><![CDATA[<p>列表list排序是一种非常常见的操作，里面有很多的方法也有很多的坑，这里简单的记录一下。</p><a id="more"></a><ol><li>sorted 方法</li></ol><pre><code class="python">&gt;&gt;&gt; l = [&#39;1&#39;,&#39;2&#39;,&#39;A&#39;,&#39;z&#39;,&#39;a&#39;,1,2]&gt;&gt;&gt; sorted(l)[1, 2, &#39;1&#39;, &#39;2&#39;, &#39;A&#39;, &#39;a&#39;, &#39;z&#39;]&gt;&gt;&gt; l[&#39;1&#39;, &#39;2&#39;, &#39;A&#39;, &#39;z&#39;, &#39;a&#39;, 1, 2]&gt;&gt;&gt; l2 = sorted(l)&gt;&gt;&gt; l2[1, 2, &#39;1&#39;, &#39;2&#39;, &#39;A&#39;, &#39;a&#39;, &#39;z&#39;]&gt;&gt;&gt; id(l2)38967136&gt;&gt;&gt; id(l)38985520</code></pre><p>sorted 方法传入一个列表，返回一个新的列表，并不影响原来列表的顺序，从上面的结果来看，数字排在了字符串之前，其实它是按照字符的ASCII的顺序排列的，那如果列表里是字符串呢？ </p><pre><code class="python">&gt;&gt;&gt; l = [&quot;yang&quot;,&quot;yan&quot;,&quot;xing&quot;,&quot;is&quot;,&quot;a&quot;,&quot;boy&quot;]&gt;&gt;&gt; sorted(l)[&#39;a&#39;, &#39;boy&#39;, &#39;is&#39;, &#39;xing&#39;, &#39;yan&#39;, &#39;yang&#39;]</code></pre><p>明显它是按照第一个字符来排，第一个字符相同再按第二个排。</p><p>sorted() 方法还有另外一个参数，reverse，当它为True的时候，将会倒序排列。</p><pre><code>&gt;&gt;&gt; sorted(l,reverse=True)[&#39;yang&#39;, &#39;yan&#39;, &#39;xing&#39;, &#39;is&#39;, &#39;boy&#39;, &#39;a&#39;]</code></pre><p>可否直接改变原list的结构，而不是生成一个新的list呢？ 当然可以</p><ol><li>sort方法<pre><code>&gt;&gt;&gt; l[&#39;yang&#39;, &#39;yan&#39;, &#39;xing&#39;, &#39;is&#39;, &#39;a&#39;, &#39;boy&#39;]&gt;&gt;&gt; l.sort()&gt;&gt;&gt; l[&#39;a&#39;, &#39;boy&#39;, &#39;is&#39;, &#39;xing&#39;, &#39;yan&#39;, &#39;yang&#39;]&gt;&gt;&gt;</code></pre>此时原列表l的结构已经变了，且该函数没有返回值，所以如果写成<code>newL = l.sorr()</code> 并不能得到一个新的列表，newL为空，所以不要用错了</li></ol><p>这种排序也太简单了，我可否按照我自已的方法来排序呢？当然可以</p><ol><li>自定义排序<br>需要提供一个排序的方法，该方法要有三种返回值，假如有两个值a1和a2，通过某种计算，如果返回大于0(True)的值，则a1排在后面，如果小于0(False)，a1排在前面，如果等于0，则a1和a2顺序不变，看代码  </li></ol><pre><code class="python">#coding:gbka = [    {&#39;name&#39;:&#39;jk&#39;, &#39;score&#39;:100, &#39;first&#39;:50, &#39;second&#39;:50, &#39;third&#39;:0},     {&#39;name&#39;:&#39;zz&#39;, &#39;score&#39;:90, &#39;first&#39;:50, &#39;second&#39;:30, &#39;third&#39;: 10},     {&#39;name&#39;: &#39;yyx&#39;, &#39;score&#39;:90, &#39;first&#39;:40, &#39;second&#39;:30, &#39;third&#39;:20},    {&#39;name&#39;: &#39;zs&#39;, &#39;score&#39;:90, &#39;first&#39;:40, &#39;second&#39;:30, &#39;third&#39;:20},]def cmp(a1, a2):    if a1[&#39;score&#39;] != a2[&#39;score&#39;]:        return a1[&#39;score&#39;] - a2[&#39;score&#39;]    elif a1[&#39;first&#39;] != a2[&#39;first&#39;]:        return a1[&#39;first&#39;] - a2[&#39;first&#39;]    elif a1[&#39;second&#39;] != a2[&#39;second&#39;]:        return a1[&#39;second&#39;] - a2[&#39;second&#39;]    else:        return a1[&#39;third&#39;] - a2[&#39;third&#39;]a.sort(cmp)for i in a:    print i</code></pre><p>这里引出另外一个问题，字典是无序的，想要排字典，其实是排一组字典<br>这里希望将上述的list排序，按照每条记录中的’score’排序。如果’score’字段的值相等，则按照’first’的值排序。如果’first’依旧相等，则按照’second’排序。如果’second’相等，则按照’third’字段的值来排序。<br>该排序的结果为</p><blockquote><p>{‘second’: 50, ‘score’: 100, ‘name’: ‘jk’, ‘third’: 0, ‘first’: 50}<br>{‘second’: 30, ‘score’: 90, ‘name’: ‘zz’, ‘third’: 10, ‘first’: 50}<br>{‘second’: 30, ‘score’: 90, ‘name’: ‘yyx’, ‘third’: 20, ‘first’: 40}<br>{‘second’: 30, ‘score’: 90, ‘name’: ‘zs’, ‘third’: 20, ‘first’: 40}</p></blockquote><p>还可以用sorted方法</p><pre><code class="python">&gt;&gt;&gt; student_tuples = [(&#39;john&#39;, &#39;A&#39;, 15),(&#39;jane&#39;, &#39;B&#39;, 12),(&#39;dave&#39;, &#39;B&#39;, 10)]# sort by age&gt;&gt;&gt; sorted(student_tuples, key=lambda student: student[2])[(&#39;dave&#39;, &#39;B&#39;, 10), (&#39;jane&#39;, &#39;B&#39;, 12), (&#39;john&#39;, &#39;A&#39;, 15)]</code></pre><p>参考文章<br><a href="https://blog.csdn.net/nisxiya/article/details/49305857" target="_blank" rel="noopener">python list 自定义排序</a><br><a href="https://www.jianshu.com/p/7be04a3f30cd" target="_blank" rel="noopener">Python之排序函数sort() 和 sorted()</a><br>[Python的排序：关于sort()与sorted()]<a href="https://blog.csdn.net/qq_15714857/article/details/50545265" target="_blank" rel="noopener">https://blog.csdn.net/qq_15714857/article/details/50545265</a></p>]]></content>
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>python中的日志按天保存单独的文件</title>
       <link href="/article/python-logging-day-file.html"/>
       <url>/article/python-logging-day-file.html</url>

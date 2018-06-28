@@ -299,18 +299,18 @@ class WeiboController extends Controller {
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
-      <span>WechatPay</span>
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
-      <span>AliPay</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
     
     
@@ -350,7 +350,7 @@ class WeiboController extends Controller {
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -384,7 +384,7 @@ class WeiboController extends Controller {
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ThinkPHP和项目与模块的初始化"><span class="toc-text"><a href="#ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;" class="headerlink" title="ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;"></a>ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#整合新浪微博的SDK"><span class="toc-text"><a href="#&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK" class="headerlink" title="&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK"></a>&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在WeiboController-class-php中写逻辑"><span class="toc-text"><a href="#&#x5728;WeiboController-class-php&#x4E2D;&#x5199;&#x903B;&#x8F91;" class="headerlink" title="&#x5728;WeiboController.class.php&#x4E2D;&#x5199;&#x903B;&#x8F91;"></a>&#x5728;WeiboController.class.php&#x4E2D;&#x5199;&#x903B;&#x8F91;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#获得token"><span class="toc-text"><a href="#&#x83B7;&#x5F97;token" class="headerlink" title="&#x83B7;&#x5F97;token"></a>&#x83B7;&#x5F97;token</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用微博的接口"><span class="toc-text"><a href="#&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;" class="headerlink" title="&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;"></a>&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;</span></a></li></ol></div>
 </div>
 
@@ -395,7 +395,7 @@ class WeiboController extends Controller {
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -417,7 +417,7 @@ class WeiboController extends Controller {
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -494,7 +494,7 @@ class WeiboController extends Controller {
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

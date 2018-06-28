@@ -294,18 +294,18 @@ button4.setOnLongClickListener(new OnLongClickListener() {
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="WechatPay"/>
-      <span>WechatPay</span>
+      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="AliPay"/>
-      <span>AliPay</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
     
     
@@ -345,7 +345,7 @@ button4.setOnLongClickListener(new OnLongClickListener() {
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -379,7 +379,7 @@ button4.setOnLongClickListener(new OnLongClickListener() {
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#通过绑定onClick属性"><span class="toc-text"><a href="#&#x901A;&#x8FC7;&#x7ED1;&#x5B9A;onClick&#x5C5E;&#x6027;" class="headerlink" title="&#x901A;&#x8FC7;&#x7ED1;&#x5B9A;onClick&#x5C5E;&#x6027;"></a>&#x901A;&#x8FC7;&#x7ED1;&#x5B9A;onClick&#x5C5E;&#x6027;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通过setOnClickListener"><span class="toc-text"><a href="#&#x901A;&#x8FC7;setOnClickListener" class="headerlink" title="&#x901A;&#x8FC7;setOnClickListener"></a>&#x901A;&#x8FC7;setOnClickListener</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将2中的onClickListener方法分离出来"><span class="toc-text"><a href="#&#x5C06;2&#x4E2D;&#x7684;onClickListener&#x65B9;&#x6CD5;&#x5206;&#x79BB;&#x51FA;&#x6765;" class="headerlink" title="&#x5C06;2&#x4E2D;&#x7684;onClickListener&#x65B9;&#x6CD5;&#x5206;&#x79BB;&#x51FA;&#x6765;"></a>&#x5C06;2&#x4E2D;&#x7684;onClickListener&#x65B9;&#x6CD5;&#x5206;&#x79BB;&#x51FA;&#x6765;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#长按与短按"><span class="toc-text"><a href="#&#x957F;&#x6309;&#x4E0E;&#x77ED;&#x6309;" class="headerlink" title="&#x957F;&#x6309;&#x4E0E;&#x77ED;&#x6309;"></a>&#x957F;&#x6309;&#x4E0E;&#x77ED;&#x6309;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#setOnTouchListener事件，滑动事件"><span class="toc-text"><a href="#setOnTouchListener&#x4E8B;&#x4EF6;&#xFF0C;&#x6ED1;&#x52A8;&#x4E8B;&#x4EF6;" class="headerlink" title="setOnTouchListener&#x4E8B;&#x4EF6;&#xFF0C;&#x6ED1;&#x52A8;&#x4E8B;&#x4EF6;"></a>setOnTouchListener&#x4E8B;&#x4EF6;&#xFF0C;&#x6ED1;&#x52A8;&#x4E8B;&#x4EF6;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#setOnKeyListener-监听键盘按键操作"><span class="toc-text"><a href="#setOnKeyListener-&#x76D1;&#x542C;&#x952E;&#x76D8;&#x6309;&#x952E;&#x64CD;&#x4F5C;" class="headerlink" title="setOnKeyListener &#x76D1;&#x542C;&#x952E;&#x76D8;&#x6309;&#x952E;&#x64CD;&#x4F5C;"></a>setOnKeyListener &#x76D1;&#x542C;&#x952E;&#x76D8;&#x6309;&#x952E;&#x64CD;&#x4F5C;</span></a></li></ol></div>
 </div>
 
@@ -390,7 +390,7 @@ button4.setOnLongClickListener(new OnLongClickListener() {
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -412,7 +412,7 @@ button4.setOnLongClickListener(new OnLongClickListener() {
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -489,7 +489,7 @@ button4.setOnLongClickListener(new OnLongClickListener() {
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

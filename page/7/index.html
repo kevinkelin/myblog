@@ -127,6 +127,76 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/920.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/920.html" itemprop="url">使用python进行windows自动化测试（1）</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-05T01:41:33+08:00">2013-10-05</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>最近开始学习整理python在windows自动化测试中的使用，觉得挺有意思的</p>
+<p>主要思路，在windows下，主要通过启进程，然后查找进程的句柄，然后再操作这个句柄，包括点击，填写文字，关闭，获取文字等操作</p>
+<p>下面以一个简单的校验文件md5值的操作来介绍一个python的应用，当然python中有校验md5的函数，不用非要使用工具来校验，这里只是练习使用python来自动化操作</p>
+<p>所用的工具有SpyLite，用于查看窗口ID，句柄等信息<br>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/920.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
+        
+        
+        
+        <a class="post-tag button" href="/tags/自动化测试/" style="background: #a3bb54" rel="tag"><i class="fas fa-tags"></i> 自动化测试</a>
+        
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/897.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -173,7 +243,7 @@ print &#39;Content-Type: text/plainn&#39;
 <p>以二进制方式上传到自已的空间上，访问 <a href="http://static.yangyanxing.com/test.py" target="_blank" rel="noopener">http://static.yangyanxing.com/test.py</a></p>
 <p>居然一次性成功了，完美地显示hello world<br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/897.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/897.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -235,7 +305,7 @@ req = urllib2.Request(url)
 html = urllib2.urlopen(req).read()
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/911.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/911.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -298,7 +368,7 @@ html = urllib2.urlopen(req).read()
       
       <p>最近想要搭建个小黄鸡的微信应用，但是一路来发现，现在很多的方法都已经不能用了，我在本地试过，也试用过requests获取session的方法也不行，但是这经过这次折腾，倒是对cookie有了更多的了解，以下以python登录人人网的例子来介绍cookie的使用。<br>cookie的定义可以参考百度百科，<a href="http://baike.baidu.com/subview/835/5062332.htm" target="_blank" rel="noopener">http://baike.baidu.com/subview/835/5062332.htm</a> 但是里面说的乱七八糟的，而且好多重复，使用firefox或者fiddler等工具来抓取cookie<br>在firefox下使用httpFox插件来查到人人网的登录时需要POST的地址是<a href="http://www.renren.com/ajaxLogin" title="http://www.renren.com/ajaxLogin" target="_blank" rel="noopener">http://www.renren.com/ajaxLogin</a>&#160;<br><a href="/image/2013/09/getUrl.png"><img src="/image/2013/09/getUrl_thumb.png" alt="getUrl" title="getUrl"></a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/908.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/908.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -363,7 +433,7 @@ html = urllib2.urlopen(req).read()
 <p>参考文章</p>
 <p><a href="http://video.sina.com.cn/v/b/113293169-1631501663.html" target="_blank" rel="noopener">http://video.sina.com.cn/v/b/113293169-1631501663.html</a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/877.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/877.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -427,7 +497,7 @@ html = urllib2.urlopen(req).read()
       <p>相对于python解析XML来说，我还是比较喜欢json的格式返回，现在一般的api返回都会有json与XML格式的选择，json的解析起来个人觉得相对简单些</p>
 <p>先看一个简单的豆瓣的图书查询的api返回
       <div class="post-readmore">
-        <a class="readmore button" href="/article/874.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/874.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -556,7 +626,7 @@ html = urllib2.urlopen(req).read()
 </code></pre>
 <p>先简单的看一下这个XML的结构
       <div class="post-readmore">
-        <a class="readmore button" href="/article/872.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/872.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -626,7 +696,7 @@ html = urllib2.urlopen(req).read()
 <p>你需要先在微信的公众平台与新浪SAE平台上各种注册，微信平台注册的时候需要你拍张手持身份证的照片，还有几天的审核期</p>
 <p>微信公众平台：<a href="http://mp.weixin.qq.com/" title="微信公众平台" target="_blank" rel="noopener">http://mp.weixin.qq.com</a><br>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/871.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/871.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
@@ -806,99 +876,11 @@ if __name__ == &#39;__main__&#39;:
     cdGrep(keword,pw)
 </code></pre>
       <div class="post-readmore">
-        <a class="readmore button" href="/article/821.html#more">Read More <i class="fas fa-angle-double-right"></i></a>
+        <a class="readmore button" href="/article/821.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>
     <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/817.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/817.html" itemprop="url">通过一个python小脚本来下载最新的360杀毒安装程序</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-06-03T19:21:12+08:00">2013-06-03</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>小脚本很简单，主要是练习一下正则匹配，与简单的urllib库的应用</p>
-<pre><code class="python">#coding: utf8
-import urllib,re
-import os
-
-def getLastinstall():
-
-    page = urllib.urlopen(r&#39;http://sd.360.cn/download_center.html&#39;)
-    html = page.read()
-    page.close()
-    rematch = r&#39;http://down.360.cn/360sd/360sd_se_(.*?)exe&#39;
-    replusmatch = r&#39;http://down.360.cn/360sd/360sd_plus_(.*?)exe&#39;
-    stdname = &#39;360sd_&#39;+(str(re.compile(rematch).findall(html)[0]))+&#39;exe&#39;
-    downurlstd = r&#39;http://down.360.cn/360sd/360sd_&#39;+(str(re.compile(rematch).findall(html)[0]))+&#39;exe&#39;
-    powname = &#39;360sd_plus_&#39;+(str(re.compile(replusmatch).findall(html)[0]))+&#39;exe&#39;
-    downurlpow = r&#39;http://down.360.cn/360sd/360sd_plus_&#39;+(str(re.compile(replusmatch).findall(html)[0]))+&#39;exe&#39;
-    localpath = os.getcwd()+r&#39;/installpack&#39;
-    if not (os.path.isfile(stdname) and os.path.isfile(powname)):
-        if not os.path.isdir(&#39;installpack&#39;):
-            os.makedirs(&#39;installpack&#39;)
-        urllib.urlretrieve(downurlstd,localpath+&#39;/&#39;+stdname)
-        urllib.urlretrieve(downurlpow,localpath+&#39;/&#39;+powname)
-    else:
-        print &#39;目录中已经是线上最新版杀毒安装程序&#39;
-
-if __name__ ==&#39;__main__&#39;:
-    getLastinstall()
-</code></pre>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
       
     </footer>
   </article>
@@ -919,7 +901,7 @@ if __name__ ==&#39;__main__&#39;:
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -950,7 +932,7 @@ if __name__ ==&#39;__main__&#39;:
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> Social Links</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -972,7 +954,7 @@ if __name__ ==&#39;__main__&#39;:
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> Blogroll</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -1049,7 +1031,7 @@ if __name__ ==&#39;__main__&#39;:
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
