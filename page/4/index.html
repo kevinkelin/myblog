@@ -127,6 +127,59 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1327.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/1327.html" itemprop="url">成就感，一种很久违了的感觉</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2015-03-11T23:48:27+08:00">2015-03-11</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/生活记录/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>以前看到的文字，看到之时已泪流满面</p>
+<blockquote>
+<p>我的孩子,我希望你好好学习,不是因为我要你跟别人比,而是因为我希望你将来会拥有选择的权利,选择有意义你又喜爱的工作,而不是被迫谋生。<br>当你的工作在你心中有意义,你就有成就感，成就感会给你带去快乐。无论工作贵贱，只要你是快乐的，妈妈就支持你，因为腰缠万贯也换不得一个真心的幸福。</p>
+</blockquote>
+<p>每天早起晚归的做着一份看不清未来但又不得不去做的工作，因为要谋生，本来应该朝气蓬勃的年纪却变得暮气沉沉，早起挤地铁，挤电梯，下班还要和中介斗智斗勇，<br>我现在之所以没法选择我想要过的生活也是因为早年没有认真的学习，成就感，一种很久违了的感觉。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1320.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -753,70 +806,6 @@ cout&lt;&lt;szUserName&lt;&lt;endl;
 </code></pre>
       <div class="post-readmore">
         <a class="readmore button" href="/article/1220.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/1216.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/1216.html" itemprop="url">C++中windows编程基础</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2014-12-06T22:20:08+08:00">2014-12-06</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <pre><code class="cpp">一、宽字符与多字节字符
-#include &quot;tchar.h&quot;
-void main(){
-TCHAR p[] = _T(&quot;IT学吧&quot;);
-int l1 = sizeof(p);//I1 T1 学2 吧2 1
-int l2 = _tcslen(p);
-int l4 = wcslen(p);
-//int l3 = strlen(p);
-return;
-
-}
-</code></pre>
-<p>在多字节字符集中，每个汉字占两个字节，英文字母占一个字节，sizeof(p) = 7 _tcslen(p)=6(字符串长度等于6，I1 T1 学2 吧2)</p>
-<p>在宽字节（unicode）字符集中，所有有字符都是占两个字节 sizeof(p) = 10 _tcslen(p)=4(I1 T1 学1 吧1)<br>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/1216.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
       </div>
       
     </main>

@@ -127,6 +127,63 @@
   
   <article class="index-post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/926.html">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="杨彦星">
+        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
+        <meta itemprop="image" content="/images/1.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="杨彦星">
+      </span>
+    </div>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/article/926.html" itemprop="url">在中文windows下使用pywinauto进行窗口操作（一）</a>
+      </h2>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-10-07T03:42:56+08:00">2013-10-07</time>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider"> | </span>
+        
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          
+          
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+          
+          
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      
+      <p>这两天开始接触pywinauto，听说百度的自动化QA也用这个模块，于是来了兴趣，但网上的教程很少，而且基本上都是拿官方的notepad来说，首先中文菜单的支持是问题，其次各种操作也没有写清楚，阅读官方的文档，发现这个东西使用起来还真是非常方便，下面我也以notepad为例来说明一下它的简单操作。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="pywinauto"><a href="#pywinauto" class="headerlink" title="pywinauto;"></a>pywinauto;</h2><p> <a href="https://sourceforge.net/project/showfiles.php?group_id=157379" target="_blank" rel="noopener">https://sourceforge.net/project/showfiles.php?group_id=157379</a></p>
+<h2 id="Sendkeys"><a href="#Sendkeys" class="headerlink" title="Sendkeys"></a>Sendkeys</h2><p><a href="http://www.rutherfurd.net/python/sendkeys/index.html" target="_blank" rel="noopener">http://www.rutherfurd.net/python/sendkeys/index.html</a></p>
+<h2 id="ctypes-如果你是python2-3或者2-4"><a href="#ctypes-如果你是python2-3或者2-4" class="headerlink" title="ctypes (如果你是python2.3或者2.4)"></a>ctypes (如果你是python2.3或者2.4)</h2><p>检测你是否安装正确</p>
+<blockquote>
+<p>from pywinauto import application<br>app = application.Application.start(“notepad.exe”)<br>app.notepad.TypeKeys(“%FX”)</p>
+</blockquote>
+      <div class="post-readmore">
+        <a class="readmore button" href="/article/926.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
+      </div>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/920.html">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="杨彦星">
@@ -803,84 +860,6 @@ if __name__ ==&quot;__main__&quot;:
         
         
       </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/821.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="杨彦星">
-        <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-        <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/article/821.html" itemprop="url">可爱的python中的一个与递归相关的小问题</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2013-06-23T01:41:21+08:00">2013-06-23</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <p>可爱的python一书中有一个练习题，是在一个目录中查找特定扩展名的文件，并且读取里面的内容，然后用户输入一个关键词，在这些文件中进行搜索，如果找到后就把这一行内容打印出来，他提出的问题是如果里面还有目录，目录里面还有更深的目录，解决这个问题，我想到的只能是递归。。。</p>
-<pre><code class="python">#coding:utf-8
-import os,sys
-
-def cdGrep(keyword,filepath):
-    filelist = os.listdir(filepath)
-
-    for cdc in filelist:
-        if os.path.isdir(cdc):
-            filepath2 = os.path.join(filepath,cdc)
-            cdGrep(keyword,filepath2)
-
-        elif &#39;.txt&#39; in cdc:
-#            print filepath+cdc
-            f = open(filepath+&#39;&#39;+ cdc)
-            for line in f.readlines():
-                linelower = line.lower()
-                if keyword in linelower:
-
-                    print &#39;您查找的关键词在%s中找到&#39;% (filepath+&#39;&#39;+cdc)
-                    print line
-                f.close()
-
-if __name__ == &#39;__main__&#39;:
-    keword = raw_input(&#39;请输入想要查询的关键字&#39;)
-    pw = os.getcwd()
-    cdGrep(keword,pw)
-</code></pre>
-      <div class="post-readmore">
-        <a class="readmore button" href="/article/821.html#more">阅读全文 <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      
-    </main>
-    <footer class="post-footer">
       
     </footer>
   </article>
