@@ -168,7 +168,7 @@
     <main class="post-body" itemprop="articleBody">
       <p>最近在玩PHP，在看了基本语法以后就开始看ThinkPHP了，几年以前接触过一些，但是基本上都忘的差不多了<br>现在再看的时候，发现版本更新了好多，添加了很多新的功能特性，使用时候也有很多不一样的，之前写了一篇边看边写的笔记，<a href="http://www.yangyanxing.com/article/thinkphp-study-note.html">ThinkPHP的学习笔记</a><br>今天结合<a href="http://document.thinkphp.cn/manual_3_2.html" target="_blank" rel="noopener">官方的文档</a>来整合一下新浪微博的SDK，在使用的过程中还是有一些问题需要注意的，我使用的是3.2.3版本<br><a id="more"></a></p>
 <h1 id="ThinkPHP和项目与模块的初始化"><a href="#ThinkPHP和项目与模块的初始化" class="headerlink" title="ThinkPHP和项目与模块的初始化"></a>ThinkPHP和项目与模块的初始化</h1><p>这个就不详细写了，学习笔记中有记录，也是比较基础的</p>
-<h1 id="整合新浪微博的SDK"><a href="#整合新浪微博的SDK" class="headerlink" title="整合新浪微博的SDK"></a>整合新浪微博的SDK</h1><p>下载SDK <a href="http://open.weibo.com/wiki/SDK#PHP_SDK" target="_blank" rel="noopener">新浪微博SDK</a><br>下载后将压缩包中的saetv2.ex.class.php取下来，重新命名，叫什么无所谓，只是为了去掉那个点，<br>我重新命名为saetv2.class.php, <code>.class.php</code> 是必须要保留的，我将其放到了ThinkPHP/Library/Org/Com/Sina/ 目录下，文档上说这个目录下的类库是可以自动加载的，但是文档上使用的是namespace的方式<br>我一开始也按照文档的介绍使用namespace方式，但是后来发现这种以名称空间的方式有很多限制，首先一个文件里只能有一个类且文件名还要和这个类名对应，微博SDK里有三个类，如果按照namespace的方法，我还得新建一个文件重新拷贝一下相应的类，很麻烦，后来我直接采用import这个类的方式，使用起来方便了很多。</p>
+<h1 id="整合新浪微博的SDK"><a href="#整合新浪微博的SDK" class="headerlink" title="整合新浪微博的SDK"></a>整合新浪微博的SDK</h1><p>下载SDK <a href="http://open.weibo.com/wiki/SDK#PHP_SDK" target="_blank" rel="noopener">新浪微博SDK</a><br>下载后将压缩包中的saetv2.ex.class.php取下来，重新命名，叫什么无所谓，只是为了去掉那个点，<br>我重新命名为saetv2.class.php, <code class="text">.class.php</code> 是必须要保留的，我将其放到了ThinkPHP/Library/Org/Com/Sina/ 目录下，文档上说这个目录下的类库是可以自动加载的，但是文档上使用的是namespace的方式<br>我一开始也按照文档的介绍使用namespace方式，但是后来发现这种以名称空间的方式有很多限制，首先一个文件里只能有一个类且文件名还要和这个类名对应，微博SDK里有三个类，如果按照namespace的方法，我还得新建一个文件重新拷贝一下相应的类，很麻烦，后来我直接采用import这个类的方式，使用起来方便了很多。</p>
 <h1 id="在WeiboController-class-php中写逻辑"><a href="#在WeiboController-class-php中写逻辑" class="headerlink" title="在WeiboController.class.php中写逻辑"></a>在WeiboController.class.php中写逻辑</h1><p>首先把新浪微博sdk引入进来，在use Think\Controller; 下面加入 引用</p>
 <blockquote>
 <p>import(‘Org\Com.Sina\saetv2’);</p>
@@ -178,7 +178,7 @@ namespace Home\Controller;
 use Think\Controller;
 import(&#39;Org\Com.Sina\saetv2&#39;);
 </code></pre>
-<p>这里的目录结构中的<code>com\sina</code> 要改成<code>Com.Sina</code><br>下面如果要使用saetv2中的类就可以直接使用 \类名调用，如使用SaeTOAuthV2类就可以使用<br><code>$c = new \SaeTClientV2()</code></p>
+<p>这里的目录结构中的<code class="text">com\sina</code> 要改成<code class="text">Com.Sina</code><br>下面如果要使用saetv2中的类就可以直接使用 \类名调用，如使用SaeTOAuthV2类就可以使用<br><code class="text">$c = new \SaeTClientV2()</code></p>
 <h1 id="获得token"><a href="#获得token" class="headerlink" title="获得token"></a>获得token</h1><p>其实里面的代码基本上就是sdk中的callback.php中的代码,这里又加上了ThinkPHP对于session与cookie的封装</p>
 <pre><code class="php">$o = new \SaeTOAuthV2( WB_AKEY , WB_SKEY );
 $code_url = $o-&gt;getAuthorizeURL( WB_CALLBACK_URL );
@@ -263,6 +263,13 @@ class WeiboController extends Controller {
 <p>点击后使用微博账号进行登录，成功后跳转回index.php/Weibo/index </p>
 <p><img src="/image/20160210232553.png" alt="dump_usre_info"></p>
 
+      <div class="article-end-text-wrap">
+          <div class="article-end-text">
+            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
+            <image src="/image/qrcode.jpg">
+          </div>
+      </div>
+      
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
@@ -299,7 +306,7 @@ class WeiboController extends Controller {
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">打賞</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -309,8 +316,8 @@ class WeiboController extends Controller {
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
+      <span>支付寶</span>
     </div>
     
     
@@ -384,7 +391,7 @@ class WeiboController extends Controller {
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <p><i class="fas fa-list-ol"></i> 文章目錄</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ThinkPHP和项目与模块的初始化"><span class="toc-text"><a href="#ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;" class="headerlink" title="ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;"></a>ThinkPHP&#x548C;&#x9879;&#x76EE;&#x4E0E;&#x6A21;&#x5757;&#x7684;&#x521D;&#x59CB;&#x5316;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#整合新浪微博的SDK"><span class="toc-text"><a href="#&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK" class="headerlink" title="&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK"></a>&#x6574;&#x5408;&#x65B0;&#x6D6A;&#x5FAE;&#x535A;&#x7684;SDK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在WeiboController-class-php中写逻辑"><span class="toc-text"><a href="#&#x5728;WeiboController-class-php&#x4E2D;&#x5199;&#x903B;&#x8F91;" class="headerlink" title="&#x5728;WeiboController.class.php&#x4E2D;&#x5199;&#x903B;&#x8F91;"></a>&#x5728;WeiboController.class.php&#x4E2D;&#x5199;&#x903B;&#x8F91;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#获得token"><span class="toc-text"><a href="#&#x83B7;&#x5F97;token" class="headerlink" title="&#x83B7;&#x5F97;token"></a>&#x83B7;&#x5F97;token</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用微博的接口"><span class="toc-text"><a href="#&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;" class="headerlink" title="&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;"></a>&#x8C03;&#x7528;&#x5FAE;&#x535A;&#x7684;&#x63A5;&#x53E3;</span></a></li></ol></div>
 </div>
 
@@ -395,7 +402,7 @@ class WeiboController extends Controller {
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> 社交鏈接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -417,7 +424,7 @@ class WeiboController extends Controller {
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> 友情鏈接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -494,7 +501,7 @@ class WeiboController extends Controller {
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

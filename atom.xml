@@ -406,7 +406,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;这两天在看原生的&lt;code&gt;uiautomator&lt;/code&gt;的测试，之前也有使用，但是只是把Android官方的例子简单的实现一样，并没有什么实际的测试意思，&lt;a href=&quot;http://www.yangyanxing.com/article/1264.html&quot;&gt;Android官方的uiautomator例子的实现&lt;/a&gt;,今天结合最近正在做的自动化项目，简单的使用uiautomator来实现了一下，只是做了一个小例子，但是基本上都如何编译jar与运行调通了，这里也简单的记录一下。&lt;br&gt;之前也有使用别人封装好的python做过，那个写起来也比较简单，&lt;a href=&quot;http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html&quot;&gt;使用uiautomator的python封装进行android的UI测试&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;这两天在看原生的&lt;code class=&quot;text&quot;&gt;uiautomator&lt;/code&gt;的测试，之前也有使用，但是只是把Android官方的例子简单的实现一样，并没有什么实际的测试意思，&lt;a href=&quot;http://www.yangyanxing.com/article/1264.html&quot;&gt;Android官方的uiautomator例子的实现&lt;/a&gt;,今天结合最近正在做的自动化项目，简单的使用uiautomator来实现了一下，只是做了一个小例子，但是基本上都如何编译jar与运行调通了，这里也简单的记录一下。&lt;br&gt;之前也有使用别人封装好的python做过，那个写起来也比较简单，&lt;a href=&quot;http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html&quot;&gt;使用uiautomator的python封装进行android的UI测试&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -483,7 +483,7 @@ require(&amp;quot;./ThinkPHP/ThinkPHP.php&amp;quot;);
 &lt;ol&gt;
 &lt;li&gt;要先定义APP_PATH,后再include thinkphp 主入口文件，要不然会在当前目录上建立目录，很乱&lt;/li&gt;
 &lt;li&gt;各种版本生成的目录有些不同，我现在用的是3.2.3 就没有lib目录，而是只有一个home目录,下面的Controller目录相当于之前版本的是lib目录，里面记录着控制器，是MVC中的C，同级目录还有Model和View目录，这样更明显&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;各个项目下的&lt;code&gt;Conf\config.php&lt;/code&gt; 里的内容只有自已的项目才能读取，其它项目读取不了，比如&lt;code&gt;admin&lt;/code&gt;读不了&lt;code&gt;study&lt;/code&gt;配置&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;各个项目下的&lt;code class=&quot;text&quot;&gt;Conf\config.php&lt;/code&gt; 里的内容只有自已的项目才能读取，其它项目读取不了，比如&lt;code class=&quot;text&quot;&gt;admin&lt;/code&gt;读不了&lt;code class=&quot;text&quot;&gt;study&lt;/code&gt;配置&lt;/p&gt;
     
     </summary>
     
@@ -762,7 +762,7 @@ return True
       &lt;p&gt;自已用php+mysql写了一个登录页面。其中包含多个sql注入漏洞，在mysql中创建一个表，其中有username password email一个列，添加三个数据&lt;/p&gt;
 &lt;p&gt;+————-+————-+—————–+&lt;br&gt;| username    | password    | email           |&lt;br&gt;+————-+————-+—————–+&lt;br&gt;| admin       | admin       | admin@admin.com |&lt;br&gt;| yangyanxing | yangyanxing | yyx@yyx.com     |&lt;br&gt;+————-+————-+—————–+&lt;/p&gt;
 &lt;p&gt;在phpmyadmin中使用一条sql命令&lt;/p&gt;
-&lt;p&gt;SELECT * FROM &lt;code&gt;admin&lt;/code&gt; WHERE 1 &lt;/p&gt;
+&lt;p&gt;SELECT * FROM &lt;code class=&quot;text&quot;&gt;admin&lt;/code&gt; WHERE 1 &lt;/p&gt;
 &lt;p&gt;where 1 是一个永真，这样它会把admin表中的所有数据返回&lt;/p&gt;
 &lt;p&gt;写一个testsql.php文件来尝试使用sql注入的方式登录这个系统
     

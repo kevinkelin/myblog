@@ -172,8 +172,8 @@
 <li>备了案的域名</li>
 <li>七牛账户，并且充了10块钱</li>
 </ol>
-<p>一、使用hexo生成静态html资源，这个不用多说，使用hexo的都知道<br>二、登录七牛账号，进入管理控制台，点击<code>镜像存储</code>，新建一个存储空间，访问控制一定要选择<code>公开空间</code><br>三、再点击<code>绑定域名</code>,将你网站的域名绑定到刚才创建的空间<br><img src="/image/2018/qiniu1.png" alt="绑定域名"><br>四、将静态网站资源上传到七牛，这里七牛会提供一些工具，windows下有可视化工具，linux与mac下有对应的命令行工具，选自已喜欢的，由于我现在是在windows下操作，所以我使用了可视化工具,下载<br><a href="https://developer.qiniu.com/kodo/tools/1666/qsunsync" target="_blank" rel="noopener">https://developer.qiniu.com/kodo/tools/1666/qsunsync</a><br>打开这个工具，先点击<code>账号设置</code>,输入你的AK与SK,这两个值可以到<code>个人中心</code>下的<code>密钥管理</code>中获取<br><img src="/image/2018/qiniu2.png" alt="设定AK与SK"><br>AK与SK设置好了以后就可以点击<code>新建同步任务</code><br><img src="/image/2018/qiniu3.png" alt="新建同步任务"><br>本地目录选择hexo生成的public目录，目标空间选择你刚才创建的空间<br>切换到高级设置，这里一定要设置一下，遇到空间中存在同名文件则强制覆盖，否则之后生成的html如果同名的话就不会上传了<br>每次同步前检查本地增量文件并上传也要勾上，否则新产生的文件不会上传<br><img src="/image/2018/qiniu4.png" alt="新建同步任务"></p>
-<p>设置好了以后就可以点击<code>开始同步</code>了<br>上传过程有点慢，要耐心等待。</p>
+<p>一、使用hexo生成静态html资源，这个不用多说，使用hexo的都知道<br>二、登录七牛账号，进入管理控制台，点击<code class="text">镜像存储</code>，新建一个存储空间，访问控制一定要选择<code class="text">公开空间</code><br>三、再点击<code class="text">绑定域名</code>,将你网站的域名绑定到刚才创建的空间<br><img src="/image/2018/qiniu1.png" alt="绑定域名"><br>四、将静态网站资源上传到七牛，这里七牛会提供一些工具，windows下有可视化工具，linux与mac下有对应的命令行工具，选自已喜欢的，由于我现在是在windows下操作，所以我使用了可视化工具,下载<br><a href="https://developer.qiniu.com/kodo/tools/1666/qsunsync" target="_blank" rel="noopener">https://developer.qiniu.com/kodo/tools/1666/qsunsync</a><br>打开这个工具，先点击<code class="text">账号设置</code>,输入你的AK与SK,这两个值可以到<code class="text">个人中心</code>下的<code class="text">密钥管理</code>中获取<br><img src="/image/2018/qiniu2.png" alt="设定AK与SK"><br>AK与SK设置好了以后就可以点击<code class="text">新建同步任务</code><br><img src="/image/2018/qiniu3.png" alt="新建同步任务"><br>本地目录选择hexo生成的public目录，目标空间选择你刚才创建的空间<br>切换到高级设置，这里一定要设置一下，遇到空间中存在同名文件则强制覆盖，否则之后生成的html如果同名的话就不会上传了<br>每次同步前检查本地增量文件并上传也要勾上，否则新产生的文件不会上传<br><img src="/image/2018/qiniu4.png" alt="新建同步任务"></p>
+<p>设置好了以后就可以点击<code class="text">开始同步</code>了<br>上传过程有点慢，要耐心等待。</p>
 <p>五、根据七牛的提示，将域名cname到它给你的地址<br><img src="/image/2018/qiniu5.png" alt="设置cname"></p>
 <p>六、最最关键的一步，空间设置<br>如果不设置空间，那么你现在的七牛就是一个普通的存储文件的地址，还不能通过域名访问<br>比如你的首页是 <a href="http://www.abc.com/" target="_blank" rel="noopener">http://www.abc.com/</a> 如果你现在访问这个，会提示 error: “Document not found”，必须要加上 <a href="http://www.abc.com/index.html" target="_blank" rel="noopener">http://www.abc.com/index.html</a><br>七牛现在比较人性化的添加了默认首页展示设定，一定要将其打开<br><img src="/image/2018/qiniu6.png" alt="默认首页展示"></p>
 <p>这样就可以通过 <a href="http://www.abc.com/" target="_blank" rel="noopener">http://www.abc.com/</a> 来访问网页了，访问categories等也会自动跳到相应的index.html页面</p>
@@ -184,6 +184,13 @@
 <p>大功告成，享受一下吧</p>
 <p>要时刻关注一下域名的备案信息，如果哪天积案被注销了，七牛也会停止该域名的访问的！！！</p>
 
+      <div class="article-end-text-wrap">
+          <div class="article-end-text">
+            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
+            <image src="/image/qrcode.jpg">
+          </div>
+      </div>
+      
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
@@ -212,7 +219,7 @@
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">打賞</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -222,8 +229,8 @@
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
+      <span>支付寶</span>
     </div>
     
     
@@ -297,7 +304,7 @@
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <p><i class="fas fa-list-ol"></i> 文章目錄</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text"><a href="#&#x51C6;&#x5907;" class="headerlink" title="&#x51C6;&#x5907;"></a>&#x51C6;&#x5907;</span></a></li></ol></div>
 </div>
 
@@ -308,7 +315,7 @@
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> 社交鏈接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -330,7 +337,7 @@
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> 友情鏈接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -407,7 +414,7 @@
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

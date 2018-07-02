@@ -189,7 +189,7 @@
 <p>所以更常用的方法是先判断一个队列是否为空，如果不为空则取值</p>
 <p>队列中常用的方法</p>
 <p>Queue.qsize() 返回队列的大小<br>Queue.empty() 如果队列为空，返回True,反之False<br>Queue.full() 如果队列满了，返回True,反之False<br>Queue.get([block[, timeout]]) 获取队列，timeout等待时间<br>Queue.get_nowait() 相当Queue.get(False)<br>非阻塞 Queue.put(item) 写入队列，timeout等待时间<br>Queue.put_nowait(item) 相当Queue.put(item, False)</p>
-<p>二、<code>multiprocessing中使用子进程概念</code></p>
+<p>二、<code class="text">multiprocessing中使用子进程概念</code></p>
 <p>from multiprocessing import Process</p>
 <p>可以通过Process来构造一个子进程</p>
 <p>p = Process(target=fun,args=(args))</p>
@@ -209,7 +209,7 @@ if __name__==&#39;__main__&#39;:
     p.join()
     print &#39;Process end.&#39;&lt;/pre&gt;
 </code></pre>
-<p>三、在<code>multiprocessing</code>中使用pool</p>
+<p>三、在<code class="text">multiprocessing</code>中使用pool</p>
 <p>如果需要多个子进程时可以考虑使用进程池(pool)来管理</p>
 <pre><code class="python">from multiprocessing import Pool
 import os, time
@@ -235,7 +235,7 @@ if __name__==&#39;__main__&#39;:
 <p>p.apply_async(func,args=(args))实现，一个池子里能同时运行的任务是取决你电脑的cpu数量，如我的电脑现在是有4个cpu，那会子进程task0,task1,task2,task3可以同时启动，task4则在之前的一个某个进程结束后才开始</p>
 <p><a href="/image/2014/07/image1.png"><img src="/image/2014/07/image1.png" alt="image" title="image"></a></p>
 <p>上面的程序运行后的结果其实是按照上图中1，2，3分开进行的，先打印1，3秒后打印2，再3秒后打印3</p>
-<p>代码中的p.close()是关掉进程池子，是不再向里面添加进程了，对<code>Pool</code>对象调用<code>join()</code>方法会等待所有子进程执行完毕，调用<code>join()</code>之前必须先调用<code>close()</code>，调用<code>close()</code>之后就不能继续添加新的<code>Process</code>了。</p>
+<p>代码中的p.close()是关掉进程池子，是不再向里面添加进程了，对<code class="text">Pool</code>对象调用<code class="text">join()</code>方法会等待所有子进程执行完毕，调用<code class="text">join()</code>之前必须先调用<code class="text">close()</code>，调用<code class="text">close()</code>之后就不能继续添加新的<code class="text">Process</code>了。</p>
 <p>当时也可以是实例pool的时候给它定义一个进程的多少</p>
 <p>如果上面的代码中p=Pool(5)那么所有的子进程就可以同时进行</p>
 <p>三、多个子进程间的通信</p>
@@ -346,6 +346,13 @@ if __name__==&#39;__main__&#39;:
 <p><a href="http://blog.csdn.net/yatere/article/details/6668006" title="http://blog.csdn.net/yatere/article/details/6668006" target="_blank" rel="noopener">python Queue模块</a></p>
 <p><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868323401155ceb3db1e2044f80b974b469eb06cb43000" title="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868323401155ceb3db1e2044f80b974b469eb06cb43000" target="_blank" rel="noopener">多进程</a></p>
 
+      <div class="article-end-text-wrap">
+          <div class="article-end-text">
+            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
+            <image src="/image/qrcode.jpg">
+          </div>
+      </div>
+      
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
@@ -374,7 +381,7 @@ if __name__==&#39;__main__&#39;:
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">打賞</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -384,8 +391,8 @@ if __name__==&#39;__main__&#39;:
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
+      <span>支付寶</span>
     </div>
     
     
@@ -464,7 +471,7 @@ if __name__==&#39;__main__&#39;:
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> 社交鏈接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -486,7 +493,7 @@ if __name__==&#39;__main__&#39;:
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> 友情鏈接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -563,7 +570,7 @@ if __name__==&#39;__main__&#39;:
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

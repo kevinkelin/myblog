@@ -170,11 +170,11 @@
 <a id="more"></a>
 <p>我的目的，将hexo生成的静态文件同时部署到github与coding上</p>
 <h2 id="安装git-for-windows客户端"><a href="#安装git-for-windows客户端" class="headerlink" title="安装git-for-windows客户端"></a>安装git-for-windows客户端</h2><p>下载地址 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a><br>无论是github还是coding都需要上传你的公钥，这两个地方可以上传相同的公钥，但也可以像我这样闲的蛋疼上传不同的公钥。</p>
-<h2 id="创建密钥对"><a href="#创建密钥对" class="headerlink" title="创建密钥对"></a>创建密钥对</h2><p>使用<code>ssh-keygen</code> 来创建密钥对，命令为 <code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code>,其实这里-C 后面的email地址无所谓，可以随便写，只是为了你方便而已。<br>输入完该命令以后，首先会让你给密钥文件起个名字，这个是文件名，叫什么随心情<br><img src="/image/2018/usessh1.png" alt="生成密钥对"><br>接下来让你输入密码，我这里直接回车，不用密码<br>然后它就会生成一个密钥对，像我这个设置就会生成yyxtest和yyxtest_pub两个文件，yyxtest.pub是公钥，谁都可以给，但是你私钥要自已保存好，谁拿到了你私钥就呵呵了。</p>
+<h2 id="创建密钥对"><a href="#创建密钥对" class="headerlink" title="创建密钥对"></a>创建密钥对</h2><p>使用<code class="text">ssh-keygen</code> 来创建密钥对，命令为 <code class="text">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code>,其实这里-C 后面的email地址无所谓，可以随便写，只是为了你方便而已。<br>输入完该命令以后，首先会让你给密钥文件起个名字，这个是文件名，叫什么随心情<br><img src="/image/2018/usessh1.png" alt="生成密钥对"><br>接下来让你输入密码，我这里直接回车，不用密码<br>然后它就会生成一个密钥对，像我这个设置就会生成yyxtest和yyxtest_pub两个文件，yyxtest.pub是公钥，谁都可以给，但是你私钥要自已保存好，谁拿到了你私钥就呵呵了。</p>
 <h2 id="上传公钥到github与coding中"><a href="#上传公钥到github与coding中" class="headerlink" title="上传公钥到github与coding中"></a>上传公钥到github与coding中</h2><p>根据github上的提示将公钥上传到github上你的个人账户中的ssh中<br><img src="/image/2018/usessh2.png" alt="上传公钥到github中"></p>
 <p>同样的操作再生成一对密钥，将公钥上传到coding中，注意我这里是为了测试，你完全没有必要重新生成，你当然可以上传刚才生成的yyxtest.pub这个公钥，当然后面会有一些问题，之后再详细说明。</p>
-<h2 id="上传文件到github上"><a href="#上传文件到github上" class="headerlink" title="上传文件到github上"></a>上传文件到github上</h2><p> 赶紧上传个文件到github上试试吧(使用hexo d 来部署)，其实你可以先不用上传文件，可以用<code>ssh -vT git@github.com</code> 来查看一下信息<br>这里你不用试了，肯定是不行的…… 抗都被我踩了<br><img src="/image/2018/usessh4.png" alt="Permission denied"><br>提示Permission denied,原因是你现在用的私钥还是id_rsa，并不是刚才生成的yyxtest，<br>ssh默认使用id_rsa，如果连id_rsa都没有，那你还不赶紧生成一个默认的。</p>
-<h2 id="添加yyxtest私钥到git-bash中"><a href="#添加yyxtest私钥到git-bash中" class="headerlink" title="添加yyxtest私钥到git bash中"></a>添加yyxtest私钥到git bash中</h2><p>根据github上的提示<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">generate SSH keys</a> 先将yyxtest添加到git bash中,<br>    使用<code>ssh-add ~/.ssh/yyxtest</code> ,然后顺利提交代码成功，但是在提交文件到coding时又不行了，提示</p>
+<h2 id="上传文件到github上"><a href="#上传文件到github上" class="headerlink" title="上传文件到github上"></a>上传文件到github上</h2><p> 赶紧上传个文件到github上试试吧(使用hexo d 来部署)，其实你可以先不用上传文件，可以用<code class="text">ssh -vT git@github.com</code> 来查看一下信息<br>这里你不用试了，肯定是不行的…… 抗都被我踩了<br><img src="/image/2018/usessh4.png" alt="Permission denied"><br>提示Permission denied,原因是你现在用的私钥还是id_rsa，并不是刚才生成的yyxtest，<br>ssh默认使用id_rsa，如果连id_rsa都没有，那你还不赶紧生成一个默认的。</p>
+<h2 id="添加yyxtest私钥到git-bash中"><a href="#添加yyxtest私钥到git-bash中" class="headerlink" title="添加yyxtest私钥到git bash中"></a>添加yyxtest私钥到git bash中</h2><p>根据github上的提示<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">generate SSH keys</a> 先将yyxtest添加到git bash中,<br>    使用<code class="text">ssh-add ~/.ssh/yyxtest</code> ,然后顺利提交代码成功，但是在提交文件到coding时又不行了，提示</p>
 <blockquote>
 <p>Error: git@git.coding.net: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
 </blockquote>
@@ -196,7 +196,7 @@ Host github.com
     PreferredAuthentications publickey
     User kevinkelin
 </code></pre>
-<p>之前说过，你没有必要为不同的网站生成不同的密钥，用同一份也可以，如果用同一份，这里IdentityFile也要写一样的<br>保存之后先不用着急提交，使用ssh -vT 查看一下连接是否有问题<br>github 提示 <code>Hi kevinkelin! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>coding提示 <code>yangyanxing，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</code><br>这样就可以直接使用<code>hexo d</code>来提交文件更新了！</p>
+<p>之前说过，你没有必要为不同的网站生成不同的密钥，用同一份也可以，如果用同一份，这里IdentityFile也要写一样的<br>保存之后先不用着急提交，使用ssh -vT 查看一下连接是否有问题<br>github 提示 <code class="text">Hi kevinkelin! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>coding提示 <code class="text">yangyanxing，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</code><br>这样就可以直接使用<code class="text">hexo d</code>来提交文件更新了！</p>
 <p>注意的问题</p>
 <ol>
 <li>config文件中的host 配置是区分大小写的，github.com 和github.COM是不同的，一定要写对</li>
@@ -209,6 +209,13 @@ Host github.com
 <li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></li>
 </ul>
 
+      <div class="article-end-text-wrap">
+          <div class="article-end-text">
+            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
+            <image src="/image/qrcode.jpg">
+          </div>
+      </div>
+      
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
@@ -237,7 +244,7 @@ Host github.com
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">打賞</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -247,8 +254,8 @@ Host github.com
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
+      <span>支付寶</span>
     </div>
     
     
@@ -322,7 +329,7 @@ Host github.com
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目录</p>
+  <p><i class="fas fa-list-ol"></i> 文章目錄</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git-for-windows客户端"><span class="toc-text"><a href="#&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;" class="headerlink" title="&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;"></a>&#x5B89;&#x88C5;git-for-windows&#x5BA2;&#x6237;&#x7AEF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建密钥对"><span class="toc-text"><a href="#&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;" class="headerlink" title="&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;"></a>&#x521B;&#x5EFA;&#x5BC6;&#x94A5;&#x5BF9;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传公钥到github与coding中"><span class="toc-text"><a href="#&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;" class="headerlink" title="&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;"></a>&#x4E0A;&#x4F20;&#x516C;&#x94A5;&#x5230;github&#x4E0E;coding&#x4E2D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传文件到github上"><span class="toc-text"><a href="#&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;" class="headerlink" title="&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;"></a>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5230;github&#x4E0A;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加yyxtest私钥到git-bash中"><span class="toc-text"><a href="#&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git-bash&#x4E2D;" class="headerlink" title="&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git bash&#x4E2D;"></a>&#x6DFB;&#x52A0;yyxtest&#x79C1;&#x94A5;&#x5230;git bash&#x4E2D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置ssh本地的config文件"><span class="toc-text"><a href="#&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;" class="headerlink" title="&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;"></a>&#x914D;&#x7F6E;ssh&#x672C;&#x5730;&#x7684;config&#x6587;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遗留问题"><span class="toc-text"><a href="#&#x9057;&#x7559;&#x95EE;&#x9898;" class="headerlink" title="&#x9057;&#x7559;&#x95EE;&#x9898;"></a>&#x9057;&#x7559;&#x95EE;&#x9898;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text"><a href="#&#x53C2;&#x8003;&#x6587;&#x7AE0;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x7AE0;"></a>&#x53C2;&#x8003;&#x6587;&#x7AE0;</span></a></li></ol></div>
 </div>
 
@@ -333,7 +340,7 @@ Host github.com
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> 社交鏈接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -355,7 +362,7 @@ Host github.com
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> 友情鏈接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -432,7 +439,7 @@ Host github.com
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>

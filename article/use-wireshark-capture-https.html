@@ -168,7 +168,7 @@
     <main class="post-body" itemprop="articleBody">
       <p>今天在看https的相关技术，于是想要使用wireshark抓取并解密https流量<br>关于https的基础可以看看这篇文章<br><a href="http://www.yangyanxing.com/article/https-basic.html">HTTPS理论基础</a></p>
 <p>本文参考文章<br><a href="https://imququ.com/post/http2-traffic-in-wireshark.html" target="_blank" rel="noopener">使用 Wireshark 调试 HTTP/2 流量</a><br><a id="more"></a></p>
-<p>当系统环境变量中存在<code>SSLKEYLOGFILE</code>这个变量的时候，chrome与firefox在访问https网站的时候会将密钥写入这个环境变量中，如果在wireshark中设置一下，这样就可以解析https的流量了。</p>
+<p>当系统环境变量中存在<code class="text">SSLKEYLOGFILE</code>这个变量的时候，chrome与firefox在访问https网站的时候会将密钥写入这个环境变量中，如果在wireshark中设置一下，这样就可以解析https的流量了。</p>
 <ol>
 <li>设置环境变量，添加SSLKEYLOGFILE变量，不同的系统不一样</li>
 <li>在wireshark中设置，打开wireshark,点击编辑-&gt;首选项，切换到PRotocols，选择SSL，在(Pre)-Master-Secret log filename那选择刚刚SSLKEYLOGFILE的值<br><img src="/image/Setting-wireshark-protols.png" alt="wireshark设置"></li>
@@ -176,6 +176,13 @@
 </ol>
 <p>可以看到，wireshark已经将http/2转成了http，并且在下面显示了相应的Decrypted SSL data的tab，我随便输入了用户名与密码，已经可以在wireshark上显示了</p>
 
+      <div class="article-end-text-wrap">
+          <div class="article-end-text">
+            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
+            <image src="/image/qrcode.jpg">
+          </div>
+      </div>
+      
         <div class="article-footer-copyright">
             本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
             非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
@@ -204,7 +211,7 @@
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <button id="reward-button" class="button" disable="enable">打賞</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -214,8 +221,8 @@
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
+      <span>支付寶</span>
     </div>
     
     
@@ -294,7 +301,7 @@
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
+  <p><i class="far fa-address-card"></i> 社交鏈接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -316,7 +323,7 @@
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
+  <p><i class="fas fa-link"></i> 友情鏈接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -393,7 +400,7 @@
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
