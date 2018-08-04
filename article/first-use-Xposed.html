@@ -496,7 +496,7 @@ public class Hook implements IXposedHookLoadPackage {
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打賞</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
@@ -506,8 +506,8 @@ public class Hook implements IXposedHookLoadPackage {
     
     
     <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付寶"/>
-      <span>支付寶</span>
+      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
+      <span>支付宝</span>
     </div>
     
     
@@ -581,7 +581,7 @@ public class Hook implements IXposedHookLoadPackage {
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目錄</p>
+  <p><i class="fas fa-list-ol"></i> 文章目录</p>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于Xposed"><span class="toc-text"><a href="#&#x5173;&#x4E8E;Xposed" class="headerlink" title="&#x5173;&#x4E8E;Xposed"></a>&#x5173;&#x4E8E;Xposed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本原理"><span class="toc-text"><a href="#&#x57FA;&#x672C;&#x539F;&#x7406;" class="headerlink" title="&#x57FA;&#x672C;&#x539F;&#x7406;"></a>&#x57FA;&#x672C;&#x539F;&#x7406;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写hook模块使用"><span class="toc-text"><a href="#&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;" class="headerlink" title="&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;"></a>&#x5199;hook&#x6A21;&#x5757;&#x4F7F;&#x7528;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先先写测试的apk"><span class="toc-text"><a href="#&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk" class="headerlink" title="&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk"></a>&#x9996;&#x5148;&#x5148;&#x5199;&#x6D4B;&#x8BD5;&#x7684;apk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写hook模块"><span class="toc-text"><a href="#&#x5199;hook&#x6A21;&#x5757;" class="headerlink" title="&#x5199;hook&#x6A21;&#x5757;"></a>&#x5199;hook&#x6A21;&#x5757;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个hookTest的android项目并将XposedBridgeApi-54-jar加入项目的build-path中"><span class="toc-text"><a href="#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54-jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;" class="headerlink" title="&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54.jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;"></a>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;hookTest&#x7684;android&#x9879;&#x76EE;&#x5E76;&#x5C06;XposedBridgeApi-54.jar&#x52A0;&#x5165;&#x9879;&#x76EE;&#x7684;build-path&#x4E2D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建一个Hook类实现IXposedHookLoadPackage接口"><span class="toc-text"><a href="#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;" class="headerlink" title="&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;"></a>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Hook&#x7C7B;&#x5B9E;&#x73B0;IXposedHookLoadPackage&#x63A5;&#x53E3;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明主入口路径"><span class="toc-text"><a href="#&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;" class="headerlink" title="&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;"></a>&#x58F0;&#x660E;&#x4E3B;&#x5165;&#x53E3;&#x8DEF;&#x5F84;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在AndroidManifest-xml文件中配置插件名称与Api版本号"><span class="toc-text"><a href="#&#x5728;AndroidManifest-xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;" class="headerlink" title="&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;"></a>&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x4E0E;Api&#x7248;&#x672C;&#x53F7;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译并安全这个apk"><span class="toc-text"><a href="#&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk" class="headerlink" title="&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk"></a>&#x7F16;&#x8BD1;&#x5E76;&#x5B89;&#x5168;&#x8FD9;&#x4E2A;apk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再打开之前写的showTime应用，点击按钮看看"><span class="toc-text"><a href="#&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;" class="headerlink" title="&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;"></a>&#x518D;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x5199;&#x7684;showTime&#x5E94;&#x7528;&#xFF0C;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x770B;&#x770B;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hook自定义的函数"><span class="toc-text"><a href="#Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;" class="headerlink" title="Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;"></a>Hook&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;</span></a></li></ol></div>
 </div>
 
@@ -592,7 +592,7 @@ public class Hook implements IXposedHookLoadPackage {
     
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交鏈接</p>
+  <p><i class="far fa-address-card"></i> 社交链接</p>
   <ul>
     
     <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
@@ -614,7 +614,7 @@ public class Hook implements IXposedHookLoadPackage {
     
 <hr>
 <div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情鏈接</p>
+  <p><i class="fas fa-link"></i> 友情链接</p>
   <ul>
     
     <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
@@ -691,7 +691,7 @@ public class Hook implements IXposedHookLoadPackage {
             <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 強力驅動 | 主題 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
