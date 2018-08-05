@@ -1,172 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#33363b">
-    <meta name="msapplication-TileColor" content="#33363b">
-    
-    
-    
-    <meta name="keywords" content="python, 自动化测试, tornado, webpy, 微信公众号">
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons.ico">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
-    
-    
-    <link rel="mask-icon" href="/favicons.svg" color="#33363b">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    <link rel="alternate" href="/atom.xml" title="杨彦星" type="application/atom+xml" />
-    
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
-
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/js/google-code-prettify/prettify.css">
-    
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
-    <script type="text/javascript">    
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-      
-      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-      prettyPrint();
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>利用logging模块轻松地进行Python日志记录(转) | 杨彦星 - 序语程言</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">杨彦星</a></h1>
-        <h2 class="subtitle">序语程言</h2>
-      </div>
-      
-    </div>
-    
-<nav id="nav" class="nav">
-  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
-  <ul id="menu">
-    
-    <li><a href="/.">首页</a></li>
-    
-    <li><a href="/archives">归档</a></li>
-    
-    <li><a href="/categories">分类</a></li>
-    
-    <li><a href="/tags">标签</a></li>
-    
-    <li><a href="http://yangyanxing.lofter.com">时光</a></li>
-    
-    <li><a href="/about">关于</a></li>
-    
-  </ul>
-</nav>
-
-
-  </div>
-</header>
-
-
-    <main id="main" class="main">
-      <div class="container">
-        <div class="main-container">
-          <div class="content">
-            
-<section id="post" class="post">
-  
-  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.yangyanxing.com/article/use-logging-in-python.html">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="杨彦星">
-       <meta itemprop="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒">
-       <meta itemprop="image" content="/images/1.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="杨彦星">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-       <span class="">利用logging模块轻松地进行Python日志记录(转)</span>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-23T23:53:38+08:00">2018-06-23</time>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider"> | </span>
-        
-        <span class="post-categories">
-          <i class="far fa-folder-open"></i>
-          
-          
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-          
-          
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      <p>在开发过程中，如果程序运行出现了问题，我们是可以使用我们自己的 Debug 工具来检测到到底是哪一步出现了问题，如果出现了问题的话，是很容易排查的。但程序开发完成之后，我们会将它部署到生产环境中去，这时候代码相当于是在一个黑盒环境下运行的，我们只能看到其运行的效果，是不能直接看到代码运行过程中每一步的状态的。在这个环境下，运行过程中难免会在某个地方出现问题，甚至这个问题可能是我们开发过程中未曾遇到的问题，碰到这种情况应该怎么办？<br>如果我们现在只能得知当前问题的现象，而没有其他任何信息的话，如果我们想要解决掉这个问题的话，那么只能根据问题的现象来试图复现一下，然后再一步步去调试，这恐怕是很难的，很大的概率上我们是无法精准地复现这个问题的，而且 Debug 的过程也会耗费巨多的时间，这样一旦生产环境上出现了问题，修复就会变得非常棘手。但这如果我们当时有做日志记录的话，不论是正常运行还是出现报错，都有相关的时间记录，状态记录，错误记录等，那么这样我们就可以方便地追踪到在当时的运行过程中出现了怎样的状况，从而可以快速排查问题。<br>因此，日志记录是非常有必要的，任何一款软件如果没有标准的日志记录，都不能算作一个合格的软件。作为开发者，我们需要重视并做好日志记录过程。</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="人一切的痛苦，本质是都是对自已的无能的愤怒"><title>利用logging模块轻松地进行Python日志记录(转) | 杨彦星</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">利用logging模块轻松地进行Python日志记录(转)</h1><a id="logo" href="/.">杨彦星</a><p class="description">序语程言</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="http://yangyanxing.lofter.com"><i class="fa fa-folder"> 时光</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">利用logging模块轻松地进行Python日志记录(转)</h1><div class="post-meta">Jun 23, 2018<span> | </span><span class="category"><a href="/categories/Python/">Python</a></span></div><div class="post-content"><p>在开发过程中，如果程序运行出现了问题，我们是可以使用我们自己的 Debug 工具来检测到到底是哪一步出现了问题，如果出现了问题的话，是很容易排查的。但程序开发完成之后，我们会将它部署到生产环境中去，这时候代码相当于是在一个黑盒环境下运行的，我们只能看到其运行的效果，是不能直接看到代码运行过程中每一步的状态的。在这个环境下，运行过程中难免会在某个地方出现问题，甚至这个问题可能是我们开发过程中未曾遇到的问题，碰到这种情况应该怎么办？<br>如果我们现在只能得知当前问题的现象，而没有其他任何信息的话，如果我们想要解决掉这个问题的话，那么只能根据问题的现象来试图复现一下，然后再一步步去调试，这恐怕是很难的，很大的概率上我们是无法精准地复现这个问题的，而且 Debug 的过程也会耗费巨多的时间，这样一旦生产环境上出现了问题，修复就会变得非常棘手。但这如果我们当时有做日志记录的话，不论是正常运行还是出现报错，都有相关的时间记录，状态记录，错误记录等，那么这样我们就可以方便地追踪到在当时的运行过程中出现了怎样的状况，从而可以快速排查问题。<br>因此，日志记录是非常有必要的，任何一款软件如果没有标准的日志记录，都不能算作一个合格的软件。作为开发者，我们需要重视并做好日志记录过程。</p>
 <a id="more"></a>
 <h1 id="日志记录的流程框架"><a href="#日志记录的流程框架" class="headerlink" title="日志记录的流程框架"></a>日志记录的流程框架</h1><p>那么在 Python 中，怎样才能算作一个比较标准的日志记录过程呢？或许很多人会使用 print 语句输出一些运行信息，然后再在控制台观察，运行的时候再将输出重定向到文件输出流保存到文件中，这样其实是非常不规范的，在 Python 中有一个标准的 logging 模块，我们可以使用它来进行标注的日志记录，利用它我们可以更方便地进行日志记录，同时还可以做更方便的级别区分以及一些额外日志信息的记录，如时间、运行模块信息等。<br>接下来我们先了解一下日志记录流程的整体框架。<br>整个日志记录的框架可以分为这么几个部分：</p>
 <ul>
@@ -185,54 +17,7 @@
 <li>logging 模块具有灵活的配置和格式化功能，如配置输出当前模块信息、运行时间等，相比 print 的字符串格式化更加方便易用。</li>
 </ul>
 <p>下面我们初步来了解下 logging 模块的基本用法，先用一个实例来感受一下：</p>
-<pre><code class="python">import logging
-
-logging.basicConfig(level=logging.INFO, format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-logger = logging.getLogger(__name__)
-
-logger.info(&#39;This is a log info&#39;)
-logger.debug(&#39;Debugging&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finish&#39;)
-</code></pre>
-<p>在这里我们首先引入了 logging 模块，然后进行了一下基本的配置，这里通过 basicConfig 配置了 level 信息和 format 信息，这里 level 配置为 INFO 信息，即只输出 INFO 级别的信息，另外这里指定了 format 格式的字符串，包括 asctime、name、levelname、message 四个内容，分别代表运行时间、模块名称、日志级别、日志内容，这样输出内容便是这四者组合而成的内容了，这就是 logging 的全局配置。<br>接下来声明了一个 Logger 对象，它就是日志输出的主类，调用对象的 info() 方法就可以输出 INFO 级别的日志信息，调用 debug() 方法就可以输出 DEBUG 级别的日志信息，非常方便。在初始化的时候我们传入了模块的名称，这里直接使用 <strong>name</strong> 来代替了，就是模块的名称，如果直接运行这个脚本的话就是 <strong>main</strong>，如果是 import 的模块的话就是被引入模块的名称，这个变量在不同的模块中的名字是不同的，所以一般使用 <strong>name</strong> 来表示就好了，再接下来输出了四条日志信息，其中有两条 INFO、一条 WARNING、一条 DEBUG 信息，我们看下输出结果：</p>
-<blockquote>
-<p>2018-06-03 13:42:43,526 - <strong>main</strong> - INFO - This is a log info<br>2018-06-03 13:42:43,526 - <strong>main</strong> - WARNING - Warning exists<br>2018-06-03 13:42:43,526 - <strong>main</strong> - INFO - Finish</p>
-</blockquote>
-<p>可以看到输出结果一共有三条日志信息，每条日志都是对应了指定的格式化内容，另外我们发现 DEBUG 的信息是没有输出的，这是因为我们在全局配置的时候设置了输出为 INFO 级别，所以 DEBUG 级别的信息就被过滤掉了。<br>这时如果我们将输出的日志级别设置为 DEBUG，就可以看到 DEBUG 级别的日志输出了：<br>logging.basicConfig(level=logging.DEBUG, format=’%(asctime)s - %(name)s - %(levelname)s - %(message)s’)<br>输出结果：</p>
-<blockquote>
-<p>2018-06-03 13:49:22,770 - <strong>main</strong> - INFO - This is a log info<br>2018-06-03 13:49:22,770 - <strong>main</strong> - DEBUG - Debugging<br>2018-06-03 13:49:22,770 - <strong>main</strong> - WARNING - Warning exists<br>2018-06-03 13:49:22,770 - <strong>main</strong> - INFO - Finish</p>
-</blockquote>
-<p>由此可见，相比 print 来说，通过刚才的代码，我们既可以输出时间、模块名称，又可以输出不同级别的日志信息作区分并加以过滤，是不是灵活多了？<br>当然这只是 logging 模块的一小部分功能，接下来我们首先来全面了解一下 basicConfig 的参数都有哪些：</p>
-<ul>
-<li>filename：即日志输出的文件名，如果指定了这个信息之后，实际上会启用 FileHandler，而不再是 StreamHandler，这样日志信息便会输出到文件中了。</li>
-<li>filemode：这个是指定日志文件的写入方式，有两种形式，一种是 w，一种是 a，分别代表清除后写入和追加写入。</li>
-<li>format：指定日志信息的输出格式，即上文示例所示的参数，详细参数可以参考：docs.python.org/3/library/l…，部分参数如下所示：</li>
-</ul>
-<blockquote>
-<p>%(levelno)s：打印日志级别的数值。<br>%(levelname)s：打印日志级别的名称。<br>%(pathname)s：打印当前执行程序的路径，其实就是sys.argv[0]。<br>%(filename)s：打印当前执行程序名。<br>%(funcName)s：打印日志的当前函数。<br>%(lineno)d：打印日志的当前行号。<br>%(asctime)s：打印日志的时间。<br>%(thread)d：打印线程ID。<br>%(threadName)s：打印线程名称。<br>%(process)d：打印进程ID。<br>%(processName)s：打印线程名称。<br>%(module)s：打印模块名称。<br>%(message)s：打印日志信息。</p>
-</blockquote>
-<ul>
-<li>datefmt：指定时间的输出格式。</li>
-<li>style：如果 format 参数指定了，这个参数就可以指定格式化时的占位符风格，如 %、{、$ 等。</li>
-<li>level：指定日志输出的类别，程序会输出大于等于此级别的信息。</li>
-<li>stream：在没有指定 filename 的时候会默认使用 StreamHandler，这时 stream 可以指定初始化的文件流。</li>
-<li>handlers：可以指定日志处理时所使用的 Handlers，必须是可迭代的。</li>
-</ul>
-<p>下面我们再用一个实例来感受一下：</p>
-<pre><code class="python">
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    filename=&#39;output.log&#39;,
-                    datefmt=&#39;%Y/%m/%d %H:%M:%S&#39;,
-                    format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(module)s - %(message)s&#39;)
-logger = logging.getLogger(__name__)
-
-logger.info(&#39;This is a log info&#39;)
-logger.debug(&#39;Debugging&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finish&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.basicConfig(level=logging.INFO, format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">'This is a log info'</span>)</span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finish'</span>)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">在这里我们首先引入了 logging 模块，然后进行了一下基本的配置，这里通过 basicConfig 配置了 level 信息和 format 信息，这里 level 配置为 INFO 信息，即只输出 INFO 级别的信息，另外这里指定了 format 格式的字符串，包括 asctime、name、levelname、message 四个内容，分别代表运行时间、模块名称、日志级别、日志内容，这样输出内容便是这四者组合而成的内容了，这就是 logging 的全局配置。</span><br><span class="line">接下来声明了一个 Logger 对象，它就是日志输出的主类，调用对象的 info() 方法就可以输出 INFO 级别的日志信息，调用 debug() 方法就可以输出 DEBUG 级别的日志信息，非常方便。在初始化的时候我们传入了模块的名称，这里直接使用 __name__ 来代替了，就是模块的名称，如果直接运行这个脚本的话就是 __main__，如果是 <span class="keyword">import</span> 的模块的话就是被引入模块的名称，这个变量在不同的模块中的名字是不同的，所以一般使用 __name__ 来表示就好了，再接下来输出了四条日志信息，其中有两条 INFO、一条 WARNING、一条 DEBUG 信息，我们看下输出结果：</span><br><span class="line"></span><br><span class="line">&gt;<span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">42</span>:<span class="number">43</span>,<span class="number">526</span> - __main__ - INFO - This <span class="keyword">is</span> a log info</span><br><span class="line"><span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">42</span>:<span class="number">43</span>,<span class="number">526</span> - __main__ - WARNING - Warning exists</span><br><span class="line"><span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">42</span>:<span class="number">43</span>,<span class="number">526</span> - __main__ - INFO - Finish</span><br><span class="line"></span><br><span class="line">可以看到输出结果一共有三条日志信息，每条日志都是对应了指定的格式化内容，另外我们发现 DEBUG 的信息是没有输出的，这是因为我们在全局配置的时候设置了输出为 INFO 级别，所以 DEBUG 级别的信息就被过滤掉了。</span><br><span class="line">这时如果我们将输出的日志级别设置为 DEBUG，就可以看到 DEBUG 级别的日志输出了：</span><br><span class="line">logging.basicConfig(level=logging.DEBUG, format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">输出结果：</span><br><span class="line"></span><br><span class="line">&gt; <span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">22</span>,<span class="number">770</span> - __main__ - INFO - This <span class="keyword">is</span> a log info</span><br><span class="line"><span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">22</span>,<span class="number">770</span> - __main__ - DEBUG - Debugging</span><br><span class="line"><span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">22</span>,<span class="number">770</span> - __main__ - WARNING - Warning exists</span><br><span class="line"><span class="number">2018</span><span class="number">-06</span><span class="number">-03</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">22</span>,<span class="number">770</span> - __main__ - INFO - Finish</span><br><span class="line"></span><br><span class="line">由此可见，相比 <span class="keyword">print</span> 来说，通过刚才的代码，我们既可以输出时间、模块名称，又可以输出不同级别的日志信息作区分并加以过滤，是不是灵活多了？</span><br><span class="line">当然这只是 logging 模块的一小部分功能，接下来我们首先来全面了解一下 basicConfig 的参数都有哪些：</span><br><span class="line"></span><br><span class="line">- filename：即日志输出的文件名，如果指定了这个信息之后，实际上会启用 FileHandler，而不再是 StreamHandler，这样日志信息便会输出到文件中了。</span><br><span class="line">- filemode：这个是指定日志文件的写入方式，有两种形式，一种是 w，一种是 a，分别代表清除后写入和追加写入。</span><br><span class="line">- format：指定日志信息的输出格式，即上文示例所示的参数，详细参数可以参考：docs.python.org/<span class="number">3</span>/library/l…，部分参数如下所示：</span><br><span class="line"></span><br><span class="line">&gt; %(levelno)s：打印日志级别的数值。</span><br><span class="line">%(levelname)s：打印日志级别的名称。</span><br><span class="line">%(pathname)s：打印当前执行程序的路径，其实就是sys.argv[<span class="number">0</span>]。</span><br><span class="line">%(filename)s：打印当前执行程序名。</span><br><span class="line">%(funcName)s：打印日志的当前函数。</span><br><span class="line">%(lineno)d：打印日志的当前行号。</span><br><span class="line">%(asctime)s：打印日志的时间。</span><br><span class="line">%(thread)d：打印线程ID。</span><br><span class="line">%(threadName)s：打印线程名称。</span><br><span class="line">%(process)d：打印进程ID。</span><br><span class="line">%(processName)s：打印线程名称。</span><br><span class="line">%(module)s：打印模块名称。</span><br><span class="line">%(message)s：打印日志信息。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- datefmt：指定时间的输出格式。</span><br><span class="line">- style：如果 format 参数指定了，这个参数就可以指定格式化时的占位符风格，如 %、&#123;、$ 等。</span><br><span class="line">- level：指定日志输出的类别，程序会输出大于等于此级别的信息。</span><br><span class="line">- stream：在没有指定 filename 的时候会默认使用 StreamHandler，这时 stream 可以指定初始化的文件流。</span><br><span class="line">- handlers：可以指定日志处理时所使用的 Handlers，必须是可迭代的。</span><br><span class="line"></span><br><span class="line">下面我们再用一个实例来感受一下：</span><br><span class="line"></span><br><span class="line">``` python</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG,</span><br><span class="line">                    filename=<span class="string">'output.log'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y/%m/%d %H:%M:%S'</span>,</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(module)s - %(message)s'</span>)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">'This is a log info'</span>)</span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finish'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我们指定了输出文件的名称为 output.log，另外指定了日期的输出格式，其中年月日的格式变成了 %Y/%m/%d，另外输出的 format 格式增加了 lineno、module 这两个信息，运行之后便会生成一个 output.log 的文件，内容如下：</p>
 <blockquote>
 <p>2018/06/03 14:43:26 - <strong>main</strong> - INFO - 9 - demo3 - This is a log info<br>2018/06/03 14:43:26 - <strong>main</strong> - DEBUG - 10 - demo3 - Debugging<br>2018/06/03 14:43:26 - <strong>main</strong> - WARNING - 11 - demo3 - Warning exists<br>2018/06/03 14:43:26 - <strong>main</strong> - INFO - 12 - demo3 - Finish</p>
@@ -283,38 +68,14 @@ logger.info(&#39;Finish&#39;)
 </tbody>
 </table>
 <p>这里最高的等级是 CRITICAL 和 FATAL，两个对应的数值都是 50，另外对于 WARNING 还提供了简写形式 WARN，两个对应的数值都是 30。<br>我们设置了输出 level，系统便只会输出 level 数值大于或等于该 level 的的日志结果，例如我们设置了输出日志 level 为 INFO，那么输出级别大于等于 INFO 的日志，如 WARNING、ERROR 等，DEBUG 和 NOSET 级别的不会输出。</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(level=logging.WARN)
-
-# Log
-logger.debug(&#39;Debugging&#39;)
-logger.critical(&#39;Critical Something&#39;)
-logger.error(&#39;Error Occurred&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finished&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level=logging.WARN)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log</span></span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.critical(<span class="string">'Critical Something'</span>)</span><br><span class="line">logger.error(<span class="string">'Error Occurred'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finished'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我们设置了输出级别为 WARN，然后对应输出了五种不同级别的日志信息，运行结果如下：</p>
 <blockquote>
 <p>Critical Something<br>Error Occurred<br>Warning exists</p>
 </blockquote>
 <p>可以看到只有 CRITICAL、ERROR、WARNING 信息输出了，DEBUG、INFO 信息没有输出。</p>
 <h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>下面我们先来了解一下 Handler 的用法，看下面的实例：</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(level=logging.INFO)
-handler = logging.FileHandler(&#39;output.log&#39;)
-formatter = logging.Formatter(&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
-logger.info(&#39;This is a log info&#39;)
-logger.debug(&#39;Debugging&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finish&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level=logging.INFO)</span><br><span class="line">handler = logging.FileHandler(<span class="string">'output.log'</span>)</span><br><span class="line">formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">'This is a log info'</span>)</span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finish'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我们没有再使用 basicConfig 全局配置，而是先声明了一个 Logger 对象，然后指定了其对应的 Handler 为 FileHandler 对象，然后 Handler 对象还单独指定了 Formatter 对象单独配置输出格式，最后给 Logger 对象添加对应的 Handler 即可，最后可以发现日志就会被输出到 output.log 中，内容如下：</p>
 <blockquote>
 <p>2018-06-03 14:53:36,467 - <strong>main</strong> - INFO - This is a log info<br>2018-06-03 14:53:36,468 - <strong>main</strong> - WARNING - Warning exists<br>2018-06-03 14:53:36,468 - <strong>main</strong> - INFO - Finish</p>
@@ -335,35 +96,7 @@ logger.info(&#39;Finish&#39;)
 <li>HTTPHandler：logging.handlers.HTTPHandler；通过”GET”或者”POST”远程输出到HTTP服务器。</li>
 </ul>
 <p>下面我们使用三个 Handler 来实现日志同时输出到控制台、文件、HTTP 服务器：</p>
-<pre><code class="python">import logging
-from logging.handlers import HTTPHandler
-import sys
-
-logger = logging.getLogger(__name__)
-logger.setLevel(level=logging.DEBUG)
-
-# StreamHandler
-stream_handler = logging.StreamHandler(sys.stdout)
-stream_handler.setLevel(level=logging.DEBUG)
-logger.addHandler(stream_handler)
-
-# FileHandler
-file_handler = logging.FileHandler(&#39;output.log&#39;)
-file_handler.setLevel(level=logging.INFO)
-formatter = logging.Formatter(&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
-
-# HTTPHandler
-http_handler = HTTPHandler(host=&#39;localhost:8001&#39;, url=&#39;log&#39;, method=&#39;POST&#39;)
-logger.addHandler(http_handler)
-
-# Log
-logger.info(&#39;This is a log info&#39;)
-logger.debug(&#39;Debugging&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finish&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">from</span> logging.handlers <span class="keyword">import</span> HTTPHandler</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level=logging.DEBUG)</span><br><span class="line"></span><br><span class="line"><span class="comment"># StreamHandler</span></span><br><span class="line">stream_handler = logging.StreamHandler(sys.stdout)</span><br><span class="line">stream_handler.setLevel(level=logging.DEBUG)</span><br><span class="line">logger.addHandler(stream_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># FileHandler</span></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'output.log'</span>)</span><br><span class="line">file_handler.setLevel(level=logging.INFO)</span><br><span class="line">formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">file_handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(file_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># HTTPHandler</span></span><br><span class="line">http_handler = HTTPHandler(host=<span class="string">'localhost:8001'</span>, url=<span class="string">'log'</span>, method=<span class="string">'POST'</span>)</span><br><span class="line">logger.addHandler(http_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log</span></span><br><span class="line">logger.info(<span class="string">'This is a log info'</span>)</span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finish'</span>)</span><br></pre></td></tr></table></figure>
 <p>运行之前我们需要先启动 HTTP Server，并运行在 8001 端口，其中 log 接口是用来接收日志的接口。<br>运行之后控制台输出会输出如下内容：</p>
 <blockquote>
 <p>This is a log info<br>Debugging<br>Warning exists<br>Finish</p>
@@ -377,166 +110,32 @@ logger.info(&#39;Finish&#39;)
 <p>另外值得注意的是，在这里 StreamHandler 对象我们没有设置 Formatter，因此控制台只输出了日志的内容，而没有包含时间、模块等信息，而 FileHandler 我们通过 setFormatter() 方法设置了一个 Formatter 对象，因此输出的内容便是格式化后的日志信息。</p>
 <p>另外每个 Handler 还可以设置 level 信息，最终输出结果的 level 信息会取 Logger 对象的 level 和 Handler 对象的 level 的交集。</p>
 <h2 id="Formatter"><a href="#Formatter" class="headerlink" title="Formatter"></a>Formatter</h2><p>在进行日志格式化输出的时候，我们可以不借助于 basicConfig 来全局配置格式化输出内容，可以借助于 Formatter 来完成，下面我们再来单独看下 Formatter 的用法：</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(level=logging.WARN)
-formatter = logging.Formatter(fmt=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;, datefmt=&#39;%Y/%m/%d %H:%M:%S&#39;)
-handler = logging.StreamHandler()
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
-# Log
-logger.debug(&#39;Debugging&#39;)
-logger.critical(&#39;Critical Something&#39;)
-logger.error(&#39;Error Occurred&#39;)
-logger.warning(&#39;Warning exists&#39;)
-logger.info(&#39;Finished&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level=logging.WARN)</span><br><span class="line">formatter = logging.Formatter(fmt=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>, datefmt=<span class="string">'%Y/%m/%d %H:%M:%S'</span>)</span><br><span class="line">handler = logging.StreamHandler()</span><br><span class="line">handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log</span></span><br><span class="line">logger.debug(<span class="string">'Debugging'</span>)</span><br><span class="line">logger.critical(<span class="string">'Critical Something'</span>)</span><br><span class="line">logger.error(<span class="string">'Error Occurred'</span>)</span><br><span class="line">logger.warning(<span class="string">'Warning exists'</span>)</span><br><span class="line">logger.info(<span class="string">'Finished'</span>)</span><br></pre></td></tr></table></figure>
 <p>在这里我们指定了一个 Formatter，并传入了 fmt 和 datefmt 参数，这样就指定了日志结果的输出格式和时间格式，然后 handler 通过 setFormatter() 方法设置此 Formatter 对象即可，输出结果如下：</p>
 <blockquote>
 <p>2018/06/03 15:47:15 - <strong>main</strong> - CRITICAL - Critical Something<br>2018/06/03 15:47:15 - <strong>main</strong> - ERROR - Error Occurred<br>2018/06/03 15:47:15 - <strong>main</strong> - WARNING - Warning exists</p>
 </blockquote>
 <p>这样我们可以每个 Handler 单独配置输出的格式，非常灵活。</p>
 <h2 id="捕获-Traceback"><a href="#捕获-Traceback" class="headerlink" title="捕获 Traceback"></a>捕获 Traceback</h2><p>如果遇到错误，我们更希望报错时出现的详细 Traceback 信息，便于调试，利用 logging 模块我们可以非常方便地实现这个记录，我们用一个实例来感受一下：</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(level=logging.DEBUG)
-
-# Formatter
-formatter = logging.Formatter(&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-
-# FileHandler
-file_handler = logging.FileHandler(&#39;result.log&#39;)
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
-
-# StreamHandler
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
-
-# Log
-logger.info(&#39;Start&#39;)
-logger.warning(&#39;Something maybe fail.&#39;)
-try:
-    result = 10 / 0
-except Exception:
-    logger.error(&#39;Faild to get result&#39;, exc_info=True)
-logger.info(&#39;Finished&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(level=logging.DEBUG)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Formatter</span></span><br><span class="line">formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># FileHandler</span></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'result.log'</span>)</span><br><span class="line">file_handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(file_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># StreamHandler</span></span><br><span class="line">stream_handler = logging.StreamHandler()</span><br><span class="line">stream_handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(stream_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log</span></span><br><span class="line">logger.info(<span class="string">'Start'</span>)</span><br><span class="line">logger.warning(<span class="string">'Something maybe fail.'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    result = <span class="number">10</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">    logger.error(<span class="string">'Faild to get result'</span>, exc_info=<span class="keyword">True</span>)</span><br><span class="line">logger.info(<span class="string">'Finished'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我们在 error() 方法中添加了一个参数，将 exc_info 设置为了 True，这样我们就可以输出执行过程中的信息了，即完整的 Traceback 信息。<br>运行结果如下：</p>
 <blockquote>
 <p>2018-06-03 16:00:15,382 - <strong>main</strong> - INFO - Start print log<br>2018-06-03 16:00:15,382 - <strong>main</strong> - DEBUG - Do something<br>2018-06-03 16:00:15,382 - <strong>main</strong> - WARNING - Something maybe fail.<br>2018-06-03 16:00:15,382 - <strong>main</strong> - ERROR - Faild to get result<br>Traceback (most recent call last):<br>  File “/private/var/books/aicodes/loggingtest/demo8.py”, line 23, in <module><br>    result = 10 / 0<br>ZeroDivisionError: division by zero<br>2018-06-03 16:00:15,383 - <strong>main</strong> - INFO - Finished<br>可以看到这样我们就非常方便地记录下来了报错的信息，一旦出现了错误，我们也能非常方便地排查。</module></p>
 </blockquote>
 <h1 id="配置共享"><a href="#配置共享" class="headerlink" title="配置共享"></a>配置共享</h1><p>在写项目的时候，我们肯定会将许多配置放置在许多模块下面，这时如果我们每个文件都来配置 logging 配置那就太繁琐了，logging 模块提供了父子模块共享配置的机制，会根据 Logger 的名称来自动加载父模块的配置。<br>例如我们这里首先定义一个 main.py 文件：</p>
-<pre><code class="python">import logging
-import core
-
-logger = logging.getLogger(&#39;main&#39;)
-logger.setLevel(level=logging.DEBUG)
-
-# Handler
-handler = logging.FileHandler(&#39;result.log&#39;)
-handler.setLevel(logging.INFO)
-formatter = logging.Formatter(&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
-logger.info(&#39;Main Info&#39;)
-logger.debug(&#39;Main Debug&#39;)
-logger.error(&#39;Main Error&#39;)
-core.run()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> core</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">'main'</span>)</span><br><span class="line">logger.setLevel(level=logging.DEBUG)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Handler</span></span><br><span class="line">handler = logging.FileHandler(<span class="string">'result.log'</span>)</span><br><span class="line">handler.setLevel(logging.INFO)</span><br><span class="line">formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">'Main Info'</span>)</span><br><span class="line">logger.debug(<span class="string">'Main Debug'</span>)</span><br><span class="line">logger.error(<span class="string">'Main Error'</span>)</span><br><span class="line">core.run()</span><br></pre></td></tr></table></figure>
 <p>这里我们配置了日志的输出格式和文件路径，同时定义了 Logger 的名称为 main，然后引入了另外一个模块 core，最后调用了 core 的 run() 方法。<br>接下来我们定义 core.py，内容如下：</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(&#39;main.core&#39;)
-
-def run():
-    logger.info(&#39;Core Info&#39;)
-    logger.debug(&#39;Core Debug&#39;)
-    logger.error(&#39;Core Error&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">'main.core'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line">    logger.info(<span class="string">'Core Info'</span>)</span><br><span class="line">    logger.debug(<span class="string">'Core Debug'</span>)</span><br><span class="line">    logger.error(<span class="string">'Core Error'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里我们定义了 Logger 的名称为 main.core，注意这里开头是 main，即刚才我们在 main.py 里面的 Logger 的名称，这样 core.py 里面的 Logger 就会复用 main.py 里面的 Logger 配置，而不用再去配置一次了。<br>运行之后会生成一个 result.log 文件，内容如下：</p>
 <blockquote>
 <p>2018-06-03 16:55:56,259 - main - INFO - Main Info<br>2018-06-03 16:55:56,259 - main - ERROR - Main Error<br>2018-06-03 16:55:56,259 - main.core - INFO - Core Info<br>2018-06-03 16:55:56,259 - main.core - ERROR - Core Error</p>
 </blockquote>
 <p>可以看到父子模块都使用了同样的输出配置。<br>如此一来，我们只要在入口文件里面定义好 logging 模块的输出配置，子模块只需要在定义 Logger 对象时名称使用父模块的名称开头即可共享配置，非常方便。<br>文件配置<br>在开发过程中，将配置在代码里面写死并不是一个好的习惯，更好的做法是将配置写在配置文件里面，我们可以将配置写入到配置文件，然后运行时读取配置文件里面的配置，这样是更方便管理和维护的，下面我们以一个实例来说明一下，首先我们定义一个 yaml 配置文件：</p>
-<pre><code class="python">version: 1
-formatters:
-  brief:
-    format: &quot;%(asctime)s - %(message)s&quot;
-  simple:
-    format: &quot;%(asctime)s - %(name)s - %(levelname)s - %(message)s&quot;
-handlers:
-  console:
-    class : logging.StreamHandler
-    formatter: brief
-    level   : INFO
-    stream  : ext://sys.stdout
-  file:
-    class : logging.FileHandler
-    formatter: simple
-    level: DEBUG
-    filename: debug.log
-  error:
-    class: logging.handlers.RotatingFileHandler
-    level: ERROR
-    formatter: simple
-    filename: error.log
-    maxBytes: 10485760
-    backupCount: 20
-    encoding: utf8
-loggers:
-  main.core:
-    level: DEBUG
-    handlers: [console, file, error]
-root:
-  level: DEBUG
-  handlers: [console]
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="number">1</span></span><br><span class="line">formatters:</span><br><span class="line">  brief:</span><br><span class="line">    format: <span class="string">"%(asctime)s - %(message)s"</span></span><br><span class="line">  simple:</span><br><span class="line">    format: <span class="string">"%(asctime)s - %(name)s - %(levelname)s - %(message)s"</span></span><br><span class="line">handlers:</span><br><span class="line">  console:</span><br><span class="line">    <span class="class"><span class="keyword">class</span> :</span> logging.StreamHandler</span><br><span class="line">    formatter: brief</span><br><span class="line">    level   : INFO</span><br><span class="line">    stream  : ext://sys.stdout</span><br><span class="line">  file:</span><br><span class="line">    <span class="class"><span class="keyword">class</span> :</span> logging.FileHandler</span><br><span class="line">    formatter: simple</span><br><span class="line">    level: DEBUG</span><br><span class="line">    filename: debug.log</span><br><span class="line">  error:</span><br><span class="line">    <span class="class"><span class="keyword">class</span>:</span> logging.handlers.RotatingFileHandler</span><br><span class="line">    level: ERROR</span><br><span class="line">    formatter: simple</span><br><span class="line">    filename: error.log</span><br><span class="line">    maxBytes: <span class="number">10485760</span></span><br><span class="line">    backupCount: <span class="number">20</span></span><br><span class="line">    encoding: utf8</span><br><span class="line">loggers:</span><br><span class="line">  main.core:</span><br><span class="line">    level: DEBUG</span><br><span class="line">    handlers: [console, file, error]</span><br><span class="line">root:</span><br><span class="line">  level: DEBUG</span><br><span class="line">  handlers: [console]</span><br></pre></td></tr></table></figure>
 <p>这里我们定义了 formatters、handlers、loggers、root 等模块，实际上对应的就是各个 Formatter、Handler、Logger 的配置，参数和它们的构造方法都是相同的。<br>接下来我们定义一个主入口文件，main.py，内容如下：</p>
-<pre><code class="python">import logging
-import core
-import yaml
-import logging.config
-import os
-
-
-def setup_logging(default_path=&#39;config.yaml&#39;, default_level=logging.INFO):
-    path = default_path
-    if os.path.exists(path):
-        with open(path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
-            config = yaml.load(f)
-            logging.config.dictConfig(config)
-    else:
-        logging.basicConfig(level=default_level)
-
-
-def log():
-    logging.debug(&#39;Start&#39;)
-    logging.info(&#39;Exec&#39;)
-    logging.info(&#39;Finished&#39;)
-
-
-if __name__ == &#39;__main__&#39;:
-    yaml_path = &#39;config.yaml&#39;
-    setup_logging(yaml_path)
-    log()
-    core.run()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> core</span><br><span class="line"><span class="keyword">import</span> yaml</span><br><span class="line"><span class="keyword">import</span> logging.config</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup_logging</span><span class="params">(default_path=<span class="string">'config.yaml'</span>, default_level=logging.INFO)</span>:</span></span><br><span class="line">    path = default_path</span><br><span class="line">    <span class="keyword">if</span> os.path.exists(path):</span><br><span class="line">        <span class="keyword">with</span> open(path, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            config = yaml.load(f)</span><br><span class="line">            logging.config.dictConfig(config)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        logging.basicConfig(level=default_level)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">()</span>:</span></span><br><span class="line">    logging.debug(<span class="string">'Start'</span>)</span><br><span class="line">    logging.info(<span class="string">'Exec'</span>)</span><br><span class="line">    logging.info(<span class="string">'Finished'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    yaml_path = <span class="string">'config.yaml'</span></span><br><span class="line">    setup_logging(yaml_path)</span><br><span class="line">    log()</span><br><span class="line">    core.run()</span><br></pre></td></tr></table></figure>
 <p>这里我们定义了一个 setup_logging() 方法，里面读取了 yaml 文件的配置，然后通过 dictConfig() 方法将配置项传给了 logging 模块进行全局初始化。<br>另外这个模块还引入了另外一个模块 core，所以我们定义 core.py 如下：</p>
-<pre><code class="python">import logging
-
-logger = logging.getLogger(&#39;main.core&#39;)
-
-def run():
-    logger.info(&#39;Core Info&#39;)
-    logger.debug(&#39;Core Debug&#39;)
-    logger.error(&#39;Core Error&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">'main.core'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line">    logger.info(<span class="string">'Core Info'</span>)</span><br><span class="line">    logger.debug(<span class="string">'Core Debug'</span>)</span><br><span class="line">    logger.error(<span class="string">'Core Error'</span>)</span><br></pre></td></tr></table></figure>
 <p>这个文件的内容和上文是没有什么变化的。<br>观察配置文件，主入口文件 main.py 实际上对应的是 root 一项配置，它指定了 handlers 是 console，即只输出到控制台。另外在 loggers 一项配置里面，我们定义了 main.core 模块，handlers 是 console、file、error 三项，即输出到控制台、输出到普通文件和回滚文件。<br>这样运行之后，我们便可以看到所有的运行结果输出到了控制台：</p>
 <blockquote>
 <p>2018-06-03 17:07:12,727 - Exec<br>2018-06-03 17:07:12,727 - Finished<br>2018-06-03 17:07:12,727 - Core Info<br>2018-06-03 17:07:12,727 - Core Info<br>2018-06-03 17:07:12,728 - Core Error<br>2018-06-03 17:07:12,728 - Core Error</p>
@@ -547,279 +146,19 @@ def run():
 </blockquote>
 <p>可以看到，通过配置文件，我们可以非常灵活地定义 Handler、Formatter、Logger 等配置，同时也显得非常直观，也非常容易维护，在实际项目中，推荐使用此种方式进行配置。<br>以上便是 logging 模块的基本使用方法，有了它，我们可以方便地进行日志管理和维护，会给我们的工作带来极大的方便。</p>
 <h1 id="日志记录使用常见误区"><a href="#日志记录使用常见误区" class="headerlink" title="日志记录使用常见误区"></a>日志记录使用常见误区</h1><p>在日志输出的时候经常我们会用到字符串拼接的形式，很多情况下我们可能会使用字符串的 format() 来构造一个字符串，但这其实并不是一个好的方法，因为还有更好的方法，下面我们对比两个例子：</p>
-<pre><code class="python">import logging
-
-logging.basicConfig(level=logging.DEBUG, format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-
-# bad
-logging.debug(&#39;Hello {0}, {1}!&#39;.format(&#39;World&#39;, &#39;Congratulations&#39;))
-# good
-logging.debug(&#39;Hello %s, %s!&#39;, &#39;World&#39;, &#39;Congratulations&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bad</span></span><br><span class="line">logging.debug(<span class="string">'Hello &#123;0&#125;, &#123;1&#125;!'</span>.format(<span class="string">'World'</span>, <span class="string">'Congratulations'</span>))</span><br><span class="line"><span class="comment"># good</span></span><br><span class="line">logging.debug(<span class="string">'Hello %s, %s!'</span>, <span class="string">'World'</span>, <span class="string">'Congratulations'</span>)</span><br></pre></td></tr></table></figure>
 <p>这里有两种打印 Log 的方法，第一种使用了字符串的 format() 的方法进行构造，传给 logging 的只用到了第一个参数，实际上 logging 模块提供了字符串格式化的方法，我们只需要在第一个参数写上要打印输出的模板，占位符用 %s、%d 等表示即可，然后在后续参数添加对应的值就可以了，推荐使用这种方法。<br>运行结果如下：</p>
 <blockquote>
 <p>2018-06-03 22:27:51,220 - root - DEBUG - Hello World, Congratulations!<br>2018-06-03 22:27:51,220 - root - DEBUG - Hello World, Congratulations!</p>
 </blockquote>
 <p>另外在进行异常处理的时候，通常我们会直接将异常进行字符串格式化，但其实可以直接指定一个参数将 traceback 打印出来，示例如下：</p>
-<pre><code class="python">import logging
-
-logging.basicConfig(level=logging.DEBUG, format=&#39;%(asctime)s - %(name)s - %(levelname)s - %(message)s&#39;)
-
-try:
-    result = 5 / 0
-except Exception as e:
-    # bad
-    logging.error(&#39;Error: %s&#39;, e)
-    # good
-    logging.error(&#39;Error&#39;, exc_info=True)
-    # good
-    logging.exception(&#39;Error&#39;)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    result = <span class="number">5</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="comment"># bad</span></span><br><span class="line">    logging.error(<span class="string">'Error: %s'</span>, e)</span><br><span class="line">    <span class="comment"># good</span></span><br><span class="line">    logging.error(<span class="string">'Error'</span>, exc_info=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment"># good</span></span><br><span class="line">    logging.exception(<span class="string">'Error'</span>)</span><br></pre></td></tr></table></figure>
 <p>如果我们直接使用字符串格式化的方法将错误输出的话，是不会包含 Traceback 信息的，但如果我们加上 exc_info 参数或者直接使用 exception() 方法打印的话，那就会输出 Traceback 信息了。<br>运行结果如下：</p>
 <blockquote>
 <p>2018-06-03 22:24:31,927 - root - ERROR - Error: division by zero<br>2018-06-03 22:24:31,927 - root - ERROR - Error<br>Traceback (most recent call last):<br>  File “/private/var/books/aicodes/loggingtest/demo9.py”, line 6, in <module><br>    result = 5 / 0<br>ZeroDivisionError: division by zero<br>2018-06-03 22:24:31,928 - root - ERROR - Error<br>Traceback (most recent call last):<br>  File “/private/var/books/aicodes/loggingtest/demo9.py”, line 6, in <module><br>    result = 5 / 0<br>ZeroDivisionError: division by zero</module></module></p>
 </blockquote>
 <p>出处信息</p>
 <p>作者：崔庆才丨静觅<br>链接：<a href="https://juejin.im/post/5b13fdd0f265da6e0b6ff3dd" target="_blank" rel="noopener">https://juejin.im/post/5b13fdd0f265da6e0b6ff3dd</a><br>来源：掘金</p>
-
-      <div class="article-end-text-wrap">
-          <div class="article-end-text">
-            <p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p>
-            <image src="/image/qrcode.jpg">
-          </div>
-      </div>
-      
-        <div class="article-footer-copyright">
-            本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
-            非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
-            本文标题为: 利用logging模块轻松地进行Python日志记录(转)<br>
-            本文链接为：<a href="http://www.yangyanxing.com/article/use-logging-in-python.html">http://www.yangyanxing.com/article/use-logging-in-python.html</a><br>
-        </div>
-    </main>
-    <footer class="post-footer">
-      
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/python/" style="background: #fc6423" rel="tag"><i class="fas fa-tags"></i> python</a>
-        
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-<div class="reward" id="reward">
-  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！求鼓励，求支持！</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
-  <div id="qr" class="qr" style="display: none;">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/wechat.jpg" alt="微信支付"/>
-      <span>微信支付</span>
-    </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/alicode.jpg" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-  
-  
-  <div class="post-nav">
-    
-    <div class="post-nav-next post-nav-item">
-      <a href="/article/config-local-ssh.html" rel="next" title="配置多个ssh密钥对并且永久多ssh管理">
-        <i class="fas fa-angle-left"></i>
-        <span class="nav-title">配置多个ssh密钥对并且永久多ssh管理</span>
-      </a>
-    </div>
-    
-    
-    <div class="post-nav-prev post-nav-item">
-      <a href="/article/python-logging-day-file.html" rel="prev" title="python中的日志按天保存单独的文件">
-        <span class="nav-title">python中的日志按天保存单独的文件</span>
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
-    
-  </div>
-  
-  
-</section>
-
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/1.jpg" alt="杨彦星">
-  
-  <p class="author-name">杨彦星</p>
-  <p class="author-description"> 人一切的痛苦，本质是都是对自已的无能的愤怒</p>
-  <div class="site-count">
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i> RSS</a>
-  </div>
-  
-</div>
-
-
-  <div class="sidebar-sticky">
-    
-    
-
-
-
-
-<hr>
-<div class="post-toc sidebar-item" id="toc-div">
-  <p><i class="fas fa-list-ol"></i> 文章目录</p>
-  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#日志记录的流程框架"><span class="toc-text"><a href="#&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x6D41;&#x7A0B;&#x6846;&#x67B6;" class="headerlink" title="&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x6D41;&#x7A0B;&#x6846;&#x67B6;"></a>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x6D41;&#x7A0B;&#x6846;&#x67B6;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日志记录的相关用法"><span class="toc-text"><a href="#&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x76F8;&#x5173;&#x7528;&#x6CD5;" class="headerlink" title="&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x76F8;&#x5173;&#x7528;&#x6CD5;"></a>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x76F8;&#x5173;&#x7528;&#x6CD5;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Level"><span class="toc-text"><a href="#Level" class="headerlink" title="Level"></a>Level</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Handler"><span class="toc-text"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Formatter"><span class="toc-text"><a href="#Formatter" class="headerlink" title="Formatter"></a>Formatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#捕获-Traceback"><span class="toc-text"><a href="#&#x6355;&#x83B7;-Traceback" class="headerlink" title="&#x6355;&#x83B7; Traceback"></a>&#x6355;&#x83B7; Traceback</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置共享"><span class="toc-text"><a href="#&#x914D;&#x7F6E;&#x5171;&#x4EAB;" class="headerlink" title="&#x914D;&#x7F6E;&#x5171;&#x4EAB;"></a>&#x914D;&#x7F6E;&#x5171;&#x4EAB;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日志记录使用常见误区"><span class="toc-text"><a href="#&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x4F7F;&#x7528;&#x5E38;&#x89C1;&#x8BEF;&#x533A;" class="headerlink" title="&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x4F7F;&#x7528;&#x5E38;&#x89C1;&#x8BEF;&#x533A;"></a>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x4F7F;&#x7528;&#x5E38;&#x89C1;&#x8BEF;&#x533A;</span></a></li></ol></div>
-</div>
-
-
-
-    
-    
-    
-<hr>
-<div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i> 社交链接</p>
-  <ul>
-    
-    <li><i class="fab fa-github"></i> <a href="https://github.com/kevinkelin" target="_blank">GitHub</a></li>
-    
-    <li><i class="fab fa-weibo"></i> <a href="https://weibo.com/kevinkelin" target="_blank">Weibo</a></li>
-    
-    <li><i class="far fa-envelope"></i> <a href="mailto:admin@yangyanxing.com" target="_blank">Email</a></li>
-    
-    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/yangyanxing" target="_blank">Facebook</a></li>
-    
-    <li><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/yangyanxing" target="_blank">Twitter</a></li>
-    
-  </ul>
-</div>
-
-
-    
-    
-    
-<hr>
-<div class="blogroll sidebar-item">
-  <p><i class="fas fa-link"></i> 友情链接</p>
-  <ul>
-    
-    <li><a href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a></li>
-    
-    <li><a href="http://blog.csdn.net/itfootball" target="_blank">D.Q的专栏</a></li>
-    
-    <li><a href="http://opentest.360.cn/" target="_blank">360开测</a></li>
-    
-    <li><a href="https://testerhome.com/" target="_blank">TesterHome</a></li>
-    
-    <li><a href="http://www.androiddevtools.cn/" target="_blank">AndroidDev</a></li>
-    
-    <li><a href="http://blog.csdn.net/guolin_blog" target="_blank">郭霖的专栏</a></li>
-    
-    <li><a href="http://coolshell.cn/" target="_blank">酷壳</a></li>
-    
-    <li><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank">阮一峰</a></li>
-    
-    <li><a href="http://stormzhang.com/" target="_blank">stormzhang博客</a></li>
-    
-    <li><a href="https://imququ.com/" target="_blank">Jerry Qu</a></li>
-    
-  </ul>
-</div>
-
-
-    
-  </div>
-</aside>
-
-
-          
-        </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer">
-  <div class="container">
-    <div class="back-to-top">
-      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
-    </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">杨彦星</span>
-          <span class="year"><i class="far fa-copyright"></i> 2010 - 2018</span>
-          
-          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-          
-          <br>
-          <span>
-          <a href="http://www.miitbeian.gov.cn/" target="_blank" class="text-muted">京ICP备18004468号</a>
-          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257423854'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257423854%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
-
-            <script>
-				(function(){
-				    var bp = document.createElement('script');
-				    var curProtocol = window.location.protocol.split(':')[0];
-				    if (curProtocol === 'https'){
-				   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-				  }
-				  else{
-				  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-				  }
-				    var s = document.getElementsByTagName("script")[0];
-				    s.parentNode.insertBefore(bp, s);
-				})();
-			</script>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-            <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-        </div>
-        <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</footer>
-
-
-  </body>
-</html>
+</div><div class="article-end-text-wrap"><div class="article-end-text"><p>欢迎关注我的公众号--序语程言，里面会分享一些编程的基础与一些问题的解决</p><img src="/image/qrcode.jpg" style="margin: 0 auto;"></div></div><iframe src="/donate/?AliPayQR=http://ww3.sinaimg.cn/large/795ab47fjw1f5ny19h9v0j20ew0jgq5g.jpg&amp;WeChatQR=http://ww1.sinaimg.cn/large/795ab47fjw1f5nxt989dqj208w0bq3z6.jpg&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="article-footer-copyright"><p>本文由 杨彦星 发表于 杨彦星的个人博客 ,采用<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" >「署名 4.0 国际」</a>创作共享协议。<br>
+非商业转载请注明作者及出处。商业转载请联系作者本人。<br>
+本文标题为: 利用logging模块轻松地进行Python日志记录(转) <br></p><p>本文链接为：<a href="http://www.yangyanxing.com/article/use-logging-in-python.html">http://www.yangyanxing.com/article/use-logging-in-python.html</a> <br></p></div><div class="tags"><a href="/tags/python/">python</a></div><div class="post-nav"><a class="pre" href="/article/python-logging-day-file.html">python中的日志按天保存单独的文件</a><a class="next" href="/article/config-local-ssh.html">配置多个ssh密钥对并且永久多ssh管理</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://www.yangyanxing.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT关注/">IT关注</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux相关/">Linux相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/我的大学/">我的大学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记录/">生活记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机相关/">计算机相关</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/安全/" style="font-size: 15px;">安全</a> <a href="/tags/xml/" style="font-size: 15px;">xml</a> <a href="/tags/ThinkPHP/" style="font-size: 15px;">ThinkPHP</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/微博/" style="font-size: 15px;">微博</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/自动化测试/" style="font-size: 15px;">自动化测试</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/requests/" style="font-size: 15px;">requests</a> <a href="/tags/webpy/" style="font-size: 15px;">webpy</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/web/" style="font-size: 15px;">web</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/higher-order-function.html">python中关于map,lambda,高阶函数与装饰器的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/article/python-list-sort.html">python中的list排序问题以及sort,sorted的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/article/python-logging-day-file.html">python中的日志按天保存单独的文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/use-logging-in-python.html">利用logging模块轻松地进行Python日志记录(转)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/config-local-ssh.html">配置多个ssh密钥对并且永久多ssh管理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/put-html-to-qiniu.html">将hexo生成的静态网站部署到七牛</a></li><li class="post-list-item"><a class="post-list-link" href="/article/use-selenium-op-browser.html">使用python操作selenium操作第三方浏览器(360浏览器)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/try_in_python.html">python中的异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/use-python-get-house-info.html">使用python抓取自住房信息</a></li><li class="post-list-item"><a class="post-list-link" href="/article/use-apscheduler.html">用于python的定时任务apscheduler的使用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.liaoxuefeng.com/" title="廖雪峰" target="_blank">廖雪峰</a><ul></ul><a href="http://blog.csdn.net/itfootball" title="D.Q的专栏" target="_blank">D.Q的专栏</a><ul></ul><a href="http://opentest.360.cn/" title="360开测" target="_blank">360开测</a><ul></ul><a href="https://testerhome.com/" title="TesterHome" target="_blank">TesterHome</a><ul></ul><a href="http://www.androiddevtools.cn/" title="AndroidDev" target="_blank">AndroidDev</a><ul></ul><a href="http://blog.csdn.net/guolin_blog" title="郭霖的专栏" target="_blank">郭霖的专栏</a><ul></ul><a href="http://coolshell.cn/" title="酷壳" target="_blank">酷壳</a><ul></ul><a href="http://www.ruanyifeng.com/blog/archives.html" title="阮一峰" target="_blank">阮一峰</a><ul></ul><a href="http://stormzhang.com/" title="stormzhang博客" target="_blank">stormzhang博客</a><ul></ul><a href="https://imququ.com/" title="Jerry Qu" target="_blank">Jerry Qu</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">杨彦星.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

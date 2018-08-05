@@ -235,8 +235,7 @@
     <summary type="html">
     
       &lt;p&gt;在使用python做网站的时候首先接触的就是webpy了，这个框架小巧简单，对于小型的网络应用功能足以了，在使用的过程中也遇到过一些总是，在这里也记录总结一下&lt;/p&gt;
-&lt;h1 id=&quot;基础的框架搭建&quot;&gt;&lt;a href=&quot;#基础的框架搭建&quot; class=&quot;headerlink&quot; title=&quot;基础的框架搭建&quot;&gt;&lt;/a&gt;基础的框架搭建&lt;/h1&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;pip install web.py -i https://pypi.douban.com/simple
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;基础的框架搭建&quot;&gt;&lt;a href=&quot;#基础的框架搭建&quot; class=&quot;headerlink&quot; title=&quot;基础的框架搭建&quot;&gt;&lt;/a&gt;基础的框架搭建&lt;/h1&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install web.py -i https://pypi.douban.com/simple&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -472,13 +471,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;初始化一个项目&quot;&gt;&lt;a href=&quot;#初始化一个项目&quot; class=&quot;headerlink&quot; title=&quot;初始化一个项目&quot;&gt;&lt;/a&gt;初始化一个项目&lt;/h1&gt;&lt;p&gt;thinkphp是单入口文件&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&amp;lt;?php
-define(&amp;quot;APP_NAME&amp;quot;, &amp;quot;THINK_Study&amp;quot;);
-define(&amp;quot;APP_PATH&amp;quot;, &amp;quot;./study/&amp;quot;);
-define(&amp;quot;APP_DEBUG&amp;quot;, true);
-require(&amp;quot;./ThinkPHP/ThinkPHP.php&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;h1 id=&quot;初始化一个项目&quot;&gt;&lt;a href=&quot;#初始化一个项目&quot; class=&quot;headerlink&quot; title=&quot;初始化一个项目&quot;&gt;&lt;/a&gt;初始化一个项目&lt;/h1&gt;&lt;p&gt;thinkphp是单入口文件&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;define(&lt;span class=&quot;string&quot;&gt;&quot;APP_NAME&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;THINK_Study&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;define(&lt;span class=&quot;string&quot;&gt;&quot;APP_PATH&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;./study/&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;define(&lt;span class=&quot;string&quot;&gt;&quot;APP_DEBUG&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;./ThinkPHP/ThinkPHP.php&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Note:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;要先定义APP_PATH,后再include thinkphp 主入口文件，要不然会在当前目录上建立目录，很乱&lt;/li&gt;
@@ -550,23 +543,7 @@ require(&amp;quot;./ThinkPHP/ThinkPHP.php&amp;quot;);
     
       &lt;p&gt;最近在看《第一行代码-android》，这本书讲的不错，从最android基础的开始讲起，由浅入深，一步一步的教怎么使用android开发中的各种内容，今天看到listView，书中讲到listView可能是使用最多也是最难的一个组件，看过之后觉得还是需要好好消化一下的，借助书中的代码，来记录一下学习的过程&lt;/p&gt;
 &lt;p&gt;一、在listView中简单的显示一行文字&lt;/p&gt;
-&lt;p&gt;这个应该是listView应用中最简单的了，在使用listView中，一般的步骤应该是，先在main_activity.xml中创建好listView的布局&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
-xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot;
-android:layout_width=&amp;quot;match_parent&amp;quot;
-android:layout_height=&amp;quot;match_parent&amp;quot;
-android:orientation=&amp;quot;vertical&amp;quot; &amp;gt;
-
-&amp;lt;ListView
-    android:id=&amp;quot;@+id/list_view&amp;quot;
-    android:layout_width=&amp;quot;match_parent&amp;quot;
-    android:layout_height=&amp;quot;match_parent&amp;quot;
-    &amp;gt;
-
-&amp;lt;/ListView&amp;gt;
-
-&amp;lt;/LinearLayout&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个应该是listView应用中最简单的了，在使用listView中，一般的步骤应该是，先在main_activity.xml中创建好listView的布局&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xmlns:tools=&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:layout_width=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:layout_height=&quot;match_parent&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:orientation=&quot;vertical&quot; &amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ListView&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@+id/list_view&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;    &amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ListView&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;LinearLayout&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -658,14 +635,7 @@ android:orientation=&amp;quot;vertical&amp;quot; &amp;gt;
     <summary type="html">
     
       &lt;p&gt;最近在写一个小的demo，简单的用户注册与登录，检查在注册的时候要先检测用户名是否已经存在了，还要检查一下密码长度要不得小于3个字符&lt;/p&gt;
-&lt;p&gt;检查用户是否存在我是写在了一个单独的model.py里&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;def check(uname):
-info = db.select(&amp;#39;pytest&amp;#39;,where=&amp;quot;username=$uname&amp;quot;,vars=locals())
-if len(info)&amp;gt;0:
-return False
-else:
-return True
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查用户是否存在我是写在了一个单独的model.py里&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(uname)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;info = db.select(&lt;span class=&quot;string&quot;&gt;&#39;pytest&#39;&lt;/span&gt;,where=&lt;span class=&quot;string&quot;&gt;&quot;username=$uname&quot;&lt;/span&gt;,vars=locals())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(info)&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -733,13 +703,7 @@ return True
 &lt;p&gt;&lt;a href=&quot;/image/2015/03/image.png&quot;&gt;&lt;img src=&quot;/image/2015/03/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot;&gt;&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;一、在项目(module)中导入robotium的jar包，右键app-&amp;gt;new-&amp;gt;directory,输入libs&lt;/p&gt;
 &lt;p&gt;然后将robotium-solo-5.3.1.jar复制进去，然后右键robotium-solo-5.3.1.jar选择add as library,之后就可以写测试用例了&lt;/p&gt;
-&lt;p&gt;如果还有问题，看一下项目的build gradle&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;dependencies {   
- compile fileTree(include: [&amp;#39;*.jar&amp;#39;], dir: &amp;#39;libs&amp;#39;)    
- compile &amp;#39;com.android.support:appcompat-v7:21.0.3&amp;#39;    
- compile files(&amp;#39;libs/robotium-solo-5.3.1.jar&amp;#39;)    
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果还有问题，看一下项目的build gradle&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dependencies &amp;#123;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; compile fileTree(include: [&amp;apos;*.jar&amp;apos;], dir: &amp;apos;libs&amp;apos;)    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; compile &amp;apos;com.android.support:appcompat-v7:21.0.3&amp;apos;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; compile files(&amp;apos;libs/robotium-solo-5.3.1.jar&amp;apos;)    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -788,16 +752,7 @@ return True
     
       &lt;p&gt;原文 &lt;a href=&quot;http://www.cnblogs.com/UUUP/p/3983394.html&quot; title=&quot;http://www.cnblogs.com/UUUP/p/3983394.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.cnblogs.com/UUUP/p/3983394.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;spinner相当于html表单中的select下拉列表。&lt;/p&gt;
-&lt;h1 id=&quot;第一种方式&quot;&gt;&lt;a href=&quot;#第一种方式&quot; class=&quot;headerlink&quot; title=&quot;第一种方式&quot;&gt;&lt;/a&gt;第一种方式&lt;/h1&gt;&lt;p&gt;在string.xml中添加一个数组spinner_data：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; 
-&amp;lt;resources&amp;gt; 
-&amp;lt;string-array name=&amp;quot;spinner_data&amp;quot;&amp;gt; 
-&amp;lt;item &amp;gt;北京&amp;lt;/item&amp;gt; 
-&amp;lt;item &amp;gt;湖南&amp;lt;/item&amp;gt; 
-&amp;lt;item &amp;gt;湖北&amp;lt;/item&amp;gt; 
-&amp;lt;/string-array&amp;gt; 
-&amp;lt;/resources&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;第一种方式&quot;&gt;&lt;a href=&quot;#第一种方式&quot; class=&quot;headerlink&quot; title=&quot;第一种方式&quot;&gt;&lt;/a&gt;第一种方式&lt;/h1&gt;&lt;p&gt;在string.xml中添加一个数组spinner_data：&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;xml version=&lt;span class=&quot;string&quot;&gt;&quot;1.0&quot;&lt;/span&gt; encoding=&lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;string-array&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;spinner_data&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt; &amp;gt;&lt;/span&gt;北京&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt; &amp;gt;&lt;/span&gt;湖南&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt; &amp;gt;&lt;/span&gt;湖北&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;string-array&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -840,12 +795,7 @@ return True
     <summary type="html">
     
       &lt;p&gt;绑定单击事件有两种方法，一种是通过绑定android:onClick属性，一种是绑定一个setOnClickListener回调函数&lt;/p&gt;
-&lt;h1 id=&quot;通过绑定onClick属性&quot;&gt;&lt;a href=&quot;#通过绑定onClick属性&quot; class=&quot;headerlink&quot; title=&quot;通过绑定onClick属性&quot;&gt;&lt;/a&gt;通过绑定onClick属性&lt;/h1&gt;&lt;p&gt;在activity_main.xml对应的组件上设置android:onClick=”test” 属性，然后再Java文件里定义一个test方法来实现，这个test方法是MainActivity类的一个方法&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
-public void test(View view){
-        Toast.makeText(MainActivity.this, &amp;quot;你还真敢点啊！&amp;quot;, Toast.LENGTH_LONG).show();
-    }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;通过绑定onClick属性&quot;&gt;&lt;a href=&quot;#通过绑定onClick属性&quot; class=&quot;headerlink&quot; title=&quot;通过绑定onClick属性&quot;&gt;&lt;/a&gt;通过绑定onClick属性&lt;/h1&gt;&lt;p&gt;在activity_main.xml对应的组件上设置android:onClick=”test” 属性，然后再Java文件里定义一个test方法来实现，这个test方法是MainActivity类的一个方法&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;public &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; test(View view)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Toast.makeText(MainActivity.this, &lt;span class=&quot;string&quot;&gt;&quot;你还真敢点啊！&quot;&lt;/span&gt;, Toast.LENGTH_LONG).show();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;这里的view就是要使用的控件，如果是绑定的是个button，那么view就是这个button&lt;br&gt;
     
     </summary>
@@ -941,44 +891,7 @@ public void test(View view){
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;windows.h&amp;gt;
-using namespace std;
-
-void main(){
-char szSelfName[MAX_PATH] = {0};//定义存储文件的名字的变量
-char szWindowsPath[MAX_PATH] = {0};//定义winsows路径的变量
-char szSystemPath[MAX_PATH] = {0};//定义存储system的变量
-char szTmpPath[MAX_PATH] = {0};
-
-GetModuleFileName(NULL,szSelfName,MAX_PATH);//得到文件的名字，NULL的时候是文件自身
-GetWindowsDirectory(szWindowsPath,MAX_PATH);//得到windows目录
-GetSystemDirectory(szSystemPath,MAX_PATH);//得到system目录
-
-cout&amp;lt;&amp;lt;szSelfName&amp;lt;&amp;lt;endl&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;endl&amp;lt;&amp;lt;szSystemPath&amp;lt;&amp;lt;endl;
-strcat(szWindowsPath,&amp;quot;\123.exe&amp;quot;);//定义拷贝后的名字
-cout&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;endl;
-cout&amp;lt;&amp;lt;CopyFile(szSelfName,szWindowsPath,FALSE);
-
-char szComputerName[MAXBYTE] = {0};//定义存储computer的变量
-char szUserName[MAXBYTE] = {0};//定义userName存储的变量
-unsigned long nSize = MAXBYTE;
-
-OSVERSIONINFO OsVer;
-//Before calling the GetVersionEx function, set the dwOSVersionInfoSize member of the OSVERSIONINFO data structure to sizeof(OSVERSIONINFO).
-OsVer.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-GetVersionEx(&amp;amp;OsVer);//将得到的系统信息存储在OsVer中
-cout&amp;lt;&amp;lt;OsVer.dwMajorVersion&amp;lt;&amp;lt;&amp;quot;.&amp;quot;&amp;lt;&amp;lt;OsVer.dwMinorVersion&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;OsVer.dwPlatformId&amp;lt;&amp;lt;endl;
-if(OsVer.dwMajorVersion == 6 &amp;amp;&amp;amp; OsVer.dwMinorVersion == 1){
-cout&amp;lt;&amp;lt;&amp;quot;你的系统是win7&amp;quot;&amp;lt;&amp;lt;endl;
-}else{
-cout&amp;lt;&amp;lt;&amp;quot;你的系统不是win7&amp;quot;&amp;lt;&amp;lt;endl;
-}
-GetComputerName(szComputerName,&amp;amp;nSize);
-GetUserName(szUserName,&amp;amp;nSize);
-cout&amp;lt;&amp;lt;szComputerName&amp;lt;&amp;lt;endl;
-cout&amp;lt;&amp;lt;szUserName&amp;lt;&amp;lt;endl;
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;windows.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szSelfName[MAX_PATH] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;span class=&quot;comment&quot;&gt;//定义存储文件的名字的变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szWindowsPath[MAX_PATH] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;span class=&quot;comment&quot;&gt;//定义winsows路径的变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szSystemPath[MAX_PATH] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;span class=&quot;comment&quot;&gt;//定义存储system的变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szTmpPath[MAX_PATH] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetModuleFileName(&lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;,szSelfName,MAX_PATH);&lt;span class=&quot;comment&quot;&gt;//得到文件的名字，NULL的时候是文件自身&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetWindowsDirectory(szWindowsPath,MAX_PATH);&lt;span class=&quot;comment&quot;&gt;//得到windows目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetSystemDirectory(szSystemPath,MAX_PATH);&lt;span class=&quot;comment&quot;&gt;//得到system目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;szSelfName&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;&amp;lt;&amp;lt;szSystemPath&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;strcat&lt;/span&gt;(szWindowsPath,&lt;span class=&quot;string&quot;&gt;&quot;\123.exe&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//定义拷贝后的名字&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;szWindowsPath&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;CopyFile(szSelfName,szWindowsPath,FALSE);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szComputerName[MAXBYTE] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;span class=&quot;comment&quot;&gt;//定义存储computer的变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; szUserName[MAXBYTE] = &amp;#123;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&amp;#125;;&lt;span class=&quot;comment&quot;&gt;//定义userName存储的变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; nSize = MAXBYTE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;OSVERSIONINFO OsVer;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//Before calling the GetVersionEx function, set the dwOSVersionInfoSize member of the OSVERSIONINFO data structure to sizeof(OSVERSIONINFO).&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;OsVer.dwOSVersionInfoSize = &lt;span class=&quot;keyword&quot;&gt;sizeof&lt;/span&gt;(OSVERSIONINFO);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetVersionEx(&amp;amp;OsVer);&lt;span class=&quot;comment&quot;&gt;//将得到的系统信息存储在OsVer中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;OsVer.dwMajorVersion&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;&amp;lt;&amp;lt;OsVer.dwMinorVersion&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;&amp;lt;&amp;lt;OsVer.dwPlatformId&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(OsVer.dwMajorVersion == &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; &amp;amp;&amp;amp; OsVer.dwMinorVersion == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;你的系统是win7&quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;你的系统不是win7&quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetComputerName(szComputerName,&amp;amp;nSize);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetUserName(szUserName,&amp;amp;nSize);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;szComputerName&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;szUserName&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -996,18 +909,7 @@ cout&amp;lt;&amp;lt;szUserName&amp;lt;&amp;lt;endl;
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;一、宽字符与多字节字符
-#include &amp;quot;tchar.h&amp;quot;
-void main(){
-TCHAR p[] = _T(&amp;quot;IT学吧&amp;quot;);
-int l1 = sizeof(p);//I1 T1 学2 吧2 1
-int l2 = _tcslen(p);
-int l4 = wcslen(p);
-//int l3 = strlen(p);
-return;
-
-}
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;一、宽字符与多字节字符&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&quot;tchar.h&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TCHAR p[] = _T(&lt;span class=&quot;string&quot;&gt;&quot;IT学吧&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l1 = &lt;span class=&quot;keyword&quot;&gt;sizeof&lt;/span&gt;(p);&lt;span class=&quot;comment&quot;&gt;//I1 T1 学2 吧2 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l2 = _tcslen(p);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l4 = wcslen(p);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//int l3 = strlen(p);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在多字节字符集中，每个汉字占两个字节，英文字母占一个字节，sizeof(p) = 7 _tcslen(p)=6(字符串长度等于6，I1 T1 学2 吧2)&lt;/p&gt;
 &lt;p&gt;在宽字节（unicode）字符集中，所有有字符都是占两个字节 sizeof(p) = 10 _tcslen(p)=4(I1 T1 学1 吧1)&lt;br&gt;
     
@@ -1027,34 +929,7 @@ return;
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;一、hello world
-#include&amp;lt;iostream&amp;gt;  这里可以用#include&amp;lt;iostream.h&amp;gt; 加载一个非标准的库，由于.h还没有名字空间的概念，所以之后也就没有使用std的操作
-using namespace std; 声明定义使用std 名字空间
-namespace a
-{
-     int b = 5;
-}
-namespace c{
-     int b = 8;
-}
-int main(){
-     std::cout&amp;lt;&amp;lt;&amp;quot;我喜欢C++n&amp;quot;;
-     std::cout&amp;lt;&amp;lt;&amp;quot;五年一班数学成绩n&amp;quot;;
-     std::cout&amp;lt;&amp;lt;&amp;quot;第一名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;100;
-     std::cout&amp;lt;&amp;lt;std::endl;
-     std::cout&amp;lt;&amp;lt;&amp;quot;第二名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;90+8;
-     std::cout&amp;lt;&amp;lt;std::endl;
-     std::cout&amp;lt;&amp;lt;&amp;quot;第三名许凡的成绩t&amp;quot;&amp;lt;&amp;lt;(float)5/8;
-     std::cout&amp;lt;&amp;lt;std::endl;
-
-     cout&amp;lt;&amp;lt;&amp;quot;我是没有使用std的&amp;quot;&amp;lt;&amp;lt;endl;
-     int b = 10;
-
-     cout&amp;lt;&amp;lt;b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;a::b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;c::b&amp;lt;&amp;lt;endl;
-
-     return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;一、hello world&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;  这里可以用#include&amp;lt;iostream.h&amp;gt; 加载一个非标准的库，由于.h还没有名字空间的概念，所以之后也就没有使用std的操作&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;; 声明定义使用&lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt; 名字空间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; a&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; b = &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; c&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; b = &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;我喜欢C++n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;五年一班数学成绩n&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;第一名许凡的成绩t&quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;第二名许凡的成绩t&quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;第三名许凡的成绩t&quot;&lt;/span&gt;&amp;lt;&amp;lt;(&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;)&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot;我是没有使用std的&quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; b = &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt;b&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;&amp;lt;&amp;lt;a::b&amp;lt;&amp;lt;&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;&amp;lt;&amp;lt;c::b&amp;lt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1117,12 +992,7 @@ int main(){
 &lt;/blockquote&gt;
 &lt;p&gt;在网上查了查，这个问题出现的还挺多的，解决办法是改&lt;span style=&quot;color: #000000;&quot;&gt;comments-ajax.js这个文件&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;1.在comments-ajax.js文件中下面这段程序的后面（参考&lt;a href=&quot;http://www.tennfy.com/503.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;cdn缓存导致ajax评论失效&lt;/a&gt;）：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var i = 0, got = -1, len = document.getElementsByTagName(&amp;#39;script&amp;#39;).length;
-while ( i &amp;lt;= len &amp;amp;&amp;amp; got == -1){
-    var js_url = document.getElementsByTagName(&amp;#39;script&amp;#39;)[i].src,
-            got = js_url.indexOf(&amp;#39;comments-ajax.js&amp;#39;); i++ ;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, got = &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;, len = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;).length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; ( i &amp;lt;= len &amp;amp;&amp;amp; got == &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; js_url = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;)[i].src,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            got = js_url.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;comments-ajax.js&#39;&lt;/span&gt;); i++ ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1269,9 +1139,7 @@ while ( i &amp;lt;= len &amp;amp;&amp;amp; got == -1){
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+          &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -1482,16 +1350,8 @@ from selenium.webdriver.common.action_chains import ActionChains
     
     <summary type="html">
     
-      &lt;p&gt;网页中的数据在传递的时候有GET和POST两种方式，GET是以网址的形式传参数，在web.py中有着很好的匹配，如果我们配置以下的urls&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;  urls =(
-    &amp;#39;/&amp;#39;,&amp;#39;index&amp;#39;,
-    &amp;#39;/weixin/(.*?)&amp;#39;,&amp;#39;WeixinInterface&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;先不考虑/weixin/后面的东西，现在我们来写index的类&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;class index:
-    def GET(self):
-        i = web.input(name = &amp;#39;kevinkelin&amp;#39;,age = 100)
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;网页中的数据在传递的时候有GET和POST两种方式，GET是以网址的形式传参数，在web.py中有着很好的匹配，如果我们配置以下的urls&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;urls =(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;index&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;/weixin/(.*?)&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;WeixinInterface&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;先不考虑/weixin/后面的东西，现在我们来写index的类&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;index&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        i = web.input(name = &lt;span class=&quot;string&quot;&gt;&#39;kevinkelin&#39;&lt;/span&gt;,age = &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1563,10 +1423,7 @@ from selenium.webdriver.common.action_chains import ActionChains
     <summary type="html">
     
       &lt;p&gt;今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下&lt;/p&gt;
-&lt;p&gt;写一个hello world的小程序&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;#!/usr/bin/python
-print &amp;#39;Content-Type: text/plainn&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写一个hello world的小程序&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;!/usr/bin/python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print &#39;Content-Type: text/plainn&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;以二进制方式上传到自已的空间上，访问 &lt;a href=&quot;http://static.yangyanxing.com/test.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://static.yangyanxing.com/test.py&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;居然一次性成功了，完美地显示hello world&lt;br&gt;
     
@@ -1587,17 +1444,9 @@ print &amp;#39;Content-Type: text/plainn&amp;#39;
     <summary type="html">
     
       &lt;p&gt;今天研究了下urllib2这个库的使用，才发现以前有很多不明白的东西，现在写下来也做个记录&lt;/p&gt;
-&lt;h1 id=&quot;最基础的应用&quot;&gt;&lt;a href=&quot;#最基础的应用&quot; class=&quot;headerlink&quot; title=&quot;最基础的应用&quot;&gt;&lt;/a&gt;最基础的应用&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import urllib2
-url = r&amp;#39;http://www.baidu.com&amp;#39;
-html = urllib2.urlopen(url).read()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;最基础的应用&quot;&gt;&lt;a href=&quot;#最基础的应用&quot; class=&quot;headerlink&quot; title=&quot;最基础的应用&quot;&gt;&lt;/a&gt;最基础的应用&lt;/h1&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; urllib2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url = &lt;span class=&quot;string&quot;&gt;r&#39;http://www.baidu.com&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;html = urllib2.urlopen(url).read()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;客户端与服务器端通过request与response来沟通，客户端先向服务端发送request，然后接收服务端返回的response&lt;/p&gt;
-&lt;p&gt;urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import urllib2
-url = r&amp;#39;http://www.baidu.com&amp;#39;
-req = urllib2.Request(url)
-html = urllib2.urlopen(req).read()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;urllib2提供了request的类，可以让用户在发送请求前先构造一个request的对象，然后通过urllib2.urlopen方法来发送请求&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; urllib2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url = &lt;span class=&quot;string&quot;&gt;r&#39;http://www.baidu.com&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;req = urllib2.Request(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;html = urllib2.urlopen(req).read()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1681,71 +1530,7 @@ html = urllib2.urlopen(req).read()
     <summary type="html">
     
       &lt;p&gt;解析XML主要用到pytohn自带的XML库，其次还是lxml库&lt;/p&gt;
-&lt;h1 id=&quot;XML结构&quot;&gt;&lt;a href=&quot;#XML结构&quot; class=&quot;headerlink&quot; title=&quot;XML结构&quot;&gt;&lt;/a&gt;XML结构&lt;/h1&gt;&lt;p&gt;先以一个相对简单但功能比较全的XML文档为例&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;utf-8&amp;#39;?&amp;gt;
-&amp;lt;feed xmlns=&amp;#39;http://www.w3.org/2005/Atom&amp;#39; xml:lang=&amp;#39;en&amp;#39;&amp;gt;
-  &amp;lt;title&amp;gt;dive into mark&amp;lt;/title&amp;gt;
-  &amp;lt;subtitle&amp;gt;currently between addictions&amp;lt;/subtitle&amp;gt;
-  &amp;lt;id&amp;gt;tag:diveintomark.org,2001-07-29:/&amp;lt;/id&amp;gt;
-  &amp;lt;updated&amp;gt;2009-03-27T21:56:07Z&amp;lt;/updated&amp;gt;
-  &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39; href=&amp;#39;http://diveintomark.org/&amp;#39;/&amp;gt;
-  &amp;lt;entry&amp;gt;
-    &amp;lt;author&amp;gt;
-      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
-      &amp;lt;uri&amp;gt;http://diveintomark.org/&amp;lt;/uri&amp;gt;
-    &amp;lt;/author&amp;gt;
-    &amp;lt;title&amp;gt;Dive into history, 2009 edition&amp;lt;/title&amp;gt;
-    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
-      href=&amp;#39;http://diveintomark.org/archives/2009/03/27/dive-into-history-2009-edition&amp;#39;/&amp;gt;
-    &amp;lt;id&amp;gt;tag:diveintomark.org,2009-03-27:/archives/20090327172042&amp;lt;/id&amp;gt;
-    &amp;lt;updated&amp;gt;2009-03-27T21:56:07Z&amp;lt;/updated&amp;gt;
-    &amp;lt;published&amp;gt;2009-03-27T17:20:42Z&amp;lt;/published&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;diveintopython&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;docbook&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;html&amp;#39;/&amp;gt;
-    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;Putting an entire chapter on one page sounds
-      bloated, but consider this &amp;amp;mdash; my longest chapter so far
-      would be 75 printed pages, and it loads in under 5 seconds&amp;amp;hellip;
-      On dialup.&amp;lt;/summary&amp;gt;
-  &amp;lt;/entry&amp;gt;
-  &amp;lt;entry&amp;gt;
-    &amp;lt;author&amp;gt;
-      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
-      &amp;lt;uri&amp;gt;http://diveintomark.org/&amp;lt;/uri&amp;gt;
-    &amp;lt;/author&amp;gt;
-    &amp;lt;title&amp;gt;Accessibility is a harsh mistress&amp;lt;/title&amp;gt;
-    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
-      href=&amp;#39;http://diveintomark.org/archives/2009/03/21/accessibility-is-a-harsh-mistress&amp;#39;/&amp;gt;
-    &amp;lt;id&amp;gt;tag:diveintomark.org,2009-03-21:/archives/20090321200928&amp;lt;/id&amp;gt;
-    &amp;lt;updated&amp;gt;2009-03-22T01:05:37Z&amp;lt;/updated&amp;gt;
-    &amp;lt;published&amp;gt;2009-03-21T20:09:28Z&amp;lt;/published&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;accessibility&amp;#39;/&amp;gt;
-    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;The accessibility orthodoxy does not permit people to
-      question the value of features that are rarely useful and rarely used.&amp;lt;/summary&amp;gt;
-  &amp;lt;/entry&amp;gt;
-  &amp;lt;entry&amp;gt;
-    &amp;lt;author&amp;gt;
-      &amp;lt;name&amp;gt;Mark&amp;lt;/name&amp;gt;
-    &amp;lt;/author&amp;gt;
-    &amp;lt;title&amp;gt;A gentle introduction to video encoding, part 1: container formats&amp;lt;/title&amp;gt;
-    &amp;lt;link rel=&amp;#39;alternate&amp;#39; type=&amp;#39;text/html&amp;#39;
-      href=&amp;#39;http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats&amp;#39;/&amp;gt;
-    &amp;lt;id&amp;gt;tag:diveintomark.org,2008-12-18:/archives/20081218155422&amp;lt;/id&amp;gt;
-    &amp;lt;updated&amp;gt;2009-01-11T19:39:22Z&amp;lt;/updated&amp;gt;
-    &amp;lt;published&amp;gt;2008-12-18T15:54:22Z&amp;lt;/published&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;asf&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;avi&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;encoding&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;flv&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;GIVE&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;mp4&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;ogg&amp;#39;/&amp;gt;
-    &amp;lt;category scheme=&amp;#39;http://diveintomark.org&amp;#39; term=&amp;#39;video&amp;#39;/&amp;gt;
-    &amp;lt;summary type=&amp;#39;html&amp;#39;&amp;gt;These notes will eventually become part of a
-      tech talk on video encoding.&amp;lt;/summary&amp;gt;
-  &amp;lt;/entry&amp;gt;
-&amp;lt;/feed&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;XML结构&quot;&gt;&lt;a href=&quot;#XML结构&quot; class=&quot;headerlink&quot; title=&quot;XML结构&quot;&gt;&lt;/a&gt;XML结构&lt;/h1&gt;&lt;p&gt;先以一个相对简单但功能比较全的XML文档为例&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://www.w3.org/2005/Atom&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xml:lang&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;en&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;dive into mark&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;subtitle&lt;/span&gt;&amp;gt;&lt;/span&gt;currently between addictions&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;subtitle&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;tag:diveintomark.org,2001-07-29:/&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-03-27T21:56:07Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;alternate&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org/&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;Mark&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;uri&lt;/span&gt;&amp;gt;&lt;/span&gt;http://diveintomark.org/&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;uri&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Dive into history, 2009 edition&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;alternate&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org/archives/2009/03/27/dive-into-history-2009-edition&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;tag:diveintomark.org,2009-03-27:/archives/20090327172042&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-03-27T21:56:07Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-03-27T17:20:42Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;diveintopython&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;docbook&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;html&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;html&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;Putting an entire chapter on one page sounds&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      bloated, but consider this &amp;amp;mdash; my longest chapter so far&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      would be 75 printed pages, and it loads in under 5 seconds&amp;amp;hellip;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      On dialup.&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;Mark&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;uri&lt;/span&gt;&amp;gt;&lt;/span&gt;http://diveintomark.org/&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;uri&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Accessibility is a harsh mistress&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;alternate&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org/archives/2009/03/21/accessibility-is-a-harsh-mistress&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;tag:diveintomark.org,2009-03-21:/archives/20090321200928&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-03-22T01:05:37Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-03-21T20:09:28Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;accessibility&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;html&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;The accessibility orthodoxy does not permit people to&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      question the value of features that are rarely useful and rarely used.&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;Mark&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;author&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;A gentle introduction to video encoding, part 1: container formats&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;alternate&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;tag:diveintomark.org,2008-12-18:/archives/20081218155422&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;2009-01-11T19:39:22Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;updated&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;2008-12-18T15:54:22Z&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;published&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;asf&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;avi&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;encoding&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;flv&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;GIVE&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;mp4&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;ogg&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;scheme&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;http://diveintomark.org&#39;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;term&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;video&#39;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;html&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;These notes will eventually become part of a&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      tech talk on video encoding.&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;summary&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;entry&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;feed&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;先简单的看一下这个XML的结构
     
     </summary>
@@ -1795,11 +1580,7 @@ html = urllib2.urlopen(req).read()
       
         
         
-          &lt;p&gt;利用python的smtplib，发邮件将是一件非常简单的事情，下文以用163邮箱来发邮件为例，说明smtplib的应用&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
-import smtplib
-
-def
+          &lt;p&gt;利用python的smtplib，发邮件将是一件非常简单的事情，下文以用163邮箱来发邮件为例，说明smtplib的应用&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
@@ -1821,34 +1602,7 @@ def
     
     <summary type="html">
     
-      &lt;p&gt;可爱的python一书中有一个练习题，是在一个目录中查找特定扩展名的文件，并且读取里面的内容，然后用户输入一个关键词，在这些文件中进行搜索，如果找到后就把这一行内容打印出来，他提出的问题是如果里面还有目录，目录里面还有更深的目录，解决这个问题，我想到的只能是递归。。。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf-8
-import os,sys
-
-def cdGrep(keyword,filepath):
-    filelist = os.listdir(filepath)
-
-    for cdc in filelist:
-        if os.path.isdir(cdc):
-            filepath2 = os.path.join(filepath,cdc)
-            cdGrep(keyword,filepath2)
-
-        elif &amp;#39;.txt&amp;#39; in cdc:
-#            print filepath+cdc
-            f = open(filepath+&amp;#39;&amp;#39;+ cdc)
-            for line in f.readlines():
-                linelower = line.lower()
-                if keyword in linelower:
-
-                    print &amp;#39;您查找的关键词在%s中找到&amp;#39;% (filepath+&amp;#39;&amp;#39;+cdc)
-                    print line
-                f.close()
-
-if __name__ == &amp;#39;__main__&amp;#39;:
-    keword = raw_input(&amp;#39;请输入想要查询的关键字&amp;#39;)
-    pw = os.getcwd()
-    cdGrep(keword,pw)
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;可爱的python一书中有一个练习题，是在一个目录中查找特定扩展名的文件，并且读取里面的内容，然后用户输入一个关键词，在这些文件中进行搜索，如果找到后就把这一行内容打印出来，他提出的问题是如果里面还有目录，目录里面还有更深的目录，解决这个问题，我想到的只能是递归。。。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#coding:utf-8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os,sys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;cdGrep&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(keyword,filepath)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filelist = os.listdir(filepath)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; cdc &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; filelist:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; os.path.isdir(cdc):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            filepath2 = os.path.join(filepath,cdc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            cdGrep(keyword,filepath2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;.txt&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; cdc:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#            print filepath+cdc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            f = open(filepath+&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;+ cdc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; line &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; f.readlines():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                linelower = line.lower()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; keyword &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; linelower:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;您查找的关键词在%s中找到&#39;&lt;/span&gt;% (filepath+&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;+cdc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; line&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                f.close()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name__ == &lt;span class=&quot;string&quot;&gt;&#39;__main__&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    keword = raw_input(&lt;span class=&quot;string&quot;&gt;&#39;请输入想要查询的关键字&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pw = os.getcwd()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cdGrep(keword,pw)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1871,13 +1625,7 @@ if __name__ == &amp;#39;__main__&amp;#39;:
         
         
           &lt;p&gt;小脚本很简单，主要是练习一下正则匹配，与简单的urllib库的应用&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding: utf8
-import urllib,re
-import os
-
-def getLastinstall():
-
-   
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -1903,13 +1651,7 @@ def getLastinstall():
       
         
         
-          &lt;p&gt;直接上代码，已经在后面有注释了&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;#coding:utf8
-
-name = &amp;#39;yangyanxing&amp;#39;
-class Test():
-    class kevin():
-        var1 =
+          &lt;p&gt;直接上代码，已经在后面有注释了&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -1935,10 +1677,7 @@ class Test():
       
         
         
-          &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from sgmllib import SGMLParser
-import sys,urllib2,urllib,cookielib
-class spider(SGMLParser):
-    def
+          &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -1988,17 +1727,7 @@ class spider(SGMLParser):
 &lt;p&gt;对于这些情况，python提供了两种特别的方法来定义函数的参数，允许函数接受过量的参数，不用显式声明参数。这些“额外”的参数下一步再解释。&lt;/p&gt;
 &lt;p&gt;注意args和kwargs只是python的约定。任何函数参数，你可以自己喜欢的方式命名，但是最好和python标准的惯用法一致，以便你的代码，其他的程序员也能轻松读懂。&lt;br&gt;&lt;strong&gt;&lt;br&gt;位置参数&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在参数名之前使用一个星号，就是让函数接受任意多的位置参数。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def multiply(*args):
-...     total = 1
-...     for arg in args:
-...         total *= arg
-...     return total
-...
-&amp;gt;&amp;gt;&amp;gt; multiply(2, 3)
-6
-&amp;gt;&amp;gt;&amp;gt; multiply(2, 3, 4, 5, 6)
-720
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; def multiply(*args):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...     total = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...     for arg in args:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...         total *= arg&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...     return total&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; multiply(2, 3)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; multiply(2, 3, 4, 5, 6)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;720&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -2038,22 +1767,8 @@ class spider(SGMLParser):
     
     <summary type="html">
     
-      &lt;p&gt;一个小功能，我就是想用print功能实现，不想用write&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import os
-
-os.chdir(&amp;quot;/usr/tem&amp;quot;)
-char=&amp;quot;my name is yangyanxing&amp;quot;
-f = open(&amp;quot;test.txt&amp;quot;,&amp;quot;w&amp;quot;)
-print &amp;gt;&amp;gt;f,char
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;但是Python3中还可以用以下的方式&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import os
-
-os.chdir(&amp;quot;/usr/tem&amp;quot;)
-char=&amp;quot;my name is yangyanxing&amp;quot;
-f = open(&amp;quot;test.txt&amp;quot;,&amp;quot;w&amp;quot;)
-print(char,file=f)
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;一个小功能，我就是想用print功能实现，不想用write&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;os.chdir(&lt;span class=&quot;string&quot;&gt;&quot;/usr/tem&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;char=&lt;span class=&quot;string&quot;&gt;&quot;my name is yangyanxing&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f = open(&lt;span class=&quot;string&quot;&gt;&quot;test.txt&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;w&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &amp;gt;&amp;gt;f,char&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是Python3中还可以用以下的方式&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;os.chdir(&lt;span class=&quot;string&quot;&gt;&quot;/usr/tem&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;char=&lt;span class=&quot;string&quot;&gt;&quot;my name is yangyanxing&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f = open(&lt;span class=&quot;string&quot;&gt;&quot;test.txt&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;w&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(char,file=f)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2164,30 +1879,7 @@ print(char,file=f)
     
     <summary type="html">
     
-      &lt;p&gt;前些天一直在倒腾新浪微博的开放平台，一开始用的oauth1，利用官方的PHP SDK写了一个简单发微博的应用，但是很遗憾，没有成功，这里简单的写一下&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&amp;lt;?php
-
-session_start();
-include_once( &amp;#39;config.php&amp;#39; );
-include_once( &amp;#39;weibooauth.php&amp;#39; );
-$c = new WeiboClient( WB_AKEY , WB_SKEY , $_SESSION[&amp;#39;last_key&amp;#39;][&amp;#39;oauth_token&amp;#39;] , $_SESSION[&amp;#39;last_key&amp;#39;][&amp;#39;oauth_token_secret&amp;#39;] );
-
-?&amp;gt;
-
-&amp;lt;form action=&amp;quot;&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;
-&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;text&amp;quot; id=&amp;quot;1&amp;quot;&amp;gt;
-&amp;lt;input type=&amp;quot;submit&amp;quot; name=&amp;quot;submit&amp;quot; value=&amp;quot;发表微博&amp;quot;&amp;gt;
-&amp;lt;/form&amp;gt;
-&amp;lt;?php
-if(isset($_POST[&amp;#39;text&amp;#39;])){
-$rr=$c-&amp;gt;update($_POST[&amp;#39;text&amp;#39;]);
-
-echo &amp;quot;发表成功&amp;quot;;
-
-}
-
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;前些天一直在倒腾新浪微博的开放平台，一开始用的oauth1，利用官方的PHP SDK写了一个简单发微博的应用，但是很遗憾，没有成功，这里简单的写一下&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;session_start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include_once&lt;/span&gt;( &lt;span class=&quot;string&quot;&gt;&#39;config.php&#39;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include_once&lt;/span&gt;( &lt;span class=&quot;string&quot;&gt;&#39;weibooauth.php&#39;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$c = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; WeiboClient( WB_AKEY , WB_SKEY , $_SESSION[&lt;span class=&quot;string&quot;&gt;&#39;last_key&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;oauth_token&#39;&lt;/span&gt;] , $_SESSION[&lt;span class=&quot;string&quot;&gt;&#39;last_key&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;oauth_token_secret&#39;&lt;/span&gt;] );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;form action=&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input type=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; name=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; id=&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input type=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; name=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; value=&lt;span class=&quot;string&quot;&gt;&quot;发表微博&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;isset&lt;/span&gt;($_POST[&lt;span class=&quot;string&quot;&gt;&#39;text&#39;&lt;/span&gt;]))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$rr=$c-&amp;gt;update($_POST[&lt;span class=&quot;string&quot;&gt;&#39;text&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;发表成功&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2290,13 +1982,7 @@ echo &amp;quot;发表成功&amp;quot;;
       &lt;p&gt;CURD 增 删 改 查&lt;/p&gt;
 &lt;p&gt;C&lt;/p&gt;
 &lt;p&gt;create方法&lt;/p&gt;
-&lt;p&gt;每当实例化一个数据对象后，当需要接收post来值的时候，要用create方法来创建一个对象，根据表单提交的POST数据创建数据对象，并保存在内存中，可以通过dump($user)查看，返回值是一个数组&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;$user=M(&amp;#39;user&amp;#39;);
-
-$vo=$user-&amp;gt;create();
-
-dupm($vo); //这时会遍历出得到的（post）值
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;每当实例化一个数据对象后，当需要接收post来值的时候，要用create方法来创建一个对象，根据表单提交的POST数据创建数据对象，并保存在内存中，可以通过dump($user)查看，返回值是一个数组&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$user=M(&lt;span class=&quot;string&quot;&gt;&#39;user&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$vo=$user-&amp;gt;create();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dupm($vo); &lt;span class=&quot;comment&quot;&gt;//这时会遍历出得到的（post）值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2315,20 +2001,7 @@ dupm($vo); //这时会遍历出得到的（post）值
     <summary type="html">
     
       &lt;p&gt;假设数据库中有一个think_user的数据表&lt;/p&gt;
-&lt;h1 id=&quot;普通方式&quot;&gt;&lt;a href=&quot;#普通方式&quot; class=&quot;headerlink&quot; title=&quot;普通方式&quot;&gt;&lt;/a&gt;普通方式&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;$user=new Model(&amp;#39;user&amp;#39;);
-
-$user=M(&amp;#39;user&amp;#39;);
-
-/*
-
-user的U可以大写，也可以小写，当库中还有一个think_user_message等表的时候，可以使用
-
-new Model(&amp;#39;userMessage&amp;#39;) 或者new Model(user_message)，也就是说大写的首字母相当于带下划线的单词
-
-此方法也可以用快捷方法，M方法
-
-*/
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;普通方式&quot;&gt;&lt;a href=&quot;#普通方式&quot; class=&quot;headerlink&quot; title=&quot;普通方式&quot;&gt;&lt;/a&gt;普通方式&lt;/h1&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$user=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Model(&lt;span class=&quot;string&quot;&gt;&#39;user&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$user=M(&lt;span class=&quot;string&quot;&gt;&#39;user&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;user的U可以大写，也可以小写，当库中还有一个think_user_message等表的时候，可以使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;new Model(&#39;userMessage&#39;) 或者new Model(user_message)，也就是说大写的首字母相当于带下划线的单词&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;此方法也可以用快捷方法，M方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
