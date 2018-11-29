@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yangyanxing.com/"/>
-  <updated>2018-11-28T15:27:37.791Z</updated>
+  <updated>2018-11-29T15:45:06.002Z</updated>
   <id>http://www.yangyanxing.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://www.yangyanxing.com/article/tulple_detail.html"/>
     <id>http://www.yangyanxing.com/article/tulple_detail.html</id>
     <published>2018-11-28T15:53:38.000Z</published>
-    <updated>2018-11-28T15:27:37.791Z</updated>
+    <updated>2018-11-29T15:45:06.002Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;元组(tulple)和列表(list)，每个写python的都知道，而且都知道，元组是不可变的，但是仅仅因为一个不可变就要创造出一个新的数据类型吗？&lt;br&gt;答案肯定不是，那么我们来看看元组究竟有哪些用法&lt;/p&gt;
+      &lt;p&gt;元组(tuple)和列表(list)，每个写python的都知道，而且都知道，元组是不可变的，但是仅仅因为一个不可变就要创造出一个新的数据类型吗？&lt;br&gt;答案肯定不是，那么我们来看看元组究竟有哪些用法&lt;/p&gt;
     
     </summary>
     
