@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</loc>
+    
+    <lastmod>2018-12-26T23:28:11.136Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yangyanxing.com/article/tulple_detail.html</loc>
     
     <lastmod>2018-11-29T15:45:06.002Z</lastmod>
