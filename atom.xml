@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yangyanxing.com/"/>
-  <updated>2018-12-26T23:28:11.136Z</updated>
+  <updated>2018-12-27T10:59:21.000Z</updated>
   <id>http://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pymongo中的特殊查询</title>
+    <link href="http://www.yangyanxing.com/article/specialUse-in-pymongo.html"/>
+    <id>http://www.yangyanxing.com/article/specialUse-in-pymongo.html</id>
+    <published>2018-12-27T15:53:38.000Z</published>
+    <updated>2018-12-27T10:59:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python操作mongo常用的增删改查看这一篇就够了&lt;a href=&quot;https://juejin.im/post/5addbd0e518825671f2f62ee&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python操作MongoDB看这一篇就够了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近在整理一些在pymongo中相对使用较少的查询。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
@@ -635,9 +656,9 @@
       <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
-    
       <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+    
+      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
     
       <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     

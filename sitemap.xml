@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yangyanxing.com/article/specialUse-in-pymongo.html</loc>
+    
+    <lastmod>2018-12-27T10:59:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</loc>
     
     <lastmod>2018-12-26T23:28:11.136Z</lastmod>
