@@ -5,9 +5,9 @@
   <subtitle>序语程言</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.yangyanxing.com/"/>
+  <link href="https://www.yangyanxing.com/"/>
   <updated>2018-12-31T07:36:51.354Z</updated>
-  <id>http://www.yangyanxing.com/</id>
+  <id>https://www.yangyanxing.com/</id>
   
   <author>
     <name>杨彦星</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>pymongo中的特殊查询</title>
-    <link href="http://www.yangyanxing.com/article/specialUse-in-pymongo.html"/>
-    <id>http://www.yangyanxing.com/article/specialUse-in-pymongo.html</id>
+    <link href="https://www.yangyanxing.com/article/specialUse-in-pymongo.html"/>
+    <id>https://www.yangyanxing.com/article/specialUse-in-pymongo.html</id>
     <published>2018-12-27T15:53:38.000Z</published>
     <updated>2018-12-31T07:36:51.354Z</updated>
     
@@ -30,17 +30,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
-    <link href="http://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
-    <id>http://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
+    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
+    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
     <published>2018-12-26T15:53:38.000Z</published>
     <updated>2018-12-26T23:28:11.136Z</updated>
     
@@ -50,17 +50,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>别小看元组</title>
-    <link href="http://www.yangyanxing.com/article/tulple_detail.html"/>
-    <id>http://www.yangyanxing.com/article/tulple_detail.html</id>
+    <link href="https://www.yangyanxing.com/article/tulple_detail.html"/>
+    <id>https://www.yangyanxing.com/article/tulple_detail.html</id>
     <published>2018-11-28T15:53:38.000Z</published>
     <updated>2018-11-29T15:45:06.002Z</updated>
     
@@ -70,17 +70,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python中关于map,lambda,高阶函数与装饰器的使用</title>
-    <link href="http://www.yangyanxing.com/article/higher-order-function.html"/>
-    <id>http://www.yangyanxing.com/article/higher-order-function.html</id>
+    <link href="https://www.yangyanxing.com/article/higher-order-function.html"/>
+    <id>https://www.yangyanxing.com/article/higher-order-function.html</id>
     <published>2018-07-01T15:53:38.000Z</published>
     <updated>2018-07-01T17:21:21.935Z</updated>
     
@@ -90,17 +90,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python中的list排序问题以及sort,sorted的使用</title>
-    <link href="http://www.yangyanxing.com/article/python-list-sort.html"/>
-    <id>http://www.yangyanxing.com/article/python-list-sort.html</id>
+    <link href="https://www.yangyanxing.com/article/python-list-sort.html"/>
+    <id>https://www.yangyanxing.com/article/python-list-sort.html</id>
     <published>2018-06-28T15:53:38.000Z</published>
     <updated>2018-08-06T16:01:06.562Z</updated>
     
@@ -110,17 +110,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python中的日志按天保存单独的文件</title>
-    <link href="http://www.yangyanxing.com/article/python-logging-day-file.html"/>
-    <id>http://www.yangyanxing.com/article/python-logging-day-file.html</id>
+    <link href="https://www.yangyanxing.com/article/python-logging-day-file.html"/>
+    <id>https://www.yangyanxing.com/article/python-logging-day-file.html</id>
     <published>2018-06-24T15:53:38.000Z</published>
     <updated>2018-07-01T13:51:04.508Z</updated>
     
@@ -130,17 +130,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>利用logging模块轻松地进行Python日志记录(转)</title>
-    <link href="http://www.yangyanxing.com/article/use-logging-in-python.html"/>
-    <id>http://www.yangyanxing.com/article/use-logging-in-python.html</id>
+    <link href="https://www.yangyanxing.com/article/use-logging-in-python.html"/>
+    <id>https://www.yangyanxing.com/article/use-logging-in-python.html</id>
     <published>2018-06-23T15:53:38.000Z</published>
     <updated>2018-07-01T13:49:36.670Z</updated>
     
@@ -150,17 +150,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>配置多个ssh密钥对并且永久多ssh管理</title>
-    <link href="http://www.yangyanxing.com/article/config-local-ssh.html"/>
-    <id>http://www.yangyanxing.com/article/config-local-ssh.html</id>
+    <link href="https://www.yangyanxing.com/article/config-local-ssh.html"/>
+    <id>https://www.yangyanxing.com/article/config-local-ssh.html</id>
     <published>2018-06-16T15:53:38.000Z</published>
     <updated>2018-06-16T18:21:46.106Z</updated>
     
@@ -170,17 +170,17 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
-      <category term="web" scheme="http://www.yangyanxing.com/tags/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>将hexo生成的静态网站部署到七牛</title>
-    <link href="http://www.yangyanxing.com/article/put-html-to-qiniu.html"/>
-    <id>http://www.yangyanxing.com/article/put-html-to-qiniu.html</id>
+    <link href="https://www.yangyanxing.com/article/put-html-to-qiniu.html"/>
+    <id>https://www.yangyanxing.com/article/put-html-to-qiniu.html</id>
     <published>2018-06-13T15:53:38.000Z</published>
     <updated>2018-06-13T15:21:08.515Z</updated>
     
@@ -190,17 +190,17 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
-      <category term="web" scheme="http://www.yangyanxing.com/tags/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>使用python操作selenium操作第三方浏览器(360浏览器)</title>
-    <link href="http://www.yangyanxing.com/article/use-selenium-op-browser.html"/>
-    <id>http://www.yangyanxing.com/article/use-selenium-op-browser.html</id>
+    <link href="https://www.yangyanxing.com/article/use-selenium-op-browser.html"/>
+    <id>https://www.yangyanxing.com/article/use-selenium-op-browser.html</id>
     <published>2018-04-26T14:41:32.000Z</published>
     <updated>2018-04-26T16:50:55.574Z</updated>
     
@@ -210,19 +210,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>python中的异常处理</title>
-    <link href="http://www.yangyanxing.com/article/try_in_python.html"/>
-    <id>http://www.yangyanxing.com/article/try_in_python.html</id>
+    <link href="https://www.yangyanxing.com/article/try_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/try_in_python.html</id>
     <published>2017-08-19T15:53:38.000Z</published>
     <updated>2018-04-27T15:51:49.557Z</updated>
     
@@ -232,17 +232,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>使用python抓取自住房信息</title>
-    <link href="http://www.yangyanxing.com/article/use-python-get-house-info.html"/>
-    <id>http://www.yangyanxing.com/article/use-python-get-house-info.html</id>
+    <link href="https://www.yangyanxing.com/article/use-python-get-house-info.html"/>
+    <id>https://www.yangyanxing.com/article/use-python-get-house-info.html</id>
     <published>2017-07-11T14:41:32.000Z</published>
     <updated>2018-01-27T05:18:53.748Z</updated>
     
@@ -259,17 +259,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>用于python的定时任务apscheduler的使用</title>
-    <link href="http://www.yangyanxing.com/article/use-apscheduler.html"/>
-    <id>http://www.yangyanxing.com/article/use-apscheduler.html</id>
+    <link href="https://www.yangyanxing.com/article/use-apscheduler.html"/>
+    <id>https://www.yangyanxing.com/article/use-apscheduler.html</id>
     <published>2017-06-17T13:42:13.000Z</published>
     <updated>2017-12-26T16:10:18.786Z</updated>
     
@@ -279,17 +279,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>webpy的常规使用与踩过的坑</title>
-    <link href="http://www.yangyanxing.com/article/use-webpy.html"/>
-    <id>http://www.yangyanxing.com/article/use-webpy.html</id>
+    <link href="https://www.yangyanxing.com/article/use-webpy.html"/>
+    <id>https://www.yangyanxing.com/article/use-webpy.html</id>
     <published>2016-12-21T13:42:13.000Z</published>
     <updated>2017-12-16T10:11:00.516Z</updated>
     
@@ -300,19 +300,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+      <category term="webpy" scheme="https://www.yangyanxing.com/tags/webpy/"/>
     
   </entry>
   
   <entry>
     <title>在MAC下加载NTFS移动硬盘或者U盘</title>
-    <link href="http://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html"/>
-    <id>http://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html</id>
+    <link href="https://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html"/>
+    <id>https://www.yangyanxing.com/article/use-mac-mount-ntfs-disk.html</id>
     <published>2016-07-12T05:49:01.000Z</published>
     <updated>2017-12-16T10:10:41.887Z</updated>
     
@@ -322,15 +322,15 @@
     
     </summary>
     
-      <category term="mac" scheme="http://www.yangyanxing.com/categories/mac/"/>
+      <category term="mac" scheme="https://www.yangyanxing.com/categories/mac/"/>
     
     
   </entry>
   
   <entry>
     <title>Xposed框架初体验</title>
-    <link href="http://www.yangyanxing.com/article/first-use-Xposed.html"/>
-    <id>http://www.yangyanxing.com/article/first-use-Xposed.html</id>
+    <link href="https://www.yangyanxing.com/article/first-use-Xposed.html"/>
+    <id>https://www.yangyanxing.com/article/first-use-Xposed.html</id>
     <published>2016-06-11T16:05:17.000Z</published>
     <updated>2017-12-16T10:10:42.287Z</updated>
     
@@ -340,17 +340,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>使用wireshark抓取解密https包</title>
-    <link href="http://www.yangyanxing.com/article/use-wireshark-capture-https.html"/>
-    <id>http://www.yangyanxing.com/article/use-wireshark-capture-https.html</id>
+    <link href="https://www.yangyanxing.com/article/use-wireshark-capture-https.html"/>
+    <id>https://www.yangyanxing.com/article/use-wireshark-capture-https.html</id>
     <published>2016-06-11T14:40:07.000Z</published>
     <updated>2017-12-16T10:10:41.871Z</updated>
     
@@ -361,17 +361,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>在wireshark上显示host</title>
-    <link href="http://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html"/>
-    <id>http://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html</id>
+    <link href="https://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html"/>
+    <id>https://www.yangyanxing.com/article/display-host-clumn-in-wireshark.html</id>
     <published>2016-06-10T14:19:45.000Z</published>
     <updated>2017-12-16T10:10:42.100Z</updated>
     
@@ -387,17 +387,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>HTTPS理论基础</title>
-    <link href="http://www.yangyanxing.com/article/https-basic.html"/>
-    <id>http://www.yangyanxing.com/article/https-basic.html</id>
+    <link href="https://www.yangyanxing.com/article/https-basic.html"/>
+    <id>https://www.yangyanxing.com/article/https-basic.html</id>
     <published>2016-06-09T07:51:32.000Z</published>
     <updated>2017-12-16T10:10:42.337Z</updated>
     
@@ -407,17 +407,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>(转)Android Context完全解析，你所不知道的Context的各种细节</title>
-    <link href="http://www.yangyanxing.com/article/learning-context.html"/>
-    <id>http://www.yangyanxing.com/article/learning-context.html</id>
+    <link href="https://www.yangyanxing.com/article/learning-context.html"/>
+    <id>https://www.yangyanxing.com/article/learning-context.html</id>
     <published>2016-05-29T15:55:59.000Z</published>
     <updated>2017-12-16T10:10:41.944Z</updated>
     
@@ -428,17 +428,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://www.yangyanxing.com/tags/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>Uiautomator中watcher的使用</title>
-    <link href="http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html"/>
-    <id>http://www.yangyanxing.com/article/use-watcher-in-uiautomator.html</id>
+    <link href="https://www.yangyanxing.com/article/use-watcher-in-uiautomator.html"/>
+    <id>https://www.yangyanxing.com/article/use-watcher-in-uiautomator.html</id>
     <published>2016-05-13T15:09:30.000Z</published>
     <updated>2017-12-16T10:10:42.473Z</updated>
     
@@ -448,19 +448,19 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://www.yangyanxing.com/tags/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/tags/Android/"/>
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>使用Uiautomator做基于UI界面的测试</title>
-    <link href="http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html"/>
-    <id>http://www.yangyanxing.com/article/use-uiautomator-for-uitest.html</id>
+    <link href="https://www.yangyanxing.com/article/use-uiautomator-for-uitest.html"/>
+    <id>https://www.yangyanxing.com/article/use-uiautomator-for-uitest.html</id>
     <published>2016-05-11T17:04:03.000Z</published>
     <updated>2017-12-16T10:10:42.253Z</updated>
     
@@ -470,19 +470,19 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="java" scheme="http://www.yangyanxing.com/tags/java/"/>
+      <category term="java" scheme="https://www.yangyanxing.com/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>过年</title>
-    <link href="http://www.yangyanxing.com/article/Spring-Festival.html"/>
-    <id>http://www.yangyanxing.com/article/Spring-Festival.html</id>
+    <link href="https://www.yangyanxing.com/article/Spring-Festival.html"/>
+    <id>https://www.yangyanxing.com/article/Spring-Festival.html</id>
     <published>2016-02-13T12:11:19.000Z</published>
     <updated>2017-12-16T10:10:42.343Z</updated>
     
@@ -494,15 +494,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>在ThinkPHP整合新浪微博SDK</title>
-    <link href="http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html"/>
-    <id>http://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html</id>
+    <link href="https://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html"/>
+    <id>https://www.yangyanxing.com/article/ThinkPHP-workwith-weibo-sdk.html</id>
     <published>2016-02-10T14:28:32.000Z</published>
     <updated>2017-12-16T10:10:42.381Z</updated>
     
@@ -512,21 +512,21 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/tags/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/tags/PHP/"/>
     
-      <category term="微博" scheme="http://www.yangyanxing.com/tags/%E5%BE%AE%E5%8D%9A/"/>
+      <category term="微博" scheme="https://www.yangyanxing.com/tags/%E5%BE%AE%E5%8D%9A/"/>
     
   </entry>
   
   <entry>
     <title>ThinkPHP的学习笔记</title>
-    <link href="http://www.yangyanxing.com/article/thinkphp-study-note.html"/>
-    <id>http://www.yangyanxing.com/article/thinkphp-study-note.html</id>
+    <link href="https://www.yangyanxing.com/article/thinkphp-study-note.html"/>
+    <id>https://www.yangyanxing.com/article/thinkphp-study-note.html</id>
     <published>2016-01-30T12:38:08.000Z</published>
     <updated>2017-12-16T10:10:41.896Z</updated>
     
@@ -541,19 +541,19 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/tags/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>使用python进行文件夹对比</title>
-    <link href="http://www.yangyanxing.com/article/use-python-dircompare.html"/>
-    <id>http://www.yangyanxing.com/article/use-python-dircompare.html</id>
+    <link href="https://www.yangyanxing.com/article/use-python-dircompare.html"/>
+    <id>https://www.yangyanxing.com/article/use-python-dircompare.html</id>
     <published>2015-12-29T15:09:30.000Z</published>
     <updated>2017-12-16T10:10:42.499Z</updated>
     
@@ -564,17 +564,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>使用国内镜像源来加速python pypi包的安装</title>
-    <link href="http://www.yangyanxing.com/article/1389.html"/>
-    <id>http://www.yangyanxing.com/article/1389.html</id>
+    <link href="https://www.yangyanxing.com/article/1389.html"/>
+    <id>https://www.yangyanxing.com/article/1389.html</id>
     <published>2015-10-10T14:57:44.000Z</published>
     <updated>2017-12-16T16:15:57.185Z</updated>
     
@@ -586,17 +586,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Android中的listView与ArrayAdapter与LayoutInflater的使用</title>
-    <link href="http://www.yangyanxing.com/article/1385.html"/>
-    <id>http://www.yangyanxing.com/article/1385.html</id>
+    <link href="https://www.yangyanxing.com/article/1385.html"/>
+    <id>https://www.yangyanxing.com/article/1385.html</id>
     <published>2015-10-05T17:21:03.000Z</published>
     <updated>2017-12-16T16:16:36.344Z</updated>
     
@@ -608,17 +608,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>使用jquery在一个页面中有多个form表单做数据有效性校验</title>
-    <link href="http://www.yangyanxing.com/article/1381.html"/>
-    <id>http://www.yangyanxing.com/article/1381.html</id>
+    <link href="https://www.yangyanxing.com/article/1381.html"/>
+    <id>https://www.yangyanxing.com/article/1381.html</id>
     <published>2015-10-02T08:23:48.000Z</published>
     <updated>2017-12-16T16:17:49.128Z</updated>
     
@@ -629,19 +629,19 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
-      <category term="javascript" scheme="http://www.yangyanxing.com/tags/javascript/"/>
+      <category term="javascript" scheme="https://www.yangyanxing.com/tags/javascript/"/>
     
-      <category term="jquery" scheme="http://www.yangyanxing.com/tags/jquery/"/>
+      <category term="jquery" scheme="https://www.yangyanxing.com/tags/jquery/"/>
     
   </entry>
   
   <entry>
     <title>使用uiautomator的python封装进行android的UI测试</title>
-    <link href="http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html"/>
-    <id>http://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html</id>
+    <link href="https://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html"/>
+    <id>https://www.yangyanxing.com/article/how-to-use-uiautomator-with-python.html</id>
     <published>2015-08-27T17:17:30.000Z</published>
     <updated>2017-12-16T10:10:42.396Z</updated>
     
@@ -653,21 +653,21 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>使用wxPython建立一个计算文件md5的GUI工具</title>
-    <link href="http://www.yangyanxing.com/article/1350.html"/>
-    <id>http://www.yangyanxing.com/article/1350.html</id>
+    <link href="https://www.yangyanxing.com/article/1350.html"/>
+    <id>https://www.yangyanxing.com/article/1350.html</id>
     <published>2015-06-25T17:13:43.000Z</published>
     <updated>2017-12-16T10:10:41.969Z</updated>
     
@@ -679,17 +679,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>笨方法实现webpy的表单校验功能</title>
-    <link href="http://www.yangyanxing.com/article/1340.html"/>
-    <id>http://www.yangyanxing.com/article/1340.html</id>
+    <link href="https://www.yangyanxing.com/article/1340.html"/>
+    <id>https://www.yangyanxing.com/article/1340.html</id>
     <published>2015-05-02T09:43:01.000Z</published>
     <updated>2017-12-16T10:10:42.246Z</updated>
     
@@ -700,17 +700,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+      <category term="webpy" scheme="https://www.yangyanxing.com/tags/webpy/"/>
     
   </entry>
   
   <entry>
     <title>那天遇到一个杀马特</title>
-    <link href="http://www.yangyanxing.com/article/1329.html"/>
-    <id>http://www.yangyanxing.com/article/1329.html</id>
+    <link href="https://www.yangyanxing.com/article/1329.html"/>
+    <id>https://www.yangyanxing.com/article/1329.html</id>
     <published>2015-03-11T15:51:11.000Z</published>
     <updated>2017-12-16T10:10:42.421Z</updated>
     
@@ -720,15 +720,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>成就感，一种很久违了的感觉</title>
-    <link href="http://www.yangyanxing.com/article/1327.html"/>
-    <id>http://www.yangyanxing.com/article/1327.html</id>
+    <link href="https://www.yangyanxing.com/article/1327.html"/>
+    <id>https://www.yangyanxing.com/article/1327.html</id>
     <published>2015-03-11T15:48:27.000Z</published>
     <updated>2017-12-16T10:10:42.355Z</updated>
     
@@ -746,15 +746,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>Android stadio上使用robotium初体验</title>
-    <link href="http://www.yangyanxing.com/article/1320.html"/>
-    <id>http://www.yangyanxing.com/article/1320.html</id>
+    <link href="https://www.yangyanxing.com/article/1320.html"/>
+    <id>https://www.yangyanxing.com/article/1320.html</id>
     <published>2015-03-05T14:57:37.000Z</published>
     <updated>2017-12-16T10:10:42.234Z</updated>
     
@@ -768,17 +768,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>sql注入初步</title>
-    <link href="http://www.yangyanxing.com/article/1314.html"/>
-    <id>http://www.yangyanxing.com/article/1314.html</id>
+    <link href="https://www.yangyanxing.com/article/1314.html"/>
+    <id>https://www.yangyanxing.com/article/1314.html</id>
     <published>2015-02-22T10:40:30.000Z</published>
     <updated>2017-12-16T10:10:42.279Z</updated>
     
@@ -793,19 +793,19 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
-      <category term="sql" scheme="http://www.yangyanxing.com/tags/sql/"/>
+      <category term="sql" scheme="https://www.yangyanxing.com/tags/sql/"/>
     
-      <category term="安全" scheme="http://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="https://www.yangyanxing.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>spinner和适配器模式</title>
-    <link href="http://www.yangyanxing.com/article/1310.html"/>
-    <id>http://www.yangyanxing.com/article/1310.html</id>
+    <link href="https://www.yangyanxing.com/article/1310.html"/>
+    <id>https://www.yangyanxing.com/article/1310.html</id>
     <published>2015-02-21T16:41:48.000Z</published>
     <updated>2017-12-16T10:10:42.307Z</updated>
     
@@ -817,17 +817,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>Android中的UI线程阻塞</title>
-    <link href="http://www.yangyanxing.com/article/1308.html"/>
-    <id>http://www.yangyanxing.com/article/1308.html</id>
+    <link href="https://www.yangyanxing.com/article/1308.html"/>
+    <id>https://www.yangyanxing.com/article/1308.html</id>
     <published>2015-02-19T17:05:19.000Z</published>
     <updated>2017-12-16T10:10:42.466Z</updated>
     
@@ -839,17 +839,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>Android开发初步</title>
-    <link href="http://www.yangyanxing.com/article/1303.html"/>
-    <id>http://www.yangyanxing.com/article/1303.html</id>
+    <link href="https://www.yangyanxing.com/article/1303.html"/>
+    <id>https://www.yangyanxing.com/article/1303.html</id>
     <published>2015-02-19T11:36:23.000Z</published>
     <updated>2017-12-16T10:10:42.150Z</updated>
     
@@ -861,17 +861,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.yangyanxing.com/categories/Android/"/>
+      <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>没事别蹭wifi-告诉你公共的wifi有多不安全</title>
-    <link href="http://www.yangyanxing.com/article/1298.html"/>
-    <id>http://www.yangyanxing.com/article/1298.html</id>
+    <link href="https://www.yangyanxing.com/article/1298.html"/>
+    <id>https://www.yangyanxing.com/article/1298.html</id>
     <published>2015-02-11T16:13:33.000Z</published>
     <updated>2017-12-16T15:34:10.794Z</updated>
     
@@ -887,15 +887,15 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
   </entry>
   
   <entry>
     <title>appium简明教程(转)</title>
-    <link href="http://www.yangyanxing.com/article/1266.html"/>
-    <id>http://www.yangyanxing.com/article/1266.html</id>
+    <link href="https://www.yangyanxing.com/article/1266.html"/>
+    <id>https://www.yangyanxing.com/article/1266.html</id>
     <published>2015-01-03T12:03:13.000Z</published>
     <updated>2017-12-16T15:40:04.317Z</updated>
     
@@ -914,17 +914,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Android官方的uiautomator例子的实现</title>
-    <link href="http://www.yangyanxing.com/article/1264.html"/>
-    <id>http://www.yangyanxing.com/article/1264.html</id>
+    <link href="https://www.yangyanxing.com/article/1264.html"/>
+    <id>https://www.yangyanxing.com/article/1264.html</id>
     <published>2014-12-28T17:04:49.000Z</published>
     <updated>2017-12-16T15:42:55.686Z</updated>
     
@@ -936,17 +936,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="android" scheme="http://www.yangyanxing.com/tags/android/"/>
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>C++获取系统信息与拷贝文件到windows目录下</title>
-    <link href="http://www.yangyanxing.com/article/1220.html"/>
-    <id>http://www.yangyanxing.com/article/1220.html</id>
+    <link href="https://www.yangyanxing.com/article/1220.html"/>
+    <id>https://www.yangyanxing.com/article/1220.html</id>
     <published>2014-12-06T14:28:33.000Z</published>
     <updated>2017-12-16T15:43:44.756Z</updated>
     
@@ -956,15 +956,15 @@
     
     </summary>
     
-      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+      <category term="C++" scheme="https://www.yangyanxing.com/categories/C/"/>
     
     
   </entry>
   
   <entry>
     <title>C++中windows编程基础</title>
-    <link href="http://www.yangyanxing.com/article/1216.html"/>
-    <id>http://www.yangyanxing.com/article/1216.html</id>
+    <link href="https://www.yangyanxing.com/article/1216.html"/>
+    <id>https://www.yangyanxing.com/article/1216.html</id>
     <published>2014-12-06T14:20:08.000Z</published>
     <updated>2017-12-16T15:44:49.292Z</updated>
     
@@ -976,15 +976,15 @@
     
     </summary>
     
-      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+      <category term="C++" scheme="https://www.yangyanxing.com/categories/C/"/>
     
     
   </entry>
   
   <entry>
     <title>c++语言基础(hello world,数据类型,构造方法,指针的常见错误,常量指针,指针与引用)</title>
-    <link href="http://www.yangyanxing.com/article/1212.html"/>
-    <id>http://www.yangyanxing.com/article/1212.html</id>
+    <link href="https://www.yangyanxing.com/article/1212.html"/>
+    <id>https://www.yangyanxing.com/article/1212.html</id>
     <published>2014-12-06T14:13:08.000Z</published>
     <updated>2017-12-16T15:45:51.109Z</updated>
     
@@ -994,15 +994,15 @@
     
     </summary>
     
-      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+      <category term="C++" scheme="https://www.yangyanxing.com/categories/C/"/>
     
     
   </entry>
   
   <entry>
     <title>dev c++安装使用</title>
-    <link href="http://www.yangyanxing.com/article/1208.html"/>
-    <id>http://www.yangyanxing.com/article/1208.html</id>
+    <link href="https://www.yangyanxing.com/article/1208.html"/>
+    <id>https://www.yangyanxing.com/article/1208.html</id>
     <published>2014-12-06T14:08:03.000Z</published>
     <updated>2017-12-16T15:47:10.836Z</updated>
     
@@ -1014,15 +1014,15 @@
     
     </summary>
     
-      <category term="C++" scheme="http://www.yangyanxing.com/categories/C/"/>
+      <category term="C++" scheme="https://www.yangyanxing.com/categories/C/"/>
     
     
   </entry>
   
   <entry>
     <title>被潜意识蒙蔽的理性</title>
-    <link href="http://www.yangyanxing.com/article/1199.html"/>
-    <id>http://www.yangyanxing.com/article/1199.html</id>
+    <link href="https://www.yangyanxing.com/article/1199.html"/>
+    <id>https://www.yangyanxing.com/article/1199.html</id>
     <published>2014-10-27T16:20:02.000Z</published>
     <updated>2017-12-16T10:10:41.991Z</updated>
     
@@ -1033,15 +1033,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>七牛cdn缓存导致ajax评论失效</title>
-    <link href="http://www.yangyanxing.com/article/1151.html"/>
-    <id>http://www.yangyanxing.com/article/1151.html</id>
+    <link href="https://www.yangyanxing.com/article/1151.html"/>
+    <id>https://www.yangyanxing.com/article/1151.html</id>
     <published>2014-10-06T16:41:23.000Z</published>
     <updated>2017-12-16T15:47:50.565Z</updated>
     
@@ -1057,17 +1057,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="wordpress" scheme="http://www.yangyanxing.com/tags/wordpress/"/>
+      <category term="wordpress" scheme="https://www.yangyanxing.com/tags/wordpress/"/>
     
   </entry>
   
   <entry>
     <title>mysql与mongodb命令对比</title>
-    <link href="http://www.yangyanxing.com/article/1128.html"/>
-    <id>http://www.yangyanxing.com/article/1128.html</id>
+    <link href="https://www.yangyanxing.com/article/1128.html"/>
+    <id>https://www.yangyanxing.com/article/1128.html</id>
     <published>2014-09-28T17:01:51.000Z</published>
     <updated>2017-12-16T10:10:42.312Z</updated>
     
@@ -1084,17 +1084,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="sql" scheme="http://www.yangyanxing.com/tags/sql/"/>
+      <category term="sql" scheme="https://www.yangyanxing.com/tags/sql/"/>
     
   </entry>
   
   <entry>
     <title>修改Gwibber脚本成功添加新浪微博账户（解决一直正在认证的问题）</title>
-    <link href="http://www.yangyanxing.com/article/1115.html"/>
-    <id>http://www.yangyanxing.com/article/1115.html</id>
+    <link href="https://www.yangyanxing.com/article/1115.html"/>
+    <id>https://www.yangyanxing.com/article/1115.html</id>
     <published>2014-09-21T15:38:38.000Z</published>
     <updated>2017-12-16T10:10:42.440Z</updated>
     
@@ -1107,17 +1107,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>java中面向对象的一点学习总结</title>
-    <link href="http://www.yangyanxing.com/article/1108.html"/>
-    <id>http://www.yangyanxing.com/article/1108.html</id>
+    <link href="https://www.yangyanxing.com/article/1108.html"/>
+    <id>https://www.yangyanxing.com/article/1108.html</id>
     <published>2014-08-24T15:33:40.000Z</published>
     <updated>2017-12-16T10:10:42.509Z</updated>
     
@@ -1130,17 +1130,17 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="java" scheme="http://www.yangyanxing.com/tags/java/"/>
+      <category term="java" scheme="https://www.yangyanxing.com/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>中国男人形象气质差配不上中国女人?</title>
-    <link href="http://www.yangyanxing.com/article/1106.html"/>
-    <id>http://www.yangyanxing.com/article/1106.html</id>
+    <link href="https://www.yangyanxing.com/article/1106.html"/>
+    <id>https://www.yangyanxing.com/article/1106.html</id>
     <published>2014-08-20T15:34:21.000Z</published>
     <updated>2017-12-16T10:10:42.210Z</updated>
     
@@ -1152,15 +1152,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>python中的Queue与多进程（multiprocessing）</title>
-    <link href="http://www.yangyanxing.com/article/1103.html"/>
-    <id>http://www.yangyanxing.com/article/1103.html</id>
+    <link href="https://www.yangyanxing.com/article/1103.html"/>
+    <id>https://www.yangyanxing.com/article/1103.html</id>
     <published>2014-07-29T16:59:27.000Z</published>
     <updated>2017-12-16T15:49:56.197Z</updated>
     
@@ -1180,17 +1180,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python操作selenium的基本操作</title>
-    <link href="http://www.yangyanxing.com/article/1085.html"/>
-    <id>http://www.yangyanxing.com/article/1085.html</id>
+    <link href="https://www.yangyanxing.com/article/1085.html"/>
+    <id>https://www.yangyanxing.com/article/1085.html</id>
     <published>2014-06-17T14:59:00.000Z</published>
     <updated>2017-12-16T10:10:42.107Z</updated>
     
@@ -1206,19 +1206,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>python的requests初步使用</title>
-    <link href="http://www.yangyanxing.com/article/1079.html"/>
-    <id>http://www.yangyanxing.com/article/1079.html</id>
+    <link href="https://www.yangyanxing.com/article/1079.html"/>
+    <id>https://www.yangyanxing.com/article/1079.html</id>
     <published>2014-06-15T15:20:53.000Z</published>
     <updated>2017-12-16T10:10:42.076Z</updated>
     
@@ -1229,19 +1229,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="requests" scheme="http://www.yangyanxing.com/tags/requests/"/>
+      <category term="requests" scheme="https://www.yangyanxing.com/tags/requests/"/>
     
   </entry>
   
   <entry>
     <title>与wordpress垃圾评论斗争到底</title>
-    <link href="http://www.yangyanxing.com/article/1069.html"/>
-    <id>http://www.yangyanxing.com/article/1069.html</id>
+    <link href="https://www.yangyanxing.com/article/1069.html"/>
+    <id>https://www.yangyanxing.com/article/1069.html</id>
     <published>2014-06-09T15:05:11.000Z</published>
     <updated>2017-12-16T10:10:42.349Z</updated>
     
@@ -1253,15 +1253,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>切换google的公共库缓解网站访问慢的问题</title>
-    <link href="http://www.yangyanxing.com/article/1052.html"/>
-    <id>http://www.yangyanxing.com/article/1052.html</id>
+    <link href="https://www.yangyanxing.com/article/1052.html"/>
+    <id>https://www.yangyanxing.com/article/1052.html</id>
     <published>2014-06-07T14:58:32.000Z</published>
     <updated>2017-12-16T10:10:42.115Z</updated>
     
@@ -1273,15 +1273,15 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>python中的中文编码问题</title>
-    <link href="http://www.yangyanxing.com/article/1050.html"/>
-    <id>http://www.yangyanxing.com/article/1050.html</id>
+    <link href="https://www.yangyanxing.com/article/1050.html"/>
+    <id>https://www.yangyanxing.com/article/1050.html</id>
     <published>2014-06-01T16:25:02.000Z</published>
     <updated>2017-12-16T10:10:41.984Z</updated>
     
@@ -1298,17 +1298,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu从安装到设置的一点记录</title>
-    <link href="http://www.yangyanxing.com/article/1032.html"/>
-    <id>http://www.yangyanxing.com/article/1032.html</id>
+    <link href="https://www.yangyanxing.com/article/1032.html"/>
+    <id>https://www.yangyanxing.com/article/1032.html</id>
     <published>2014-03-06T15:43:25.000Z</published>
     <updated>2017-12-16T10:10:42.185Z</updated>
     
@@ -1327,19 +1327,19 @@
     
     </summary>
     
-      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+      <category term="Linux相关" scheme="https://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="linux" scheme="http://www.yangyanxing.com/tags/linux/"/>
+      <category term="linux" scheme="https://www.yangyanxing.com/tags/linux/"/>
     
-      <category term="Ubuntu" scheme="http://www.yangyanxing.com/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://www.yangyanxing.com/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>javascript DOM初学(一)</title>
-    <link href="http://www.yangyanxing.com/article/994.html"/>
-    <id>http://www.yangyanxing.com/article/994.html</id>
+    <link href="https://www.yangyanxing.com/article/994.html"/>
+    <id>https://www.yangyanxing.com/article/994.html</id>
     <published>2014-02-22T18:18:25.000Z</published>
     <updated>2017-12-16T10:10:42.446Z</updated>
     
@@ -1349,17 +1349,17 @@
     
     </summary>
     
-      <category term="web" scheme="http://www.yangyanxing.com/categories/web/"/>
+      <category term="web" scheme="https://www.yangyanxing.com/categories/web/"/>
     
     
-      <category term="javascript" scheme="http://www.yangyanxing.com/tags/javascript/"/>
+      <category term="javascript" scheme="https://www.yangyanxing.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>python中的logging模块应用</title>
-    <link href="http://www.yangyanxing.com/article/963.html"/>
-    <id>http://www.yangyanxing.com/article/963.html</id>
+    <link href="https://www.yangyanxing.com/article/963.html"/>
+    <id>https://www.yangyanxing.com/article/963.html</id>
     <published>2013-11-16T15:56:49.000Z</published>
     <updated>2017-12-16T10:10:42.068Z</updated>
     
@@ -1370,17 +1370,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>使用web.py在BAE建立自已的电影网站</title>
-    <link href="http://www.yangyanxing.com/article/953.html"/>
-    <id>http://www.yangyanxing.com/article/953.html</id>
+    <link href="https://www.yangyanxing.com/article/953.html"/>
+    <id>https://www.yangyanxing.com/article/953.html</id>
     <published>2013-10-31T16:06:43.000Z</published>
     <updated>2017-12-16T10:10:42.085Z</updated>
     
@@ -1393,19 +1393,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+      <category term="webpy" scheme="https://www.yangyanxing.com/tags/webpy/"/>
     
   </entry>
   
   <entry>
     <title>web.py中关于url的总结</title>
-    <link href="http://www.yangyanxing.com/article/932.html"/>
-    <id>http://www.yangyanxing.com/article/932.html</id>
+    <link href="https://www.yangyanxing.com/article/932.html"/>
+    <id>https://www.yangyanxing.com/article/932.html</id>
     <published>2013-10-21T17:42:41.000Z</published>
     <updated>2017-12-16T10:10:41.904Z</updated>
     
@@ -1416,19 +1416,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="webpy" scheme="http://www.yangyanxing.com/tags/webpy/"/>
+      <category term="webpy" scheme="https://www.yangyanxing.com/tags/webpy/"/>
     
   </entry>
   
   <entry>
     <title>在中文windows下使用pywinauto进行窗口操作（一）</title>
-    <link href="http://www.yangyanxing.com/article/926.html"/>
-    <id>http://www.yangyanxing.com/article/926.html</id>
+    <link href="https://www.yangyanxing.com/article/926.html"/>
+    <id>https://www.yangyanxing.com/article/926.html</id>
     <published>2013-10-06T19:42:56.000Z</published>
     <updated>2017-12-16T10:10:42.482Z</updated>
     
@@ -1444,15 +1444,15 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>使用python进行windows自动化测试（1）</title>
-    <link href="http://www.yangyanxing.com/article/920.html"/>
-    <id>http://www.yangyanxing.com/article/920.html</id>
+    <link href="https://www.yangyanxing.com/article/920.html"/>
+    <id>https://www.yangyanxing.com/article/920.html</id>
     <published>2013-10-04T17:41:33.000Z</published>
     <updated>2017-12-16T10:10:42.368Z</updated>
     
@@ -1465,19 +1465,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="自动化测试" scheme="http://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>通过hello world程序判断你的虚拟主机是否支持python</title>
-    <link href="http://www.yangyanxing.com/article/897.html"/>
-    <id>http://www.yangyanxing.com/article/897.html</id>
+    <link href="https://www.yangyanxing.com/article/897.html"/>
+    <id>https://www.yangyanxing.com/article/897.html</id>
     <published>2013-09-24T17:37:52.000Z</published>
     <updated>2017-12-16T10:10:41.998Z</updated>
     
@@ -1490,15 +1490,15 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>Python中的urllib2库的使用</title>
-    <link href="http://www.yangyanxing.com/article/911.html"/>
-    <id>http://www.yangyanxing.com/article/911.html</id>
+    <link href="https://www.yangyanxing.com/article/911.html"/>
+    <id>https://www.yangyanxing.com/article/911.html</id>
     <published>2013-09-11T17:06:43.000Z</published>
     <updated>2017-12-16T10:10:42.494Z</updated>
     
@@ -1511,17 +1511,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python处理网页中的cookie</title>
-    <link href="http://www.yangyanxing.com/article/908.html"/>
-    <id>http://www.yangyanxing.com/article/908.html</id>
+    <link href="https://www.yangyanxing.com/article/908.html"/>
+    <id>https://www.yangyanxing.com/article/908.html</id>
     <published>2013-09-10T03:16:49.000Z</published>
     <updated>2017-12-16T10:10:42.039Z</updated>
     
@@ -1531,17 +1531,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>使用python抓取360搜索联想词</title>
-    <link href="http://www.yangyanxing.com/article/877.html"/>
-    <id>http://www.yangyanxing.com/article/877.html</id>
+    <link href="https://www.yangyanxing.com/article/877.html"/>
+    <id>https://www.yangyanxing.com/article/877.html</id>
     <published>2013-09-03T17:09:19.000Z</published>
     <updated>2017-12-16T15:53:24.146Z</updated>
     
@@ -1553,17 +1553,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python解析json</title>
-    <link href="http://www.yangyanxing.com/article/874.html"/>
-    <id>http://www.yangyanxing.com/article/874.html</id>
+    <link href="https://www.yangyanxing.com/article/874.html"/>
+    <id>https://www.yangyanxing.com/article/874.html</id>
     <published>2013-08-27T17:23:05.000Z</published>
     <updated>2017-12-16T10:10:42.129Z</updated>
     
@@ -1574,17 +1574,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Python解析XML文档</title>
-    <link href="http://www.yangyanxing.com/article/872.html"/>
-    <id>http://www.yangyanxing.com/article/872.html</id>
+    <link href="https://www.yangyanxing.com/article/872.html"/>
+    <id>https://www.yangyanxing.com/article/872.html</id>
     <published>2013-08-27T16:32:24.000Z</published>
     <updated>2017-12-16T10:10:42.294Z</updated>
     
@@ -1596,19 +1596,19 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
-      <category term="xml" scheme="http://www.yangyanxing.com/tags/xml/"/>
+      <category term="xml" scheme="https://www.yangyanxing.com/tags/xml/"/>
     
   </entry>
   
   <entry>
     <title>使用python一步一步搭建微信公众平台（一）</title>
-    <link href="http://www.yangyanxing.com/article/871.html"/>
-    <id>http://www.yangyanxing.com/article/871.html</id>
+    <link href="https://www.yangyanxing.com/article/871.html"/>
+    <id>https://www.yangyanxing.com/article/871.html</id>
     <published>2013-08-24T11:03:05.000Z</published>
     <updated>2017-12-16T15:55:19.459Z</updated>
     
@@ -1621,17 +1621,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python发邮件是件很简单的事情</title>
-    <link href="http://www.yangyanxing.com/article/870.html"/>
-    <id>http://www.yangyanxing.com/article/870.html</id>
+    <link href="https://www.yangyanxing.com/article/870.html"/>
+    <id>https://www.yangyanxing.com/article/870.html</id>
     <published>2013-08-07T16:09:33.000Z</published>
     <updated>2017-12-16T10:10:42.402Z</updated>
     
@@ -1647,17 +1647,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>可爱的python中的一个与递归相关的小问题</title>
-    <link href="http://www.yangyanxing.com/article/821.html"/>
-    <id>http://www.yangyanxing.com/article/821.html</id>
+    <link href="https://www.yangyanxing.com/article/821.html"/>
+    <id>https://www.yangyanxing.com/article/821.html</id>
     <published>2013-06-22T17:41:21.000Z</published>
     <updated>2017-12-16T10:10:42.319Z</updated>
     
@@ -1667,15 +1667,15 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>通过一个python小脚本来下载最新的360杀毒安装程序</title>
-    <link href="http://www.yangyanxing.com/article/817.html"/>
-    <id>http://www.yangyanxing.com/article/817.html</id>
+    <link href="https://www.yangyanxing.com/article/817.html"/>
+    <id>https://www.yangyanxing.com/article/817.html</id>
     <published>2013-06-03T11:21:12.000Z</published>
     <updated>2017-12-16T10:10:41.839Z</updated>
     
@@ -1692,17 +1692,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python中的OOP</title>
-    <link href="http://www.yangyanxing.com/article/813.html"/>
-    <id>http://www.yangyanxing.com/article/813.html</id>
+    <link href="https://www.yangyanxing.com/article/813.html"/>
+    <id>https://www.yangyanxing.com/article/813.html</id>
     <published>2013-06-01T14:17:55.000Z</published>
     <updated>2017-12-16T10:10:42.222Z</updated>
     
@@ -1718,17 +1718,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>一个python的小脚本登录人人并抓取新鲜事</title>
-    <link href="http://www.yangyanxing.com/article/806.html"/>
-    <id>http://www.yangyanxing.com/article/806.html</id>
+    <link href="https://www.yangyanxing.com/article/806.html"/>
+    <id>https://www.yangyanxing.com/article/806.html</id>
     <published>2013-05-28T16:30:48.000Z</published>
     <updated>2017-12-16T10:10:42.024Z</updated>
     
@@ -1744,17 +1744,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>(转)抛砖引玉 正则表达式完成电话号码的匹配</title>
-    <link href="http://www.yangyanxing.com/article/779.html"/>
-    <id>http://www.yangyanxing.com/article/779.html</id>
+    <link href="https://www.yangyanxing.com/article/779.html"/>
+    <id>https://www.yangyanxing.com/article/779.html</id>
     <published>2013-03-18T15:24:26.000Z</published>
     <updated>2017-12-16T16:00:10.301Z</updated>
     
@@ -1768,15 +1768,15 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>(转)Python 参数知识（变量前加星号的意义）</title>
-    <link href="http://www.yangyanxing.com/article/775.html"/>
-    <id>http://www.yangyanxing.com/article/775.html</id>
+    <link href="https://www.yangyanxing.com/article/775.html"/>
+    <id>https://www.yangyanxing.com/article/775.html</id>
     <published>2013-03-16T12:24:01.000Z</published>
     <updated>2017-12-16T10:10:42.046Z</updated>
     
@@ -1792,17 +1792,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>迟暮之年，感慨之春</title>
-    <link href="http://www.yangyanxing.com/article/760.html"/>
-    <id>http://www.yangyanxing.com/article/760.html</id>
+    <link href="https://www.yangyanxing.com/article/760.html"/>
+    <id>https://www.yangyanxing.com/article/760.html</id>
     <published>2013-03-08T18:04:37.000Z</published>
     <updated>2017-12-16T10:10:42.520Z</updated>
     
@@ -1814,15 +1814,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>Python中用print方法向文件中写入内容</title>
-    <link href="http://www.yangyanxing.com/article/749.html"/>
-    <id>http://www.yangyanxing.com/article/749.html</id>
+    <link href="https://www.yangyanxing.com/article/749.html"/>
+    <id>https://www.yangyanxing.com/article/749.html</id>
     <published>2013-02-02T15:40:21.000Z</published>
     <updated>2017-12-16T10:10:42.142Z</updated>
     
@@ -1833,17 +1833,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>利用新浪SAE storage服务做图床</title>
-    <link href="http://www.yangyanxing.com/article/460.html"/>
-    <id>http://www.yangyanxing.com/article/460.html</id>
+    <link href="https://www.yangyanxing.com/article/460.html"/>
+    <id>https://www.yangyanxing.com/article/460.html</id>
     <published>2012-12-10T15:37:16.000Z</published>
     <updated>2017-12-16T10:10:42.526Z</updated>
     
@@ -1856,15 +1856,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>解决wordpress后台写日志时编辑器加载慢</title>
-    <link href="http://www.yangyanxing.com/article/444.html"/>
-    <id>http://www.yangyanxing.com/article/444.html</id>
+    <link href="https://www.yangyanxing.com/article/444.html"/>
+    <id>https://www.yangyanxing.com/article/444.html</id>
     <published>2012-12-07T16:05:04.000Z</published>
     <updated>2017-12-16T10:10:42.361Z</updated>
     
@@ -1876,15 +1876,15 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>（转）Python装饰器与面向切面编程</title>
-    <link href="http://www.yangyanxing.com/article/416.html"/>
-    <id>http://www.yangyanxing.com/article/416.html</id>
+    <link href="https://www.yangyanxing.com/article/416.html"/>
+    <id>https://www.yangyanxing.com/article/416.html</id>
     <published>2012-12-05T15:18:05.000Z</published>
     <updated>2017-12-16T16:07:40.668Z</updated>
     
@@ -1901,17 +1901,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>北京工业大学内两个网卡分别访问内网与外网的方法</title>
-    <link href="http://www.yangyanxing.com/article/413.html"/>
-    <id>http://www.yangyanxing.com/article/413.html</id>
+    <link href="https://www.yangyanxing.com/article/413.html"/>
+    <id>https://www.yangyanxing.com/article/413.html</id>
     <published>2012-11-30T13:50:34.000Z</published>
     <updated>2017-12-16T10:10:42.538Z</updated>
     
@@ -1926,15 +1926,15 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>解决新浪开放平台应用（oauth2）网站无法认证的问题</title>
-    <link href="http://www.yangyanxing.com/article/407.html"/>
-    <id>http://www.yangyanxing.com/article/407.html</id>
+    <link href="https://www.yangyanxing.com/article/407.html"/>
+    <id>https://www.yangyanxing.com/article/407.html</id>
     <published>2012-11-29T15:10:50.000Z</published>
     <updated>2017-12-16T10:10:42.416Z</updated>
     
@@ -1944,15 +1944,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>通过小程序练习Python中关于os模块的方法</title>
-    <link href="http://www.yangyanxing.com/article/397.html"/>
-    <id>http://www.yangyanxing.com/article/397.html</id>
+    <link href="https://www.yangyanxing.com/article/397.html"/>
+    <id>https://www.yangyanxing.com/article/397.html</id>
     <published>2012-11-15T17:14:18.000Z</published>
     <updated>2017-12-16T16:10:07.607Z</updated>
     
@@ -1962,17 +1962,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>一个Python的小例子来理解字典与while循环</title>
-    <link href="http://www.yangyanxing.com/article/393.html"/>
-    <id>http://www.yangyanxing.com/article/393.html</id>
+    <link href="https://www.yangyanxing.com/article/393.html"/>
+    <id>https://www.yangyanxing.com/article/393.html</id>
     <published>2012-11-11T17:23:59.000Z</published>
     <updated>2017-12-16T10:10:42.433Z</updated>
     
@@ -1982,17 +1982,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://www.yangyanxing.com/categories/Python/"/>
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="http://www.yangyanxing.com/tags/python/"/>
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>利用Chrome或者极速浏览器屏蔽烦人的广告</title>
-    <link href="http://www.yangyanxing.com/article/375.html"/>
-    <id>http://www.yangyanxing.com/article/375.html</id>
+    <link href="https://www.yangyanxing.com/article/375.html"/>
+    <id>https://www.yangyanxing.com/article/375.html</id>
     <published>2012-09-21T15:52:03.000Z</published>
     <updated>2017-12-16T10:10:42.031Z</updated>
     
@@ -2005,15 +2005,15 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>ThinkPHP之简单的用户增删改查</title>
-    <link href="http://www.yangyanxing.com/article/702.html"/>
-    <id>http://www.yangyanxing.com/article/702.html</id>
+    <link href="https://www.yangyanxing.com/article/702.html"/>
+    <id>https://www.yangyanxing.com/article/702.html</id>
     <published>2012-08-19T16:05:15.000Z</published>
     <updated>2017-12-16T10:10:42.053Z</updated>
     
@@ -2024,17 +2024,17 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
   </entry>
   
   <entry>
     <title>ThinkPHP中的CURD之C</title>
-    <link href="http://www.yangyanxing.com/article/373.html"/>
-    <id>http://www.yangyanxing.com/article/373.html</id>
+    <link href="https://www.yangyanxing.com/article/373.html"/>
+    <id>https://www.yangyanxing.com/article/373.html</id>
     <published>2012-08-09T17:53:09.000Z</published>
     <updated>2017-12-16T10:10:41.864Z</updated>
     
@@ -2047,15 +2047,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>ThinkPHP四种实例化模型的方法</title>
-    <link href="http://www.yangyanxing.com/article/372.html"/>
-    <id>http://www.yangyanxing.com/article/372.html</id>
+    <link href="https://www.yangyanxing.com/article/372.html"/>
+    <id>https://www.yangyanxing.com/article/372.html</id>
     <published>2012-08-06T17:00:18.000Z</published>
     <updated>2017-12-16T10:10:42.460Z</updated>
     
@@ -2066,17 +2066,17 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="http://www.yangyanxing.com/tags/ThinkPHP/"/>
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
   </entry>
   
   <entry>
     <title>通过新浪SAE搭建自己的个人博客</title>
-    <link href="http://www.yangyanxing.com/article/371.html"/>
-    <id>http://www.yangyanxing.com/article/371.html</id>
+    <link href="https://www.yangyanxing.com/article/371.html"/>
+    <id>https://www.yangyanxing.com/article/371.html</id>
     <published>2012-04-22T17:02:55.000Z</published>
     <updated>2017-12-16T10:10:42.545Z</updated>
     
@@ -2089,15 +2089,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>在SUSE中用Pidgin整合QQ与新浪微博</title>
-    <link href="http://www.yangyanxing.com/article/227.html"/>
-    <id>http://www.yangyanxing.com/article/227.html</id>
+    <link href="https://www.yangyanxing.com/article/227.html"/>
+    <id>https://www.yangyanxing.com/article/227.html</id>
     <published>2012-01-13T17:57:08.000Z</published>
     <updated>2017-12-16T10:10:42.532Z</updated>
     
@@ -2109,15 +2109,15 @@
     
     </summary>
     
-      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+      <category term="Linux相关" scheme="https://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>美化opensuse中的字体</title>
-    <link href="http://www.yangyanxing.com/article/221.html"/>
-    <id>http://www.yangyanxing.com/article/221.html</id>
+    <link href="https://www.yangyanxing.com/article/221.html"/>
+    <id>https://www.yangyanxing.com/article/221.html</id>
     <published>2012-01-10T15:37:57.000Z</published>
     <updated>2017-12-16T10:10:42.515Z</updated>
     
@@ -2129,15 +2129,15 @@
     
     </summary>
     
-      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+      <category term="Linux相关" scheme="https://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>关于Audacious中字体乱码的解决办法</title>
-    <link href="http://www.yangyanxing.com/article/216.html"/>
-    <id>http://www.yangyanxing.com/article/216.html</id>
+    <link href="https://www.yangyanxing.com/article/216.html"/>
+    <id>https://www.yangyanxing.com/article/216.html</id>
     <published>2012-01-10T15:30:03.000Z</published>
     <updated>2017-12-16T10:10:42.240Z</updated>
     
@@ -2149,15 +2149,15 @@
     
     </summary>
     
-      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+      <category term="Linux相关" scheme="https://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>opensuse12.1从安装到使用的一些札记</title>
-    <link href="http://www.yangyanxing.com/article/210.html"/>
-    <id>http://www.yangyanxing.com/article/210.html</id>
+    <link href="https://www.yangyanxing.com/article/210.html"/>
+    <id>https://www.yangyanxing.com/article/210.html</id>
     <published>2012-01-10T15:11:27.000Z</published>
     <updated>2017-12-16T10:10:42.300Z</updated>
     
@@ -2171,17 +2171,17 @@
     
     </summary>
     
-      <category term="Linux相关" scheme="http://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
+      <category term="Linux相关" scheme="https://www.yangyanxing.com/categories/Linux%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="linux" scheme="http://www.yangyanxing.com/tags/linux/"/>
+      <category term="linux" scheme="https://www.yangyanxing.com/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>关于PHP面向对象的一点网摘(继承性与访问类型)</title>
-    <link href="http://www.yangyanxing.com/article/205.html"/>
-    <id>http://www.yangyanxing.com/article/205.html</id>
+    <link href="https://www.yangyanxing.com/article/205.html"/>
+    <id>https://www.yangyanxing.com/article/205.html</id>
     <published>2011-12-18T09:32:20.000Z</published>
     <updated>2017-12-16T10:10:42.093Z</updated>
     
@@ -2191,15 +2191,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>关于PHP面向对象的一点网摘(基本概念与封装性)</title>
-    <link href="http://www.yangyanxing.com/article/199.html"/>
-    <id>http://www.yangyanxing.com/article/199.html</id>
+    <link href="https://www.yangyanxing.com/article/199.html"/>
+    <id>https://www.yangyanxing.com/article/199.html</id>
     <published>2011-12-15T16:50:04.000Z</published>
     <updated>2017-12-16T10:10:42.454Z</updated>
     
@@ -2211,15 +2211,15 @@
     
     </summary>
     
-      <category term="PHP" scheme="http://www.yangyanxing.com/categories/PHP/"/>
+      <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
   </entry>
   
   <entry>
     <title>说说大学里的打工赚钱</title>
-    <link href="http://www.yangyanxing.com/article/131.html"/>
-    <id>http://www.yangyanxing.com/article/131.html</id>
+    <link href="https://www.yangyanxing.com/article/131.html"/>
+    <id>https://www.yangyanxing.com/article/131.html</id>
     <published>2011-11-13T16:02:04.000Z</published>
     <updated>2017-12-16T10:10:42.408Z</updated>
     
@@ -2231,15 +2231,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>说说微博与RSS</title>
-    <link href="http://www.yangyanxing.com/article/129.html"/>
-    <id>http://www.yangyanxing.com/article/129.html</id>
+    <link href="https://www.yangyanxing.com/article/129.html"/>
+    <id>https://www.yangyanxing.com/article/129.html</id>
     <published>2011-11-06T14:04:18.000Z</published>
     <updated>2017-12-16T16:12:03.575Z</updated>
     
@@ -2251,15 +2251,15 @@
     
     </summary>
     
-      <category term="IT关注" scheme="http://www.yangyanxing.com/categories/IT%E5%85%B3%E6%B3%A8/"/>
+      <category term="IT关注" scheme="https://www.yangyanxing.com/categories/IT%E5%85%B3%E6%B3%A8/"/>
     
     
   </entry>
   
   <entry>
     <title>是否还能保持一种学习的态度</title>
-    <link href="http://www.yangyanxing.com/article/124.html"/>
-    <id>http://www.yangyanxing.com/article/124.html</id>
+    <link href="https://www.yangyanxing.com/article/124.html"/>
+    <id>https://www.yangyanxing.com/article/124.html</id>
     <published>2011-08-21T15:26:08.000Z</published>
     <updated>2017-12-16T10:10:42.017Z</updated>
     
@@ -2273,15 +2273,15 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>用猫抓老鼠的实例理解java中面向对象的编程与类和对象以及方法的概念</title>
-    <link href="http://www.yangyanxing.com/article/121.html"/>
-    <id>http://www.yangyanxing.com/article/121.html</id>
+    <link href="https://www.yangyanxing.com/article/121.html"/>
+    <id>https://www.yangyanxing.com/article/121.html</id>
     <published>2011-06-02T18:16:17.000Z</published>
     <updated>2017-12-16T10:10:41.879Z</updated>
     
@@ -2291,15 +2291,15 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>大学就这么过了（4）</title>
-    <link href="http://www.yangyanxing.com/article/105.html"/>
-    <id>http://www.yangyanxing.com/article/105.html</id>
+    <link href="https://www.yangyanxing.com/article/105.html"/>
+    <id>https://www.yangyanxing.com/article/105.html</id>
     <published>2010-12-26T15:14:08.000Z</published>
     <updated>2017-12-16T10:10:42.061Z</updated>
     
@@ -2316,15 +2316,15 @@
     
     </summary>
     
-      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+      <category term="我的大学" scheme="https://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>大学就这么过了（3）</title>
-    <link href="http://www.yangyanxing.com/article/104.html"/>
-    <id>http://www.yangyanxing.com/article/104.html</id>
+    <link href="https://www.yangyanxing.com/article/104.html"/>
+    <id>https://www.yangyanxing.com/article/104.html</id>
     <published>2010-12-26T13:51:46.000Z</published>
     <updated>2017-12-16T10:10:42.203Z</updated>
     
@@ -2340,15 +2340,15 @@
     
     </summary>
     
-      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+      <category term="我的大学" scheme="https://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>大学就这么过了（2）</title>
-    <link href="http://www.yangyanxing.com/article/103.html"/>
-    <id>http://www.yangyanxing.com/article/103.html</id>
+    <link href="https://www.yangyanxing.com/article/103.html"/>
+    <id>https://www.yangyanxing.com/article/103.html</id>
     <published>2010-12-24T05:15:39.000Z</published>
     <updated>2017-12-16T10:10:42.136Z</updated>
     
@@ -2363,15 +2363,15 @@
     
     </summary>
     
-      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+      <category term="我的大学" scheme="https://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>大学就这么过了（1）</title>
-    <link href="http://www.yangyanxing.com/article/102.html"/>
-    <id>http://www.yangyanxing.com/article/102.html</id>
+    <link href="https://www.yangyanxing.com/article/102.html"/>
+    <id>https://www.yangyanxing.com/article/102.html</id>
     <published>2010-12-23T06:33:03.000Z</published>
     <updated>2017-12-16T10:10:42.216Z</updated>
     
@@ -2386,15 +2386,15 @@
     
     </summary>
     
-      <category term="我的大学" scheme="http://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+      <category term="我的大学" scheme="https://www.yangyanxing.com/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>Twitter常用术语和名词解析</title>
-    <link href="http://www.yangyanxing.com/article/83.html"/>
-    <id>http://www.yangyanxing.com/article/83.html</id>
+    <link href="https://www.yangyanxing.com/article/83.html"/>
+    <id>https://www.yangyanxing.com/article/83.html</id>
     <published>2010-07-13T02:08:08.000Z</published>
     <updated>2017-12-16T16:13:14.369Z</updated>
     
@@ -2408,15 +2408,15 @@
     
     </summary>
     
-      <category term="计算机相关" scheme="http://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+      <category term="计算机相关" scheme="https://www.yangyanxing.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
   
   <entry>
     <title>小鸭子</title>
-    <link href="http://www.yangyanxing.com/article/850.html"/>
-    <id>http://www.yangyanxing.com/article/850.html</id>
+    <link href="https://www.yangyanxing.com/article/850.html"/>
+    <id>https://www.yangyanxing.com/article/850.html</id>
     <published>2009-12-05T01:09:39.000Z</published>
     <updated>2017-12-16T10:10:42.191Z</updated>
     
@@ -2428,7 +2428,7 @@
     
     </summary>
     
-      <category term="生活记录" scheme="http://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+      <category term="生活记录" scheme="https://www.yangyanxing.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
