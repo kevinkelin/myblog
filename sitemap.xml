@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/async_in_python.html</loc>
+    
+    <lastmod>2019-01-14T13:15:47.911Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/specialUse-in-pymongo.html</loc>
     
     <lastmod>2018-12-31T07:36:51.354Z</lastmod>

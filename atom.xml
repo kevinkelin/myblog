@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2018-12-31T07:36:51.354Z</updated>
+  <updated>2019-01-14T13:15:47.911Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中的异步实践与tornado应用</title>
+    <link href="https://www.yangyanxing.com/article/async_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/async_in_python.html</id>
+    <published>2019-01-10T16:00:00.000Z</published>
+    <updated>2019-01-14T13:15:47.911Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近项目中由于在python3中使用tornado,之前也有用过，是在python2中，由于对于协程理解不是很透彻，只是套用官方文档中的写法，最近比较细致的看了下协程的用法，也将tornado在python3中异步的实践了一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>pymongo中的特殊查询</title>
@@ -656,9 +676,9 @@
       <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
-    
       <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
     
       <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
