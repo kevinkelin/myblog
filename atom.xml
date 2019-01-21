@@ -676,9 +676,9 @@
       <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
     
     
-      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
-    
       <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+      <category term="android" scheme="https://www.yangyanxing.com/tags/android/"/>
     
       <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
@@ -1504,7 +1504,7 @@
     <summary type="html">
     
       &lt;p&gt;今天在RC上买了台虚拟主机玩玩，看它上面说支持python语言，于是试了下&lt;/p&gt;
-&lt;p&gt;写一个hello world的小程序&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;!/usr/bin/python&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print &#39;Content-Type: text/plainn&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;写一个hello world的小程序&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;!/usr/bin/python&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print &#39;Content-Type: text/plainn&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;以二进制方式上传到自已的空间上，访问 &lt;a href=&quot;http://static.yangyanxing.com/test.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://static.yangyanxing.com/test.py&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;居然一次性成功了，完美地显示hello world&lt;br&gt;
     
@@ -1585,7 +1585,7 @@
     <link href="https://www.yangyanxing.com/article/874.html"/>
     <id>https://www.yangyanxing.com/article/874.html</id>
     <published>2013-08-27T17:23:05.000Z</published>
-    <updated>2019-01-21T13:24:53.713Z</updated>
+    <updated>2019-01-21T13:52:10.319Z</updated>
     
     <summary type="html">
     
