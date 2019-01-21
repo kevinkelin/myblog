@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/874.html</loc>
+    
+    <lastmod>2019-01-21T13:24:53.713Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/async_in_python.html</loc>
     
     <lastmod>2019-01-14T13:15:47.911Z</lastmod>
@@ -607,13 +614,6 @@
     <loc>https://www.yangyanxing.com/article/103.html</loc>
     
     <lastmod>2017-12-16T10:10:42.136Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/874.html</loc>
-    
-    <lastmod>2017-12-16T10:10:42.129Z</lastmod>
     
   </url>
   
