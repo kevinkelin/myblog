@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-01-14T13:15:47.911Z</updated>
+  <updated>2019-01-21T16:03:36.003Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中使用加盐哈希函数加密密码</title>
+    <link href="https://www.yangyanxing.com/article/python_generate_password_hash.html"/>
+    <id>https://www.yangyanxing.com/article/python_generate_password_hash.html</id>
+    <published>2019-01-20T16:00:00.000Z</published>
+    <updated>2019-01-21T16:03:36.003Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开发网站离不开用户的注册与登录，今天来说说在网站开发的时候关于用户密码的保存方式，传统的方式有以下几种&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;明文存储：肉眼就可以识别，没有任何安全性。 谁用谁傻缺&lt;/li&gt;
+&lt;li&gt;加密存储：通过一定的变换形式，使得密码原文不易被识别。密码加密的几类方式：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;明文转码加密：BASE64, 7BIT等，这种方式只是个障眼法，不是真正的加密。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对称算法加密：DES, RSA等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;签名算法加密：也可以理解为单向哈希加密，比如MD5, SHA1等。加密算法固定，容 易被暴力破解。如果密码相同，得到的哈希值是一样的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;加盐哈希加密：加密时混入一段“随机”字符串（盐值）再进行哈希加密。即使 密码相同，如果盐值不同，那么哈希值也是不一样的。现在网站开发中主要是运 用这种加密方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本篇文章主要介绍第四种 「加盐哈希加密」&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python中的异步实践与tornado应用</title>

@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>python中使用加盐哈希函数加密密码</title>
+      <link href="/article/python_generate_password_hash.html"/>
+      <url>/article/python_generate_password_hash.html</url>
+      <content type="html"><![CDATA[<p>开发网站离不开用户的注册与登录，今天来说说在网站开发的时候关于用户密码的保存方式，传统的方式有以下几种</p><ul><li>明文存储：肉眼就可以识别，没有任何安全性。 谁用谁傻缺</li><li>加密存储：通过一定的变换形式，使得密码原文不易被识别。密码加密的几类方式：</li></ul><ol><li><p>明文转码加密：BASE64, 7BIT等，这种方式只是个障眼法，不是真正的加密。</p></li><li><p>对称算法加密：DES, RSA等。</p></li><li><p>签名算法加密：也可以理解为单向哈希加密，比如MD5, SHA1等。加密算法固定，容 易被暴力破解。如果密码相同，得到的哈希值是一样的。</p></li><li><p>加盐哈希加密：加密时混入一段“随机”字符串（盐值）再进行哈希加密。即使 密码相同，如果盐值不同，那么哈希值也是不一样的。现在网站开发中主要是运 用这种加密方法</p></li></ol><p>本篇文章主要介绍第四种 「加盐哈希加密」</p><a id="more"></a><h1 id="werkzeug介绍"><a href="#werkzeug介绍" class="headerlink" title="werkzeug介绍"></a>werkzeug介绍</h1><p>Werkzeug是一个WSGI工具包，他可以作为一个Web框架的底层库。但是 werkzeug 不是一个 web 服务器，也不是一个 web 框架，而是一个工具包，因为它封装好了很多 Web 框架的东西，例如 Request，Response 等等，大名鼎鼎的Flask就是基于werkzeug开发的。</p><h1 id="安装-werkzeug"><a href="#安装-werkzeug" class="headerlink" title="安装 werkzeug"></a>安装 werkzeug</h1><blockquote><p>pip install Werkzeug </p></blockquote><h1 id="密码生成函数-generate-password-hash"><a href="#密码生成函数-generate-password-hash" class="headerlink" title="密码生成函数 generate_password_hash"></a>密码生成函数 generate_password_hash</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> werkzeug.security <span class="keyword">import</span> generate_password_hash</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha256:50000$fESwY4Cl$38fdf741069ef37c207211b9bee69514582dc366660563d75c00e7cbfd7cbd8a'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha256:50000$hUhR8Gr3$73d44814d5cd490c04e0559141fb327c31766a0314d82ee05e33c33e1559af78'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha256:50000$EDHR93sZ$0d72a4c15a1c07b03f4190c7ac30b48ae8b478a4977a0262fa16d38417450b21'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha256:50000$ntpFkKsc$bd062cd0b35c5b26c91242fc72eb0e889cf71b9dd4c1ae291587a7a3e84db293'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha256:50000$sVP5IXJG$b93a86f5343d2a243ec701bfdf0cff745a5b1532c66cb7f82fb7d252d3b5ffb0'</span></span><br></pre></td></tr></table></figure><p>可以看到，每次计算出来的值都是不一样的,<code class="text">generate_password_hash</code> 函数定义为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">generate_password_hash(password, method=&apos;pbkdf2:sha256&apos;, salt_length=8)</span><br></pre></td></tr></table></figure></p><p><code class="text">password</code> 为明文密码</p><p><code class="text">method</code> 哈希的方式,格式为  <code class="text">pbpdf2:&lt;method&gt;</code> 主要有sha1,sha256,md5</p><p><code class="text">salt_length</code> 盐值的长度，默认为8 </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>,method=<span class="string">'pbkdf2:sha1'</span>,salt_length=<span class="number">10</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha1:50000$4GUBRzzizn$45b0f6b84a4ca4352b45feea8283fc48186f9ee8'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>,method=<span class="string">'pbkdf2:sha1'</span>,salt_length=<span class="number">8</span>)</span><br><span class="line"><span class="string">'pbkdf2:sha1:50000$4kHPpS9R$1f87c09c052342fd0d65b75aa70ababb1c17e7df'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>,method=<span class="string">'pbkdf2:md5'</span>,salt_length=<span class="number">8</span>)</span><br><span class="line"><span class="string">'pbkdf2:md5:50000$zppMHqux$01acb41e0b2858bbc849abf77692a9c0'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>generate_password_hash(<span class="string">'123'</span>,method=<span class="string">'pbkdf2:md5'</span>,salt_length=<span class="number">8</span>)</span><br><span class="line"><span class="string">'pbkdf2:md5:50000$rMaQutjR$1cc67c05e063cec0c8e5f8e048ddb5e1'</span></span><br></pre></td></tr></table></figure><h1 id="密码验证函数：check-password-hash"><a href="#密码验证函数：check-password-hash" class="headerlink" title="密码验证函数：check_password_hash"></a>密码验证函数：check_password_hash</h1><p>有生成函数就得有相应的解密函数，<code class="text">check_password_hash</code>的定义为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">check_password_hash(pwhash, password)</span><br></pre></td></tr></table></figure></p><p><code class="text">pwhash</code> 为密文<br><code class="text">password</code> 为明文</p><p>相同则返回<code class="text">True</code>，不同返回 <code class="text">False</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>check_password_hash(<span class="string">'pbkdf2:sha256:50000$ntpFkKsc$bd062cd0b35c5b26c91242fc72eb0e889cf71b9dd4c1ae291587a7a3e84db293'</span>,<span class="string">'123'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>check_password_hash(<span class="string">'pbkdf2:sha256:50000$ntpFkKsc$bd062cd0b35c5b26c91242fc72eb0e889cf71b9dd4c1ae291587a7a3e84db293'</span>,<span class="string">'1234'</span>)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>这个加盐哈希加密以后的密文，放到另外一台服务器上也是可以校验通过的，如果做网站数据库迁移也不用重新生成数据，使用这套加密算法可以很大程度上规避暴力破解密码，还是那名老话，密码是123456的就算使用再牛逼的加密你依然是不安全的，另外撞库也是不可避免的，所以作为用户可以尝试不同的网站使用不同的密码来规避撞库问题。</p><p>参考文章<br><a href="http://flask123.sinaapp.com/article/40/" target="_blank" rel="noopener">Flask加盐密码生成和验证函数</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>python中的异步实践与tornado应用</title>
       <link href="/article/async_in_python.html"/>
       <url>/article/async_in_python.html</url>
@@ -2126,16 +2147,16 @@
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
