@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-01-21T16:03:36.003Z</updated>
+  <updated>2019-01-21T16:37:31.643Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.yangyanxing.com/article/python_generate_password_hash.html"/>
     <id>https://www.yangyanxing.com/article/python_generate_password_hash.html</id>
     <published>2019-01-20T16:00:00.000Z</published>
-    <updated>2019-01-21T16:03:36.003Z</updated>
+    <updated>2019-01-21T16:37:31.643Z</updated>
     
     <summary type="html">
     
@@ -76,32 +76,12 @@
     <link href="https://www.yangyanxing.com/article/specialUse-in-pymongo.html"/>
     <id>https://www.yangyanxing.com/article/specialUse-in-pymongo.html</id>
     <published>2018-12-27T15:53:38.000Z</published>
-    <updated>2018-12-31T07:36:51.354Z</updated>
+    <updated>2019-01-23T07:57:50.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;python操作mongo常用的增删改查操作。&lt;a href=&quot;https://juejin.im/post/5addbd0e518825671f2f62ee&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python操作MongoDB看这一篇就够了&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;python操作mongo常用的增删改查看这一篇就够了&lt;a href=&quot;https://juejin.im/post/5addbd0e518825671f2f62ee&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python操作MongoDB看这一篇就够了&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最近在整理一些在pymongo中相对使用较少的查询。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
-    
-    
-      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
-    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
-    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
-    <published>2018-12-26T15:53:38.000Z</published>
-    <updated>2018-12-26T23:28:11.136Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
     
     </summary>
     
@@ -284,6 +264,26 @@
     <summary type="html">
     
       &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
+    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
+    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
+    <published>2017-08-19T15:53:38.000Z</published>
+    <updated>2019-01-23T13:33:30.752Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
     
     </summary>
     
@@ -570,9 +570,9 @@
       <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
-    
       <category term="PHP" scheme="https://www.yangyanxing.com/tags/PHP/"/>
+    
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
       <category term="微博" scheme="https://www.yangyanxing.com/tags/%E5%BE%AE%E5%8D%9A/"/>
     
@@ -599,9 +599,9 @@
       <category term="PHP" scheme="https://www.yangyanxing.com/categories/PHP/"/>
     
     
-      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
-    
       <category term="PHP" scheme="https://www.yangyanxing.com/tags/PHP/"/>
+    
+      <category term="ThinkPHP" scheme="https://www.yangyanxing.com/tags/ThinkPHP/"/>
     
   </entry>
   

@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</loc>
+    
+    <lastmod>2019-01-23T13:33:30.752Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/specialUse-in-pymongo.html</loc>
+    
+    <lastmod>2019-01-23T07:57:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/python_generate_password_hash.html</loc>
     
-    <lastmod>2019-01-21T16:03:36.003Z</lastmod>
+    <lastmod>2019-01-21T16:37:31.643Z</lastmod>
     
   </url>
   
@@ -19,20 +33,6 @@
     <loc>https://www.yangyanxing.com/article/async_in_python.html</loc>
     
     <lastmod>2019-01-14T13:15:47.911Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/specialUse-in-pymongo.html</loc>
-    
-    <lastmod>2018-12-31T07:36:51.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</loc>
-    
-    <lastmod>2018-12-26T23:28:11.136Z</lastmod>
     
   </url>
   
