@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-03-04T08:11:13.000Z</updated>
+  <updated>2019-03-11T10:11:01.000Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python3中的字符编码问题</title>
+    <link href="https://www.yangyanxing.com/article/charset_in_python3.html"/>
+    <id>https://www.yangyanxing.com/article/charset_in_python3.html</id>
+    <published>2019-03-10T16:00:00.000Z</published>
+    <updated>2019-03-11T10:11:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果说在python2中处理字符编码很蛋疼的话，如果幻想着python3不那么蛋疼，那么我只想说，你想多了，好不容易在python2中把字符编码的问题捣腾清楚了，但是换成python3，它会将之前的体系重新构建，使得之前的知识体系不能很好的运用，只能重新来构建。感觉是从一个坑跳到了另外一个坑，下面来看看这个令人头疼的python编码问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python中使用优先队列</title>
