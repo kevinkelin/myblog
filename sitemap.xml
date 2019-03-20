@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/aggregate_in_pymongo.html</loc>
+    
+    <lastmod>2019-03-20T12:25:44.505Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/priorityqueue_in_python.html</loc>
     
     <lastmod>2019-03-19T16:36:37.248Z</lastmod>

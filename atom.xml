@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-03-11T10:11:01.000Z</updated>
+  <updated>2019-03-20T12:25:44.505Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pymongo中使用聚合查询</title>
+    <link href="https://www.yangyanxing.com/article/aggregate_in_pymongo.html"/>
+    <id>https://www.yangyanxing.com/article/aggregate_in_pymongo.html</id>
+    <published>2019-03-19T16:00:00.000Z</published>
+    <updated>2019-03-20T12:25:44.505Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用mongo数据库时，简单的查询基本上可以满足大多数的业务场景，但是试想一下，如果要统计某一荐在指定的数据中出现了多少次该怎么查询呢？笨的方法是使用&lt;code class=&quot;text&quot;&gt;find&lt;/code&gt; 将数据查询出来，再使用&lt;code class=&quot;text&quot;&gt;count()&lt;/code&gt; 方法进行数据统计，这个场景还好，但是如果要求其中某个字段的和呢？是不是就非得遍历出相应的数据然后再进行求和运算呢？&lt;br&gt;在mysql中我们经常会用到&lt;code class=&quot;text&quot;&gt;count&lt;/code&gt;、&lt;code class=&quot;text&quot;&gt;group by&lt;/code&gt; 等查询，在mongodb中我们也可以使用聚合查询。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python3中的字符编码问题</title>
