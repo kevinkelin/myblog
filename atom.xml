@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-03-20T12:25:44.505Z</updated>
+  <updated>2019-03-21T14:07:30.769Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python中使用分步式进程计算</title>
+    <link href="https://www.yangyanxing.com/article/fractional_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/fractional_in_python.html</id>
+    <published>2019-03-20T16:00:00.000Z</published>
+    <updated>2019-03-21T14:07:30.769Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在python中使用多进程和多线程都能达到同时运行多个任务，和多进程和多线程的选择上，应该优先选择多进程的方式，因为多进程更加稳定，且对于进程的操作管理也更加方便，但有一点是多进程独有的杀手锏，多进程可以将进程分步到多台机器上跑，假如有很多个任务，一台机器即使开了多进程或者多进程跑起来还是要耗很多时间，那么这时就要想一下可否将任务分配到多台机器上跑，这样可以更快的完成任务。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pymongo中使用聚合查询</title>
     <link href="https://www.yangyanxing.com/article/aggregate_in_pymongo.html"/>
     <id>https://www.yangyanxing.com/article/aggregate_in_pymongo.html</id>
     <published>2019-03-19T16:00:00.000Z</published>
-    <updated>2019-03-20T12:25:44.505Z</updated>
+    <updated>2019-03-20T14:24:55.275Z</updated>
     
     <summary type="html">
     
