@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/oop_in_python.html</loc>
+    
+    <lastmod>2019-03-30T13:13:05.374Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/fractional_in_python.html</loc>
     
     <lastmod>2019-03-21T14:37:10.765Z</lastmod>
