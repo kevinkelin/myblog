@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/sync_in_asyncio.html</loc>
+    
+    <lastmod>2019-06-13T18:41:17.791Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/asyncio_in_python.html</loc>
     
     <lastmod>2019-06-09T17:55:52.798Z</lastmod>
