@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-06-13T18:41:17.791Z</updated>
+  <updated>2019-06-14T11:31:49.000Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在python异步协程中处理流程分析(二)</title>
+    <link href="https://www.yangyanxing.com/article/sync_in_asyncio2.html"/>
+    <id>https://www.yangyanxing.com/article/sync_in_asyncio2.html</id>
+    <published>2019-06-13T16:00:00.000Z</published>
+    <updated>2019-06-14T11:31:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇文章&lt;a href=&quot;https://mp.weixin.qq.com/s/iNhWG2VJr-PEANzmU8jqbQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;在python异步协程中处理流程分析(一)&lt;/a&gt;介绍了在python3中使用asyncio创建单个协程和多个协程，这篇文章介绍在异步的应用里如何调用同步的函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在python异步协程中处理流程分析(一)</title>
     <link href="https://www.yangyanxing.com/article/sync_in_asyncio.html"/>
     <id>https://www.yangyanxing.com/article/sync_in_asyncio.html</id>
     <published>2019-06-12T16:00:00.000Z</published>
-    <updated>2019-06-13T18:41:17.791Z</updated>
+    <updated>2019-06-14T13:58:16.973Z</updated>
     
     <summary type="html">
     
