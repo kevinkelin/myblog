@@ -1492,3 +1492,12 @@ em.search-keyword {
   list-style: none; }
   .post-copyright li {
     margin: 8px 0; }
+
+.mpcontact {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between; }
+
+.mpimage {
+  width: 258px;
+  height: 258px; }
