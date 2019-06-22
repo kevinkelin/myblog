@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/about/index.html</loc>
+    
+    <lastmod>2019-06-22T11:10:18.253Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/sync_in_asyncio.html</loc>
     
     <lastmod>2019-06-14T13:58:16.973Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>https://www.yangyanxing.com/article/python-list-sort.html</loc>
     
     <lastmod>2018-08-06T16:01:06.562Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/about/index.html</loc>
-    
-    <lastmod>2018-08-06T15:46:45.781Z</lastmod>
     
   </url>
   
