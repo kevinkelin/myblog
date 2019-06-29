@@ -1494,7 +1494,7 @@ em.search-keyword {
     margin: 8px 0; }
 
 .mpcontact {
-  display: flex;
+  display: inline-block;
   -webkit-box-pack: justify;
   justify-content: space-between; }
 
