@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-06-14T11:31:49.000Z</updated>
+  <updated>2019-07-09T17:47:07.340Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在mongodb中按天进行聚合查询</title>
+    <link href="https://www.yangyanxing.com/article/aggregate-perday-mongodb.html"/>
+    <id>https://www.yangyanxing.com/article/aggregate-perday-mongodb.html</id>
+    <published>2019-07-09T15:53:38.000Z</published>
+    <updated>2019-07-09T17:47:07.340Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在写项目的时候遇到一个问题，使用mongodb记录了用例的执行结果，但是在时间的记录上使用的是date格式，现在有一个需求，以天为单位，统计一下每天成功的用例和失败的用例，说到统计，肯定是要用到聚合查询，但是如果以date格式的时间为group依据，那么等同于没有分组，因为在记录用例的时间几乎不可能同时，今天查阅了一下相关文档，可以使用mongodb的&lt;code class=&quot;text&quot;&gt;$dateToString&lt;/code&gt;命令来完成这个需求&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>在python异步协程中处理流程分析(二)</title>
