@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/kwargs_in_python.html</loc>
+    
+    <lastmod>2019-07-11T16:58:15.612Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/aggregate-perday-mongodb.html</loc>
     
     <lastmod>2019-07-09T17:47:07.340Z</lastmod>

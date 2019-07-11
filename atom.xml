@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-07-09T17:47:07.340Z</updated>
+  <updated>2019-07-11T16:58:15.612Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中的双星参数展开问题</title>
+    <link href="https://www.yangyanxing.com/article/kwargs_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/kwargs_in_python.html</id>
+    <published>2019-07-11T15:53:38.000Z</published>
+    <updated>2019-07-11T16:58:15.612Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在python的函数中允许有不定参数，我们对于这种参数已经习以为常了，并且这种写法很方便的，但是对于它背后的运行机制却不是很熟悉，正好最近在写项目过程中有遇到过这种双星不定参数的问题，这里也记录一下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>在mongodb中按天进行聚合查询</title>
