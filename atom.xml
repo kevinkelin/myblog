@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-07-16T14:23:56.073Z</updated>
+  <updated>2019-07-19T19:22:32.689Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决mysql服务器在无操作超时主动断开连接的问题</title>
+    <link href="https://www.yangyanxing.com/article/connect_short_problem.html"/>
+    <id>https://www.yangyanxing.com/article/connect_short_problem.html</id>
+    <published>2019-07-18T15:53:38.000Z</published>
+    <updated>2019-07-19T19:22:32.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们在使用mysql服务的时候，正常情况下，mysql的设置的timeout是8个小时(28800秒)，也就是说，如果一个连接8个小时都没有操作，那么mysql会主动的断开连接，当这个连接再次尝试查询的时候就会报个”MySQL server has gone away”的误，但是有时候，由于mysql服务器那边做了一些设置，很多情况下会缩短这个连接timeout时长以保证更多的连接可用。有时候设置得比较变态，很短，30秒，这样就需要客户端这边做一些操作来保证不要让mysql主动来断开。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Filter过滤python中的日志输出</title>
