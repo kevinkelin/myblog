@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-07-21T12:10:16.931Z</updated>
+  <updated>2019-07-21T12:35:05.783Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://www.yangyanxing.com/article/aiomysql_in_python.html"/>
     <id>https://www.yangyanxing.com/article/aiomysql_in_python.html</id>
     <published>2019-07-20T15:53:38.000Z</published>
-    <updated>2019-07-21T12:10:16.931Z</updated>
+    <updated>2019-07-21T12:35:05.783Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;之后一直在使用mongo与redis，最近在项目中开始使用mysql数据库，由于现在的项目是全程异步的操作，所以在在网上查了下关于在python中异步的操作mysql，找来找去最后开现aipmysql的是实现最好的，现在简单介绍一下它的使用。&lt;/p&gt;
+      &lt;p&gt;之前一直在使用mongo与redis，最近在项目中开始使用mysql数据库，由于现在的项目是全程异步的操作，所以在在网上查了下关于在python中异步的操作mysql，找来找去最后发现aiomysql的是实现最好的，现在简单介绍一下它的使用。&lt;/p&gt;
     
     </summary>
     
