@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-07-21T12:35:05.783Z</updated>
+  <updated>2019-07-27T16:18:04.413Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中多线程与多进程中的数据共享问题</title>
+    <link href="https://www.yangyanxing.com/article/sharedata_in_python_thread.html"/>
+    <id>https://www.yangyanxing.com/article/sharedata_in_python_thread.html</id>
+    <published>2019-07-27T15:53:38.000Z</published>
+    <updated>2019-07-27T16:18:04.413Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在写多线程与多进程的时候，因为一般情况下都是各自完成各自的任务，各个子线程或者各个子进程之前并没有太多的联系，如果需要通信的话我会使用队列或者数据库来完成，但是最近我在写一些多线程与多进程的代码时，发现如果它们需要用到共享变量的话，需要有一些注意的地方&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>使用aiomysql异步操作mysql</title>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/sharedata_in_python_thread.html</loc>
+    
+    <lastmod>2019-07-27T16:18:04.413Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/aiomysql_in_python.html</loc>
     
     <lastmod>2019-07-21T12:35:05.783Z</lastmod>
