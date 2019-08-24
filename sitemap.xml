@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/exec_command_in_go.html</loc>
+    
+    <lastmod>2019-08-24T17:48:58.189Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/func_viriadic_in_go.html</loc>
+    
+    <lastmod>2019-08-24T15:38:49.310Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/new_make_in_go.html</loc>
     
     <lastmod>2019-08-17T12:28:51.256Z</lastmod>
