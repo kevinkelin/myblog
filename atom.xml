@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-08-25T01:01:37.454Z</updated>
+  <updated>2019-08-25T15:25:40.638Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>go语言中关于文件路径的使用总结</title>
+    <link href="https://www.yangyanxing.com/article/file_path_in_go.html"/>
+    <id>https://www.yangyanxing.com/article/file_path_in_go.html</id>
+    <published>2019-08-24T16:00:00.000Z</published>
+    <updated>2019-08-25T15:25:40.638Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在编程中操作文件非常常见，如读取或者写入文件，但是在此之前会先构造出文件路径，在python中有相应的os.path库，对于文件路径的操作很简单，如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;os.path.basename 获取文件名&lt;/li&gt;
+&lt;li&gt;os.path.dirname 获取文件目录名&lt;/li&gt;
+&lt;li&gt;os.path.join 拼接文件路径&lt;/li&gt;
+&lt;li&gt;os.path.splitext 拆分文件，获取文件名和扩展名&lt;/li&gt;
+&lt;li&gt;os.path.adspath 获取文件绝对路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下尝试在go语言中对上面的这些方法进行实现&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="go" scheme="https://www.yangyanxing.com/categories/go/"/>
+    
+    
+      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+    
+  </entry>
   
   <entry>
     <title>go语言中函数使用不定参数问题</title>

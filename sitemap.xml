@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/file_path_in_go.html</loc>
+    
+    <lastmod>2019-08-25T15:25:40.638Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/exec_command_in_go.html</loc>
     
     <lastmod>2019-08-25T14:52:14.480Z</lastmod>

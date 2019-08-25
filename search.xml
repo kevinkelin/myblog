@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>go语言中关于文件路径的使用总结</title>
+      <link href="/article/file_path_in_go.html"/>
+      <url>/article/file_path_in_go.html</url>
+      <content type="html"><![CDATA[<p>在编程中操作文件非常常见，如读取或者写入文件，但是在此之前会先构造出文件路径，在python中有相应的os.path库，对于文件路径的操作很简单，如</p><ul><li>os.path.basename 获取文件名</li><li>os.path.dirname 获取文件目录名</li><li>os.path.join 拼接文件路径</li><li>os.path.splitext 拆分文件，获取文件名和扩展名</li><li>os.path.adspath 获取文件绝对路径</li></ul><p>以下尝试在go语言中对上面的这些方法进行实现</p><a id="more"></a><p>在go语言中操作文件路径主要使用 <code class="text">filepath</code> 这个包，使用也比较简单，已经写在注释里了。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line"><span class="string">"os"</span></span><br><span class="line"><span class="string">"path/filepath"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">pwd,_ := os.Getwd() <span class="comment">// 获取到当前目录，相当于python里的os.getcwd()</span></span><br><span class="line">fmt.Println(<span class="string">"当前的操作路径为:"</span>,pwd)</span><br><span class="line"><span class="comment">//文件路径拼接</span></span><br><span class="line">f1 := filepath.Join(pwd,<span class="string">"test"</span>,<span class="string">"1.txt"</span>)</span><br><span class="line">fmt.Println(<span class="string">"文件的路径为:"</span>,f1)</span><br><span class="line"><span class="comment">//文件的目录名</span></span><br><span class="line">fmt.Println(<span class="string">"文件的目录名:"</span>,filepath.Dir(f1))</span><br><span class="line"><span class="comment">//文件的文件名</span></span><br><span class="line">fmt.Println(<span class="string">"文件的文件名:"</span>,filepath.Base(f1))</span><br><span class="line"><span class="comment">//文件的绝对路径</span></span><br><span class="line">adspath,_ := filepath.Abs(<span class="string">"evn/3.txt"</span>)</span><br><span class="line">fmt.Println(<span class="string">"文件的绝对路径为:"</span>,adspath)</span><br><span class="line"><span class="comment">//拆分路径</span></span><br><span class="line">dirname,filename := filepath.Split(f1)</span><br><span class="line">fmt.Println(<span class="string">"目录名为:"</span>,dirname,<span class="string">"文件名为"</span>,filename)</span><br><span class="line"><span class="comment">//扩展名相关</span></span><br><span class="line">fmt.Println(<span class="string">"f1的扩展名为:"</span>,filepath.Ext(f1))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>运行的结果为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">当前的操作路径为: F:\GO\src\gobookcode</span><br><span class="line">文件的路径为: F:\GO\src\gobookcode\test\1.txt</span><br><span class="line">文件的目录名: F:\GO\src\gobookcode\test</span><br><span class="line">文件的文件名: 1.txt</span><br><span class="line">文件的绝对路径为: F:\GO\src\gobookcode\evn\3.txt</span><br><span class="line">目录名为: F:\GO\src\gobookcode\test\ 文件名为 1.txt</span><br><span class="line">f1的扩展名为: .txt</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>go语言中函数使用不定参数问题</title>
       <link href="/article/func_viriadic_in_go.html"/>
       <url>/article/func_viriadic_in_go.html</url>
