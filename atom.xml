@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-08-25T15:25:40.638Z</updated>
+  <updated>2019-08-26T10:58:00.000Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.yangyanxing.com/article/file_path_in_go.html"/>
     <id>https://www.yangyanxing.com/article/file_path_in_go.html</id>
     <published>2019-08-24T16:00:00.000Z</published>
-    <updated>2019-08-25T15:25:40.638Z</updated>
+    <updated>2019-08-26T10:58:00.000Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,7 @@
 &lt;li&gt;os.path.join 拼接文件路径&lt;/li&gt;
 &lt;li&gt;os.path.splitext 拆分文件，获取文件名和扩展名&lt;/li&gt;
 &lt;li&gt;os.path.adspath 获取文件绝对路径&lt;/li&gt;
+&lt;li&gt;os.path.exists 判断文件或者文件夹是否存在&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下尝试在go语言中对上面的这些方法进行实现&lt;/p&gt;
     
@@ -99,6 +100,26 @@
     <summary type="html">
     
       &lt;p&gt;初学go语言，对于初始化变量时使用new还是make有些迷惑，这里简单总结一下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
+    
+    
+      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go语言中的for range的应用</title>
+    <link href="https://www.yangyanxing.com/article/forrange_in_go.html"/>
+    <id>https://www.yangyanxing.com/article/forrange_in_go.html</id>
+    <published>2019-08-11T15:53:38.000Z</published>
+    <updated>2019-08-26T11:12:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;for range 在go语言中用于遍历一个可迭代的对象，它可以应用于数组，切片，字典等&lt;br&gt;它有以下一些用法&lt;br&gt;
     
     </summary>
     
@@ -648,15 +669,15 @@
   </entry>
   
   <entry>
-    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
-    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
-    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
+    <title>python中的异常处理</title>
+    <link href="https://www.yangyanxing.com/article/try_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/try_in_python.html</id>
     <published>2017-08-19T15:53:38.000Z</published>
-    <updated>2019-01-23T13:33:30.752Z</updated>
+    <updated>2018-04-27T15:51:49.557Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
+      &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
     
     </summary>
     
@@ -668,15 +689,15 @@
   </entry>
   
   <entry>
-    <title>python中的异常处理</title>
-    <link href="https://www.yangyanxing.com/article/try_in_python.html"/>
-    <id>https://www.yangyanxing.com/article/try_in_python.html</id>
+    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
+    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
+    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
     <published>2017-08-19T15:53:38.000Z</published>
-    <updated>2018-04-27T15:51:49.557Z</updated>
+    <updated>2019-01-23T13:33:30.752Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
+      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
     
     </summary>
     
