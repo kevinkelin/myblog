@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/use_venv_in_python.html</loc>
+    
+    <lastmod>2019-09-08T09:22:49.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/func_viriadic_in_go.html</loc>
+    
+    <lastmod>2019-09-01T13:26:14.813Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/string_use_in_go.html</loc>
     
     <lastmod>2019-08-27T10:49:24.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://www.yangyanxing.com/article/exec_command_in_go.html</loc>
     
     <lastmod>2019-08-25T14:52:14.480Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/func_viriadic_in_go.html</loc>
-    
-    <lastmod>2019-08-25T01:01:37.454Z</lastmod>
     
   </url>
   
