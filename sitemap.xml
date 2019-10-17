@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/numpy_use_in_python.html</loc>
+    
+    <lastmod>2019-10-17T09:04:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/use_venv_in_python.html</loc>
     
     <lastmod>2019-09-08T09:22:49.233Z</lastmod>
