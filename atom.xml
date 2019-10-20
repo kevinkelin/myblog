@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-10-17T09:04:52.000Z</updated>
+  <updated>2019-10-20T12:58:44.378Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见激励函数的python表达</title>
+    <link href="https://www.yangyanxing.com/article/activation_function_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/activation_function_in_python.html</id>
+    <published>2019-10-19T16:00:00.000Z</published>
+    <updated>2019-10-20T12:58:44.378Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在神经网络最后的输出层，通常会使用激活函数将最后一层神经元得到的数据再进行计算，最终得到一个输出的结果，这里称该函数为激活函数，比对输出表达式为，当最后一层输出元得到的数据大于0，则输出1，小于0则输出0，这种称为阶跃函数，常见的激活函数有阶跃函数，sigmoid，ReLU，tanh函数&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://www.yangyanxing.com/categories/Python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>numpy中对于矩阵的基本操作</title>
