@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/array_and_object_in_javacript.html</loc>
+    
+    <lastmod>2020-02-06T12:38:47.037Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/simple-app-in-k8s.html</loc>
+    
+    <lastmod>2020-02-06T12:38:27.908Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/flask-redirect-cookie.html</loc>
+    
+    <lastmod>2020-02-06T12:37:50.409Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/string_use_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:55:30.206Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/file_path_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:55:23.776Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/func_viriadic_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:55:13.762Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/exec_command_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:55:05.686Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/new_make_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:54:58.214Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/forrange_in_go.html</loc>
+    
+    <lastmod>2020-02-06T08:54:50.342Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/pymongo-threadsafe.html</loc>
     
     <lastmod>2019-12-22T16:44:48.052Z</lastmod>
@@ -40,48 +103,6 @@
     <loc>https://www.yangyanxing.com/article/use_venv_in_python.html</loc>
     
     <lastmod>2019-09-08T09:22:49.233Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/func_viriadic_in_go.html</loc>
-    
-    <lastmod>2019-09-01T13:26:14.813Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/string_use_in_go.html</loc>
-    
-    <lastmod>2019-08-27T10:49:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/forrange_in_go.html</loc>
-    
-    <lastmod>2019-08-26T11:12:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/file_path_in_go.html</loc>
-    
-    <lastmod>2019-08-26T10:58:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/exec_command_in_go.html</loc>
-    
-    <lastmod>2019-08-25T14:52:14.480Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/new_make_in_go.html</loc>
-    
-    <lastmod>2019-08-17T12:28:51.256Z</lastmod>
     
   </url>
   

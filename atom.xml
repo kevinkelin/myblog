@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2019-12-22T16:44:48.052Z</updated>
+  <updated>2020-02-06T12:38:47.037Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript中的列表与对象遍历</title>
+    <link href="https://www.yangyanxing.com/article/array_and_object_in_javacript.html"/>
+    <id>https://www.yangyanxing.com/article/array_and_object_in_javacript.html</id>
+    <published>2020-02-05T16:00:00.000Z</published>
+    <updated>2020-02-06T12:38:47.037Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工作中不是经常会写javascript，所以每次遇到写js代码的时候，都要上网上各种查，这里先总结一下，经常用的，之后再慢慢添加。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://www.yangyanxing.com/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://www.yangyanxing.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用kubernetes搭建简单的应用</title>
+    <link href="https://www.yangyanxing.com/article/simple-app-in-k8s.html"/>
+    <id>https://www.yangyanxing.com/article/simple-app-in-k8s.html</id>
+    <published>2020-02-04T16:00:00.000Z</published>
+    <updated>2020-02-06T12:38:27.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在看kubernetes的相关内空，参考《Kubernetes权威指南》第一章，搭建一个简单的应用，它里面使用的是RC，我直接使用RS来搭建。&lt;/p&gt;
+&lt;h3 id=&quot;项目架构&quot;&gt;&lt;a href=&quot;#项目架构&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/categories/k8s/"/>
+    
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flask中跳转的同时设置cookie</title>
+    <link href="https://www.yangyanxing.com/article/flask-redirect-cookie.html"/>
+    <id>https://www.yangyanxing.com/article/flask-redirect-cookie.html</id>
+    <published>2020-02-03T16:00:00.000Z</published>
+    <updated>2020-02-06T12:37:50.409Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在使用flask的时候，有一个比较麻烦的事情，在跳转网页的时候需要设置cookie，使用单独设置cookie与单独跳转都比较简单，&lt;/p&gt;
+&lt;h3 id=&quot;跳转网页&quot;&gt;&lt;a href=&quot;#跳转网页&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://www.yangyanxing.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://www.yangyanxing.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>pymongo中的并发问题</title>
@@ -141,7 +215,7 @@
     <link href="https://www.yangyanxing.com/article/string_use_in_go.html"/>
     <id>https://www.yangyanxing.com/article/string_use_in_go.html</id>
     <published>2019-08-26T16:00:00.000Z</published>
-    <updated>2019-08-27T10:49:24.000Z</updated>
+    <updated>2020-02-06T08:55:30.206Z</updated>
     
     <summary type="html">
     
@@ -151,10 +225,10 @@
     
     </summary>
     
-      <category term="go" scheme="https://www.yangyanxing.com/categories/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
@@ -163,7 +237,7 @@
     <link href="https://www.yangyanxing.com/article/file_path_in_go.html"/>
     <id>https://www.yangyanxing.com/article/file_path_in_go.html</id>
     <published>2019-08-24T16:00:00.000Z</published>
-    <updated>2019-08-26T10:58:00.000Z</updated>
+    <updated>2020-02-06T08:55:23.776Z</updated>
     
     <summary type="html">
     
@@ -180,10 +254,10 @@
     
     </summary>
     
-      <category term="go" scheme="https://www.yangyanxing.com/categories/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
@@ -192,7 +266,7 @@
     <link href="https://www.yangyanxing.com/article/func_viriadic_in_go.html"/>
     <id>https://www.yangyanxing.com/article/func_viriadic_in_go.html</id>
     <published>2019-08-23T16:00:00.000Z</published>
-    <updated>2019-09-01T13:26:14.813Z</updated>
+    <updated>2020-02-06T08:55:13.762Z</updated>
     
     <summary type="html">
     
@@ -200,10 +274,10 @@
     
     </summary>
     
-      <category term="go" scheme="https://www.yangyanxing.com/categories/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
@@ -212,7 +286,7 @@
     <link href="https://www.yangyanxing.com/article/exec_command_in_go.html"/>
     <id>https://www.yangyanxing.com/article/exec_command_in_go.html</id>
     <published>2019-08-22T16:00:00.000Z</published>
-    <updated>2019-08-25T14:52:14.480Z</updated>
+    <updated>2020-02-06T08:55:05.686Z</updated>
     
     <summary type="html">
     
@@ -225,10 +299,10 @@
     
     </summary>
     
-      <category term="go" scheme="https://www.yangyanxing.com/categories/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
@@ -237,7 +311,7 @@
     <link href="https://www.yangyanxing.com/article/new_make_in_go.html"/>
     <id>https://www.yangyanxing.com/article/new_make_in_go.html</id>
     <published>2019-08-13T15:53:38.000Z</published>
-    <updated>2019-08-17T12:28:51.256Z</updated>
+    <updated>2020-02-06T08:54:58.214Z</updated>
     
     <summary type="html">
     
@@ -248,7 +322,7 @@
       <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
@@ -257,7 +331,7 @@
     <link href="https://www.yangyanxing.com/article/forrange_in_go.html"/>
     <id>https://www.yangyanxing.com/article/forrange_in_go.html</id>
     <published>2019-08-11T15:53:38.000Z</published>
-    <updated>2019-08-26T11:12:39.000Z</updated>
+    <updated>2020-02-06T08:54:50.342Z</updated>
     
     <summary type="html">
     
@@ -268,7 +342,7 @@
       <category term="Go" scheme="https://www.yangyanxing.com/categories/Go/"/>
     
     
-      <category term="go" scheme="https://www.yangyanxing.com/tags/go/"/>
+      <category term="Go" scheme="https://www.yangyanxing.com/tags/Go/"/>
     
   </entry>
   
