@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2020-02-06T12:38:47.037Z</updated>
+  <updated>2020-02-10T14:13:51.112Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>kubernetes中pod间的通信</title>
+    <link href="https://www.yangyanxing.com/article/pod-communite-k8s.html"/>
+    <id>https://www.yangyanxing.com/article/pod-communite-k8s.html</id>
+    <published>2020-02-09T16:00:00.000Z</published>
+    <updated>2020-02-10T14:13:51.112Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我们如果创建了一些pod，那么它们之间是怎么通信的呢？因为pod的ip地址是有可能变化的，这里我们主要讨论几个场景&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同一网络下的不同pod间是怎么通信的？&lt;/li&gt;
+&lt;li&gt;同一个pod中不同的容器是怎么通信的？&lt;/li&gt;
+&lt;li&gt;不同的网络下不同
+        
+      
+    
+    </summary>
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/categories/k8s/"/>
+    
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes中的服务类型</title>
+    <link href="https://www.yangyanxing.com/article/type-in-k8s.html"/>
+    <id>https://www.yangyanxing.com/article/type-in-k8s.html</id>
+    <published>2020-02-06T16:00:00.000Z</published>
+    <updated>2020-02-10T14:38:00.565Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当我们使用deployment或者RS创建了一些pod时，比如创建了一个nginx的pod，该pod中有三个replicas，此时，如果我们查看pod状态大概是这个样子的&lt;/p&gt;
+&lt;p&gt;nginx-deploy.yaml 文件&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/categories/k8s/"/>
+    
+    
+      <category term="k8s" scheme="https://www.yangyanxing.com/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
     <title>javascript中的列表与对象遍历</title>
     <link href="https://www.yangyanxing.com/article/array_and_object_in_javacript.html"/>
     <id>https://www.yangyanxing.com/article/array_and_object_in_javacript.html</id>
     <published>2020-02-05T16:00:00.000Z</published>
-    <updated>2020-02-06T12:38:47.037Z</updated>
+    <updated>2020-02-06T15:07:50.228Z</updated>
     
     <summary type="html">
     
@@ -41,7 +99,7 @@
     <link href="https://www.yangyanxing.com/article/simple-app-in-k8s.html"/>
     <id>https://www.yangyanxing.com/article/simple-app-in-k8s.html</id>
     <published>2020-02-04T16:00:00.000Z</published>
-    <updated>2020-02-06T12:38:27.908Z</updated>
+    <updated>2020-02-07T14:35:49.438Z</updated>
     
     <summary type="html">
     
@@ -1158,9 +1216,9 @@
       <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
-    
       <category term="java" scheme="https://www.yangyanxing.com/tags/java/"/>
+    
+      <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   

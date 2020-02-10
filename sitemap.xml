@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.yangyanxing.com/article/array_and_object_in_javacript.html</loc>
+    <loc>https://www.yangyanxing.com/article/type-in-k8s.html</loc>
     
-    <lastmod>2020-02-06T12:38:47.037Z</lastmod>
+    <lastmod>2020-02-10T14:38:00.565Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/pod-communite-k8s.html</loc>
+    
+    <lastmod>2020-02-10T14:13:51.112Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.yangyanxing.com/article/simple-app-in-k8s.html</loc>
     
-    <lastmod>2020-02-06T12:38:27.908Z</lastmod>
+    <lastmod>2020-02-07T14:35:49.438Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/array_and_object_in_javacript.html</loc>
+    
+    <lastmod>2020-02-06T15:07:50.228Z</lastmod>
     
   </url>
   
