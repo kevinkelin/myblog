@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yangyanxing.com/article/namespace-k8s.html</loc>
+    
+    <lastmod>2020-02-11T15:34:22.326Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yangyanxing.com/article/pod-communite-k8s.html</loc>
     
-    <lastmod>2020-02-11T01:51:41.386Z</lastmod>
+    <lastmod>2020-02-11T14:19:17.403Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yangyanxing.com/article/simple-app-in-k8s.html</loc>
+    
+    <lastmod>2020-02-11T09:00:52.113Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://www.yangyanxing.com/article/type-in-k8s.html</loc>
     
     <lastmod>2020-02-10T14:38:00.565Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yangyanxing.com/article/simple-app-in-k8s.html</loc>
-    
-    <lastmod>2020-02-07T14:35:49.438Z</lastmod>
     
   </url>
   
