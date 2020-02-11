@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yangyanxing.com/"/>
-  <updated>2020-02-10T14:13:51.112Z</updated>
+  <updated>2020-02-11T01:51:41.386Z</updated>
   <id>https://www.yangyanxing.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.yangyanxing.com/article/pod-communite-k8s.html"/>
     <id>https://www.yangyanxing.com/article/pod-communite-k8s.html</id>
     <published>2020-02-09T16:00:00.000Z</published>
-    <updated>2020-02-10T14:13:51.112Z</updated>
+    <updated>2020-02-11T01:51:41.386Z</updated>
     
     <summary type="html">
     
@@ -943,15 +943,15 @@
   </entry>
   
   <entry>
-    <title>python中的异常处理</title>
-    <link href="https://www.yangyanxing.com/article/try_in_python.html"/>
-    <id>https://www.yangyanxing.com/article/try_in_python.html</id>
+    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
+    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
+    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
     <published>2017-08-19T15:53:38.000Z</published>
-    <updated>2018-04-27T15:51:49.557Z</updated>
+    <updated>2019-01-23T13:33:30.752Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
+      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
     
     </summary>
     
@@ -963,15 +963,15 @@
   </entry>
   
   <entry>
-    <title>使用Redis作为消息队列实现生产消费与发布订阅</title>
-    <link href="https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html"/>
-    <id>https://www.yangyanxing.com/article/use-redis-for-mq-in-python.html</id>
+    <title>python中的异常处理</title>
+    <link href="https://www.yangyanxing.com/article/try_in_python.html"/>
+    <id>https://www.yangyanxing.com/article/try_in_python.html</id>
     <published>2017-08-19T15:53:38.000Z</published>
-    <updated>2019-01-23T13:33:30.752Z</updated>
+    <updated>2018-04-27T15:51:49.557Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;日常的工作中，经常会用到队列(Queue)，在python中有原生的队列，但是由于原生的队列是存在于内存当中，当系统重启后队列里的消息就没有，且无法进行分步式，Redis中的List数据有四种原语，LPUSH,LPOP,RPUSH,RPOP，配合使用可以实现简单的生产消费模型。&lt;/p&gt;
+      &lt;p&gt;写程序肯定要接触异常处理，还好python中的异常处理比较简单，但是有些细节还是需要好好看一下&lt;br&gt;这里记录一下try在python中的使用。&lt;/p&gt;
     
     </summary>
     
@@ -1216,9 +1216,9 @@
       <category term="Android" scheme="https://www.yangyanxing.com/categories/Android/"/>
     
     
-      <category term="java" scheme="https://www.yangyanxing.com/tags/java/"/>
-    
       <category term="自动化测试" scheme="https://www.yangyanxing.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="java" scheme="https://www.yangyanxing.com/tags/java/"/>
     
   </entry>
   
